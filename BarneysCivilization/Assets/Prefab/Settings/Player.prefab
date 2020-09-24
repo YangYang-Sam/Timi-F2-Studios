@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8190699500804290973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8190699500804290974}
+  - component: {fileID: 8190699500804290975}
+  - component: {fileID: 8190699500804290972}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8190699500804290974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190699500804290973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -102.513885, y: 13.789024, z: 94.035095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8190699500804290975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190699500804290973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a9f8707ca73a849b469afa80e70cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camp: 0
+  Cards: []
+  InGameCardDeck: []
+  Units: []
+  OccupiedCells: []
+  CanMoveCells: []
+  NewOccupiedCells: []
+  Buildings: []
+  MaxCardAmount: 6
+  DrawCardAmount: 5
+  ResourceAmount: 1
+  TempResourceAmount: 0
+  BuyUnitTimes: 0
+  ActionPoint: 0
+  Race:
+    Name: 
+    CorePrefab: {fileID: 0}
+    UnitPrefab: {fileID: 0}
+    cards: []
+  PlayerCore: {fileID: 0}
+  StartCell: 22
+--- !u!114 &8190699500804290972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190699500804290973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e3b1969054f0b45b9a7d43ff90fc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TesetCard: {fileID: 5296548780900481383, guid: fadd45d67d58c15429072774fd11ab5a,
+    type: 3}
+  cardManager: {fileID: 8190699500804290975}
+  SelectCell: {fileID: 0}
+  SelectUnit: {fileID: 0}
+  jobType: 0
+  camp: 0
