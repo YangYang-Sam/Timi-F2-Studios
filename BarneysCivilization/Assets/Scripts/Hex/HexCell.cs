@@ -27,6 +27,7 @@ public class HexCell : MonoBehaviour
     private List<int> Camps = new List<int>();
 
     public Building_Base PlacedBuilding;
+    public List<CellBuff_Base> CellBuffs = new List<CellBuff_Base>();
 
     public bool CanPass = true;
 

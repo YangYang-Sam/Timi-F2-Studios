@@ -12,12 +12,19 @@ public class PlayerController : MonoBehaviour
     public Unit_Base SelectUnit;
 
     public PointerJobType jobType;
+    public static bool isInBattle;
 
     public int camp;
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void HexTrace()

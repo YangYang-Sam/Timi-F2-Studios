@@ -1086,3 +1086,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e6b3b2b553014f4ab19a4eebe0dd340, type: 3}
+--- !u!1 &8668050369973418530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8668050369247080691, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+    type: 3}
+  m_PrefabInstance: {fileID: 8668050369973418529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8668050369973418531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668050369973418530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa361e467d134224989d1bc3970cbf0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllCardObjects:
+  - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+  - {fileID: 6943707428436127944, guid: 307214ba36d6d1d4288fb46e9cb86d49, type: 3}
+  - {fileID: 6943707428436127944, guid: f3ec0ebcd6b01144091a032ba58629ef, type: 3}
+  - {fileID: 6943707428436127944, guid: 3552a16cd4d1d07429a2dc7e6067e5fb, type: 3}
+  - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
+  - {fileID: 6943707428436127944, guid: 78fd9117c94cc5d4da4498b1cdae6f37, type: 3}
+  - {fileID: 6943707428436127944, guid: 0d1a9c7f809a1de4681fad5a97e134af, type: 3}
+  - {fileID: 6943707428436127944, guid: a682d0ca49143f34a876209aaac67dec, type: 3}
+  - {fileID: 6943707428436127944, guid: 54e02565771f2044b8b49ac2e4c67ec4, type: 3}
+  - {fileID: 6943707428436127944, guid: b1392f2a8d25c1742ba1b8436dfb8a25, type: 3}
+  - {fileID: 6943707428436127944, guid: 2735b889495651d4eb0a00956d43f22c, type: 3}
+  - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
+  - {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09, type: 3}
+  - {fileID: 6943707428436127944, guid: f5cbf84d1e6507b41b341b8f2fdc7208, type: 3}
+  - {fileID: 6943707428436127944, guid: 7d4305f701ad4b64d8be5b44e5a7dfdf, type: 3}
+  - {fileID: 6943707428436127944, guid: 56e6ca40384227f4290f86e0c4cd67a0, type: 3}
+  AllCardNames: []

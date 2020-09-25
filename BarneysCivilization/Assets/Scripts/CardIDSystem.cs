@@ -12,6 +12,7 @@ public class CardIDSystem : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        AllCardNames = new string[AllCardObjects.Length];
         for (int i = 0; i < AllCardObjects.Length; i++)
         {
             AllCardNames[i] = AllCardObjects[i].GetComponent<Card_Base>().CardName;
