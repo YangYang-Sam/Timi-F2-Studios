@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\Card_Base.cs" />
     <Compile Include="Assets\Scripts\CardAppearence.cs" />
     <Compile Include="Assets\Scripts\CardEffect.cs" />
+    <Compile Include="Assets\Scripts\CardIDSystem.cs" />
     <Compile Include="Assets\Scripts\CardManager.cs" />
     <Compile Include="Assets\Scripts\CardS\Card_CellProduce.cs" />
     <Compile Include="Assets\Scripts\CardS\Card_CreateBuilding.cs" />
@@ -160,31 +161,31 @@
     <None Include="Assets\ArtResource\Epic Toon FX\Prefabs\Interactive\Interactive FX.txt" />
     <None Include="Assets\ArtResource\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/UnityProject/BarneysCivilization/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>F:/Work/Oasis/timi-f2-studios/BarneysCivilization/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/MyGame/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

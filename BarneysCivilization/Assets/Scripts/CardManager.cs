@@ -291,6 +291,9 @@ public class CardManager : MonoBehaviour
             card.CardEffect(this,cell);
             AddToUsedCards(card);
             ActionPoint -= card.ActionPointCost();
+
+            // 向服务器汇报使用卡的ID
+            CardIDSystem.instance.GetCardID(card.CardName);
         }
     }
     public void AddToUsedCards(Card_Base card)
@@ -330,6 +333,7 @@ public class CardManager : MonoBehaviour
             if (CanMoveCells.Contains(TargetCell))
             {
                 BattleManager.instance.MoveAllUnitsToCell(this, TargetCell, UnitMoveSpeed);
+               
             }
         }
     }
