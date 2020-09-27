@@ -38,8 +38,7 @@ public class InGameManager : MonoBehaviour
     public void EndTurn()
     {
         if (CurrentGameState == GameStateType.Decision)
-        {
-            ChangeGameState(GameStateType.Battle);
+        {            
             StartMoving();
         }
     }
@@ -65,7 +64,7 @@ public class InGameManager : MonoBehaviour
             cell.CheckOwner();
         }
 
-        if (CurrentGameState == GameStateType.Battle)
+        if (CurrentGameState == GameStateType.AfterBattle)
         {
             ChangeGameState(GameStateType.Decision);
         }
@@ -76,8 +75,16 @@ public class InGameManager : MonoBehaviour
     }
     private IEnumerator MoveProcess()
     {
+        ChangeGameState(GameStateType.BeforeMove);
+        yield return new WaitForSeconds(1);
+        ChangeGameState(GameStateType.Move);
         yield return new WaitForSeconds(2.5f);
-        EndBattle();
+        ChangeGameState(GameStateType.BeforeBattle);
+        yield return new WaitForSeconds(1);
+        ChangeGameState(GameStateType.Battle);
+        yield return new WaitForSeconds(1);
+        ChangeGameState(GameStateType.AfterBattle);
+        EndBattle();    
     }
     public void CampLost(CardManager lostManager)
     {
@@ -106,5 +113,9 @@ public enum GameStateType
 {
     Menu,
     Decision,
+    BeforeMove,
+    Move,
+    BeforeBattle,
     Battle,
+    AfterBattle
 }

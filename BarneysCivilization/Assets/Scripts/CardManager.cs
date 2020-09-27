@@ -125,7 +125,7 @@ public class CardManager : MonoBehaviour
                     ChooseCardCoroutine= StartCoroutine(ChooseCardProcess());
                 }        
                 break;
-            case GameStateType.Battle:
+            case GameStateType.BeforeMove:
 
                 if (camp == PlayerController.instance.camp)
                 {

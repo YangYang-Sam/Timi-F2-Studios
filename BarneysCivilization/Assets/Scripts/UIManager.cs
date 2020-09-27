@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
                 playerCardManager.UpdateCanMoveCells();
                 UpdateInteractableCells(true, null);
                 break;
-            case GameStateType.Battle:
+            case GameStateType.BeforeMove:
                 UpdateInteractableCells(false, null);
                 break;
         }

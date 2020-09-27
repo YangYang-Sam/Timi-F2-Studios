@@ -39,7 +39,7 @@ public class Unit_Base : MonoBehaviour
     {
         switch (InGameManager.CurrentGameState)
         {       
-            case GameStateType.Battle:
+            case GameStateType.Move:
                 if (canMove && Health > Cell.MinUnitAmount && PathCells.Count>0 && PathCells[PathCells.Count-1]!=Cell && canMove)
                 {
                     Unit_Base unit = Owner.CreateNewUnit(Cell, Cell.MinUnitAmount);
@@ -52,6 +52,9 @@ public class Unit_Base : MonoBehaviour
                 {
                     Cell.UnitArrived(this);
                 }
+                break;
+            case GameStateType.AfterBattle:
+                StartCoroutine(MoveToCenter());
                 break;
             case GameStateType.Decision:
                 TempHealth = 0;
@@ -83,12 +86,8 @@ public class Unit_Base : MonoBehaviour
         Cell = cell;
     }
     public void Death(Unit_Base killer)
-    {        
-        foreach(Animator a in animator)
-        {
-            a.Play("Death");
-        }
-      
+    {
+        PlayAnimDeath();      
         UnitRemoved();
     }
     public void Merged(Unit_Base MergeToUnit)
@@ -104,16 +103,13 @@ public class Unit_Base : MonoBehaviour
         RotateProcess = StartCoroutine(RotateTowards(PathCells[0].transform.position));
         HexCell destinyCell = PathCells[PathCells.Count - 1];
         UnitMoveTo(destinyCell);
-        foreach (Animator a in animator)
-        {
-            a.SetBool("isWalking", true);
-        }
-        
+        SetAnimMoveState(true);
+
         float speed = PathCells.Count * HexMetrics.innerRadius * 2 / 2.5f;
         while (PathCells.Count > 0)
         {                        
             transform.position += (PathCells[0].transform.position - transform.position).normalized * speed * Time.deltaTime;
-            if (Vector3.Distance(PathCells[0].transform.position, transform.position) <= 0.5f)
+            if (Vector3.Distance(PathCells[0].transform.position, transform.position) <= 3)
             {                
                 PathCells.RemoveAt(0);
                 if (PathCells.Count > 0)
@@ -127,11 +123,36 @@ public class Unit_Base : MonoBehaviour
             }
             yield return null;
         }
+        SetAnimMoveState(false);
+        destinyCell.UnitArrived(this);
+    }
+    private IEnumerator MoveToCenter()
+    {
+        print("start move");
+        SetAnimMoveState(true);
+        float distance = Vector3.Distance(transform.position, Cell.transform.position);
+        while (distance > 0.2f)
+        {
+            print(gameObject + "moving: "+distance);
+            transform.position = Vector3.MoveTowards(transform.position, Cell.transform.position, 5 * Time.deltaTime);
+            distance = Vector3.Distance(transform.position, Cell.transform.position);
+            yield return null;
+        }
+        SetAnimMoveState(false);
+    }
+    private void SetAnimMoveState(bool isMoving)
+    {
         foreach (Animator a in animator)
         {
-            a.SetBool("isWalking", false);
+            a.SetBool("isWalking", isMoving);
         }
-        destinyCell.UnitArrived(this);
+    }
+    private void PlayAnimDeath()
+    {
+        foreach (Animator a in animator)
+        {
+            a.Play("Death");
+        }
     }
     public void UpdateDestinyCell()
     {

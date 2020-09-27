@@ -106,18 +106,18 @@ public class HexGrid : MonoBehaviour
 		}
 		cell.TypeText.text = t;
 
-		GameObject terrain = Instantiate(AssetsManager.instance.HexTerrainPrefab[typeIndex], cell.transform);
-		//terrain.transform.SetParent(cell.transform);
-		//terrain.transform.localPosition = Vector3.zero;
-	
+		GameObject terrain = Instantiate(AssetsManager.instance.HexTerrainPrefab[typeIndex]);
+		terrain.transform.position = cell.transform.position;
+      
 
-		//Text label = Instantiate<Text>(cellLabelPrefab);
-		//label.rectTransform.SetParent(gridCanvas.transform, false);
-		//label.rectTransform.anchoredPosition =
-		//	new Vector2(position.x, position.z);
-		//label.text = cell.coordinates.ToStringOnSeparateLines();
 
-		return cell;
+        //Text label = Instantiate<Text>(cellLabelPrefab);
+        //label.rectTransform.SetParent(gridCanvas.transform, false);
+        //label.rectTransform.anchoredPosition =
+        //	new Vector2(position.x, position.z);
+        //label.text = cell.coordinates.ToStringOnSeparateLines();
+
+        return cell;
 	}
 
 

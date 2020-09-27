@@ -119,14 +119,6 @@
     <Compile Include="Assets\Scripts\CardEffect.cs" />
     <Compile Include="Assets\Scripts\CardIDSystem.cs" />
     <Compile Include="Assets\Scripts\CardManager.cs" />
-    <Compile Include="Assets\Scripts\CardS\Card_CellProduce.cs" />
-    <Compile Include="Assets\Scripts\CardS\Card_CreateBuilding.cs" />
-    <Compile Include="Assets\Scripts\CardS\Card_Desert.cs" />
-    <Compile Include="Assets\Scripts\CardS\Card_Forest.cs" />
-    <Compile Include="Assets\Scripts\CardS\Card_Grass.cs" />
-    <Compile Include="Assets\Scripts\CardS\Card_Montain.cs" />
-    <Compile Include="Assets\Scripts\CardS\Card_Resource.cs" />
-    <Compile Include="Assets\Scripts\CardS\Card_River.cs" />
     <Compile Include="Assets\Scripts\CardS\Effect_AreaAttack.cs" />
     <Compile Include="Assets\Scripts\CardS\Effect_BasicStats.cs" />
     <Compile Include="Assets\Scripts\CardS\Effect_CellProduce.cs" />
