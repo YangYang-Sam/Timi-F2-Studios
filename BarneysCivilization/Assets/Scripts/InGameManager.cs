@@ -59,10 +59,15 @@ public class InGameManager : MonoBehaviour
 
     public void EndBattle()
     {
+        if (BeforeTurnEndEvent != null)
+        {
+            BeforeTurnEndEvent();
+        }
+
         foreach (HexCell cell in HexGrid.instance.cells)
         {
             cell.CheckOwner();
-        }
+        }       
 
         if (CurrentGameState == GameStateType.AfterBattle)
         {
@@ -76,13 +81,13 @@ public class InGameManager : MonoBehaviour
     private IEnumerator MoveProcess()
     {
         ChangeGameState(GameStateType.BeforeMove);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         ChangeGameState(GameStateType.Move);
         yield return new WaitForSeconds(2.5f);
         ChangeGameState(GameStateType.BeforeBattle);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         ChangeGameState(GameStateType.Battle);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         ChangeGameState(GameStateType.AfterBattle);
         EndBattle();    
     }
@@ -108,6 +113,7 @@ public class InGameManager : MonoBehaviour
     }
     public event System.Action GameStateChangeEvent;
     public event System.Action LateDecisionEvent;
+    public event System.Action BeforeTurnEndEvent;
 }
 public enum GameStateType
 {

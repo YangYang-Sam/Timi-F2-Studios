@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CellBuff_Base
+public class CellBuff_Base:MonoBehaviour
 {
     public HexCell Cell;
     public CardManager Creator;
@@ -30,10 +30,16 @@ public class CellBuff_Base
         }
     }
 
+    public virtual void OnStack(CellBuff_Base newBuff)
+    {
+        Turns += newBuff.Turns;
+    }
+
     public virtual void OnBuffDestroy()
     {
         InGameManager.instance.GameStateChangeEvent -= OnGameStateChange;
         Cell.RemoveBuff(this);
+        Destroy(gameObject);
     }
 }
 

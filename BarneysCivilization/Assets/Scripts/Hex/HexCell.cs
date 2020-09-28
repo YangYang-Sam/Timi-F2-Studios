@@ -178,7 +178,20 @@ public class HexCell : MonoBehaviour
     }
     public void RemoveUnit(Unit_Base unit)
     {
-        PlacedUnits.Remove(unit);
+        if (PlacedUnits.Contains(unit))
+        {
+            PlacedUnits.Remove(unit);
+            //if (PlacedUnits.Count == 0)
+            //{
+            //    ChangeOwner(null);
+            //}
+            //if (CampUnits.Contains(unit))
+            //{
+            //    int i = CampUnits.IndexOf(unit);
+            //    CampUnits.RemoveAt(i);
+            //    Camps.RemoveAt(i);
+            //}
+        }
     }
     public void ChangeOwner(Unit_Base newOwnerUnit)
     {
@@ -334,7 +347,23 @@ public class HexCell : MonoBehaviour
     }
     public void AddBuff(CellBuff_Base newBuff)
     {
-        CellBuffs.Add(newBuff);
+        CellBuff_Base oldBuff = FindBuff(newBuff.BuffType);
+        if (oldBuff != null)
+        {
+            if (oldBuff.Stackable)
+            {
+                oldBuff.OnStack(newBuff);
+            }
+            else
+            {
+                oldBuff.OnBuffDestroy();
+                CellBuffs.Add(newBuff);
+            }
+        }
+        else
+        {
+            CellBuffs.Add(newBuff);
+        }       
     }
     public void RemoveBuff(CellBuff_Base buff)
     {

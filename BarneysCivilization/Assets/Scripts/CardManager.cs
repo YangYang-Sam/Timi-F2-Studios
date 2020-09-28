@@ -83,6 +83,7 @@ public class CardManager : MonoBehaviour
     public int UnitMoveSpeed=1;
 
     public RaceInfo Race;
+    public RaceTrait_Base RaceTrait;
     public Core PlayerCore;
     public bool isLost = false;
 
@@ -121,6 +122,11 @@ public class CardManager : MonoBehaviour
         HexCell startCell = HexGrid.instance.cells[StartCell];
         PlayerCore.transform.position = startCell.transform.position;
         PlayerCore.InitCore(startCell, this);
+
+        GameObject traitObj = Instantiate(Race.RaceTraitPrefab);
+        RaceTrait = traitObj.GetComponent<RaceTrait_Base>();
+        RaceTrait.InitRaceTrait(this);
+
         Unit_Base unit = CreateNewUnit(startCell, 1);
         startCell.ChangeOwner(unit);
 
@@ -137,9 +143,10 @@ public class CardManager : MonoBehaviour
         unit.UnitCreated(cell, this, health);
         Units.Add(unit);
         unit.transform.position = cell.transform.position;
-
+        
         return unit;
     }
+   
     public void UnitRemoved(Unit_Base unit)
     {
         Units.Remove(unit);

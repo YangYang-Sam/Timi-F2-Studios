@@ -9,7 +9,7 @@ public class RaceInfo
     public GameObject CorePrefab;
     public GameObject UnitPrefab;
     public HexCards[] cards;
-
+    public GameObject RaceTraitPrefab;
 
     [System.Serializable]
     public class HexCards

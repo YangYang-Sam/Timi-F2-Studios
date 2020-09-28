@@ -253,6 +253,8 @@ MonoBehaviour:
     CorePrefab: {fileID: 0}
     UnitPrefab: {fileID: 0}
     cards: []
+    RaceTraitPrefab: {fileID: 0}
+  RaceTrait: {fileID: 0}
   PlayerCore: {fileID: 0}
   isLost: 0
   StartCell: 39
@@ -633,6 +635,8 @@ MonoBehaviour:
     CorePrefab: {fileID: 0}
     UnitPrefab: {fileID: 0}
     cards: []
+    RaceTraitPrefab: {fileID: 0}
+  RaceTrait: {fileID: 0}
   PlayerCore: {fileID: 0}
   isLost: 0
   StartCell: 11
@@ -995,13 +999,13 @@ PrefabInstance:
         type: 3}
       propertyPath: StartDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454,
+      objectReference: {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3,
         type: 3}
     - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
         type: 3}
       propertyPath: StartDeck.Array.data[1]
       value: 
-      objectReference: {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454,
+      objectReference: {fileID: 6943707428436127944, guid: ec2b3b2259dbb9e47843fc3eb05c5660,
         type: 3}
     - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
         type: 3}
@@ -1084,6 +1088,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8668050369247080694, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: RaceInfos.Array.data[0].RaceTraitPrefab
+      value: 
+      objectReference: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
+        type: 3}
+    - target: {fileID: 8668050369247080694, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: RaceInfos.Array.data[1].RaceTraitPrefab
+      value: 
+      objectReference: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
+        type: 3}
     - target: {fileID: 8668050369247080695, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
         type: 3}
       propertyPath: HexTerrainPrefab.Array.size

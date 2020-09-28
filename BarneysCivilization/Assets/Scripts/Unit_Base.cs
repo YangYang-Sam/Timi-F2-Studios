@@ -128,7 +128,6 @@ public class Unit_Base : MonoBehaviour
     }
     private IEnumerator MoveToCenter()
     {
-        print("start move");
         SetAnimMoveState(true);
         float distance = Vector3.Distance(transform.position, Cell.transform.position);
         while (distance > 0.2f)
