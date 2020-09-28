@@ -1,0 +1,302 @@
+﻿syntax="proto3";
+package csmsg;
+
+enum MSGID {
+    NO_USED = 0;
+    CS_REQ_REGIST_ID = 1;
+    CS_RES_REGIST_ID = 2;
+    CS_REQ_LOGIN_ID = 3;
+    CS_RES_LOGIN_ID = 4;
+    CS_REQ_HELLO_ID=5;
+    CS_RES_HELLO_ID=6;
+    CS_REQ_LOGINOUT_ID = 7;
+    CS_RES_LOGINOUT_ID = 8;
+    CS_NTY_LOGINOUT_ID = 10;
+    CS_NTY_MATCHING_ID = 12;
+    CS_REQ_GET_RACE_ID = 13;
+    CS_RES_GET_RACE_ID = 14;
+    CS_REQ_CHG_RACE_ID = 15;
+    CS_RES_CHG_RACE_ID = 16;
+    CS_REQ_MATCHING_ID = 17;
+    CS_RES_MATCHING_ID = 18;
+    CS_REQ_STOP_MATCHING_ID = 19;
+    CS_RES_STOP_MATCHING_ID = 20;
+    CS_REQ_PLAYER_MOV_ID = 21;
+    CS_RES_PLAYER_MOV_ID = 22;
+    CS_NTY_PLAYER_MOV_ID = 24;
+    CS_REQ_CHG_PLAYER_STATUS_ID = 25;
+    CS_RES_CHG_PLAYER_STATUS_ID = 26;
+    CS_NTY_END_ROUND_ID = 28;
+    CS_REQ_PLAYER_USE_CARD_ID = 29;
+    CS_RES_PLAYER_USE_CARD_ID = 30;
+    CS_NTY_PLAYER_USE_CARD_ID = 32;
+    CS_REQ_GAME_END_ID = 33;
+    CS_RES_GAME_END_ID = 34;
+    CS_NTY_GAME_END_ID = 36;
+  }
+
+enum RACE {
+    Deer = 0;
+    Bear = 1;
+    WOLF = 2;
+  }
+
+enum Game_ResultType {
+    Suc = 0;
+    User_No_In_Game = 1;
+    User_No_In_Line = 2;
+    Had_Prepar_Error = 3;
+    UserID_Error = 4;
+    System_Error = 5;
+  }
+
+message Room_Info {
+    enum STATUS {
+        FREE = 0;
+        MATCHING = 1;
+        PLAY = 2;
+      }
+    enum GAMESTATUS {
+        GAME_NOPREPAR = 0;
+        GAME_PREPAR = 1;
+      }
+    enum PLAYERSTATUS {
+        PLAYER_NOPREPAR = 0;
+        PLAYER_PREPAR = 1;
+    }
+}
+
+message CS_REQ_REGIST {
+   string id = 1;
+   string passwd = 2;
+}
+
+message CS_RES_REGIST {
+  enum Regist_Result {
+      Suc = 0;
+      Repeat = 1;
+      System_Error = 2;
+    }
+
+   Regist_Result result = 1;
+}
+
+message CS_REQ_LOGIN {
+   string id = 1;
+   string passwd = 2;
+}
+
+message CS_RES_LOGIN {
+  enum Login_Result {
+      Suc = 0;
+      Passwd_Error = 1;
+      Uid_Error = 2;
+      Online_Full_Error = 3;
+      System_Error = 4;
+    }
+
+   Login_Result result = 1;
+}
+
+message CS_REQ_LOGINOUT {
+   string id = 1;
+}
+
+message CS_RES_LOGINOUT {
+  enum Loginout_Result {
+      Suc = 0;
+      System_Error = 1;
+    }
+
+   Loginout_Result result = 1;
+}
+
+message CS_NTY_LOGINOUT {
+  enum Loginout_Reason {
+      Login_Again = 0;
+      Not_Login = 1;
+      System_Error = 2;
+    }
+
+   string id = 1;
+   Loginout_Reason Reason = 2;
+}
+
+message CS_REQ_HELLO {
+   string id = 1;
+}
+
+message CS_RES_HELLO {
+   int64 timenow = 1;
+}
+
+message CS_REQ_MATCHING {
+   string userid = 1;
+}
+
+message CS_RES_MATCHING {
+  enum ResultType {
+      Suc = 0;
+      System_Error = 1;
+    }
+
+   ResultType result = 1;
+}
+
+message CS_NTY_MATCHING {
+  enum ResultType {
+      Suc = 0;
+      Room_Error = 1;
+      TimeOut_Error = 2;
+      System_Error = 3;
+    }
+
+   ResultType result = 1;
+  repeated string userlist = 2;
+}
+
+message CS_REQ_STOP_MATCHING {
+   string userid = 1;
+}
+
+message CS_RES_STOP_MATCHING {
+  enum ResultType {
+      Suc = 0;
+      NO_MATCHING_ERROR = 1;
+      GAME_START_ERROR = 2;
+      System_Error = 3;
+    }
+
+   ResultType result = 1;
+}
+
+message CS_REQ_GET_RACE {
+   string userid = 1;
+}
+
+message CS_RES_GET_RACE {
+  enum ResultType {
+      Suc = 0;
+      UserId_Error = 1;
+      System_Error = 2;
+    }
+
+   ResultType result = 1;
+   RACE race = 2;
+}
+
+message CS_REQ_CHG_RACE {
+   string userid = 1;
+   RACE race = 2;
+}
+
+message CS_RES_CHG_RACE {
+  enum ResultType {
+      Suc = 0;
+      UserId_Error = 1;
+      System_Error = 2;
+    }
+
+   ResultType result = 1;
+}
+
+message CS_REQ_CHG_PLAYER_STATUS {
+   string userid = 1;
+   int32 roomid = 2;
+}
+
+message CS_RES_CHG_PLAYER_STATUS {
+   Game_ResultType result = 1;
+}
+
+message CS_NTY_END_ROUND {
+   Game_ResultType result = 1;
+}
+
+message CS_REQ_PLAYER_MOV {
+   string userid = 1;
+   int32 posid = 2;
+}
+
+message CS_RES_PLAYER_MOV {
+   Game_ResultType result = 1;
+}
+
+message CS_NTY_PLAYER_MOV {
+   string userid = 1;
+   int32 posid = 2;
+}
+
+message CS_REQ_PLAYER_USE_CARD {
+   string userid = 1;
+   int32 cardid = 2;
+}
+
+message CS_RES_PLAYER_USE_CARD {
+   Game_ResultType result = 1;
+}
+
+message CS_NTY_PLAYER_USE_CARD {
+   string userid = 1;
+   int32 cardid = 2;
+}
+
+message CS_REQ_GAME_END {
+  enum Result {
+    Suc = 0;
+    Failed = 1;
+  }
+
+   string userid = 1;
+   Result gameResult = 2;
+}
+
+message CS_RES_GAME_END {
+   Game_ResultType result = 1;
+}
+
+message CS_NTY_GAME_END {
+  enum Result {
+      Suc = 0;
+      System_Error = 1;
+    }
+
+     string suc_userid = 1;
+     Result gameResult = 2;
+}
+
+message CS_REQ_MSG {
+   MSGID msgid = 1;
+
+  oneof CS_MSG {
+         CS_REQ_REGIST cs_req_regist = 2;
+         CS_REQ_LOGIN cs_req_login = 3;
+         CS_REQ_HELLO cs_req_hello = 4;
+         CS_REQ_LOGINOUT cs_req_loginout = 5;
+         CS_REQ_CHG_RACE cs_req_chg_race = 6;
+         CS_REQ_MATCHING cs_req_matching = 7;
+         CS_REQ_STOP_MATCHING cs_req_stop_matching = 8;
+         CS_REQ_GET_RACE cs_req_get_race = 9;
+         CS_REQ_CHG_PLAYER_STATUS cs_req_chg_player_status = 10;
+      }
+}
+
+message CS_RES_MSG {
+   MSGID msgid = 1;
+
+  oneof CS_MSG {
+         CS_RES_REGIST cs_res_regist = 2;
+         CS_RES_LOGIN cs_res_login = 3;
+         CS_RES_HELLO cs_res_hello = 4;
+         CS_RES_LOGINOUT cs_res_loginout = 5;
+         CS_NTY_LOGINOUT cs_nty_loginout = 6;
+         CS_NTY_MATCHING cs_nty_matching = 7;
+         CS_RES_CHG_RACE cs_res_chg_race = 8;
+         CS_RES_MATCHING cs_res_matching = 9;
+         CS_RES_STOP_MATCHING cs_res_stop_matching = 10;
+         CS_RES_GET_RACE cs_res_get_race = 11;
+         CS_RES_CHG_PLAYER_STATUS cs_res_chg_player_status = 12;
+         CS_NTY_END_ROUND cs_nty_end_round = 13;
+         CS_NTY_GAME_END cs_nty_game_end = 14;
+      }
+}

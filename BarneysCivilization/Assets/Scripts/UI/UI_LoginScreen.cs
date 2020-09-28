@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using NetTest;
 
 public class UI_LoginScreen : MonoBehaviour
 {
@@ -10,18 +11,39 @@ public class UI_LoginScreen : MonoBehaviour
     string Password;
     public InputField IDField;
     public InputField PWField;
+    public InputField RegIDField;
+    public InputField RegPWField;
     public GameObject MessagePrefab;
     public GameObject MessageInstance;
+
+    NetManager netManager;
     private void Start()
     {
         animator = GetComponent<Animator>();
+        CsResManager.LoginResult += OnLoginResult;
+        CsResManager.RegistResult += OnRegistResult;
+        netManager = new NetManager();
+        netManager.InitState();
     }
+
+    private void OnRegistResult(int obj)
+    {
+        //ShowUserMessage("注册结果："+ obj);
+        print("Regist: " + obj);
+    }
+
+    private void OnLoginResult(int obj)
+    {
+        //ShowUserMessage("登陆结果：" + obj);
+        print("Login: " + obj);
+    }
+
     public void Login()
     {
         UID = IDField.text;
         Password = PWField.text;
-        print("ID: " + UID + " PW: " + Password);
-        ShowUserMessage("登陆中");
+        netManager.ReqLogin(UID, Password);
+        //print("ID: " + UID + " PW: " + Password);
     }
     public void RegistButton()
     {
@@ -29,7 +51,9 @@ public class UI_LoginScreen : MonoBehaviour
     }
     public void Regist()
     {
-        ShowUserMessage("注册成功");
+        UID = RegIDField.text;
+        Password = RegPWField.text;
+        netManager.ReqRegister(UID, Password);
     }
     public void BackButton()
     {

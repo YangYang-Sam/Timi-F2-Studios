@@ -201,12 +201,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 186178793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 464911dc202fc2c4f9ffb77ad36fe63d, type: 3}
+  m_Script: {fileID: 11500000, guid: bbf9e4207473afc4dbb1d5b53a483906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineOffset: 0.06
-  OutlineExtent: 0.08
-  LineRendererPrefab: {fileID: 6180516577396150080, guid: 6d7ec1379917fc94bbdbe858fde3f99f,
+  OutlineExtent: 0
+  LineRendererPrefab: {fileID: 4780640826905784930, guid: 97c4cb65bc1fdad45934b7d36652a3ae,
     type: 3}
 --- !u!1 &468351574
 GameObject:
@@ -293,7 +293,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &468351578
 MonoBehaviour:
@@ -304,12 +304,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 468351574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 464911dc202fc2c4f9ffb77ad36fe63d, type: 3}
+  m_Script: {fileID: 11500000, guid: bbf9e4207473afc4dbb1d5b53a483906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineOffset: 0.06
-  OutlineExtent: 0.08
-  LineRendererPrefab: {fileID: 5208100664610145535, guid: f43a0a6d708e6d948aa26941faeeae99,
+  OutlineExtent: 0
+  LineRendererPrefab: {fileID: 4780640826905784930, guid: 97c4cb65bc1fdad45934b7d36652a3ae,
     type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -567,7 +567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1399296721
 MeshRenderer:
@@ -703,12 +703,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1632748105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 464911dc202fc2c4f9ffb77ad36fe63d, type: 3}
+  m_Script: {fileID: 11500000, guid: bbf9e4207473afc4dbb1d5b53a483906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineOffset: 0.06
-  OutlineExtent: 0.08
-  LineRendererPrefab: {fileID: 3998378671750588029, guid: 01e9a67d15b13aa419c072256b7f4441,
+  OutlineExtent: 0
+  LineRendererPrefab: {fileID: 4780640826905784930, guid: 97c4cb65bc1fdad45934b7d36652a3ae,
     type: 3}
 --- !u!1001 &2610616362309298114
 PrefabInstance:
