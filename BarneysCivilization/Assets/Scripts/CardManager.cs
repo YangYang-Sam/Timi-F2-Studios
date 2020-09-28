@@ -367,6 +367,7 @@ public class CardManager : MonoBehaviour
     {
         OccupiedCells.Add(cell);
         NewOccupiedCells.Add(cell);
+        UpdateOccupiedBoundaryLines();
     }
     public void AddNewCard(GameObject CardPrefab)
     {
@@ -377,6 +378,7 @@ public class CardManager : MonoBehaviour
     public void LostCell(HexCell cell)
     {
         OccupiedCells.Remove(cell);
+        UpdateOccupiedBoundaryLines();
     }
     public void SetUnitMoveTo(HexCell TargetCell)
     {
