@@ -21,6 +21,8 @@ public class HexCell : MonoBehaviour
 
     public List<HexCell> NearbyCells = new List<HexCell>();
 
+    public List<int> EdgeIndexesOnBoundary = new List<int>();
+
     public HexCell PathFromCell;
 
     private List<Unit_Base> CampUnits = new List<Unit_Base>();
@@ -95,6 +97,53 @@ public class HexCell : MonoBehaviour
     //
     // #Add For Search Route End
     //
+
+    public int GetEdgeIndexByNearbyCell(HexCell nearbyHex)
+    {
+        int index = -1;
+
+        if (NearbyCells.Contains(nearbyHex))
+        {
+            int dx = nearbyHex.coordinates.X - coordinates.X;
+            int dy = nearbyHex.coordinates.Y - coordinates.Y;
+            int dz = nearbyHex.coordinates.Z - coordinates.Z;
+
+            if (dx == 0 && dy == -1 && dz == 1) index = 0;
+            else if (dx == 1 && dy == -1 && dz == 0) index = 1;
+            else if (dx == 1 && dy == 0 && dz == -1) index = 2;
+            else if (dx == 0 && dy == 1 && dz == -1) index = 3;
+            else if (dx == -1 && dy == 1 && dz == 0) index = 4;
+            else if (dx == -1 && dy == 0 && dz == 1) index = 5;
+        }
+
+        return index;
+    }
+
+    public void UpdateEdgeIndexesOnBoundary()
+    {
+        EdgeIndexesOnBoundary.Clear();
+
+        List<int> edgeIndexes = new List<int> { 0, 1, 2, 3, 4, 5 };
+
+        foreach (var nearbyHex in NearbyCells)
+        {
+            int index = GetEdgeIndexByNearbyCell(nearbyHex);
+            edgeIndexes.Remove(index);
+
+            if (nearbyHex.OwnerManager != this.OwnerManager)
+            {
+                if (index >= 0)
+                {
+                    EdgeIndexesOnBoundary.Add(index);
+                }
+            }
+        }
+
+        foreach (var index in edgeIndexes)
+        {
+            EdgeIndexesOnBoundary.Add(index);
+        }
+    }
     public void GetNearbyCells()
     {
         foreach (HexCell cell in HexGrid.instance.cells)
