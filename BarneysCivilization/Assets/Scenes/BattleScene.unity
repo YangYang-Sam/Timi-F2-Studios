@@ -186,6 +186,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &186178793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8190699500804290973, guid: 13c6f45aa1148dd44bda41de1838ea8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8190699501559097909}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &186178794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186178793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464911dc202fc2c4f9ffb77ad36fe63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineOffset: 0.06
+  OutlineExtent: 0.08
+  LineRendererPrefab: {fileID: 6180516577396150080, guid: 6d7ec1379917fc94bbdbe858fde3f99f,
+    type: 3}
 --- !u!1 &468351574
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +219,7 @@ GameObject:
   - component: {fileID: 468351577}
   - component: {fileID: 468351576}
   - component: {fileID: 468351575}
+  - component: {fileID: 468351578}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -272,6 +295,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &468351578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468351574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464911dc202fc2c4f9ffb77ad36fe63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineOffset: 0.06
+  OutlineExtent: 0.08
+  LineRendererPrefab: {fileID: 5208100664610145535, guid: f43a0a6d708e6d948aa26941faeeae99,
+    type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +505,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8190699501559097909}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 186178793}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32a9f8707ca73a849b469afa80e70cf8, type: 3}
@@ -579,6 +618,7 @@ GameObject:
   - component: {fileID: 1632748108}
   - component: {fileID: 1632748107}
   - component: {fileID: 1632748106}
+  - component: {fileID: 1632748109}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -654,6 +694,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632748109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632748105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464911dc202fc2c4f9ffb77ad36fe63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineOffset: 0.06
+  OutlineExtent: 0.08
+  LineRendererPrefab: {fileID: 3998378671750588029, guid: 01e9a67d15b13aa419c072256b7f4441,
+    type: 3}
 --- !u!1001 &2610616362309298114
 PrefabInstance:
   m_ObjectHideFlags: 0

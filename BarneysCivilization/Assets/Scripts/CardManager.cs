@@ -3,56 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class LineObjectPool
-{
-    public void FreeAllLines()
-    {
-        foreach (var line in ActiveLineRenderObjects)
-        {
-            line.SetActive(false);
-            FreeLineRenderObjects.Add(line);
-        }
-        ActiveLineRenderObjects.Clear();
-    }
-
-    public LineRenderer NextFreeLineRenderer()
-    {
-
-        GameObject lineRendererObject = null;
-        LineRenderer lineRenderer = null;
-
-        if (FreeLineRenderObjects.Count > 0)
-        {
-            lineRendererObject = FreeLineRenderObjects[0];
-            FreeLineRenderObjects.RemoveAt(0);
-            lineRendererObject.SetActive(true);
-            lineRenderer = lineRendererObject.GetComponent<LineRenderer>();
-        }
-        else
-        {
-            lineRendererObject = new GameObject();
-            lineRenderer = lineRendererObject.AddComponent<LineRenderer>();
-            InitLineRenderer(lineRenderer);
-        }
-
-        if (lineRendererObject)
-        {
-            ActiveLineRenderObjects.Add(lineRendererObject);
-        }
-
-        return lineRenderer;
-    }
-
-    private void InitLineRenderer(LineRenderer lineRenderer)
-    {
-        lineRenderer.positionCount = 2;
-        lineRenderer.material = new Material(Shader.Find("Standard"));
-    }
-
-
-    private List<GameObject> ActiveLineRenderObjects = new List<GameObject>();
-    private List<GameObject> FreeLineRenderObjects = new List<GameObject>();
-}
 
 public class CardManager : MonoBehaviour
 {
@@ -71,7 +21,7 @@ public class CardManager : MonoBehaviour
     public List<HexCell> NewOccupiedCells = new List<HexCell>();
     public List<Building_Base> Buildings = new List<Building_Base>();
     private List<HexCell> OccupiedBoundaryCells = new List<HexCell>();
-    private LineObjectPool LinePool = new LineObjectPool();
+    private LineObjectPool LinePool;
 
     public int MaxCardAmount = 6;
     public int DrawCardAmount = 3;
@@ -109,6 +59,7 @@ public class CardManager : MonoBehaviour
             Race = ArtResourceManager.instance.RaceInfos[Random.Range(0, 2)];
         }
         InGameManager.instance.RegistCardManager(this);
+        LinePool = GetComponent<LineObjectPool>();
     }
     public void ChooseRace(int index)
     {
@@ -471,21 +422,9 @@ public class CardManager : MonoBehaviour
             {
                 var line = LinePool.NextFreeLineRenderer();
                 Vector3 center = hexCell.transform.position;
-                Color lineColor = new Color();
-                switch (camp)
-                {
-                    case 0: lineColor = Color.cyan; break;
-                    case 1: lineColor = Color.magenta; break;
-                    case 2: lineColor = Color.blue; break;
-                }
 
-                line.startColor = lineColor;
-                line.endColor = lineColor;
-
-                line.material.SetColor("_Color", lineColor);
-
-                float s1 = 0.94f;
-                float s2 = 0.08f;
+                float s1 = 1.0f - LinePool.OutlineOffset;
+                float s2 = LinePool.OutlineExtent;
                 Vector3 pos1 = (1.0f - s1) * center + s1 * (center + HexMetrics.corners[EdgeIndex]);
                 Vector3 pos2 = (1.0f - s1) * center + s1 * (center + HexMetrics.corners[EdgeIndex + 1]);
                 Vector3 extent = pos1 - pos2;
