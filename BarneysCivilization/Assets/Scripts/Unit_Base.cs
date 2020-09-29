@@ -84,6 +84,7 @@ public class Unit_Base : MonoBehaviour
         Cell.RemoveUnit(this);
         cell.AddUnit(this);
         Cell = cell;
+        if(Owner.CurvesManger) Owner.CurvesManger.StartNewCurve(transform.position, cell.transform.position, 3);
     }
     public void Death(Unit_Base killer)
     {
