@@ -68,6 +68,7 @@ crashlytics-build.properties
 /BarneysCivilization/obj
 /BarneysCivilization/Logs
 /BarneysCivilization/Packages
+/BarneysCivilization/Temp
 **/BarneysCivilization/Library*
 !**/BarneysCivilization/Library/TimeManager.asset
 !**/BarneysCivilization/Library/TagManager.asset
