@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         instance = this;
+        camp = UserData.instance.Camp;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -47,41 +48,21 @@ public class PlayerController : MonoBehaviour
             {
                 SelectCell = null;
             }     
-        }
-        
+        }        
     }
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.M))
-        //{
-        //    cardManager.DrawCard();
-        //}
-
-        //switch (jobType)
-        //{
-        //    case PointerJobType.BuyUnit:
-        //        if(SelectUnit!=null && SelectCell != null)
-        //        {
-        //            SelectUnit.transform.position = SelectCell.transform.position;
-        //            if (Input.GetMouseButtonDown(0) && SelectCell.CanPlaceUnit(cardManager))
-        //            {
-        //                cardManager.BuyUnitOnCell(SelectUnit, SelectCell, ResourceCost);
-        //                SelectUnit = null;
-        //                jobType = PointerJobType.none;
-        //            }                 
-        //        }
-
-        //        break;
-        //}
-        HexTrace();
-        if (Input.GetMouseButtonDown(0) && SelectCell!=null)
+        if (cardManager != null)
         {
-            cardManager.SetUnitMoveTo(SelectCell);
-        }       
+            HexTrace();
+            if (Input.GetMouseButtonDown(0) && SelectCell != null)
+            {
+                cardManager.SetUnitMoveTo(SelectCell);
+                NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex + 1);
+            }
+        }
     } 
-
-
 }
 
 public enum PointerJobType

@@ -37,6 +37,7 @@ public class HexGrid : MonoBehaviour
 	}
     private void Start()
     {
+		Random.InitState(UserData.instance.RandomSeeds[0]);
 		int cellIndex = 0;
 		for (int z = 0, i = 0; z < height; z++)
 		{
@@ -74,7 +75,7 @@ public class HexGrid : MonoBehaviour
 		cell.transform.SetParent(transform, false);
 		cell.transform.position = position;
 		cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
-
+				
         int typeIndex = Random.Range(0, 6);
         cell.CellType = (HexCellType)typeIndex;
 		cell.color = DefaultColors[typeIndex];

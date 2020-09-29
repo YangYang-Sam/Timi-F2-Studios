@@ -10,7 +10,7 @@ namespace NetTest
 {
     class NetManager
     {
-        public static String USERID;
+        public static NetManager instance;
         public static Socket socket;
         private IPEndPoint ipe;
 
@@ -32,8 +32,6 @@ namespace NetTest
 
         }
 
-
-
         // 子线程中等待接收的方法
         public void ReceiveThreadFunc()
         {
@@ -48,87 +46,63 @@ namespace NetTest
         // 注册时向服务器发送请求
         public void ReqRegister(String uid, String password)
         {
-            byte[] data = PBConverter.ReqRegister(uid, password);
+            byte[] data = new byte[1024];
+            PBConverter.ReqRegister(uid, password, ref data);
             SendData(data);
         }
 
         // 请求匹配
-        public void ReqMatching(String uid)
+        public void ReqMatching(String uid, int raceIndex)
         {
-            byte[] data = PBConverter.ReqMatching(uid);
+            byte[] data = new byte[1024];
+            PBConverter.ReqMatching(uid, raceIndex, ref data);
             SendData(data);
         }
 
-        // 注册请求后服务器的返回
-        public int ResRegister()
+        public void ReqStopMatching(String uid)
         {
             byte[] data = new byte[1024];
-            ReceiveData(ref data);
-            int res = PBConverter.ResRegister(data);
-            return res;
+            PBConverter.ReqStopMatching(uid, ref data);
+            SendData(data);
         }
 
         // 登录时向服务器发送请求
         public void ReqLogin(String uid, String password)
         {
-            USERID = uid;
-            byte[] data = PBConverter.ReqLogin(uid, password);
-            SendData(data);
-        }
-
-        // 登录请求后服务器的返回
-        public int ResLogin()
-        {
             byte[] data = new byte[1024];
-            ReceiveData(ref data);
-            int res = PBConverter.ResLogin(data);
-            if (res == 0)
-            {
-                //NTY
-                AsyncReceiveNty();
-            }
-            return res;
-        }
-
-        private async Task AsyncReceiveNty()
-        {
-            await Task.Run(() =>
-            {
-                while (true)
-                {
-                    byte[] data = new byte[1024];
-                    ReceiveData(ref data);
-                    NtyLoginOut nlo = new NtyLoginOut();
-                    bool isNty = PBConverter.ResNtyLoginOut(data, ref nlo);
-                    if (isNty == true)
-                    {
-                        //打断主进程
-                        Console.WriteLine("this is nty");
-                        break;
-                    }
-                    Console.WriteLine("no Nty");
-                }
-            });
+            PBConverter.ReqLogin(uid, password, ref data);
+            SendData(data);
         }
 
         // 请求退出登录
         public void ReqLoginOut(string uid)
         {
-            byte[] data = PBConverter.ReqLoginOut(uid);
+            byte[] data = new byte[1024];
+            PBConverter.ReqLoginOut(uid, ref data);
             SendData(data);
         }
 
-        // 返回退出登录
-        public int ResLoginOut()
+        // 发送移动指令
+        public void ReqSetDestiny(string uid,int index)
         {
             byte[] data = new byte[1024];
-            ReceiveData(ref data);
-            int res = PBConverter.ResLoginOut(data);
-            if (res == 0)
-            {
-                socket.Close();
-            }
-            return res;
+            PBConverter.ReqSetDestiny(uid, index, ref data);
+            SendData(data);
+        }
+
+        public void ReqUseCard(string uid, int cardID, int hexID)
+        {
+            byte[] data = new byte[1024];
+            PBConverter.ReqUseCard(uid, cardID, hexID, ref data);
+            SendData(data);
+        }
+
+        // 发送回合结束指令
+        public void ReqEndTurn(string uid)
+        {
+            byte[] data = new byte[1024];
+            PBConverter.ReqTurnEnd(uid, ref data);
+            SendData(data);
         }
 
         // socket发送数据
@@ -145,7 +119,7 @@ namespace NetTest
             int bytes;
             bytes = socket.Receive(recvBytes, recvBytes.Length, 0);//从服务器端接受返回信息
             byte[] resRecvBytes = new byte[bytes];
-            for (int i = 0; i < bytes; i++)
+            for(int i = 0; i < bytes; i++)
             {
                 resRecvBytes[i] = recvBytes[i];
             }

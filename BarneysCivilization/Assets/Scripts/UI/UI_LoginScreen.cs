@@ -28,7 +28,9 @@ public class UI_LoginScreen : MonoBehaviour
         animator = GetComponent<Animator>();
         CsResManager.LoginResult += OnLoginResult;
         CsResManager.RegistResult += OnRegistResult;
+
         netManager = new NetManager();
+        NetManager.instance = netManager;
         netManager.InitState();
     }
     private void Update()
@@ -40,7 +42,6 @@ public class UI_LoginScreen : MonoBehaviour
             {
                 case 0:
                     ShowUserMessage("登陆成功",Color.green);
-                    UserData.instance.UID = UID;
                     SceneManager.LoadScene("MainScene");
                     break;
                 case 1:
@@ -85,6 +86,7 @@ public class UI_LoginScreen : MonoBehaviour
     {
         UID = IDField.text;
         Password = PWField.text;
+        UserData.instance.UID = UID;
         netManager.ReqLogin(UID, Password);
         //print("ID: " + UID + " PW: " + Password);
     }

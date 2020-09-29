@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 
 public class CardManager : MonoBehaviour
 {
+    public string UID;
     public int camp;
 
     [Header("Cards")]
@@ -58,7 +59,6 @@ public class CardManager : MonoBehaviour
         {
             Race = ArtResourceManager.instance.RaceInfos[Random.Range(0, 2)];
         }
-        InGameManager.instance.RegistCardManager(this);
         LinePool = GetComponent<LineObjectPool>();
     }
     public void ChooseRace(int index)
@@ -301,10 +301,7 @@ public class CardManager : MonoBehaviour
         {
             card.CardEffect(this,cell);
             AddToUsedCards(card);
-            ActionPoint -= card.ActionPointCost();
-
-            // 向服务器汇报使用卡的ID
-            CardIDSystem.instance.GetCardID(card.CardName);
+            ActionPoint -= card.ActionPointCost();          
         }
     }
     public void AddToUsedCards(Card_Base card)

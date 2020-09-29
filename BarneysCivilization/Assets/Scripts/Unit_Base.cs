@@ -45,8 +45,8 @@ public class Unit_Base : MonoBehaviour
                     Unit_Base unit = Owner.CreateNewUnit(Cell, Cell.MinUnitAmount);
                     Cell.UnitArrived(unit);
                     ChangeHealth(-Cell.MinUnitAmount);
-                    StartCoroutine(MoveProcess());                  
-                    
+                    StartCoroutine(MoveProcess());
+                    print("Unit:" + gameObject + " move, Health: " + Health);
                 }
                 else
                 {

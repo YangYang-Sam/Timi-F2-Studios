@@ -55,7 +55,7 @@ namespace NetTest
                         //开一个子线程，用于发送心跳包
                         Thread HeartPcgThread = new Thread(new ParameterizedThreadStart(HeartPcgThreadFunc));
                         HeartPcgThread.IsBackground = true;
-                        HeartPcgThread.Start(NetManager.USERID);
+                        HeartPcgThread.Start(UserData.instance.UID);
                     }
                     CsResManager.ResLogin(res2);
                     break;
@@ -77,35 +77,76 @@ namespace NetTest
                     break;
                 case MSGID.CsNtyMatchingId:
                     CS_NTY_MATCHING resMsg6 = msg.CsNtyMatching;
+
                     String[] userList = new String[resMsg6.Userlist.Count];
                     for (int i = 0; i < resMsg6.Userlist.Count; i++)
                     {
                         userList[i] = resMsg6.Userlist[i].ToString();
                     }
+
+                    int[] raceList = new int[resMsg6.Racelist.Count];
+                    for (int i = 0; i < resMsg6.Racelist.Count; i++)
+                    {
+                        raceList[i] = resMsg6.Racelist[i];
+                    }
+
+                    int[] RandomSeeds = new int[resMsg6.Randomlist.Count];
+                    for (int i = 0; i < resMsg6.Randomlist.Count; i++)
+                    {
+                        RandomSeeds[i] = resMsg6.Randomlist[i];
+                    }
+
                     int res6 = (int)resMsg6.Result;
-                    CsResManager.NtyMatching(res6, userList);
+                    CsResManager.NtyMatching(res6, userList, raceList, RandomSeeds);
+                    break;
+                case MSGID.CsResStopMatchingId:
+                    CS_RES_STOP_MATCHING resMsg7 = msg.CsResStopMatching;
+                    int res7 = (int)resMsg7.Result;
+                    CsResManager.ResStopMatching(res7);
+                    break;
+                case MSGID.CsNtyEndRoundId:
+                    CS_NTY_END_ROUND resMsg8 = msg.CsNtyEndRound;
+                    UserData ud = UserData.instance;
+                    ud.AllPoses = new int[resMsg8.Posid.Count];
+                    for (int i = 0; i < ud.AllPoses.Length; i++)
+                    {
+                        ud.AllPoses[i] = resMsg8.Posid[i] - 1;
+                    }
+                    ud.RandomSeeds = new int[resMsg8.Randomlist.Count];
+                    for (int i = 0; i < resMsg8.Randomlist.Count; i++)
+                    {
+                        ud.RandomSeeds[i] = resMsg8.Randomlist[i];
+                    }
+                    CsResManager.NtyRoundEnd();
+                    break;
+                case MSGID.CsNtyPlayerUseCardId:
+                    CS_NTY_PLAYER_USE_CARD resMsg9 = msg.CsNtyPlayerUseCard;
+                    int cardID = resMsg9.Cardid - 1;
+                    string uid = resMsg9.Userid;
+                    int hexID = resMsg9.Pos - 1;
+                    CsResManager.NtyUseCard(uid, cardID, hexID);
                     break;
                 default:
                     break;
             }
         }
 
-        // 心跳包
+        // 心跳包（每十秒向服务器发送一次请求）
         public static void HeartPcgThreadFunc(object userId)
         {
             String uid = userId as String;
 
             while (true)
             {
+                Thread.Sleep(10000);
                 byte[] data = new byte[1024];
                 ReqHello(uid, ref data);
-                NetManager.socket.Send(data, data.Length, 0);
-                Thread.Sleep(10000);
+                NetManager.socket.Send(data, data.Length, 0);                
             }
         }
 
         //心跳包
-        public static byte[] ReqHello(String uid, ref byte[] data)
+        public static void ReqHello(String uid, ref byte[] data)
         {
             CS_REQ_MSG msg = new CS_REQ_MSG();
             msg.Msgid = MSGID.CsReqHelloId;
@@ -116,11 +157,10 @@ namespace NetTest
             msg.CsReqHello = reqMsg;
 
             data = PBConverter.Serialize(msg);
-            return data;
         }
 
         //请求注册
-        public static byte[] ReqRegister(String uid, String password)
+        public static void ReqRegister(String uid, String password, ref byte[] data)
         {
 
             CS_REQ_MSG msg = new CS_REQ_MSG();
@@ -132,37 +172,34 @@ namespace NetTest
 
             msg.CsReqRegist = reqMsg;
 
-            byte[] data = PBConverter.Serialize(msg);
-            return data;
+            data = PBConverter.Serialize(msg);
         }
 
         // 请求匹配
-        public static byte[] ReqMatching(String uid)
+        public static void ReqMatching(String uid,int raceIndex, ref byte[] data)
         {
             CS_REQ_MSG msg = new CS_REQ_MSG();
             msg.Msgid = MSGID.CsReqMatchingId;
             CS_REQ_MATCHING reqMsg = new CS_REQ_MATCHING();
             reqMsg.Userid = uid;
+            reqMsg.Race = raceIndex;
             msg.CsReqMatching = reqMsg;
-            byte[] data = PBConverter.Serialize(msg);
-            return data;
+            data = PBConverter.Serialize(msg);
         }
 
-        //返回注册
-        public static int ResRegister(byte[] data)
+        //请求停止匹配
+        public static void ReqStopMatching(String uid, ref byte[] data)
         {
-
-            CS_RES_MSG msg = PBConverter.Deserialize<CS_RES_MSG>(data);
-
-            CS_RES_REGIST resMsg = msg.CsResRegist;
-
-            int res = (int)resMsg.Result;
-
-            return res;
+            CS_REQ_MSG msg = new CS_REQ_MSG();
+            msg.Msgid = MSGID.CsReqStopMatchingId;
+            CS_REQ_STOP_MATCHING reqMsg = new CS_REQ_STOP_MATCHING();
+            reqMsg.Userid = uid;
+            msg.CsReqStopMatching = reqMsg;
+            data = PBConverter.Serialize(msg);
         }
 
         // 请求登录
-        public static byte[] ReqLogin(String uid, String password)
+        public static void ReqLogin(String uid, String password, ref byte[] data)
         {
 
             CS_REQ_MSG msg = new CS_REQ_MSG();
@@ -174,36 +211,11 @@ namespace NetTest
 
             msg.CsReqLogin = reqMsg;
 
-            byte[] data = PBConverter.Serialize(msg);
-            return data;
-        }
-
-        //返回登录
-        public static int ResLogin(byte[] data)
-        {
-
-            CS_RES_MSG msg = PBConverter.Deserialize<CS_RES_MSG>(data);
-
-            CS_RES_LOGIN resMsg = msg.CsResLogin;
-            int res = (int)resMsg.Result;
-            return res;
-        }
-
-        public static bool ResNtyLoginOut(byte[] data, ref NtyLoginOut nlo)
-        {
-            CS_RES_MSG msg = PBConverter.Deserialize<CS_RES_MSG>(data);
-            if (msg.Msgid == MSGID.CsNtyLoginoutId)
-            {
-                CS_NTY_LOGINOUT resMsg = msg.CsNtyLoginout;
-                nlo.uid = resMsg.Id;
-                nlo.reason = (int)resMsg.Reason;
-                return true;
-            }
-            return false;
+            data = PBConverter.Serialize(msg);
         }
 
         //请求退出登录
-        public static byte[] ReqLoginOut(String uid)
+        public static void ReqLoginOut(String uid, ref byte[] data)
         {
             CS_REQ_MSG msg = new CS_REQ_MSG();
             msg.Msgid = MSGID.CsReqLoginoutId;
@@ -213,23 +225,52 @@ namespace NetTest
 
             msg.CsReqLoginout = reqMsg;
 
-            byte[] data = PBConverter.Serialize(msg);
-            return data;
+            data = PBConverter.Serialize(msg);
         }
 
-        public static int ResLoginOut(byte[] data)
+        // 发送移动指令
+        public static void ReqSetDestiny(String uid, int index, ref byte[] data)
         {
-            CS_RES_MSG msg = PBConverter.Deserialize<CS_RES_MSG>(data);
+            CS_REQ_MSG msg = new CS_REQ_MSG();
+            msg.Msgid = MSGID.CsReqPlayerMovId;
 
-            CS_RES_LOGINOUT resMsg = msg.CsResLoginout;
-            int res = (int)resMsg.Result;
-            return res;
+            CS_REQ_PLAYER_MOV reqMsg = new CS_REQ_PLAYER_MOV();
+            reqMsg.Posid = index;
+            reqMsg.Userid = uid;
+
+            msg.CsReqPlayerMov = reqMsg;
+
+            data = PBConverter.Serialize(msg);
         }
 
-        struct RoomInfo
+        // 发送用卡指令
+        public static void ReqUseCard(String uid, int CardID, int HexID, ref byte[] data)
         {
-            int roomId;
-            string[] userList;
+            CS_REQ_MSG msg = new CS_REQ_MSG();
+            msg.Msgid = MSGID.CsReqPlayerUseCardId;
+
+            CS_REQ_PLAYER_USE_CARD reqMsg = new CS_REQ_PLAYER_USE_CARD();
+            reqMsg.Cardid = CardID + 1;
+            reqMsg.Userid = uid;
+            reqMsg.Pos = HexID + 1;
+
+            msg.CsReqPlayerUseCard = reqMsg;
+
+            data = PBConverter.Serialize(msg);
+        }
+
+        // 发送回合结束指令
+        public static void ReqTurnEnd(String uid, ref byte[] data)
+        {
+            CS_REQ_MSG msg = new CS_REQ_MSG();
+            msg.Msgid = MSGID.CsReqChgPlayerStatusId;
+
+            CS_REQ_CHG_PLAYER_STATUS reqMsg = new CS_REQ_CHG_PLAYER_STATUS();
+            reqMsg.Userid = uid;
+
+            msg.CsReqChgPlayerStatus = reqMsg;
+
+            data = PBConverter.Serialize(msg);
         }
     }
 }

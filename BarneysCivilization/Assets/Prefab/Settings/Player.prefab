@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8190699500804290974}
   - component: {fileID: 8190699500804290975}
-  - component: {fileID: 8190699500804290972}
+  - component: {fileID: 186178794}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -47,25 +47,33 @@ MonoBehaviour:
   camp: 0
   Cards: []
   InGameCardDeck: []
+  StartDeck:
+  - {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3, type: 3}
+  - {fileID: 6943707428436127944, guid: ec2b3b2259dbb9e47843fc3eb05c5660, type: 3}
+  - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
   Units: []
   OccupiedCells: []
   CanMoveCells: []
   NewOccupiedCells: []
   Buildings: []
   MaxCardAmount: 6
-  DrawCardAmount: 5
+  DrawCardAmount: 3
   ResourceAmount: 1
   TempResourceAmount: 0
   BuyUnitTimes: 0
   ActionPoint: 0
+  UnitMoveSpeed: 1
   Race:
     Name: 
     CorePrefab: {fileID: 0}
     UnitPrefab: {fileID: 0}
     cards: []
+    RaceTraitPrefab: {fileID: 0}
+  RaceTrait: {fileID: 0}
   PlayerCore: {fileID: 0}
+  isLost: 0
   StartCell: 22
---- !u!114 &8190699500804290972
+--- !u!114 &186178794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,13 +82,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8190699500804290973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5e3b1969054f0b45b9a7d43ff90fc82, type: 3}
+  m_Script: {fileID: 11500000, guid: bbf9e4207473afc4dbb1d5b53a483906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TesetCard: {fileID: 5296548780900481383, guid: fadd45d67d58c15429072774fd11ab5a,
+  OutlineOffset: 0.06
+  OutlineExtent: 0
+  LineRendererPrefab: {fileID: 4780640826905784930, guid: 97c4cb65bc1fdad45934b7d36652a3ae,
     type: 3}
-  cardManager: {fileID: 8190699500804290975}
-  SelectCell: {fileID: 0}
-  SelectUnit: {fileID: 0}
-  jobType: 0
-  camp: 0

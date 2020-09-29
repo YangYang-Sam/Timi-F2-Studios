@@ -1,4 +1,4 @@
-﻿syntax="proto3";
+syntax = "proto3";
 package csmsg;
 
 enum MSGID {
@@ -23,7 +23,6 @@ enum MSGID {
     CS_RES_STOP_MATCHING_ID = 20;
     CS_REQ_PLAYER_MOV_ID = 21;
     CS_RES_PLAYER_MOV_ID = 22;
-    CS_NTY_PLAYER_MOV_ID = 24;
     CS_REQ_CHG_PLAYER_STATUS_ID = 25;
     CS_RES_CHG_PLAYER_STATUS_ID = 26;
     CS_NTY_END_ROUND_ID = 28;
@@ -47,7 +46,8 @@ enum Game_ResultType {
     User_No_In_Line = 2;
     Had_Prepar_Error = 3;
     UserID_Error = 4;
-    System_Error = 5;
+    Had_Settle_Error = 5;
+    System_Error = 6;
   }
 
 message Room_Info {
@@ -132,6 +132,7 @@ message CS_RES_HELLO {
 
 message CS_REQ_MATCHING {
    string userid = 1;
+   int32 race = 2;
 }
 
 message CS_RES_MATCHING {
@@ -152,7 +153,10 @@ message CS_NTY_MATCHING {
     }
 
    ResultType result = 1;
-  repeated string userlist = 2;
+   int32 roomid = 2;
+  repeated string userlist = 3;
+  repeated int32 racelist = 4;
+  repeated int32 randomlist = 5;
 }
 
 message CS_REQ_STOP_MATCHING {
@@ -202,7 +206,6 @@ message CS_RES_CHG_RACE {
 
 message CS_REQ_CHG_PLAYER_STATUS {
    string userid = 1;
-   int32 roomid = 2;
 }
 
 message CS_RES_CHG_PLAYER_STATUS {
@@ -211,6 +214,9 @@ message CS_RES_CHG_PLAYER_STATUS {
 
 message CS_NTY_END_ROUND {
    Game_ResultType result = 1;
+  repeated string userid = 2;
+  repeated int32 posid = 3;
+  repeated int32 randomlist = 4;
 }
 
 message CS_REQ_PLAYER_MOV {
@@ -222,14 +228,10 @@ message CS_RES_PLAYER_MOV {
    Game_ResultType result = 1;
 }
 
-message CS_NTY_PLAYER_MOV {
-   string userid = 1;
-   int32 posid = 2;
-}
-
 message CS_REQ_PLAYER_USE_CARD {
    string userid = 1;
    int32 cardid = 2;
+   int32 pos = 3;
 }
 
 message CS_RES_PLAYER_USE_CARD {
@@ -239,6 +241,7 @@ message CS_RES_PLAYER_USE_CARD {
 message CS_NTY_PLAYER_USE_CARD {
    string userid = 1;
    int32 cardid = 2;
+   int32 pos = 3;
 }
 
 message CS_REQ_GAME_END {
@@ -278,6 +281,9 @@ message CS_REQ_MSG {
          CS_REQ_STOP_MATCHING cs_req_stop_matching = 8;
          CS_REQ_GET_RACE cs_req_get_race = 9;
          CS_REQ_CHG_PLAYER_STATUS cs_req_chg_player_status = 10;
+         CS_REQ_PLAYER_MOV cs_req_player_mov = 11;
+         CS_REQ_PLAYER_USE_CARD cs_req_player_use_card = 12;
+         CS_REQ_GAME_END cs_req_game_end = 13;
       }
 }
 
@@ -298,5 +304,9 @@ message CS_RES_MSG {
          CS_RES_CHG_PLAYER_STATUS cs_res_chg_player_status = 12;
          CS_NTY_END_ROUND cs_nty_end_round = 13;
          CS_NTY_GAME_END cs_nty_game_end = 14;
+         CS_RES_PLAYER_MOV cs_res_player_mov = 15;
+         CS_RES_PLAYER_USE_CARD cs_res_player_use_card = 16;
+         CS_NTY_PLAYER_USE_CARD cs_nty_player_use_card = 17;
+         CS_RES_GAME_END cs_res_game_end = 18;
       }
 }

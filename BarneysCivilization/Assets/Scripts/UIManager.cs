@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
+        playerCardManager = InGameManager.instance.CardManagers[UserData.instance.Camp];
         InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
     }
 
@@ -174,7 +175,12 @@ public class UIManager : MonoBehaviour
             {
                 if (Input.mousePosition.y > ReleaseThreshold)
                 {
-                    playerCardManager.UseCard(SelectCard, PlayerController.instance.SelectCell);                    
+                    playerCardManager.UseCard(SelectCard, PlayerController.instance.SelectCell);
+
+                    // 向服务器汇报使用卡的ID
+                    int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName) + 1;
+                    int hexID = SelectCell.HexIndex + 1;
+                    NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
                 }
                 SelectCard = null;
                 UI_ArrowMesh.instance.SetVisibility(false);

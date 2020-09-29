@@ -9,23 +9,51 @@ public class InGameManager : MonoBehaviour
     public Color[] CampColor;
     public List<CardManager> CardManagers;
 
-    public bool GameInitialized;
-
+    public bool IsTurnEnd;
     private void Awake()
     {
         instance = this;
     }
     private void Start()
     {
+        NetTest.CsResManager.RoundEndEvent += OnReceiveTurnEnd;
         StartCoroutine(WaitForGameStart());
-        GameInitialized = true;
+    }
+    private void Update()
+    {
+        if (IsTurnEnd)
+        {
+            OnTurnEnd();
+        }
+    }
+    private void OnReceiveTurnEnd()
+    {
+        IsTurnEnd = true;
+    }
+    private void OnTurnEnd()
+    {
+        IsTurnEnd = false;
+        foreach (CardManager cm in CardManagers)
+        {
+            for (int i = 0; i < UserData.instance.AllUsers.Length; i++)
+            {
+                if (cm.UID == UserData.instance.AllUsers[i])
+                {
+                    int index = UserData.instance.AllPoses[i];
+                    if (index >= 0)
+                    {
+                        HexCell cell = HexGrid.instance.cells[UserData.instance.AllPoses[i]];
+                        cm.SetUnitMoveTo(cell);
+                        print("User:" + UserData.instance.AllUsers[i] + " move to cell :" + cell.HexIndex);
+                    }       
+                    break;
+                }
+            }
+        }
+        StartMoving();
     }
     private IEnumerator WaitForGameStart()
     {
-        while (!GameInitialized)
-        {
-            yield return null;
-        }
         yield return new WaitForSeconds(1);
         GameStartProcess();
     }
@@ -33,6 +61,30 @@ public class InGameManager : MonoBehaviour
     
     public void GameStartProcess()
     {
+        UserData data = UserData.instance;
+        if (data.isMultiplayerGame)
+        {
+            for (int i = 0; i < CardManagers.Count; i++)
+            {
+                if (data.AllRaces.Length > i)
+                {
+                    CardManagers[i].UID = data.AllUsers[i];
+                    CardManagers[i].ChooseRace(data.AllRaces[i]);
+                }
+                else
+                {
+                    CardManagers[i].ChooseRace(0);
+                }
+                if (data.AllUsers[i] == data.UID)
+                {
+                    PlayerController.instance.cardManager = CardManagers[i];
+                }
+                else
+                {
+                    CardManagers[i].gameObject.AddComponent<RemotePlayer>();
+                }
+            }
+        }
         PlayerController.instance.cardManager.ChooseRace(UserData.instance.RaceIndex);
 
         foreach (CardManager c in CardManagers)
@@ -40,10 +92,6 @@ public class InGameManager : MonoBehaviour
             c.GameStart();
         }
         ChangeGameState(GameStateType.Decision);
-    }
-    public void RegistCardManager(CardManager cardManager)
-    {
-        CardManagers.Add(cardManager);
     }
 
     public static bool isGameState(GameStateType type)
@@ -53,8 +101,8 @@ public class InGameManager : MonoBehaviour
     public void EndTurn()
     {
         if (CurrentGameState == GameStateType.Decision)
-        {            
-            StartMoving();
+        {
+            NetTest.NetManager.instance.ReqEndTurn(UserData.instance.UID);
         }
     }
 
