@@ -22,7 +22,6 @@ public class CardManager : MonoBehaviour
     public List<Building_Base> Buildings = new List<Building_Base>();
     private List<HexCell> OccupiedBoundaryCells = new List<HexCell>();
     private LineObjectPool LinePool;
-    public CurveManger CurvesManger;
 
     public int MaxCardAmount = 6;
     public int DrawCardAmount = 3;
@@ -61,7 +60,6 @@ public class CardManager : MonoBehaviour
         }
         InGameManager.instance.RegistCardManager(this);
         LinePool = GetComponent<LineObjectPool>();
-        CurvesManger = GetComponent<CurveManger>();
     }
     public void ChooseRace(int index)
     {

@@ -195,8 +195,14 @@ public class CurvePointManger : MonoBehaviour
 
 public class CurveManger : MonoBehaviour
 {
-    public void StartNewCurve(Vector3 startPos, Vector3 endPos, int numPoints)
+    public static CurveManger instance;
+    private void Awake()
     {
+        instance = this;
+    }
+    public void StartNewCurve(Vector3 startPos, Vector3 endPos, int numPoints, GameObject projectilePrefab)
+    {
+        CurvePointPrefab = projectilePrefab;
         var curvePointManger = NextFreeCurvePointManger();
         curvePointManger.StartCurve(startPos, endPos, numPoints, G, IntervalTime, TotalTime, DefaultFlyTime);
     }

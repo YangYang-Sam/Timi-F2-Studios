@@ -6,8 +6,7 @@ public class UI_ChooseRaceButton : MonoBehaviour
 {
     public int RaceIndex;
     public void Choose()
-    {
-        PlayerController.instance.cardManager.ChooseRace(RaceIndex);
-        InGameManager.instance.GameStartProcess();
+    {        
+        UserData.instance.RaceIndex = RaceIndex;
     }
 }

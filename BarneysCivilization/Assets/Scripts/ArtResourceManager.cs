@@ -15,6 +15,8 @@ public class ArtResourceManager : MonoBehaviour
     public GameObject UpgradeEffect;
     public GameObject BattleEffect;
 
+    public GameObject BallPrefab;
+
     public RaceInfo[] RaceInfos;
     public GameObject[] EffectPrefabs;
     public void CreateHealEffect(Vector3 pos)

@@ -9,18 +9,33 @@ public class InGameManager : MonoBehaviour
     public Color[] CampColor;
     public List<CardManager> CardManagers;
 
+    public bool GameInitialized;
+
     private void Awake()
     {
         instance = this;
     }
     private void Start()
     {
-
+        StartCoroutine(WaitForGameStart());
+        GameInitialized = true;
+    }
+    private IEnumerator WaitForGameStart()
+    {
+        while (!GameInitialized)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(1);
+        GameStartProcess();
     }
 
+    
     public void GameStartProcess()
     {
-        foreach(CardManager c in CardManagers)
+        PlayerController.instance.cardManager.ChooseRace(UserData.instance.RaceIndex);
+
+        foreach (CardManager c in CardManagers)
         {
             c.GameStart();
         }
