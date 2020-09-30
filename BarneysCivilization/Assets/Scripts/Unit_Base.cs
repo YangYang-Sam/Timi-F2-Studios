@@ -132,7 +132,6 @@ public class Unit_Base : MonoBehaviour
         float distance = Vector3.Distance(transform.position, Cell.transform.position);
         while (distance > 0.2f)
         {
-            print(gameObject + "moving: "+distance);
             transform.position = Vector3.MoveTowards(transform.position, Cell.transform.position, 5 * Time.deltaTime);
             distance = Vector3.Distance(transform.position, Cell.transform.position);
             yield return null;

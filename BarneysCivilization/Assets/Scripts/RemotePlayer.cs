@@ -24,7 +24,11 @@ public class RemotePlayer : MonoBehaviour
                 GameObject prefab = CardIDSystem.instance.GetCardByID(CardID);
                 GameObject cardObj = Instantiate(prefab);
                 Card_Base card = cardObj.GetComponent<Card_Base>();
-                HexCell cell = HexGrid.instance.cells[HexID];
+                HexCell cell = null;
+                if (HexID >= 0)
+                {
+                    cell = HexGrid.instance.cells[HexID];
+                }
                 cardManager.UseCard(card, cell);
             }
         }  

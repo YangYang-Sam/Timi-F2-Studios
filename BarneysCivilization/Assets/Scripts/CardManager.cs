@@ -40,7 +40,6 @@ public class CardManager : MonoBehaviour
 
     public int StartCell;
 
-
     public GameObject GetUnitPrefab()
     {
         return Race.UnitPrefab;
@@ -343,7 +342,6 @@ public class CardManager : MonoBehaviour
             if (CanMoveCells.Contains(TargetCell))
             {
                 BattleManager.instance.MoveAllUnitsToCell(this, TargetCell, UnitMoveSpeed);
-               
             }
         }
     }

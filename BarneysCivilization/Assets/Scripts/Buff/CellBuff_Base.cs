@@ -28,6 +28,7 @@ public class CellBuff_Base:MonoBehaviour
                 OnBuffDestroy();
             }
         }
+
     }
 
     public virtual void OnStack(CellBuff_Base newBuff)

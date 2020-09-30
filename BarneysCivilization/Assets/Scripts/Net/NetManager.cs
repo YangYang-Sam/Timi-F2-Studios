@@ -104,6 +104,13 @@ namespace NetTest
             PBConverter.ReqTurnEnd(uid, ref data);
             SendData(data);
         }
+        // 发送玩家结束指令   
+        public void ReqGameEnd(string uid)
+        {
+            byte[] data = new byte[1024];
+            PBConverter.ReqGameEnd(uid, ref data);
+            SendData(data);
+        }
 
         // socket发送数据
         public void SendData(byte[] data)

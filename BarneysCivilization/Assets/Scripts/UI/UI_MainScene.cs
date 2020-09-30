@@ -8,8 +8,6 @@ public class UI_MainScene : MonoBehaviour
 {
     Animator animator;
     Camera mainCam;
-    [SerializeField]
-    public UnityEngine.UI.Text TestText;
 
     public float ChooseRaceCameraPitch;
     public float MainSceneCameraPitch;
@@ -29,18 +27,7 @@ public class UI_MainScene : MonoBehaviour
     {
         if(isMatching  && MatchFound)
         {
-            MatchFound = false;
-            string t = "";
-            for (int i = 0; i < UserData.instance.AllUsers.Length; i++)
-            {
-                t += UserData.instance.AllUsers[i] + ": " + UserData.instance.AllRaces[i]+ "\n";
-            }
-
-            for (int i = 0; i < UserData.instance.RandomSeeds.Length; i++)
-            {
-                t += " " + UserData.instance.RandomSeeds[i];
-            }
-            TestText.text = t;
+            MatchFound = false;           
             SceneManager.LoadScene("BattleScene");
         }
     }
@@ -78,6 +65,11 @@ public class UI_MainScene : MonoBehaviour
 
     public void SinglePlayerStart()
     {
+        UserData.instance.RandomSeeds = new int[10];
+        for (int i = 0; i < 10; i++)       
+        {
+            i = Random.Range(0, int.MaxValue);
+        }
         SceneManager.LoadScene("BattleScene");
     }
     public void StartMatching()
@@ -104,6 +96,11 @@ public class UI_MainScene : MonoBehaviour
             StopCoroutine(CameraRotateProcess);
         }
         CameraRotateProcess = StartCoroutine(CameraRotate(MainSceneCameraPitch));
+    }
+    public void CancelMatch()
+    {
+        StartMainScene();
+        NetManager.instance.ReqStopMatching(UserData.instance.UID);
     }
     private Coroutine CameraRotateProcess;
     private IEnumerator CameraRotate(float TargetPitch)

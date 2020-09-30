@@ -173,15 +173,31 @@ public class UIManager : MonoBehaviour
             }
             if (SelectCard != null)
             {
-                if (Input.mousePosition.y > ReleaseThreshold)
+                if (Input.mousePosition.y > ReleaseThreshold && PlayerController.canControl)
                 {
-                    playerCardManager.UseCard(SelectCard, PlayerController.instance.SelectCell);
-
-                    // 向服务器汇报使用卡的ID
                     int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName);
-                    int hexID = SelectCell.HexIndex;
-                    print("use card: " + cardID + " Hex ID:" + hexID);
-                    NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
+                    int hexID = -2;
+
+                    if (SelectCell != null)
+                    {
+                        playerCardManager.UseCard(SelectCard, PlayerController.instance.SelectCell);
+                        hexID = SelectCell.HexIndex;
+                    }
+                    else if (SelectCard.NoneTargetCard())
+                    {
+                        playerCardManager.UseCard(SelectCard, PlayerController.instance.SelectCell);
+                    }
+                    else
+                    {
+                        SelectCard = null;
+                        UI_ArrowMesh.instance.SetVisibility(false);
+                        return;
+                    }
+                    if (UserData.instance.isMultiplayerGame)
+                    {
+                        // 向服务器汇报使用卡的ID              
+                        NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
+                    }
                 }
                 SelectCard = null;
                 UI_ArrowMesh.instance.SetVisibility(false);
@@ -242,7 +258,10 @@ public class UIManager : MonoBehaviour
     }
     public void EndTurnButton()
     {
-        InGameManager.instance.EndTurn();
+        if (PlayerController.canControl)
+        {
+            InGameManager.instance.EndTurn();
+        }
     }
 
     public void BattleEnd(bool isWin)

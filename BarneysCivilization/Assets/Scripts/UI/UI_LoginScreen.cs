@@ -69,7 +69,6 @@ public class UI_LoginScreen : MonoBehaviour
     private void OnRegistResult(int obj)
     {
         //ShowUserMessage("注册结果："+ obj);
-        print("Regist: " + obj);
         RegistResult = obj;
         updateRegistResult = true;
     }
@@ -77,7 +76,6 @@ public class UI_LoginScreen : MonoBehaviour
     private void OnLoginResult(int obj)
     {
         //ShowUserMessage("登陆结果：" + obj);
-        print("Login: " + obj);
         LoginResult = obj;
         updateLoginResult = true;
     }

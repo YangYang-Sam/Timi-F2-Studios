@@ -272,5 +272,19 @@ namespace NetTest
 
             data = PBConverter.Serialize(msg);
         }
-    }
+
+        // 发送玩家结束指令   
+        public static void ReqGameEnd(String uid, ref byte[] data)
+        {
+            CS_REQ_MSG msg = new CS_REQ_MSG();
+        msg.Msgid = MSGID.CsReqGameEndId;
+
+            CS_REQ_GAME_END reqMsg = new CS_REQ_GAME_END();
+            reqMsg.Userid = uid;
+
+            msg.CsReqGameEnd = reqMsg;
+
+            data = PBConverter.Serialize(msg);
+        }
+}
 }

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public PointerJobType jobType;
     public static bool isInBattle;
-
+    public static bool canControl = false;
     public int camp;
 
     private void Awake()
@@ -53,13 +53,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (cardManager != null)
+        if (cardManager != null && canControl)
         {
             HexTrace();
             if (Input.GetMouseButtonDown(0) && SelectCell != null)
             {
                 cardManager.SetUnitMoveTo(SelectCell);
-                NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
+                if (UserData.instance.isMultiplayerGame)
+                {
+                    NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
+                }
             }
         }
     } 

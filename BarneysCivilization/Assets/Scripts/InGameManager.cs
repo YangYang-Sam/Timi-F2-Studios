@@ -9,6 +9,9 @@ public class InGameManager : MonoBehaviour
     public Color[] CampColor;
     public List<CardManager> CardManagers;
 
+    public float DecisionDuration = 15f;
+    private float DecisionTimer;
+
     public bool IsTurnEnd;
     private void Awake()
     {
@@ -24,6 +27,10 @@ public class InGameManager : MonoBehaviour
         if (IsTurnEnd)
         {
             OnTurnEnd();
+        }
+        if(Time.time> DecisionTimer && PlayerController.canControl)
+        {
+            EndTurn();
         }
     }
     private void OnReceiveTurnEnd()
@@ -44,7 +51,6 @@ public class InGameManager : MonoBehaviour
                     {
                         HexCell cell = HexGrid.instance.cells[UserData.instance.AllPoses[i]];
                         cm.SetUnitMoveTo(cell);
-                        print("User:" + UserData.instance.AllUsers[i] + " move to cell :" + cell.HexIndex);
                     }       
                     break;
                 }
@@ -85,6 +91,16 @@ public class InGameManager : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            PlayerController.instance.cardManager = CardManagers[0];
+            CardManagers[0].ChooseRace(UserData.instance.RaceIndex);
+            for (int i = 1; i < CardManagers.Count; i++)
+            {
+                CardManagers[i].ChooseRace(Random.Range(0, 2));
+                CardManagers[i].gameObject.AddComponent<AIController>();
+            }
+        }
         PlayerController.instance.cardManager.ChooseRace(UserData.instance.RaceIndex);
 
         foreach (CardManager c in CardManagers)
@@ -100,9 +116,17 @@ public class InGameManager : MonoBehaviour
     }
     public void EndTurn()
     {
-        if (CurrentGameState == GameStateType.Decision)
+        if (PlayerController.canControl)
         {
-            NetTest.NetManager.instance.ReqEndTurn(UserData.instance.UID);
+            PlayerController.canControl = false;
+            if (UserData.instance.isMultiplayerGame)
+            {
+                NetTest.NetManager.instance.ReqEndTurn(UserData.instance.UID);
+            }
+            else
+            {
+                StartMoving();
+            }
         }
     }
 
@@ -112,6 +136,13 @@ public class InGameManager : MonoBehaviour
         if (GameStateChangeEvent != null)
         {
             GameStateChangeEvent();
+        }
+        switch (newState)
+        {
+            case GameStateType.Decision:
+                PlayerController.canControl = true;
+                DecisionTimer = Time.time + DecisionDuration;
+                break;
         }
     }
 
@@ -159,7 +190,7 @@ public class InGameManager : MonoBehaviour
         CardManagers.Remove(lostManager);
         if (lostManager == PlayerController.instance.cardManager)
         {
-            PlayerLost();
+            PlayerLost();           
         }
         if (CardManagers.Count == 1 && CardManagers[0]==PlayerController.instance.cardManager)
         {
@@ -169,10 +200,18 @@ public class InGameManager : MonoBehaviour
     public void PlayerLost()
     {
         UIManager.instance.BattleEnd(false);
+        if (UserData.instance.isMultiplayerGame)
+        {
+            NetTest.NetManager.instance.ReqGameEnd(UserData.instance.UID);
+        }
     }
     public void PlayerWin()
     {
         UIManager.instance.BattleEnd(true);
+        if (UserData.instance.isMultiplayerGame)
+        {
+            NetTest.NetManager.instance.ReqGameEnd(UserData.instance.UID);
+        }
     }
     public event System.Action GameStateChangeEvent;
     public event System.Action LateDecisionEvent;
