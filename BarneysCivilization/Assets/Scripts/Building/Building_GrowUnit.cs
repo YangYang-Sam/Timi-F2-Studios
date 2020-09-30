@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Building_GrowUnit : Building_Base
 {
-
     public int Threshold;
     public int Amount;
 
