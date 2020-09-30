@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Effect_TempResourceByCellType : CardEffect
 {
+    public int AddAmount = 1;
+
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
         return base.CanUseCard(user, cell);
@@ -19,7 +21,7 @@ public class Effect_TempResourceByCellType : CardEffect
         {
             if(occupiedCell.CellType == CellType)
             {
-                user.TempResourceAmount++;
+                user.TempResourceAmount += AddAmount;
             }
         }
     }

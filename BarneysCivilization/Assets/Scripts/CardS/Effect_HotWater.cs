@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Effect_HotWater : CardEffect
 {
+    public int HealthAmount = 1;
+    public int MinLevel = 2;
+
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
         return base.CanUseCard(user, cell);
@@ -14,7 +17,13 @@ public class Effect_HotWater : CardEffect
     }
     public override void Effect(CardManager user, HexCell cell)
     {
-        user.ActionPoint += 1;
-        user.UnitMoveSpeed += 1;
+       foreach(var occupiedCell in user.OccupiedCells)
+       {
+            var unit = occupiedCell.GetUnitOnCell();
+            if(unit.Level >= MinLevel)
+            {
+                unit.ChangeHealth(HealthAmount);
+            }           
+       }
     }
 }

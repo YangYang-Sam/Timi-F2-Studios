@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Building_Mine : Building_Base
 {
-    public int ResourceAmount;
+    public int ResourceAmount = 1;
 
     protected override void OnGameStateChange()
     {

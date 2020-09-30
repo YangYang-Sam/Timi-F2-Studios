@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CellBuff_SandStorm : CellBuff_Base
 {
-    public int Damage;
+    public int Damage = 1;
 
     public override void OnCreated(HexCell cell, CardManager creator)
     {
