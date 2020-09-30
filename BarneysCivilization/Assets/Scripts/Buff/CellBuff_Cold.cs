@@ -7,6 +7,7 @@ public class CellBuff_Cold : CellBuff_Base
     public override void OnCreated(HexCell cell, CardManager creator)
     {
         base.OnCreated(cell, creator);
+        UpdateBuffType(CellBuffType.Cold);
         InGameManager.instance.GameStateChangeEvent += OnGameStateChangeInColdBuff;
     }
 

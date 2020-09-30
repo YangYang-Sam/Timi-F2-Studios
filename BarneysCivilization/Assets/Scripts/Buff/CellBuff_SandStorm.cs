@@ -9,6 +9,7 @@ public class CellBuff_SandStorm : CellBuff_Base
     public override void OnCreated(HexCell cell, CardManager creator)
     {
         base.OnCreated(cell, creator);
+        UpdateBuffType(CellBuffType.SandStorm);
         InGameManager.instance.GameStateChangeEvent += OnGameStateChangeInColdBuff;
     }
 

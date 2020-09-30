@@ -7,8 +7,8 @@ public class CellBuff_Base:MonoBehaviour
     public HexCell Cell;
     public CardManager Creator;
     public int Turns;
-    public bool Stackable=false;
-    public CellBuffType BuffType;
+    public bool Stackable = false;
+    public CellBuffType BuffType = CellBuffType.Null;
 
     public virtual void OnCreated(HexCell cell, CardManager creator)
     {
@@ -41,10 +41,28 @@ public class CellBuff_Base:MonoBehaviour
         Cell.RemoveBuff(this);
         Destroy(gameObject);
     }
+
+    protected void UpdateBuffType(CellBuffType type, bool forceUpdateType = false)
+    {
+        if(forceUpdateType)
+        {
+            BuffType = type;
+        }
+        else
+        {
+            if(BuffType == CellBuffType.Null)
+            {
+                BuffType = type;
+            }
+        }
+    }
 }
 
 public enum CellBuffType
 {
+    Null,
+    Cold,
+    Fire,
     Rain,
-    Fire
+    SandStorm
 }

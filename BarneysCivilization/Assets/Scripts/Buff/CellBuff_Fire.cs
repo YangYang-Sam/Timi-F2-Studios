@@ -8,6 +8,7 @@ public class CellBuff_Fire : CellBuff_Base
     public override void OnCreated(HexCell cell, CardManager creator)
     {
         base.OnCreated(cell, creator);
+        UpdateBuffType(CellBuffType.Fire);
         InGameManager.instance.BeforeTurnEndEvent += OnBeforeTurnEnd;
     }
 
