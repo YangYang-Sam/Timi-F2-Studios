@@ -178,8 +178,9 @@ public class UIManager : MonoBehaviour
                     playerCardManager.UseCard(SelectCard, PlayerController.instance.SelectCell);
 
                     // 向服务器汇报使用卡的ID
-                    int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName) + 1;
-                    int hexID = SelectCell.HexIndex + 1;
+                    int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName);
+                    int hexID = SelectCell.HexIndex;
+                    print("use card: " + cardID + " Hex ID:" + hexID);
                     NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
                 }
                 SelectCard = null;

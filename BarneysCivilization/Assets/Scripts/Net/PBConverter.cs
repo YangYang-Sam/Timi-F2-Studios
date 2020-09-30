@@ -235,7 +235,7 @@ namespace NetTest
             msg.Msgid = MSGID.CsReqPlayerMovId;
 
             CS_REQ_PLAYER_MOV reqMsg = new CS_REQ_PLAYER_MOV();
-            reqMsg.Posid = index;
+            reqMsg.Posid = index + 1;
             reqMsg.Userid = uid;
 
             msg.CsReqPlayerMov = reqMsg;

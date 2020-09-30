@@ -31,6 +31,7 @@ public class RemotePlayer : MonoBehaviour
     }
     private void OnUseCard(string uid, int cardID, int hexID)
     {
+        print("User:" + uid + " use " + cardID + " on " + hexID);
         UseCard = true;
         UID = uid;
         HexID = hexID;

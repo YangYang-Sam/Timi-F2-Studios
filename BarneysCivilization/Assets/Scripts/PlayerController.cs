@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && SelectCell != null)
             {
                 cardManager.SetUnitMoveTo(SelectCell);
-                NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex + 1);
+                NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
             }
         }
     } 
