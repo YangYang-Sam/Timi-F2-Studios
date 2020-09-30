@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UnitMoveMode
+{
+    Normal,
+    Directional
+}
+
 public class BattleManager : MonoBehaviour
 {
     public static BattleManager instance;
@@ -133,7 +139,7 @@ public class BattleManager : MonoBehaviour
 
         foreach (Unit_Base unit in owner.Units)
         {
-            List<HexCell> queue = SearchRoute(unit.Cell, targetCell,owner);
+            List<HexCell> queue = SearchRoute(unit.Cell, targetCell, owner);
             unit.PathCells.Clear();
             for (int i = 1; i <= distance; i++)
             {
@@ -146,4 +152,18 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    public void MoveAllUnitsOneStepToDirection(CardManager owner, Vector3 dir)
+    {
+        foreach (Unit_Base unit in owner.Units)
+        {
+            Vector3 targetPos = unit.Cell.transform.position + dir.normalized * HexMetrics.innerRadius * 2.0f;
+            HexCell targetCell = HexGrid.instance.GetCellByPosition(targetPos);
+            unit.PathCells.Clear();
+            if (targetCell != null /*&& targetCell.CanPass*/)
+            {
+                unit.PathCells.Add(targetCell);
+            }
+            unit.UpdateDestinyCell();
+        }
+    }
 }

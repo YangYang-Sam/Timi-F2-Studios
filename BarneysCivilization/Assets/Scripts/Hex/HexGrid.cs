@@ -142,4 +142,10 @@ public class HexGrid : MonoBehaviour
 			return null;
 		}
 	}
+
+	public HexCell GetCellByCoordinate(HexCoordinates hexCoord)
+	{
+		int index = hexCoord.X + hexCoord.Z * width + hexCoord.Z / 2;
+		return cells[index];
+	}
 }

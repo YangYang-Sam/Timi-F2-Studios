@@ -40,6 +40,13 @@ public class CardManager : MonoBehaviour
 
     public int StartCell;
 
+    public UnitMoveMode MoveMode = UnitMoveMode.Directional;
+
+    public void SetUnitMoveModeTemporarily(UnitMoveMode mode)
+    {
+        MoveMode = mode;
+    }
+
     public GameObject GetUnitPrefab()
     {
         return Race.UnitPrefab;
@@ -110,6 +117,7 @@ public class CardManager : MonoBehaviour
         switch (InGameManager.CurrentGameState)
         {
             case GameStateType.Decision:
+                MoveMode = UnitMoveMode.Normal;
                 ActionPoint = 1;
                 BuyUnitTimes = 1;
                 UnitMoveSpeed = 1;
@@ -341,7 +349,19 @@ public class CardManager : MonoBehaviour
             UpdateCanMoveCells();
             if (CanMoveCells.Contains(TargetCell))
             {
-                BattleManager.instance.MoveAllUnitsToCell(this, TargetCell, UnitMoveSpeed);
+                if(MoveMode == UnitMoveMode.Directional)
+                {
+                    HexCell startCell = HexGrid.instance.cells[StartCell];
+                    Vector3 direction = TargetCell.transform.position - startCell.transform.position;
+                    BattleManager.instance.MoveAllUnitsOneStepToDirection(this, direction);
+                }
+                //else if(MoveMode == UnitMoveMode.OtherMode)
+                //{ 
+                //}
+                else
+                {
+                    BattleManager.instance.MoveAllUnitsToCell(this, TargetCell, UnitMoveSpeed);
+                }
             }
         }
     }

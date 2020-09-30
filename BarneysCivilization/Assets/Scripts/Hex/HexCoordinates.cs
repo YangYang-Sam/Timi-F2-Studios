@@ -22,6 +22,14 @@ public struct HexCoordinates
 		}
 	}
 
+	public int Y
+	{
+		get
+		{
+			return -X - Z;
+		}
+	}
+
 	public HexCoordinates(int x, int z)
 	{
 		this.x = x;
@@ -31,13 +39,6 @@ public struct HexCoordinates
 	public static HexCoordinates FromOffsetCoordinates(int x, int z)
 	{
 		return new HexCoordinates(x - z / 2, z);
-	}
-	public int Y
-	{
-		get
-		{
-			return -X - Z;
-		}
 	}
 
 	public override string ToString()
