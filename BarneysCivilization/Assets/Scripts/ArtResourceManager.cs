@@ -8,7 +8,15 @@ public class ArtResourceManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }        
     }
 
     public GameObject HealEffect;
@@ -19,6 +27,7 @@ public class ArtResourceManager : MonoBehaviour
 
     public RaceInfo[] RaceInfos;
     public GameObject[] EffectPrefabs;
+    public GameObject[] CellIconPrefab;
     public void CreateHealEffect(Vector3 pos)
     {
         GameObject g = Instantiate(HealEffect, pos, Quaternion.identity);
@@ -41,6 +50,10 @@ public class ArtResourceManager : MonoBehaviour
         Destroy(g, duration);
     }
 
+    public GameObject GetCellIconPrefab(HexCellType type)
+    {
+        return CellIconPrefab[(int)type];
+    }
     public static string ConverCellTypeText(HexCellType type)
     {
         switch (type)

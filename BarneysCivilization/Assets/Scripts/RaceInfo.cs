@@ -5,7 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class RaceInfo
 {
+    [Header("Introduce")]
     public string Name;
+    public string TraitName;
+    public string TraitIntroduce;
+    public HexCellType[] FitCells;
+    public GameObject GalleryPrefab;
+
+    [Header("Prefabs")]
     public GameObject CorePrefab;
     public GameObject UnitPrefab;
     public HexCards[] cards;

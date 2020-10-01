@@ -246,6 +246,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   isLost: 0
   StartCell: 39
+  MoveMode: 1
 --- !u!4 &468351577
 Transform:
   m_ObjectHideFlags: 0
@@ -728,6 +729,7 @@ MonoBehaviour:
   PlayerCore: {fileID: 0}
   isLost: 0
   StartCell: 11
+  MoveMode: 1
 --- !u!4 &1632748108
 Transform:
   m_ObjectHideFlags: 0
@@ -1177,15 +1179,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
         type: 3}
+      propertyPath: StartDeck.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
+        type: 3}
       propertyPath: StartDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454,
+      objectReference: {fileID: 9107424326188569314, guid: 693d7062f74ca8744a073868a4005032,
         type: 3}
     - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
         type: 3}
       propertyPath: StartDeck.Array.data[1]
       value: 
       objectReference: {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454,
+        type: 3}
+    - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
+        type: 3}
+      propertyPath: StartDeck.Array.data[3]
+      value: 
+      objectReference: {fileID: 9107424326188569314, guid: 693d7062f74ca8744a073868a4005032,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c6f45aa1148dd44bda41de1838ea8a, type: 3}

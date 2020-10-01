@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using NetTest;
+using UnityEngine.UI;
 
 public class UI_MainScene : MonoBehaviour
 {
+    public static UI_MainScene instance;
+  
     Animator animator;
     Camera mainCam;
 
@@ -15,6 +18,15 @@ public class UI_MainScene : MonoBehaviour
     private bool isMatching;
     private bool MatchFound;
 
+    public GameObject GalleryInstance;
+    public UI_RaceTrait RaceTrait;
+
+    public UI_ChooseRaceButton[] RaceButtons;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -22,6 +34,11 @@ public class UI_MainScene : MonoBehaviour
 
         CsResManager.MatchingBeginEvent += OnMatchingBegin;
         CsResManager.MatchSuccessEvent += OnMatchSuccess;
+
+        int RaceIndex = Random.Range(0, 6);
+        ChooseRace(RaceIndex);
+        UserData.instance.RaceIndex = RaceIndex;
+        RaceButtons[RaceIndex].SetHighlight(true);
     }
     private void Update()
     {
@@ -114,5 +131,17 @@ public class UI_MainScene : MonoBehaviour
             targetEuler.x = TargetPitch;
             mainCam.transform.eulerAngles = Vector3.Lerp(mainCam.transform.eulerAngles, targetEuler, 0.1f);
         }
+    }
+
+    public void ChooseRace(int raceIndex)
+    {
+        RaceInfo info = ArtResourceManager.instance.RaceInfos[raceIndex];
+
+        RaceTrait.UpdateRaceInfo(info);
+        if (GalleryInstance != null)
+        {
+            Destroy(GalleryInstance);
+        }
+        GalleryInstance = Instantiate(info.GalleryPrefab);
     }
 }
