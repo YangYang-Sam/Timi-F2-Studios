@@ -171,21 +171,28 @@ MonoBehaviour:
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
-      - {fileID: 6943707428436127944, guid: 86a673d55ed966340992f8dbe5cca158, type: 3}
+      - {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3, type: 3}
+      - {fileID: 6943707428436127944, guid: f0371603bb46642468cdba6fc35ed7b4, type: 3}
     - cards:
+      - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
       - {fileID: 6943707428436127944, guid: 3552a16cd4d1d07429a2dc7e6067e5fb, type: 3}
-      - {fileID: 6943707428436127944, guid: f3ec0ebcd6b01144091a032ba58629ef, type: 3}
+      - {fileID: 6943707428436127944, guid: 526d01f72cc6c174d9dc23b2e5b165a8, type: 3}
     - cards:
       - {fileID: 6943707428436127944, guid: a682d0ca49143f34a876209aaac67dec, type: 3}
-      - {fileID: 6943707428436127944, guid: 0d1a9c7f809a1de4681fad5a97e134af, type: 3}
+      - {fileID: 6943707428436127944, guid: 936a8f23848e15646af3d8ee7df23a11, type: 3}
+      - {fileID: 6943707428436127944, guid: 838602cd0412178469bf35332cbdc7bf, type: 3}
     - cards:
       - {fileID: 6943707428436127944, guid: 307214ba36d6d1d4288fb46e9cb86d49, type: 3}
+      - {fileID: 6943707428436127944, guid: b1a11c45dc1386846b13d8838b7be698, type: 3}
+      - {fileID: 6943707428436127944, guid: 09d93e662eb8d9d41a2009e69f132146, type: 3}
     - cards:
-      - {fileID: 6943707428436127944, guid: b1392f2a8d25c1742ba1b8436dfb8a25, type: 3}
       - {fileID: 6943707428436127944, guid: 54e02565771f2044b8b49ac2e4c67ec4, type: 3}
+      - {fileID: 6943707428436127944, guid: fd4aa3992b1cf394eae32694df7f6923, type: 3}
+      - {fileID: 6943707428436127944, guid: 9f3e13437a193f749907f4893e99020c, type: 3}
     - cards:
       - {fileID: 6943707428436127944, guid: df9d0c434ec3cde459b70ae8433b28cd, type: 3}
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
+      - {fileID: 6943707428436127944, guid: 72b68d7127337494fac9e04f27848944, type: 3}
     RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
       type: 3}
   - Name: "\u6D2A\u7259\u90E8\u843D"

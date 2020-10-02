@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5305593850179875146
+--- !u!114 &-8332934086083492809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,16 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6943707428436127944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f0904d5d6ea7541b2c64d0e04a03ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 44b69defcc1368f4b933f9c35f30978e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ActionPointCost: 1
-  NonTargetCard: 0
-  SupportAllCellTypes: 0
-  SupportCellTypes: 02000000
-  RequireHealth: 0
-  DecreaseHealth: 0
-  BuildingPrefab: {fileID: 8066953169565981884, guid: d949f6f367d9bc64ab5b4aea22f27db0,
+  NonTargetCard: 1
+  Turns: 1
+  BuffPrefab: {fileID: 1477477239368706076, guid: 52c1344fe1f8ad141af8930a86a5cd2b,
     type: 3}
 --- !u!1001 &3016318905123916207
 PrefabInstance:
@@ -46,12 +43,12 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardName
-      value: "\u84C4\u6C34\u6C60"
+      value: "\u6ECB\u517B"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u5728\u5C71\u4E18\u5EFA\u9020\u4E00\u4E2A\u84C4\u6C34\u6C60\u5EFA\u7B51\uFF0C\u56DE\u5408\u7ED3\u675F\u65F6\u5982\u679C\u84C4\u6C34\u6C60\u6240\u5728\u683C\u5B50\u6709\u964D\u96E8\uFF0C\u5219+1\u8D44\u6E90"
+      value: "\u672C\u56DE\u5408\u7ED3\u675F\u9636\u6BB5\uFF0C\u5DF1\u65B9\u9886\u571F\u5185\u6240\u6709\u964D\u96E8\u683C\u5B50+1\u6218\u6597\u529B"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -62,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Water_Reservoir
+      value: C_Water_Nourish
       objectReference: {fileID: 0}
     - target: {fileID: 5451290693730646944, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

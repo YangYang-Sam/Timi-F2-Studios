@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5305593850179875146
+--- !u!114 &1720330263030132271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6943707428436127944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f0904d5d6ea7541b2c64d0e04a03ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 7489f11f3ed0f1148893d448159b5c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ActionPointCost: 1
   NonTargetCard: 0
-  SupportAllCellTypes: 0
-  SupportCellTypes: 02000000
-  RequireHealth: 0
-  DecreaseHealth: 0
-  BuildingPrefab: {fileID: 8066953169565981884, guid: d949f6f367d9bc64ab5b4aea22f27db0,
+  RainTurns: 4
+  HealthReduceAmount: 2
+  ResourceAddAmount: 2
+  BuffPrefab: {fileID: 1477477239368706076, guid: eb1263c2936edb5498ac87e1df44e741,
     type: 3}
 --- !u!1001 &3016318905123916207
 PrefabInstance:
@@ -46,12 +45,12 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardName
-      value: "\u84C4\u6C34\u6C60"
+      value: "\u84B8\u53D1"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u5728\u5C71\u4E18\u5EFA\u9020\u4E00\u4E2A\u84C4\u6C34\u6C60\u5EFA\u7B51\uFF0C\u56DE\u5408\u7ED3\u675F\u65F6\u5982\u679C\u84C4\u6C34\u6C60\u6240\u5728\u683C\u5B50\u6709\u964D\u96E8\uFF0C\u5219+1\u8D44\u6E90"
+      value: "\u6307\u5B9A\u4E00\u4E2A\u6218\u6597\u529B\u81F3\u5C11\u4E3A3\u7684\u5DF1\u65B9\u683C\u5B50\uFF0C\u4F7F\u5176\u6218\u6597\u529B-2\uFF0C\u672C\u56DE\u5408+2\u8D44\u6E90\uFF0C\u6B64\u683C\u5B50\u964D\u96E84\u56DE\u5408"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -62,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Water_Reservoir
+      value: C_Water_Evaporate
       objectReference: {fileID: 0}
     - target: {fileID: 5451290693730646944, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
