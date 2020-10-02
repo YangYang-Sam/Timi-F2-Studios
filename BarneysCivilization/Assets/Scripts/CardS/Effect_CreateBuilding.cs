@@ -12,7 +12,18 @@ public class Effect_CreateBuilding : CardEffect
 
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
-        bool isSupportCellType = SupportAllCellTypes ? true : SupportCellTypes.Contains(cell.CellType);
+        bool isSupportCellType = SupportAllCellTypes;
+        if (!SupportAllCellTypes)
+        {
+            if (cell)
+            {
+                isSupportCellType = SupportCellTypes.Contains(cell.CellType);
+            }
+            else
+            {
+                isSupportCellType = false;
+            }
+        }
         return base.CanUseCard(user, cell) && GetCanUseCells(user).Contains(cell) && isSupportCellType;
     }
 

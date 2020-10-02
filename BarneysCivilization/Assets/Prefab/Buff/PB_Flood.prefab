@@ -48,4 +48,4 @@ MonoBehaviour:
   Creator: {fileID: 0}
   Turns: 1
   Stackable: 0
-  BuffType: 0
+  BuffType: 2

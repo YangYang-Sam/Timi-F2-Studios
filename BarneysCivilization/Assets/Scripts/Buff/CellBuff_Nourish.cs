@@ -31,6 +31,6 @@ public class CellBuff_Nourish : CellBuff_Base
     public override void OnBuffDestroy()
     {
         base.OnBuffDestroy();
-        InGameManager.instance.BeforeTurnEndEvent -= OnGameStateChangeInNourishBuff;
+        InGameManager.instance.GameStateChangeEvent -= OnGameStateChangeInNourishBuff;
     }
 }

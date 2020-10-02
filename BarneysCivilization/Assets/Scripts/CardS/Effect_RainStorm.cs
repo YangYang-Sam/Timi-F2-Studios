@@ -10,7 +10,11 @@ public class Effect_RainStorm : CardEffect
 
     private bool CanUseRainStormCell(CardManager user, HexCell targetCell)
     {
-        bool isUserOccupiedCell = (targetCell.OwnerManager == user);
+        bool isUserOccupiedCell = false;
+        if (targetCell != null)
+        {
+            isUserOccupiedCell = targetCell.OwnerManager == user;
+        }
         bool isSupportCellType = (targetCell.CellType == HexCellType.Forest) || (targetCell.CellType == HexCellType.Water);
         foreach(var buff in targetCell.CellBuffs)
         {

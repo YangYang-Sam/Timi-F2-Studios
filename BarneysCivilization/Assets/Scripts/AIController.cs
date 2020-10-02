@@ -115,7 +115,7 @@ public class AIController : MonoBehaviour
                 HexCell cell = null;
 
                 List<HexCell> canUseCells = card.GetCanUseCells(cardManager);
-                if (canUseCells.Count > 0)
+                if (canUseCells!=null && canUseCells.Count > 0)
                 {
                     cell = GetMVC(canUseCells);
                 }

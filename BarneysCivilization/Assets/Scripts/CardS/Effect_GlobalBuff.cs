@@ -21,7 +21,7 @@ public class Effect_GlobalBuff : CardEffect
             GameObject g = Instantiate(BuffPrefab, occupiedCell.transform.position, Quaternion.identity);
             CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
             buff.Turns = Turns;
-            buff.OnCreated(cell, user);
+            buff.OnCreated(occupiedCell, user);
         }
     }
 }

@@ -48,7 +48,7 @@ MonoBehaviour:
   Creator: {fileID: 0}
   Turns: 0
   Stackable: 0
-  BuffType: 4
+  BuffType: 6
   Damage: 1
 --- !u!1 &4574575311639297273
 GameObject:

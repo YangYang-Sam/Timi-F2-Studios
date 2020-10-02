@@ -85,7 +85,7 @@ public class UIManager : MonoBehaviour
             if (SelectCell != null)
             {
                 UI_ArrowMesh.instance.UpdatePosition(hit.point);
-                if (UIManager.instance.InteractableCells.Contains(SelectCell))
+                if (UIManager.instance.InteractableCells!=null && UIManager.instance.InteractableCells.Contains(SelectCell))
                 {
                     SelectCell.SetHighLightColor(Color.green);
                 }
@@ -221,9 +221,17 @@ public class UIManager : MonoBehaviour
         }
         foreach (HexCell cell in HexGrid.instance.cells)
         {
-            cell.HighLightCell(InteractableCells.Contains(cell));
+            print(cell);
+            if (InteractableCells != null)
+            {
+                cell.HighLightCell(InteractableCells.Contains(cell));
+            }
+            else
+            {
+                cell.HighLightCell(false);
+            }
         }
-        
+
     }
 
     public void AddCard(GameObject card, int Camp)
