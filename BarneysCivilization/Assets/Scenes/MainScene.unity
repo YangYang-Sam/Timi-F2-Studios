@@ -171,7 +171,7 @@ MonoBehaviour:
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
-      - {fileID: 6943707428436127944, guid: 78fd9117c94cc5d4da4498b1cdae6f37, type: 3}
+      - {fileID: 6943707428436127944, guid: 86a673d55ed966340992f8dbe5cca158, type: 3}
     - cards:
       - {fileID: 6943707428436127944, guid: 3552a16cd4d1d07429a2dc7e6067e5fb, type: 3}
       - {fileID: 6943707428436127944, guid: f3ec0ebcd6b01144091a032ba58629ef, type: 3}
@@ -184,7 +184,7 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: b1392f2a8d25c1742ba1b8436dfb8a25, type: 3}
       - {fileID: 6943707428436127944, guid: 54e02565771f2044b8b49ac2e4c67ec4, type: 3}
     - cards:
-      - {fileID: 6943707428436127944, guid: 2735b889495651d4eb0a00956d43f22c, type: 3}
+      - {fileID: 6943707428436127944, guid: df9d0c434ec3cde459b70ae8433b28cd, type: 3}
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
     RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
       type: 3}

@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 3058027426356787826}
   - component: {fileID: 721646718627960329}
   m_Layer: 0
-  m_Name: Unit
+  m_Name: Deer_Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   Owner: {fileID: 0}
   Health: 3
   TempHealth: 0
-  Level: 0
+  Level: 1
   isAlive: 1
   canMove: 1
   redMat: {fileID: 2100000, guid: 33578958a14c1484b882c00b062967d7, type: 2}

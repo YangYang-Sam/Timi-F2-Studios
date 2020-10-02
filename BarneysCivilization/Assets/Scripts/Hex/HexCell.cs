@@ -32,6 +32,7 @@ public class HexCell : MonoBehaviour
     public List<CellBuff_Base> CellBuffs = new List<CellBuff_Base>();
 
     public bool CanPass = true;
+    private bool hasBattle = false;
 
     public UnityEngine.UI.Text TypeText;
 
@@ -233,7 +234,29 @@ public class HexCell : MonoBehaviour
             CampUnits.Add(unit);
         }
     }
-    public void CheckOwner()
+    public void BeforeBattle()
+    {
+        hasBattle = false;
+        // 清理无效单位
+        if (PlacedUnits.Count > 0)
+        {
+            for (int i = PlacedUnits.Count - 1; i >= 0; i--)
+            {
+                if (PlacedUnits[i] == null || !PlacedUnits[i].isAlive)
+                {
+                    PlacedUnits.RemoveAt(i);
+                }
+            }
+        }
+        if (Camps.Count > 1)
+        {
+            foreach (Unit_Base unit in PlacedUnits)
+            {
+                unit.Owner.UnitBeforeBattle(unit, this);
+            }
+        }
+    }
+    public void Battle()
     {
         // 清理无效单位
         if (PlacedUnits.Count > 0)
@@ -250,6 +273,7 @@ public class HexCell : MonoBehaviour
         // 战斗
         if (Camps.Count > 1)
         {
+            hasBattle = true;
             int TopHealth = 0;
             int SecondHealth = 0;
             Unit_Base TopUnit=null;
@@ -319,7 +343,13 @@ public class HexCell : MonoBehaviour
         Camps.Clear();
         CampUnits.Clear();
     }
-
+    public void AfterBattle()
+    {
+        if (hasBattle && GetUnitOnCell()!=null)
+        {
+            GetUnitOnCell().Owner.UnitWinBattle(GetUnitOnCell(), this);
+        }
+    }
     public void HighLightCell(bool highLight)
     {
         HightlightSprite.enabled = highLight;

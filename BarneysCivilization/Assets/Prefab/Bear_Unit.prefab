@@ -331,7 +331,7 @@ MonoBehaviour:
   Owner: {fileID: 0}
   Health: 3
   TempHealth: 0
-  Level: 0
+  Level: 1
   isAlive: 1
   canMove: 1
   redMat: {fileID: 2100000, guid: 33578958a14c1484b882c00b062967d7, type: 2}

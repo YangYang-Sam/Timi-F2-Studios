@@ -151,39 +151,44 @@ public class InGameManager : MonoBehaviour
         StartCoroutine(MoveProcess());
     }
 
-    public void EndBattle()
-    {
-        if (BeforeTurnEndEvent != null)
-        {
-            BeforeTurnEndEvent();
-        }
-
-        foreach (HexCell cell in HexGrid.instance.cells)
-        {
-            cell.CheckOwner();
-        }       
-
-        if (CurrentGameState == GameStateType.AfterBattle)
-        {
-            ChangeGameState(GameStateType.Decision);
-        }
-        if (LateDecisionEvent != null)
-        {
-            LateDecisionEvent();
-        }
-    }
     private IEnumerator MoveProcess()
     {
         ChangeGameState(GameStateType.BeforeMove);
         yield return new WaitForSeconds(0.1f);
+
         ChangeGameState(GameStateType.Move);
         yield return new WaitForSeconds(2.5f);
+
         ChangeGameState(GameStateType.BeforeBattle);
+        foreach (HexCell cell in HexGrid.instance.cells)
+        {
+            cell.BeforeBattle();
+        }   
         yield return new WaitForSeconds(0.1f);
+  
         ChangeGameState(GameStateType.Battle);
+        foreach (HexCell cell in HexGrid.instance.cells)
+        {
+            cell.Battle();
+        }
         yield return new WaitForSeconds(0.1f);
+
         ChangeGameState(GameStateType.AfterBattle);
-        EndBattle();    
+        foreach (HexCell cell in HexGrid.instance.cells)
+        {
+            cell.AfterBattle();
+        }
+        if (BeforeTurnEndEvent != null)
+        {
+            BeforeTurnEndEvent();
+        }
+        yield return new WaitForSeconds(0.1f);
+
+        ChangeGameState(GameStateType.Decision);
+        if (LateDecisionEvent != null)
+        {
+            LateDecisionEvent();
+        }
     }
     public void CampLost(CardManager lostManager)
     {
