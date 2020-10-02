@@ -14,6 +14,8 @@ public class Unit_Base : MonoBehaviour
     public bool isAlive;
     public bool canMove;
 
+    public int LastDamage;
+
     [SerializeField]
     private Material redMat;
 
@@ -201,16 +203,22 @@ public class Unit_Base : MonoBehaviour
         {
 
             amount -= TempHealth;
-                   
+
+            LastDamage = Mathf.Min(amount, Health);
             ChangeHealth(-amount);
             if (Health <= 0)
             {
+                if (DeathEvent != null)
+                {
+                    DeathEvent(LastDamage);
+                }
                 Death(source);
                 return true;
             }
             return false;
         }
     }
+    public event System.Action<int> DeathEvent;
 
     public void ChangeHealth(int amount)
     {

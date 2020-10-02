@@ -9,6 +9,8 @@ public class Building_Base : MonoBehaviour
     public bool IsPermenant;
     public int Turns;
 
+    public int Level = 1;
+    public int MaxLevel = 1;
     public virtual void OnCreated(HexCell cell,CardManager owner)
     {
         Cell = cell;
@@ -17,7 +19,14 @@ public class Building_Base : MonoBehaviour
         cell.PlacedBuilding = this;
         InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
     }
-
+    public virtual bool CanUpgrade(CardManager user)
+    {
+        return MaxLevel > Level;
+    }
+    public virtual void UpgradeBuilding(HexCell cell, CardManager owner)
+    {
+        Level++;
+    }
     protected virtual void OnGameStateChange()
     {
         if (InGameManager.isGameState(GameStateType.Decision))

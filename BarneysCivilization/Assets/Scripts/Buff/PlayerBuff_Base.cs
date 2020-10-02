@@ -64,5 +64,6 @@ public enum PlayerBuffType
     Null,
     WaterGather,
     Flood,
-
+    BurnToGround,
+    Revive
 }

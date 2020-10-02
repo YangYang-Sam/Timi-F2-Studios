@@ -33,7 +33,7 @@ public class Effect_CreateBuilding : CardEffect
         foreach (HexCell cell in user.OccupiedCells)
         {
             bool isSupportCellType = SupportAllCellTypes ? true : SupportCellTypes.Contains(cell.CellType);
-            if (cell.GetUnitOnCell().Health >= RequireHealth && cell.PlacedBuilding == null && isSupportCellType)
+            if (cell.GetUnitOnCell().Health >= RequireHealth && (cell.PlacedBuilding == null || cell.PlacedBuilding.CanUpgrade(user)) && isSupportCellType)
             {
                 cells.Add(cell);
             }
@@ -48,6 +48,13 @@ public class Effect_CreateBuilding : CardEffect
         {
             cell.GetUnitOnCell().ChangeHealth(-DecreaseHealth);
         }
-        user.CreateBuilding(BuildingPrefab, cell);
+        if (cell.PlacedBuilding == null)
+        {
+            user.CreateBuilding(BuildingPrefab, cell);
+        }
+        else
+        {
+            cell.PlacedBuilding.UpgradeBuilding(cell, user);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class Effect_PlayerBuff : CardEffect
     }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {
-        return null;
+        return new List<HexCell>();
     }
     public override void Effect(CardManager user, HexCell cell)
     {

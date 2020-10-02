@@ -14,7 +14,7 @@ public class Building_GrowUnit : Building_Base
         {
             if (Cell.GetUnitOnCell().Health <= Threshold)
             {
-                Cell.GetUnitOnCell().ChangeHealth(Amount);                
+                Cell.GetUnitOnCell().ChangeHealth(Mathf.Min(Threshold - Cell.GetUnitOnCell().Health, Amount * Level));                
             }          
         }
     }

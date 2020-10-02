@@ -250,12 +250,17 @@ public class HexCell : MonoBehaviour
         }
         if (Camps.Count > 1)
         {
+            if (CellBeforeBattleEvent != null)
+            {
+                CellBeforeBattleEvent(this);
+            }
             foreach (Unit_Base unit in PlacedUnits)
             {
                 unit.Owner.UnitBeforeBattle(unit, this);
             }
         }
     }
+    public event System.Action<HexCell> CellBeforeBattleEvent;
     public void Battle()
     {
         // 清理无效单位

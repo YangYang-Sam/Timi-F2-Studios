@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: 3496330935874996695}
   m_Layer: 0
-  m_Name: B_Bamboo
+  m_Name: B_Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,9 @@ MonoBehaviour:
   Owner: {fileID: 0}
   IsPermenant: 1
   Turns: 0
-  Threshold: 3
+  Level: 1
+  MaxLevel: 1
+  Threshold: 5
   Amount: 1
 --- !u!1001 &2276934281346672692
 PrefabInstance:
