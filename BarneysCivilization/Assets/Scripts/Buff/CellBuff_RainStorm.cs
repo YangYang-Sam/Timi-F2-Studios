@@ -23,6 +23,6 @@ public class CellBuff_RainStorm : CellBuff_Base
     public override void OnBuffDestroy()
     {
         base.OnBuffDestroy();
-        InGameManager.instance.BeforeTurnEndEvent -= OnGameStateChangeInRainStormBuff;
+        InGameManager.instance.GameStateChangeEvent -= OnGameStateChangeInRainStormBuff;
     }
 }

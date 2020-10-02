@@ -36,6 +36,6 @@ public class CellBuff_SandStorm : CellBuff_Base
     public override void OnBuffDestroy()
     {
         base.OnBuffDestroy();
-        InGameManager.instance.BeforeTurnEndEvent -= OnGameStateChangeInColdBuff;
+        InGameManager.instance.GameStateChangeEvent -= OnGameStateChangeInColdBuff;
     }
 }
