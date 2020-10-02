@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6356148457905091285
+--- !u!114 &8273384962864258559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6943707428436127944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac5c6dd7ee6609b45a520041080f3685, type: 3}
+  m_Script: {fileID: 11500000, guid: 09f3541ea0c9c92459e34ff0f68426b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ActionPointCost: 1
-  NonTargetCard: 0
-  FireTurns: 2
+  NonTargetCard: 1
   HealthAddAmount: 1
-  BuffPrefab: {fileID: 246154860520892266, guid: 529d205fe0cd8ac4b8f6cfb9fa0d767b,
-    type: 3}
 --- !u!1001 &3016318905123916207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,12 +41,12 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardName
-      value: "\u5F15\u71C3"
+      value: "\u52A9\u71C3"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u9009\u62E9\u4E00\u4E2A\u5DF1\u65B9\u68EE\u6797\u6216\u8349\u539F\u683C\u5B50\uFF0C\u4F7F\u5176\u6218\u6597\u529B+1\u5E76\u71C3\u70E72\u56DE\u5408"
+      value: "\u5DF1\u65B9\u6240\u6709\u71C3\u70E7\u6548\u679C\u7684\u683C\u5B50+1\u6218\u6597\u529B"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -60,7 +57,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Fire_Burn
+      value: C_Fire_HelpBurn
       objectReference: {fileID: 0}
     - target: {fileID: 5451290693730646944, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
