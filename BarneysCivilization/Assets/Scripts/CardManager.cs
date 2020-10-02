@@ -482,4 +482,62 @@ public class CardManager : MonoBehaviour
             }
         }
     }
+    #region PlayerBuff
+    public List<PlayerBuff_Base> PlayerBuffs;
+
+    public PlayerBuff_Base FindBuff(PlayerBuffType type)
+    {
+        foreach (PlayerBuff_Base buff in PlayerBuffs)
+        {
+            if (buff.BuffType == type)
+            {
+                return buff;
+            }
+        }
+        return null;
+    }
+    public void AddBuff(PlayerBuff_Base newBuff)
+    {
+        PlayerBuff_Base oldBuff = FindBuff(newBuff.BuffType);
+        if (oldBuff != null)
+        {
+            if (oldBuff.Stackable)
+            {
+                oldBuff.OnStack(newBuff);
+            }
+            else
+            {
+                oldBuff.OnBuffDestroy();
+                PlayerBuffs.Add(newBuff);
+            }
+        }
+        else
+        {
+            PlayerBuffs.Add(newBuff);
+        }
+    }
+    public void RemoveBuff(PlayerBuff_Base buff)
+    {
+        PlayerBuffs.Remove(buff);
+    }
+    #endregion
+
+    #region BattleEvent
+    public void UnitBeforeBattle(Unit_Base unit, HexCell cell)
+    {
+        if (UnitBeforeBattleEvent != null)
+        {
+            UnitBeforeBattleEvent(unit, cell);
+        }
+    }
+    public event System.Action<Unit_Base, HexCell> UnitBeforeBattleEvent;
+    public void UnitWinBattle(Unit_Base unit, HexCell cell)
+    {
+        if (UnitWinBattleEvent != null)
+        {
+            UnitWinBattleEvent(unit, cell);
+        }
+    }
+    public event System.Action<Unit_Base, HexCell> UnitWinBattleEvent;
+    #endregion
 }

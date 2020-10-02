@@ -218,23 +218,23 @@ public class Unit_Base : MonoBehaviour
         Health += amount;
         if (Health >= 10)
         { 
-            Level = 2;
+            Level = 3;
         }
         else if (Health >= 5)
         {
-            Level = 1;
+            Level = 2;
         }
         else
         {
-            Level = 0;
+            Level = 1;
         }
 
         if (Level != oldLevel)
         {
             ArtResourceManager.instance.CreateUpgradeEffect(transform.position);
-            
-            LevelGraphics[oldLevel].SetActive(false);
-            LevelGraphics[Level].SetActive(true);
+
+            LevelGraphics[oldLevel - 1].SetActive(false);
+            LevelGraphics[Level - 1].SetActive(true);
         }
         else
         {

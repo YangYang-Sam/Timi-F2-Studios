@@ -251,6 +251,7 @@ MonoBehaviour:
   isLost: 0
   StartCell: 39
   MoveMode: 1
+  PlayerBuffs: []
 --- !u!4 &468351577
 Transform:
   m_ObjectHideFlags: 0
@@ -379,7 +380,7 @@ MonoBehaviour:
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
-      - {fileID: 6943707428436127944, guid: 78fd9117c94cc5d4da4498b1cdae6f37, type: 3}
+      - {fileID: 6943707428436127944, guid: 86a673d55ed966340992f8dbe5cca158, type: 3}
     - cards:
       - {fileID: 6943707428436127944, guid: 3552a16cd4d1d07429a2dc7e6067e5fb, type: 3}
       - {fileID: 6943707428436127944, guid: f3ec0ebcd6b01144091a032ba58629ef, type: 3}
@@ -392,7 +393,7 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: b1392f2a8d25c1742ba1b8436dfb8a25, type: 3}
       - {fileID: 6943707428436127944, guid: 54e02565771f2044b8b49ac2e4c67ec4, type: 3}
     - cards:
-      - {fileID: 6943707428436127944, guid: 2735b889495651d4eb0a00956d43f22c, type: 3}
+      - {fileID: 6943707428436127944, guid: df9d0c434ec3cde459b70ae8433b28cd, type: 3}
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
     RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
       type: 3}
@@ -850,6 +851,7 @@ MonoBehaviour:
   isLost: 0
   StartCell: 11
   MoveMode: 1
+  PlayerBuffs: []
 --- !u!4 &1632748108
 Transform:
   m_ObjectHideFlags: 0
@@ -1306,19 +1308,25 @@ PrefabInstance:
         type: 3}
       propertyPath: StartDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 9107424326188569314, guid: 693d7062f74ca8744a073868a4005032,
+      objectReference: {fileID: 6943707428436127944, guid: fd4aa3992b1cf394eae32694df7f6923,
         type: 3}
     - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
         type: 3}
       propertyPath: StartDeck.Array.data[1]
       value: 
-      objectReference: {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454,
+      objectReference: {fileID: 6943707428436127944, guid: fd4aa3992b1cf394eae32694df7f6923,
         type: 3}
     - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
         type: 3}
       propertyPath: StartDeck.Array.data[3]
       value: 
-      objectReference: {fileID: 9107424326188569314, guid: 693d7062f74ca8744a073868a4005032,
+      objectReference: {fileID: 6943707428436127944, guid: fd4aa3992b1cf394eae32694df7f6923,
+        type: 3}
+    - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
+        type: 3}
+      propertyPath: StartDeck.Array.data[2]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: fd4aa3992b1cf394eae32694df7f6923,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c6f45aa1148dd44bda41de1838ea8a, type: 3}
@@ -1404,5 +1412,82 @@ PrefabInstance:
       propertyPath: CardManagers.Array.data[2]
       value: 
       objectReference: {fileID: 468351576}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: 307214ba36d6d1d4288fb46e9cb86d49,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: b1a11c45dc1386846b13d8838b7be698,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: 86a673d55ed966340992f8dbe5cca158,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[6]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: 936a8f23848e15646af3d8ee7df23a11,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[10]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: df9d0c434ec3cde459b70ae8433b28cd,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[12]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[13]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: fd4aa3992b1cf394eae32694df7f6923,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[14]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: f5cbf84d1e6507b41b341b8f2fdc7208,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[15]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: 7d4305f701ad4b64d8be5b44e5a7dfdf,
+        type: 3}
+    - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: AllCardObjects.Array.data[16]
+      value: 
+      objectReference: {fileID: 6943707428436127944, guid: 56e6ca40384227f4290f86e0c4cd67a0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e6b3b2b553014f4ab19a4eebe0dd340, type: 3}

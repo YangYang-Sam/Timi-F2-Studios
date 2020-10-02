@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2465695427879028656
+--- !u!114 &-5305593850179875146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,15 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6943707428436127944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0291c3ca05395784aabc96b35561fd7e, type: 3}
+  m_Script: {fileID: 11500000, guid: f2f0904d5d6ea7541b2c64d0e04a03ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ActionPointCost: 1
   NonTargetCard: 0
-  Turns: 3
-  ActionPointAddAmount: 1
-  ResourceReduceAmount: 1
-  BuffPrefab: {fileID: 1477477239368706076, guid: eb1263c2936edb5498ac87e1df44e741,
+  SupportAllCellTypes: 0
+  SupportCellTypes: 02000000
+  RequireHealth: 0
+  DecreaseHealth: 0
+  BuildingPrefab: {fileID: 8066953169565981884, guid: d949f6f367d9bc64ab5b4aea22f27db0,
     type: 3}
 --- !u!1001 &3016318905123916207
 PrefabInstance:
@@ -45,12 +46,12 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardName
-      value: "\u964D\u96E8"
+      value: "\u84C4\u6C34\u6C60"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u9700\u8981\u672C\u56DE\u5408\u8D44\u6E90-1\uFF0C\u4F7F\u76EE\u6807\u683C\u5B50\u964D\u96E83\u56DE\u5408\uFF0C+1\u884C\u52A8\u529B"
+      value: "\u5728\u5C71\u4E18\u5EFA\u9020\u4E00\u4E2A\u84C4\u6C34\u6C60\u5EFA\u7B51\uFF0C\u56DE\u5408\u7ED3\u675F\u65F6\u5982\u679C\u84C4\u6C34\u6C60\u6240\u5728\u683C\u5B50\u6709\u964D\u96E8\uFF0C\u5219+1\u8D44\u6E90"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -61,7 +62,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Water_Rain
+      value: C_Water_Reservoir
       objectReference: {fileID: 0}
     - target: {fileID: 5451290693730646944, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
