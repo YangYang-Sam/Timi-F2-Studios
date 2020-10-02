@@ -67,5 +67,6 @@ public enum CellBuffType
     Nourish,
     Rain,
     RainStorm,
-    SandStorm
+    SandStorm,
+    WoodSpirit
 }
