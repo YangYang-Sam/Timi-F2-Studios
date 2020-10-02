@@ -64,6 +64,8 @@ public enum CellBuffType
     Null,
     Cold,
     Fire,
+    Nourish,
     Rain,
+    RainStorm,
     SandStorm
 }
