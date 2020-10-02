@@ -250,11 +250,11 @@ public class UIManager : MonoBehaviour
     {
         ChooseCardWidget.ChooseRandomCard();
     }
-    public void CardChoosed(GameObject card)
+    public void CardChoosed(GameObject card , HexCell cell)
     {
         IsChoosingCard = false;
         ChooseCardWidget.ChooseFinish();
-        playerCardManager.AddNewCard(card);
+        playerCardManager.AddNewCard(card,cell);
     }
     public void EndTurnButton()
     {

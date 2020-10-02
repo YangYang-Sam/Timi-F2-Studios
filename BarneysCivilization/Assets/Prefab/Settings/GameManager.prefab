@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8668050369247080692}
   - component: {fileID: 8668050369247080693}
   - component: {fileID: 8668050369247080695}
-  - component: {fileID: 8668050369247080694}
+  - component: {fileID: 8668050369973418531}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -53,7 +53,12 @@ MonoBehaviour:
   - {r: 0.44615936, g: 0.39215684, b: 1, a: 1}
   - {r: 1, g: 0.39215684, b: 0.9292292, a: 1}
   - {r: 1, g: 0.53361547, b: 0.39215684, a: 1}
-  CardManagers: []
+  CardManagers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  DecisionDuration: 15
+  IsTurnEnd: 0
 --- !u!114 &8668050369247080693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337d8c88943f2704caafe7c5db19315f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BattleCell: {fileID: 0}
 --- !u!114 &8668050369247080695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,13 +84,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HexTerrainPrefab:
-  - {fileID: 7852981256622078098, guid: eccb74349fc57bd4080f52c98e8bea09, type: 3}
-  - {fileID: 4742292353693251869, guid: 8f97bbb68c3722a419f6ff2e6fad9f38, type: 3}
-  - {fileID: 7320177924824648849, guid: 33fec93a5cf01854bb6c8898cbb39e88, type: 3}
-  - {fileID: 4874926615690117762, guid: 0a50d19df6b30bd4ca51e2ae391ff6d7, type: 3}
-  - {fileID: 2857751926654814190, guid: 0aa050b7a4a60e14f9b07f5f32425125, type: 3}
-  - {fileID: 2857751926654814190, guid: 06534023016fb0045a8198e64002a5bf, type: 3}
---- !u!114 &8668050369247080694
+  - {fileID: 8852987767979922825, guid: c29a7fc0da952344b8e6d6c67847183d, type: 3}
+  - {fileID: 8852987767979922825, guid: c29a7fc0da952344b8e6d6c67847183d, type: 3}
+  - {fileID: 8852987767979922825, guid: d20095c2cef416b4f954b42605211cca, type: 3}
+  - {fileID: 8852987767979922825, guid: c29a7fc0da952344b8e6d6c67847183d, type: 3}
+  - {fileID: 8852987767979922825, guid: c29a7fc0da952344b8e6d6c67847183d, type: 3}
+  - {fileID: 8852987767979922825, guid: c29a7fc0da952344b8e6d6c67847183d, type: 3}
+--- !u!114 &8668050369973418531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,60 +99,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8668050369247080691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9afb0452421df7e45a7a72dd4ace253d, type: 3}
+  m_Script: {fileID: 11500000, guid: aa361e467d134224989d1bc3970cbf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealEffect: {fileID: 4477562938608091067, guid: a79ad4ba8240fa14d98bbf420cc0e2a0,
-    type: 3}
-  UpgradeEffect: {fileID: 11533904105166737, guid: e52e9d78a0eb9ef4e869b512695cda10,
-    type: 3}
-  BattleEffect: {fileID: 520777612219536444, guid: f5a5a6665f2d8c14fbe83b9fb3c65d92,
-    type: 3}
-  RaceInfos:
-  - Name: "\u9E7F"
-    CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
-      type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: 7acb28ca93af6054fbc1a97c76c779b5,
-      type: 3}
-    cards:
-    - cards:
-      - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
-      - {fileID: 6943707428436127944, guid: 78fd9117c94cc5d4da4498b1cdae6f37, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: 3552a16cd4d1d07429a2dc7e6067e5fb, type: 3}
-      - {fileID: 6943707428436127944, guid: f3ec0ebcd6b01144091a032ba58629ef, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: a682d0ca49143f34a876209aaac67dec, type: 3}
-      - {fileID: 6943707428436127944, guid: 0d1a9c7f809a1de4681fad5a97e134af, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: 307214ba36d6d1d4288fb46e9cb86d49, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: b1392f2a8d25c1742ba1b8436dfb8a25, type: 3}
-      - {fileID: 6943707428436127944, guid: 54e02565771f2044b8b49ac2e4c67ec4, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: 2735b889495651d4eb0a00956d43f22c, type: 3}
-      - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
-  - Name: "\u718A"
-    CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
-      type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
-      type: 3}
-    cards:
-    - cards:
-      - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
-      - {fileID: 6943707428436127944, guid: 7d4305f701ad4b64d8be5b44e5a7dfdf, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: 56e6ca40384227f4290f86e0c4cd67a0, type: 3}
-      - {fileID: 6943707428436127944, guid: f3ec0ebcd6b01144091a032ba58629ef, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: f5cbf84d1e6507b41b341b8f2fdc7208, type: 3}
-      - {fileID: 6943707428436127944, guid: 0d1a9c7f809a1de4681fad5a97e134af, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: 307214ba36d6d1d4288fb46e9cb86d49, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: b1392f2a8d25c1742ba1b8436dfb8a25, type: 3}
-      - {fileID: 6943707428436127944, guid: 56e6ca40384227f4290f86e0c4cd67a0, type: 3}
-    - cards:
-      - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
-  EffectPrefabs:
-  - {fileID: 5756787108513754847, guid: 82b30a0be5e5f794a8555ef31c868aab, type: 3}
+  AllCardObjects:
+  - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+  - {fileID: 6943707428436127944, guid: 307214ba36d6d1d4288fb46e9cb86d49, type: 3}
+  - {fileID: 6943707428436127944, guid: f3ec0ebcd6b01144091a032ba58629ef, type: 3}
+  - {fileID: 6943707428436127944, guid: 3552a16cd4d1d07429a2dc7e6067e5fb, type: 3}
+  - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
+  - {fileID: 6943707428436127944, guid: 78fd9117c94cc5d4da4498b1cdae6f37, type: 3}
+  - {fileID: 6943707428436127944, guid: 0d1a9c7f809a1de4681fad5a97e134af, type: 3}
+  - {fileID: 6943707428436127944, guid: a682d0ca49143f34a876209aaac67dec, type: 3}
+  - {fileID: 6943707428436127944, guid: 54e02565771f2044b8b49ac2e4c67ec4, type: 3}
+  - {fileID: 6943707428436127944, guid: b1392f2a8d25c1742ba1b8436dfb8a25, type: 3}
+  - {fileID: 6943707428436127944, guid: 2735b889495651d4eb0a00956d43f22c, type: 3}
+  - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
+  - {fileID: 6943707428436127944, guid: f5cbf84d1e6507b41b341b8f2fdc7208, type: 3}
+  - {fileID: 6943707428436127944, guid: 7d4305f701ad4b64d8be5b44e5a7dfdf, type: 3}
+  - {fileID: 6943707428436127944, guid: 56e6ca40384227f4290f86e0c4cd67a0, type: 3}
+  - {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09, type: 3}
+  - {fileID: 6943707428436127944, guid: ec2b3b2259dbb9e47843fc3eb05c5660, type: 3}
+  - {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3, type: 3}
+  AllCardNames: []

@@ -89,7 +89,7 @@ public class CardManager : MonoBehaviour
 
         for (int i = 0; i < StartDeck.Length; i++)
         {
-            AddNewCard(StartDeck[i]);
+            AddNewCard(StartDeck[i], null);
         }
     }
  
@@ -190,10 +190,14 @@ public class CardManager : MonoBehaviour
             NewOccupiedCells.RemoveAt(0);
             int randomIndex = Random.Range(0, Race.cards[(int)cell.CellType].cards.Length);
             GameObject g = Race.cards[(int)cell.CellType].cards[randomIndex];
-            AddNewCard(g);
+            
             if(camp == PlayerController.instance.camp)
             {
-                UIManager.instance.CardChoosed(g);
+                UIManager.instance.CardChoosed(g, cell);
+            }
+            else
+            {
+                AddNewCard(g, cell);
             }
         }       
     }
@@ -331,15 +335,42 @@ public class CardManager : MonoBehaviour
         NewOccupiedCells.Add(cell);
         UpdateOccupiedBoundaryLines();
     }
-    public void AddNewCard(GameObject CardPrefab)
+    public void AddNewCard(GameObject CardPrefab, HexCell cell)
     {
         Card_Base card = Instantiate(CardPrefab).GetComponent<Card_Base>();
+        card.CardSource = cell;
         UIManager.instance.AddCard(card.gameObject, camp);
         AddToUsedCards(card);
     }
     public void LostCell(HexCell cell)
     {
         OccupiedCells.Remove(cell);
+        bool Removed = false;
+        for (int i = 0; i < UsedCardsDeck.Count; i++)
+        {
+            if (UsedCardsDeck[i].CardSource == cell)
+            {
+                Removed = true;
+                UsedCardsDeck.RemoveAt(i);
+                break;
+            }
+        }
+        if (!Removed)
+        {
+            for (int i = 0; i < Cards.Count; i++)
+            {
+                if (InGameCardDeck[i].CardSource == cell)
+                {
+                    Removed = true;
+                    InGameCardDeck.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+        if (!Removed)
+        {
+            Debug.LogError("Lost Cell:" + cell + " can't find the card from it");
+        }
         UpdateOccupiedBoundaryLines();
     }
     public void SetUnitMoveTo(HexCell TargetCell)

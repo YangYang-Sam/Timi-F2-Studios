@@ -50,6 +50,7 @@ public class Unit_Base : MonoBehaviour
                 }
                 else
                 {
+                    PathCells.Clear();
                     Cell.UnitArrived(this);
                 }
                 break;
