@@ -1308,13 +1308,13 @@ PrefabInstance:
         type: 3}
       propertyPath: StartDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3,
+      objectReference: {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454,
         type: 3}
     - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
         type: 3}
       propertyPath: StartDeck.Array.data[1]
       value: 
-      objectReference: {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3,
+      objectReference: {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454,
         type: 3}
     - target: {fileID: 8190699500804290975, guid: 13c6f45aa1148dd44bda41de1838ea8a,
         type: 3}
@@ -1326,7 +1326,7 @@ PrefabInstance:
         type: 3}
       propertyPath: StartDeck.Array.data[2]
       value: 
-      objectReference: {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3,
+      objectReference: {fileID: 6943707428436127944, guid: ec2b3b2259dbb9e47843fc3eb05c5660,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c6f45aa1148dd44bda41de1838ea8a, type: 3}
@@ -1412,6 +1412,11 @@ PrefabInstance:
       propertyPath: CardManagers.Array.data[2]
       value: 
       objectReference: {fileID: 468351576}
+    - target: {fileID: 8668050369247080692, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
+        type: 3}
+      propertyPath: DecisionDuration
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 8668050369973418531, guid: 2e6b3b2b553014f4ab19a4eebe0dd340,
         type: 3}
       propertyPath: AllCardObjects.Array.size
