@@ -16,6 +16,6 @@ public class Effect_Stay : CardEffect
     public override void Effect(CardManager user, HexCell cell)
     {
         cell.GetUnitOnCell().canMove = false;
-        cell.GetUnitOnCell().ChangeHealth(amount);
+        cell.GetUnitOnCell().ChangeHealth(amount, user.GetCorePosition());
     }
 }

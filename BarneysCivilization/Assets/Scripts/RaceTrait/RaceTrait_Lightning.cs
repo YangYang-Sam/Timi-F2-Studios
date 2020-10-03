@@ -18,7 +18,14 @@ public class RaceTrait_Lightning : RaceTrait_Base
                 {
                     if (unit.Level > 1)
                     {
-                        unit.ChangeHealth(Mathf.Min(unit.MoveDistance, 3));
+                        for (int i = 0; i < unit.VisitCells.Count; i++)
+                        {
+                            unit.ChangeHealth(Mathf.Min(unit.MoveDistance, 1), unit.VisitCells[i].transform.position);
+                            if (i >= 2)
+                            {
+                                break;
+                            }
+                        }                       
                     }
                 }
                 break;

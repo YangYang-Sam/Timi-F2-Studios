@@ -27,6 +27,7 @@ public class Unit_Base : MonoBehaviour
     private GameObject[] LevelGraphics;
 
     public List<HexCell> PathCells = new List<HexCell>();
+    public List<HexCell> VisitCells = new List<HexCell>();
     private void Start()
     {
         InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
@@ -47,7 +48,7 @@ public class Unit_Base : MonoBehaviour
                 {
                     Unit_Base unit = Owner.CreateNewUnit(Cell, Cell.MinUnitAmount);
                     Cell.UnitArrived(unit);
-                    ChangeHealth(-Cell.MinUnitAmount);
+                    ChangeHealth(-Cell.MinUnitAmount,Vector3.zero);
                     StartCoroutine(MoveProcess());
                 }
                 else
@@ -99,7 +100,7 @@ public class Unit_Base : MonoBehaviour
         {
             MergeToUnit.MoveDistance = MoveDistance;
         }
-        MergeToUnit.ChangeHealth(Health);
+        MergeToUnit.ChangeHealth(Health,transform.position);
         MergeToUnit.TempHealth += TempHealth;
         UnitRemoved();
     }
@@ -112,12 +113,14 @@ public class Unit_Base : MonoBehaviour
         UnitMoveTo(destinyCell);
         SetAnimMoveState(true);
         MoveDistance = PathCells.Count;
+        VisitCells.Clear();
         float speed = PathCells.Count * HexMetrics.innerRadius * 2 / 2.5f;
         while (PathCells.Count > 0)
         {                        
             transform.position += (PathCells[0].transform.position - transform.position).normalized * speed * Time.deltaTime;
             if (Vector3.Distance(PathCells[0].transform.position, transform.position) <= 3)
-            {                
+            {
+                VisitCells.Add(PathCells[0]);
                 PathCells.RemoveAt(0);
                 if (PathCells.Count > 0)
                 {
@@ -215,7 +218,7 @@ public class Unit_Base : MonoBehaviour
             amount -= TempHealth;
 
             LastDamage = Mathf.Min(amount, Health);
-            ChangeHealth(-amount);
+            ChangeHealth(-amount,Vector3.zero);
             if (Health <= 0)
             {
                 if (DeathEvent != null)
@@ -230,7 +233,7 @@ public class Unit_Base : MonoBehaviour
     }
     public event System.Action<int> DeathEvent;
 
-    public void ChangeHealth(int amount)
+    public void ChangeHealth(int amount, Vector3 FromPosition)
     {
         int oldLevel = Level;
         Health += amount;
@@ -259,6 +262,7 @@ public class Unit_Base : MonoBehaviour
             if (amount > 0)
             {
                 ArtResourceManager.instance.CreateHealEffect(transform.position);
+                CurveManger.instance.StartNewCurve(FromPosition, transform.position, amount, PlayerController.instance.OrbPrefabs[Owner.camp]);
             }
         }
         if (HealthChangeEvent != null)

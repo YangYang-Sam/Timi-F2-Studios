@@ -22,9 +22,10 @@ public class PlayerBuff_WaterGather : PlayerBuff_Base
             {
                 amount += AmountPerRain;
             }
-
+            unit.ChangeHealth(amount,cell.transform.position);
             foreach (HexCell neighbor in cell.NearbyCells)
             {
+                amount = 0;
                 if (Types.Contains(neighbor.CellType))
                 {
                     amount+= AmountPerCell;
@@ -33,8 +34,9 @@ public class PlayerBuff_WaterGather : PlayerBuff_Base
                 {
                     amount += AmountPerRain;
                 }
+                unit.ChangeHealth(amount,neighbor.transform.position);
             }
-            unit.ChangeHealth(amount);
+            
         }
     }
 }

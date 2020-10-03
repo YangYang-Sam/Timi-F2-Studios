@@ -8,6 +8,6 @@ public class PlayerBuff_Revive : PlayerBuff_Base
     protected override void OnUnitWinBattle(Unit_Base unit, HexCell cell)
     {
         base.OnUnitWinBattle(unit, cell);
-        unit.ChangeHealth(Mathf.Min(amount, unit.LastDamage));
+        unit.ChangeHealth(Mathf.Min(amount, unit.LastDamage),cell.transform.position);
     }
 }

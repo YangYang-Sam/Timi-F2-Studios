@@ -28,7 +28,7 @@ public class Building_Tinder : Building_Base
                 {
                     if(buff.BuffType == CellBuffType.Fire)
                     {
-                        cell.GetUnitOnCell().ChangeHealth(Amount);
+                        cell.GetUnitOnCell().ChangeHealth(Amount,Cell.transform.position);
                         break;
                     }
                 }

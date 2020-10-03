@@ -19,7 +19,7 @@ public class Building_BigTree : Building_Base
         base.OnGameStateChange();
         if (InGameManager.isGameState(GameStateType.AfterBattle))
         {
-            Cell.GetUnitOnCell().ChangeHealth(1);
+            Cell.GetUnitOnCell().ChangeHealth(1,transform.position);
             if (Cell.GetUnitOnCell().Level == 3)
             {
                 OnBuildingDestroy();

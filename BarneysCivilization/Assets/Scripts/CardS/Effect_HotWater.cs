@@ -22,7 +22,7 @@ public class Effect_HotWater : CardEffect
             var unit = occupiedCell.GetUnitOnCell();
             if(unit.Level >= MinLevel)
             {
-                unit.ChangeHealth(HealthAmount);
+                unit.ChangeHealth(HealthAmount, user.GetCorePosition());
             }           
        }
     }

@@ -97,7 +97,10 @@ public class CardManager : MonoBehaviour
             AddNewCard(g, null);
         }
     }
- 
+ public Vector3 GetCorePosition()
+    {
+        return PlayerCore.transform.position;
+    }
     public Unit_Base CreateNewUnit(HexCell cell,int health)
     {
         GameObject g = Instantiate(GetUnitPrefab());
@@ -137,7 +140,7 @@ public class CardManager : MonoBehaviour
                 }
                 else
                 {
-                    PlayerCore.Cell.PlacedUnits[0].ChangeHealth(ResourceAmount + TempResourceAmount);
+                    PlayerCore.Cell.PlacedUnits[0].ChangeHealth(ResourceAmount + TempResourceAmount, GetCorePosition());
                 }
 
                 TempResourceAmount = 0;

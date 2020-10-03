@@ -42,7 +42,7 @@ public class Building_AttackArea : Building_Base
             {
                 if (unit.Owner == Owner)
                 {
-                    unit.ChangeHealth(Amount * Level);
+                    unit.ChangeHealth(Amount * Level,transform.position);
                     AddBuff(cell);
                     break;
                 }

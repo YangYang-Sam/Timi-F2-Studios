@@ -45,7 +45,7 @@ public class Effect_Thaw : CardEffect
             {
                 if(nearbyCell && (nearbyCell.OwnerManager == user) && nearbyCell.GetUnitOnCell())
                 {
-                    nearbyCell.GetUnitOnCell().ChangeHealth(NearbyHealthAddAmount);
+                    nearbyCell.GetUnitOnCell().ChangeHealth(NearbyHealthAddAmount,cell.transform.position);
                     ReduceAmount += CenterHealthReduceAmount;
                 }
             }

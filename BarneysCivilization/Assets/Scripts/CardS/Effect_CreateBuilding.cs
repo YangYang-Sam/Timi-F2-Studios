@@ -46,7 +46,7 @@ public class Effect_CreateBuilding : CardEffect
         base.Effect(user, cell);
         if (DecreaseHealth != 0)
         {
-            cell.GetUnitOnCell().ChangeHealth(-DecreaseHealth);
+            cell.GetUnitOnCell().ChangeHealth(-DecreaseHealth,Vector3.zero);
         }
         if (cell.PlacedBuilding == null)
         {

@@ -13,7 +13,7 @@ public class RaceTrait_Fire : RaceTrait_Base
     {
         if (cell.CellType == HexCellType.Forest || cell.CellType== HexCellType.Grass)
         {
-            cell.GetUnitOnCell().ChangeHealth(1);
+            cell.GetUnitOnCell().ChangeHealth(1, owner.GetCorePosition());
         }
     }
 }

@@ -20,7 +20,7 @@ public class Effect_CellProduce : CardEffect
         {
             if (cellType.Contains(c.CellType))
             {
-                c.GetUnitOnCell().ChangeHealth(amount);
+                c.GetUnitOnCell().ChangeHealth(amount, user.GetCorePosition());
             }
         }
     }

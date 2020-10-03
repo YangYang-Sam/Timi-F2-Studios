@@ -15,6 +15,6 @@ public class Effect_Resource : CardEffect
     public override void Effect(CardManager user, HexCell cell)
     {
         Unit_Base unit = cell.GetUnitOnCell();
-        unit.ChangeHealth(user.GetTotalResource());
+        unit.ChangeHealth(user.GetTotalResource(), user.GetCorePosition());
     }
 }

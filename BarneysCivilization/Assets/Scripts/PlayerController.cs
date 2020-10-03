@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public static bool canControl = false;
     public int camp;
 
+    public GameObject[] OrbPrefabs;
     private void Awake()
     {
         if (instance != null)

@@ -21,7 +21,7 @@ public class CellBuff_Nourish : CellBuff_Base
             {
                 if(buff.BuffType == CellBuffType.Rain)
                 {
-                    Cell.GetUnitOnCell().ChangeHealth(HealthAddAmount);
+                    Cell.GetUnitOnCell().ChangeHealth(HealthAddAmount,Creator.GetCorePosition());
                     break;
                 }
             }

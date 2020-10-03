@@ -16,7 +16,7 @@ public class RaceTrait_Water : RaceTrait_Base
             CellBuff_Base oldBuff = unit.Cell.FindBuff(CellBuffType.Rain);
             if (oldBuff != null)
             {
-                unit.ChangeHealth(1);
+                unit.ChangeHealth(1, owner.GetCorePosition());
                 ArtResourceManager.instance.CreateTestEffect("高涨之水", unit.transform.position, new Color(0.7f,1, 0.9424f,1), 1);
             }            
         }

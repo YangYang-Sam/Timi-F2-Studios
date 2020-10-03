@@ -18,7 +18,7 @@ public class CellBuff_SeedOfNature : CellBuff_Base
         {
             if (Cell.GetUnitOnCell() != null)
             {
-                Cell.GetUnitOnCell().ChangeHealth(1);
+                Cell.GetUnitOnCell().ChangeHealth(1, Creator.GetCorePosition());
             }
         }
     }

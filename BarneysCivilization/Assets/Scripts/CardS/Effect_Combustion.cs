@@ -34,7 +34,7 @@ public class Effect_Combustion : CardEffect
         {
             if(HasFireBuff(occupiedCell))
             {
-                occupiedCell.GetUnitOnCell().ChangeHealth(HealthAddAmount);
+                occupiedCell.GetUnitOnCell().ChangeHealth(HealthAddAmount, user.GetCorePosition());
             }         
         }
     }

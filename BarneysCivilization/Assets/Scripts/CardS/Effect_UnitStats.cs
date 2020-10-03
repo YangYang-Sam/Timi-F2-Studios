@@ -20,7 +20,7 @@ public class Effect_UnitStats : CardEffect
         user.ActionPoint += ActionPoint;
         Unit_Base unit = cell.GetUnitOnCell();
         unit.AddTempHealth(TempHealth);
-        unit.ChangeHealth(Health);
+        unit.ChangeHealth(Health,user.PlayerCore.transform.position);
 
     }
 }

@@ -9,8 +9,7 @@ public class Building_Core : Building_Base
         base.OnGameStateChange();
         if (InGameManager.isGameState(GameStateType.Decision))
         {
-            Cell.GetUnitOnCell().ChangeHealth(Owner.GetTotalResource());
-
+            Cell.GetUnitOnCell().ChangeHealth(Owner.GetTotalResource(),Owner.GetCorePosition());
         }
     }
 }

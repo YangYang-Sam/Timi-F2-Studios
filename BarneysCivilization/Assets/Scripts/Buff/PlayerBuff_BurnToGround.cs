@@ -17,20 +17,24 @@ public class PlayerBuff_BurnToGround : PlayerBuff_Base
             if (cell.FindBuff(CellBuffType.Rain) != null)
             {
                 amount += AmountPerFire;
+                unit.ChangeHealth(AmountPerFire, Cell.transform.position);                
             }
 
             foreach (HexCell neighbor in cell.NearbyCells)
             {
+                amount = 0;
                 if (neighbor.OwnerManager==Owner)
                 {
                     amount += AmountPerAlly;
+                
                 }
                 if (neighbor.FindBuff(CellBuffType.Fire) != null)
                 {
                     amount += AmountPerFire;
                 }
+                unit.ChangeHealth(amount, neighbor.transform.position);
             }
-            unit.ChangeHealth(amount);
+            
         }
     }
 }

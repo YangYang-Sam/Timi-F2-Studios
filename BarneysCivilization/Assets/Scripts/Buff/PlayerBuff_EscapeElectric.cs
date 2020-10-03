@@ -14,7 +14,7 @@ public class PlayerBuff_EscapeElectric : PlayerBuff_Base
                 {
                     if (unit && (unit.Owner == Creator))
                     {
-                        unit.ChangeHealth(damage / 2);
+                        unit.ChangeHealth(damage / 2,Cell.transform.position);
                         return;
                     }
                 }

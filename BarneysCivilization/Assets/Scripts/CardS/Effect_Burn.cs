@@ -33,7 +33,7 @@ public class Effect_Burn : CardEffect
 
     public override void Effect(CardManager user, HexCell cell)
     {
-        cell.GetUnitOnCell().ChangeHealth(HealthAddAmount);
+        cell.GetUnitOnCell().ChangeHealth(HealthAddAmount, user.GetCorePosition());
         GameObject g = Instantiate(BuffPrefab, cell.transform.position, Quaternion.identity);
         CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
         buff.Turns = FireTurns;

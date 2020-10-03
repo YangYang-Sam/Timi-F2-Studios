@@ -31,7 +31,7 @@ public class Effect_SnowTreasure : CardEffect
         }
         foreach(HexCell c in BuildingGrids)
         {
-            c.GetUnitOnCell().ChangeHealth(amount);
+            c.GetUnitOnCell().ChangeHealth(amount, user.GetCorePosition());
         }
     }
 }

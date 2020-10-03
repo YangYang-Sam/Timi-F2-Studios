@@ -385,7 +385,7 @@ MonoBehaviour:
   IntervalTime: 0.1
   DefaultFlyTime: 0.5
   TotalTime: 1
-  G: -200
+  G: -140
   CurvePointPrefab: {fileID: 0}
 --- !u!4 &497088298
 Transform:
@@ -436,6 +436,7 @@ MonoBehaviour:
     type: 3}
   BattleEffect: {fileID: 520777612219536444, guid: f5a5a6665f2d8c14fbe83b9fb3c65d92,
     type: 3}
+  TextEffectPrefab: {fileID: 0}
   BallPrefab: {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54,
     type: 3}
   RaceInfos:
@@ -752,6 +753,13 @@ MonoBehaviour:
   SelectUnit: {fileID: 0}
   jobType: 0
   camp: 0
+  OrbPrefabs:
+  - {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54, type: 3}
+  - {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54, type: 3}
+  - {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54, type: 3}
+  - {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54, type: 3}
+  - {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54, type: 3}
+  - {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54, type: 3}
 --- !u!4 &1195341138
 Transform:
   m_ObjectHideFlags: 0
