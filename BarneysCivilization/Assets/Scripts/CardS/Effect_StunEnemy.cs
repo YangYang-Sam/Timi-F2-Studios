@@ -8,7 +8,7 @@ public class Effect_StunEnemy : CardEffect
     public float EffectDuration=1;
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
-        return base.CanUseCard(user, cell) && GetCanUseCells(user).Contains(cell);
+        return base.CanUseCard(user, cell);
     }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {

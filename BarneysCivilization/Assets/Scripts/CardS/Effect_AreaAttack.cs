@@ -8,7 +8,7 @@ public class Effect_AreaAttack : CardEffect
     public int EnemyAmount;
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
-        return base.CanUseCard(user, cell) && GetCanUseCells(user).Contains(cell);
+        return base.CanUseCard(user, cell);
     }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {

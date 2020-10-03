@@ -17,7 +17,8 @@ public class RaceTrait_Water : RaceTrait_Base
             if (oldBuff != null)
             {
                 unit.ChangeHealth(1);
-            }
+                ArtResourceManager.instance.CreateTestEffect("高涨之水", unit.transform.position, new Color(0.7f,1, 0.9424f,1), 1);
+            }            
         }
     }
 }

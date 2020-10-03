@@ -7,7 +7,7 @@ public class Effect_Stay : CardEffect
     public int amount;
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
-        return base.CanUseCard(user, cell) && GetCanUseCells(user).Contains(cell);
+        return base.CanUseCard(user, cell);
     }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {

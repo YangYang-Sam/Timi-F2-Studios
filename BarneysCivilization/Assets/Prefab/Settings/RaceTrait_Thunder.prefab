@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5770948835251651120}
-  - component: {fileID: 2274732291954477234}
+  - component: {fileID: -919214951575523588}
   m_Layer: 0
-  m_Name: RaceTrait_Water
+  m_Name: RaceTrait_Thunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2274732291954477234
+--- !u!114 &-919214951575523588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9058298516049921785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd5c11594772eb94bbe38cb0fced65b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 29dcbf66c5b09f347958c143a0f5c70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: {fileID: 0}
+  ActionPointCost: 1
+  NonTargetCard: 0
+  Turns: 1
+  BuffPrefab: {fileID: 0}

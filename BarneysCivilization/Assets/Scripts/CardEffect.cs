@@ -12,7 +12,7 @@ public class CardEffect : MonoBehaviour
     }
     public virtual bool CanUseCard(CardManager user, HexCell cell)
     {
-        return user.ActionPoint >= ActionPointCost;
+        return user.ActionPoint >= ActionPointCost && (NonTargetCard || GetCanUseCells(user).Contains(cell));
     }
     public virtual void Effect(CardManager user, HexCell cell)
     {
