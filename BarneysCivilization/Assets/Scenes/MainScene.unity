@@ -168,6 +168,10 @@ MonoBehaviour:
       type: 3}
     UnitPrefab: {fileID: 2875863986545933350, guid: 7acb28ca93af6054fbc1a97c76c779b5,
       type: 3}
+    StartDeckPrefabs:
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
@@ -205,6 +209,10 @@ MonoBehaviour:
       type: 3}
     UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
       type: 3}
+    StartDeckPrefabs:
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
@@ -234,6 +242,10 @@ MonoBehaviour:
       type: 3}
     UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
       type: 3}
+    StartDeckPrefabs:
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
@@ -271,6 +283,10 @@ MonoBehaviour:
       type: 3}
     UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
       type: 3}
+    StartDeckPrefabs:
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
@@ -300,6 +316,7 @@ MonoBehaviour:
       type: 3}
     UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
       type: 3}
+    StartDeckPrefabs: []
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
@@ -329,6 +346,7 @@ MonoBehaviour:
       type: 3}
     UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
       type: 3}
+    StartDeckPrefabs: []
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}

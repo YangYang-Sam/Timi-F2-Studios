@@ -85,7 +85,7 @@ public class UI_MainScene : MonoBehaviour
         UserData.instance.RandomSeeds = new int[10];
         for (int i = 0; i < 10; i++)       
         {
-            i = Random.Range(0, int.MaxValue);
+            UserData.instance.RandomSeeds[i] = Random.Range(0, int.MaxValue);
         }
         SceneManager.LoadScene("BattleScene");
     }

@@ -19,6 +19,19 @@ public class Building_Base : MonoBehaviour
         cell.OnBuildingCreatedOnCell(this);
         InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
     }
+    public void ChangeCell(HexCell newCell)
+    {
+        Cell.OwnerChangeEvent -= OnCellChangeOwner;
+        InGameManager.instance.GameStateChangeEvent -= OnGameStateChange;
+        Cell.PlacedBuilding = null;
+
+        Cell = newCell;
+        Cell.OwnerChangeEvent += OnCellChangeOwner;
+        Cell.PlacedBuilding = this;
+        InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
+
+        transform.position = Cell.transform.position;
+    }
     public virtual bool CanUpgrade(CardManager user)
     {
         return MaxLevel > Level;

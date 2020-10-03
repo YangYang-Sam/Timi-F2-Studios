@@ -51,7 +51,7 @@ MonoBehaviour:
   IsPermenant: 1
   Turns: 0
   Level: 1
-  MaxLevel: 1
+  MaxLevel: 2
   Amount: 1
   WoodSpiritBuff: {fileID: 1477477239368706076, guid: b58d403aa74832b43a484888bc32c083,
     type: 3}

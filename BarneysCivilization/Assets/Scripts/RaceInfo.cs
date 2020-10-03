@@ -15,6 +15,7 @@ public class RaceInfo
     [Header("Prefabs")]
     public GameObject CorePrefab;
     public GameObject UnitPrefab;
+    public GameObject[] StartDeckPrefabs;
     public HexCards[] cards;
     public GameObject RaceTraitPrefab;
 

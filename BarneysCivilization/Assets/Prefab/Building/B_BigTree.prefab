@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3486931390343410433}
-  - component: {fileID: 3496330935874996695}
+  - component: {fileID: -2239278997560704095}
   m_Layer: 0
-  m_Name: B_Tree
+  m_Name: B_BigTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3496330935874996695
+--- !u!114 &-2239278997560704095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8066953169565981884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8cc934fed0da3044b0e89c4487f4483, type: 3}
+  m_Script: {fileID: 11500000, guid: 6714f69f955f74143ae34c377ebf351c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Cell: {fileID: 0}
@@ -49,9 +49,7 @@ MonoBehaviour:
   IsPermenant: 1
   Turns: 0
   Level: 1
-  MaxLevel: 3
-  Threshold: 5
-  Amount: 1
+  MaxLevel: 1
 --- !u!1001 &2276934281346672692
 PrefabInstance:
   m_ObjectHideFlags: 0

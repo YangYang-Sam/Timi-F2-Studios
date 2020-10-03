@@ -14,7 +14,6 @@ public class CardManager : MonoBehaviour
     public List<Card_Base> InGameCardDeck = new List<Card_Base>();
     private List<Card_Base> UsedCardsDeck = new List<Card_Base>();
     private List<Card_Base> VanishedCardsDeck = new List<Card_Base>();
-    public GameObject[] StartDeck;
 
     public List<Unit_Base> Units = new List<Unit_Base>();
     public List<HexCell> OccupiedCells = new List<HexCell>();
@@ -87,9 +86,10 @@ public class CardManager : MonoBehaviour
         Unit_Base unit = CreateNewUnit(startCell, 1);
         startCell.ChangeOwner(unit);
 
-        for (int i = 0; i < StartDeck.Length; i++)
+        for (int i = 0; i < Race.StartDeckPrefabs.Length; i++)
         {
-            AddNewCard(StartDeck[i], null);
+            GameObject g = Instantiate(Race.StartDeckPrefabs[i]);
+            AddNewCard(g, null);
         }
     }
  
