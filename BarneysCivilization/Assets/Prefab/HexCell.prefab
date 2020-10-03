@@ -144,12 +144,15 @@ MonoBehaviour:
     z: 0
   CellType: 0
   HexIndex: 0
+  MinUnitAmount: 1
   color: {r: 0, g: 0, b: 0, a: 0}
-  CardPrefab: {fileID: 0}
   OwnerManager: {fileID: 0}
   PlacedUnits: []
   NearbyCells: []
+  EdgeIndexesOnBoundary: 
   PathFromCell: {fileID: 0}
+  PlacedBuilding: {fileID: 0}
+  CellBuffs: []
   CanPass: 1
   TypeText: {fileID: 1582871700947842234}
   HightlightSprite: {fileID: 4238096031326684423}
@@ -179,7 +182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4407402985480766165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 6.9275, y: 6.9275036, z: 6.9275036}
   m_Children: []
   m_Father: {fileID: 7557541789524664966}
@@ -465,7 +468,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8441234386209847243}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 

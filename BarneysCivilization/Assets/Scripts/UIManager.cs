@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
     public HexCell SelectCell;
     public List<HexCell> InteractableCells = new List<HexCell>();
     public Vector3 MousePoint;
+    public Color NormalInteractColor;
+    public Color HightlightInteractColor;
 
     [SerializeField]
     private UI_ChooseCardWidget ChooseCardWidget;
@@ -79,7 +81,7 @@ public class UIManager : MonoBehaviour
         {
             if (SelectCell != null)
             {
-                SelectCell.SetHighLightColor(Color.white);
+                SelectCell.SetHighLightColor(NormalInteractColor);
             }
             SelectCell = HexGrid.instance.GetCellByPosition(hit.point);
             if (SelectCell != null)
@@ -87,7 +89,7 @@ public class UIManager : MonoBehaviour
                 UI_ArrowMesh.instance.UpdatePosition(hit.point);
                 if (UIManager.instance.InteractableCells!=null && UIManager.instance.InteractableCells.Contains(SelectCell))
                 {
-                    SelectCell.SetHighLightColor(Color.green);
+                    SelectCell.SetHighLightColor(HightlightInteractColor);
                 }
             }
         }
@@ -95,7 +97,7 @@ public class UIManager : MonoBehaviour
         {
             if (SelectCell != null)
             {
-                SelectCell.SetHighLightColor(Color.white);
+                SelectCell.SetHighLightColor(NormalInteractColor);
                 SelectCell = null;
             }
         }

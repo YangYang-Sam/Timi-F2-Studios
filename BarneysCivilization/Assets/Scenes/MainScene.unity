@@ -375,6 +375,31 @@ MonoBehaviour:
   - {fileID: 1710729663482659346, guid: cc17ed256889634498a8ab473f8ee660, type: 3}
   - {fileID: 1710729663482659346, guid: 7c300e3c6fe57bd4a841b53c3169de83, type: 3}
   - {fileID: 1710729663482659346, guid: 776dfd95e27043b4f95337f4e0eee48a, type: 3}
+  Terrains:
+  - TerrainPerfab:
+    - {fileID: 3254252090728733660, guid: eccb74349fc57bd4080f52c98e8bea09, type: 3}
+    - {fileID: 418473558480452922, guid: bcf7d7a483730de4b851b052a56da55e, type: 3}
+    - {fileID: 4396035303539464039, guid: 604047a3510ebd748bbb5271d9d849a0, type: 3}
+  - TerrainPerfab:
+    - {fileID: 5360856578164299248, guid: 8f97bbb68c3722a419f6ff2e6fad9f38, type: 3}
+    - {fileID: 801489400216782297, guid: 580cb3bca3edea14685ef2cba49c7749, type: 3}
+    - {fileID: 8104746097294631259, guid: a001ccbdf56e46342952c88fb850dc5f, type: 3}
+  - TerrainPerfab:
+    - {fileID: 7206859520391851552, guid: 42b5e865cec049a4fbde65d588bfa12d, type: 3}
+    - {fileID: 4085324135961240585, guid: c739e69c05636f544856b3347962f17d, type: 3}
+    - {fileID: 883923452130021114, guid: 3e3b9b7f9d3527148a17ff70bd474cae, type: 3}
+  - TerrainPerfab:
+    - {fileID: 6289001541469101647, guid: 0a50d19df6b30bd4ca51e2ae391ff6d7, type: 3}
+    - {fileID: 8426635143614784255, guid: 3341fa677fb6a794b826ffc16ab9be4d, type: 3}
+    - {fileID: 3900675183221906990, guid: 77ce7a58bbe0a6248bd68f4bf7a0c456, type: 3}
+  - TerrainPerfab:
+    - {fileID: 274648239985804587, guid: 9d9fdccb14f145f408bb38fdfe8dedeb, type: 3}
+    - {fileID: 435663179631154147, guid: a5a9d1eabde593f4da2770371a89d6cd, type: 3}
+    - {fileID: 1574418654488571314, guid: b900032857bcd4340a9fdb72c97ebc52, type: 3}
+  - TerrainPerfab:
+    - {fileID: 5869670225738966347, guid: d1eeffbaf6090844389ee01dba48d9a1, type: 3}
+    - {fileID: 964960501499927901, guid: 17edb2648172d41498e36c4281f5170c, type: 3}
+    - {fileID: 374214137680816255, guid: 7dc1f9695753f274fbe72faf2b817649, type: 3}
 --- !u!4 &69906781
 Transform:
   m_ObjectHideFlags: 0

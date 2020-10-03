@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArtResourceManager : MonoBehaviour
 {
     public static ArtResourceManager instance;
-
+    
     private void Awake()
     {
         if (instance != null)
@@ -28,6 +28,17 @@ public class ArtResourceManager : MonoBehaviour
     public RaceInfo[] RaceInfos;
     public GameObject[] EffectPrefabs;
     public GameObject[] CellIconPrefab;
+
+    [System.Serializable]
+    public class TerrainPrefabs
+    {
+        public GameObject[] TerrainPerfab;
+    }
+    public TerrainPrefabs[] Terrains;
+    public GameObject GetTerrainPrefab(int typeIndex)
+    {
+        return Terrains[typeIndex].TerrainPerfab[Random.Range(0, Terrains[typeIndex].TerrainPerfab.Length)];
+    }
     public void CreateHealEffect(Vector3 pos)
     {
         GameObject g = Instantiate(HealEffect, pos, Quaternion.identity);

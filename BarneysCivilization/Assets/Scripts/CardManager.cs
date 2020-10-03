@@ -78,6 +78,11 @@ public class CardManager : MonoBehaviour
         HexCell startCell = HexGrid.instance.cells[StartCell];
         PlayerCore.transform.position = startCell.transform.position;
         PlayerCore.InitCore(startCell, this);
+        if (camp == UserData.instance.Camp)
+        {
+            UI_ArrowMesh.instance.transform.position = startCell.transform.position;
+        }
+      
 
         GameObject traitObj = Instantiate(Race.RaceTraitPrefab);
         RaceTrait = traitObj.GetComponent<RaceTrait_Base>();
@@ -474,11 +479,14 @@ public class CardManager : MonoBehaviour
                 Vector3 pos1 = (1.0f - s1) * center + s1 * (center + HexMetrics.corners[EdgeIndex]);
                 Vector3 pos2 = (1.0f - s1) * center + s1 * (center + HexMetrics.corners[EdgeIndex + 1]);
                 Vector3 extent = pos1 - pos2;
-                pos1 = pos1 + extent * s2;
-                pos2 = pos2 - extent * s2;
+                pos1 = pos1 + extent * s2 + Vector3.up;
+                pos2 = pos2 - extent * s2 + Vector3.up;
 
                 line.SetPosition(0, pos1);
                 line.SetPosition(1, pos2);
+                Color c = InGameManager.instance.CampColor[camp];
+                line.startColor = c;
+                line.endColor = c;
             }
         }
     }

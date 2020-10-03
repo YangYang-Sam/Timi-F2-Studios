@@ -107,9 +107,9 @@ public class HexGrid : MonoBehaviour
 		}
 		cell.TypeText.text = t;
 
-		GameObject terrain = Instantiate(AssetsManager.instance.HexTerrainPrefab[typeIndex]);
+		GameObject terrain = Instantiate(ArtResourceManager.instance.GetTerrainPrefab(typeIndex));
 		terrain.transform.position = cell.transform.position;
-      
+		terrain.transform.eulerAngles = new Vector3(0, 60 * Random.Range(1, 6)+30, 0);
 
 
         //Text label = Instantiate<Text>(cellLabelPrefab);

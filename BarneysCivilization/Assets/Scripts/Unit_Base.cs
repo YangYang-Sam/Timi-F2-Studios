@@ -144,14 +144,20 @@ public class Unit_Base : MonoBehaviour
     {
         foreach (Animator a in animator)
         {
-            a.SetBool("isWalking", isMoving);
+            if (a.gameObject.activeSelf)
+            {
+                a.SetBool("isWalking", isMoving);
+            }
         }
     }
     private void PlayAnimDeath()
     {
         foreach (Animator a in animator)
         {
-            a.Play("Death");
+            if (a.gameObject.activeSelf)
+            {
+                a.Play("Death");
+            }
         }
     }
     public void UpdateDestinyCell()
