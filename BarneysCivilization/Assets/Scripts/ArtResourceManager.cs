@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArtResourceManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class ArtResourceManager : MonoBehaviour
     public GameObject HealEffect;
     public GameObject UpgradeEffect;
     public GameObject BattleEffect;
+
+    public GameObject TextEffectPrefab;
 
     public GameObject BallPrefab;
 
@@ -53,6 +56,20 @@ public class ArtResourceManager : MonoBehaviour
     {
         GameObject g = Instantiate(BattleEffect, pos, Quaternion.identity); 
         Destroy(g, 1);
+    }
+    public void CreateTestEffect(string Text, Vector3 position)
+    {
+        CreateTestEffect(Text, position, Color.white, 1);
+    }
+
+    public void CreateTestEffect(string Text, Vector3 position,Color c,float sizeMultiplier)
+    {
+        GameObject g = Instantiate(TextEffectPrefab, position+ Vector3.up, Quaternion.identity);
+        Text t = g.GetComponentInChildren<Text>();
+        t.text = Text;
+        t.color = c;
+        g.transform.localScale *= sizeMultiplier;
+        Destroy(g, 1.5f);
     }
 
     public void CreateEffectByIndex(Vector3 pos,int i,float duration=1)

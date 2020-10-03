@@ -155,6 +155,8 @@ MonoBehaviour:
     type: 3}
   BattleEffect: {fileID: 520777612219536444, guid: f5a5a6665f2d8c14fbe83b9fb3c65d92,
     type: 3}
+  TextEffectPrefab: {fileID: 3956588151916493729, guid: 0bbafa554f82cd04d911cab320a181fc,
+    type: 3}
   BallPrefab: {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54,
     type: 3}
   RaceInfos:

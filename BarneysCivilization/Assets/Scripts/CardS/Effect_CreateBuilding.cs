@@ -24,7 +24,7 @@ public class Effect_CreateBuilding : CardEffect
                 isSupportCellType = false;
             }
         }
-        return base.CanUseCard(user, cell) && GetCanUseCells(user).Contains(cell) && isSupportCellType;
+        return base.CanUseCard(user, cell) && isSupportCellType;
     }
 
     public override List<HexCell> GetCanUseCells(CardManager user)

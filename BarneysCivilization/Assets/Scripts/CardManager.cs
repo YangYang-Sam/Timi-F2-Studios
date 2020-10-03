@@ -317,7 +317,8 @@ public class CardManager : MonoBehaviour
         {
             card.CardEffect(this,cell);
             AddToUsedCards(card);
-            ActionPoint -= card.ActionPointCost();          
+            ActionPoint -= card.ActionPointCost();
+            ArtResourceManager.instance.CreateTestEffect(card.CardName, PlayerCore.transform.position);
         }
     }
     public void AddToUsedCards(Card_Base card)
