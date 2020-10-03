@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Effect_Vine : CardEffect
 {
+    public int ConsumeHealth;
     public int Turns = 1;
     public GameObject BuffPrefab;
     public List<HexCellType> SupportCellTypes = new List<HexCellType>();
@@ -14,7 +15,10 @@ public class Effect_Vine : CardEffect
         {
             if(SupportCellTypes.Contains(cell.CellType))
             {
-                return true;
+                if (cell.GetUnitOnCell().Health > ConsumeHealth)
+                {
+                    return true;
+                }                
             }
         }
 
@@ -43,6 +47,7 @@ public class Effect_Vine : CardEffect
 
     public override void Effect(CardManager user, HexCell cell)
     {
+        cell.GetUnitOnCell().TakeDamage(ConsumeHealth,null);
         GameObject g = Instantiate(BuffPrefab, cell.transform.position, Quaternion.identity);
         CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
         buff.Turns = Turns;

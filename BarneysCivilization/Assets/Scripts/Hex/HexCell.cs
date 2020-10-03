@@ -368,6 +368,26 @@ public class HexCell : MonoBehaviour
 
     public event System.Action<CardManager> OwnerChangeEvent;
 
+    #region building Event
+    public event System.Action CellBuildingCreateEvent;
+    public void OnBuildingCreatedOnCell(Building_Base building)
+    {
+        PlacedBuilding = building;
+        if (CellBuildingCreateEvent != null)
+        {
+            CellBuildingCreateEvent();
+        }
+    }
+    public event System.Action CellBuildingUpgradeEvent;
+    public void OnBuildingUpgradeOnCell(Building_Base building)
+    {
+        PlacedBuilding = building;
+        if (CellBuildingUpgradeEvent != null)
+        {
+            CellBuildingUpgradeEvent();
+        }
+    }
+    #endregion
     #region CellBuff
     public CellBuff_Base FindBuff(CellBuffType type)
     {

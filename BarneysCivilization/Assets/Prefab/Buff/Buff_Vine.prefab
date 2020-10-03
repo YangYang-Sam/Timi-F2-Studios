@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7033213134828211478}
-  - component: {fileID: 5288724598277713325}
+  - component: {fileID: -1280201652735508473}
   m_Layer: 0
-  m_Name: Buff_WoodSpirit
+  m_Name: Buff_Vine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5288724598277713325
+--- !u!114 &-1280201652735508473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,15 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1477477239368706076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b2a9c7d1e4e4a4a85087031daf2249, type: 3}
+  m_Script: {fileID: 11500000, guid: 1352c09284ea519448b8cf0d0b31f43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Cell: {fileID: 0}
   Creator: {fileID: 0}
   Turns: 0
-  Stackable: 1
-  BuffType: 9
-  Creators: []
+  Stackable: 0
+  BuffType: 8
 --- !u!1 &4574575311639297273
 GameObject:
   m_ObjectHideFlags: 0

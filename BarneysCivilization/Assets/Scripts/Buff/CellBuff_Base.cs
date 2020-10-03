@@ -70,5 +70,6 @@ public enum CellBuffType
     SandStorm,
     ThunderSlash,
     Vine,
-    WoodSpirit
+    WoodSpirit,
+    SeedOfNature
 }

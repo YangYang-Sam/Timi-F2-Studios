@@ -16,7 +16,7 @@ public class Building_Base : MonoBehaviour
         Cell = cell;
         Owner = owner;
         cell.OwnerChangeEvent += OnCellChangeOwner;
-        cell.PlacedBuilding = this;
+        cell.OnBuildingCreatedOnCell(this);
         InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
     }
     public virtual bool CanUpgrade(CardManager user)
@@ -26,6 +26,7 @@ public class Building_Base : MonoBehaviour
     public virtual void UpgradeBuilding(HexCell cell, CardManager owner)
     {
         Level++;
+        cell.OnBuildingUpgradeOnCell(this);
     }
     protected virtual void OnGameStateChange()
     {

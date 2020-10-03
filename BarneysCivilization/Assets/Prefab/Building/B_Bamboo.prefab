@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: 5226746406523220095}
   m_Layer: 0
-  m_Name: B_Bamboo 1
+  m_Name: B_Bamboo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,10 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cell: {fileID: 0}
   Owner: {fileID: 0}
-  IsPermenant: 0
-  Turns: 3
-  AllyAmount: 1
-  EnemyAmount: 0
+  IsPermenant: 1
+  Turns: 0
+  Level: 1
+  MaxLevel: 1
+  Amount: 1
+  WoodSpiritBuff: {fileID: 1477477239368706076, guid: b58d403aa74832b43a484888bc32c083,
+    type: 3}
 --- !u!1001 &5916472736692134974
 PrefabInstance:
   m_ObjectHideFlags: 0

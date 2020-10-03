@@ -27,8 +27,16 @@ public class Building_AttackArea : Building_Base
 
     private void BeforeBattle(HexCell cell)
     {
-        CellBuff_Base buff = cell.FindBuff(CellBuffType.WoodSpirit);
+        CellBuff_WoodSpirit buff = cell.FindBuff(CellBuffType.WoodSpirit) as CellBuff_WoodSpirit;
         if (buff == null)
+        {
+            print("No Buff Exist");
+        }
+        else
+        {
+            print("Buff exist, Creators:"+buff.Creators.Count);
+        }
+        if (buff == null || !buff.Creators.Contains(Owner))
         {
             foreach(Unit_Base unit in cell.PlacedUnits)
             {
@@ -44,7 +52,18 @@ public class Building_AttackArea : Building_Base
 
     public override void OnBuildingDestroy()
     {
-        base.OnBuildingDestroy(); 
+        base.OnBuildingDestroy();
+        List<HexCell> CheckList = new List<HexCell>();
+        CheckList.Add(Cell);
+        foreach (HexCell neighbor in Cell.NearbyCells)
+        {
+            CheckList.Add(neighbor);
+        }
+
+        foreach (HexCell checkCell in CheckList)
+        {
+            checkCell.CellBeforeBattleEvent -= BeforeBattle;
+        }
     }
  
     public void AddBuff(HexCell cell)

@@ -221,7 +221,6 @@ public class UIManager : MonoBehaviour
         }
         foreach (HexCell cell in HexGrid.instance.cells)
         {
-            print(cell);
             if (InteractableCells != null)
             {
                 cell.HighLightCell(InteractableCells.Contains(cell));
