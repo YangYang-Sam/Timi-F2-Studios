@@ -1140,6 +1140,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2610616360816342969, guid: 9c1e0ee652e884f47b06e53da6b5e91f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610616362077686956, guid: 9c1e0ee652e884f47b06e53da6b5e91f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -163
+      objectReference: {fileID: 0}
     - target: {fileID: 4172406621660600886, guid: 9c1e0ee652e884f47b06e53da6b5e91f,
         type: 3}
       propertyPath: DragSpeed

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 66c9d9c226328fb439b849af29fe7bac
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: TencentSans
+  fontNames:
+  - TencentSans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 217e70b42964bfc448a2f3aa5ce0e7fa, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

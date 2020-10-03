@@ -333,12 +333,18 @@ public class CardManager : MonoBehaviour
     {
         InGameCardDeck = Fisher_Yates_CardDeck_Shuffle(InGameCardDeck);
     }
- 
+
+    public event System.Action<HexCell> OccupyNewCellEvent;
     public void OccupyCell(Unit_Base unit, HexCell cell)
     {
         OccupiedCells.Add(cell);
         NewOccupiedCells.Add(cell);
         UpdateOccupiedBoundaryLines();
+        if (OccupyNewCellEvent != null)
+        {
+            OccupyNewCellEvent(cell);
+
+        }
     }
     public void AddNewCard(GameObject CardPrefab, HexCell cell)
     {

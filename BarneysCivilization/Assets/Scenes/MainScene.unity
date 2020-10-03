@@ -159,8 +159,8 @@ MonoBehaviour:
     type: 3}
   RaceInfos:
   - Name: "\u9752\u679D\u90E8\u843D"
-    TraitName: "\u81EA\u7136\u4E4B\u5B50"
-    TraitIntroduce: "\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u6BCF\u62E5\u67092\u4E2A\u5EFA\u7B51\u591A\u62BD\u4E00\u5F20\u724C\uFF0C\u6700\u591A\u591A\u62BD2\u5F20"
+    TraitName: "\u8349\u6728\u7E41\u76DB"
+    TraitIntroduce: "\u521D\u59CB\u6BCF\u56DE\u5408\u62BD\u724C\u4E24\u5F20\uFF0C\u6BCF\u62E5\u6709\u4E00\u4E2A\u5EFA\u7B51\u591A\u62BD\u4E00\u5F20\uFF0C\u6700\u591A\u4E94\u5F20"
     FitCells: 0100000005000000
     GalleryPrefab: {fileID: 8772511729376741450, guid: 4345c16d7c269204e87a6badd3d20072,
       type: 3}
@@ -197,7 +197,7 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: df9d0c434ec3cde459b70ae8433b28cd, type: 3}
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
       - {fileID: 6943707428436127944, guid: 72b68d7127337494fac9e04f27848944, type: 3}
-    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
+    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 7ebd7d3ec2214574b8b585fdb7bf17a5,
       type: 3}
   - Name: "\u6D2A\u7259\u90E8\u843D"
     TraitName: "\u9AD8\u6DA8\u4E4B\u6C34"
@@ -234,7 +234,7 @@ MonoBehaviour:
       type: 3}
   - Name: "\u661F\u706B\u90E8\u843D"
     TraitName: "\u71CE\u539F\u4E4B\u706B"
-    TraitIntroduce: "\u6BCF\u6B21\u5360\u9886\u68EE\u6797\u6216\u8349\u539F\u65F6\uFF0C\u4F7F\u5360\u9886\u5355\u4F4D\u6218\u6597\u529B+1\u3002\u5355\u4F4D\u4E0D\u53D7\u71C3\u70E7\u6548\u679C\u7684\u4F24\u5BB3\u3002"
+    TraitIntroduce: "\u6BCF\u6B21\u5360\u9886\u68EE\u6797\u6216\u8349\u539F\u65F6\uFF0C\u4F7F\u5360\u9886\u5355\u4F4D\u6218\u6597\u529B+1\u3002\u5355\u4F4D\u4E0D\u53D7\u71C3\u70E7\u6548\u679C\u7684\u4F24\u5BB3"
     FitCells: 0100000000000000
     GalleryPrefab: {fileID: 25747987919072908, guid: a3fe3d51ca138954fad6f42971a96d27,
       type: 3}
@@ -271,11 +271,11 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
       - {fileID: 6943707428436127944, guid: df9d0c434ec3cde459b70ae8433b28cd, type: 3}
       - {fileID: 6943707428436127944, guid: 7d4305f701ad4b64d8be5b44e5a7dfdf, type: 3}
-    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
+    RaceTraitPrefab: {fileID: 9058298516049921785, guid: cd14a631ba1b8f44081316494a378a87,
       type: 3}
-  - Name: "\u6D2A\u7259\u90E8\u843D"
-    TraitName: "\u9AD8\u6DA8\u4E4B\u6C34"
-    TraitIntroduce: "\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u5DF1\u65B9\u5904\u4E8E\u964D\u96E8\u683C\u5B50\u7684\u5355\u4F4D\u6218\u6597\u529B+1"
+  - Name: "\u96F7\u9E23\u90E8\u843D"
+    TraitName: "\u7535\u5149\u75BE\u884C"
+    TraitIntroduce: "\u79FB\u52A8\u7ED3\u675F\u65F6\uFF0C\u4E8C\u7EA7\u4EE5\u4E0A\u5355\u4F4D\u6BCF\u79FB\u52A8\u4E00\u683C\u83B7\u5F97+1\uFF0C\u6700\u591A+3"
     FitCells: 0400000000000000
     GalleryPrefab: {fileID: 1402832618061682485, guid: 227e578c7f9a1d246ace28227cd98f84,
       type: 3}

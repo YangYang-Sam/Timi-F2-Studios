@@ -14,9 +14,14 @@ public class CellBuff_Fire : CellBuff_Base
 
     private void OnBeforeTurnEnd()
     {
-        if (Cell.GetUnitOnCell() != null)
+        Unit_Base unit = Cell.GetUnitOnCell();
+        if (unit != null)
         {
-            Cell.GetUnitOnCell().TakeDamage(Damage, null);
+            RaceTrait_Fire fire = unit.Owner.RaceTrait as RaceTrait_Fire;
+            if (fire == null)
+            {
+                unit.TakeDamage(Damage, null);
+            }
         }
     }
 

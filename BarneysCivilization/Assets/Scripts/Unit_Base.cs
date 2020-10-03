@@ -15,7 +15,7 @@ public class Unit_Base : MonoBehaviour
     public bool canMove;
 
     public int LastDamage;
-
+    public int MoveDistance;
     [SerializeField]
     private Material redMat;
 
@@ -42,6 +42,7 @@ public class Unit_Base : MonoBehaviour
         switch (InGameManager.CurrentGameState)
         {       
             case GameStateType.Move:
+                MoveDistance = 0;
                 if (canMove && Health > Cell.MinUnitAmount && PathCells.Count>0 && PathCells[PathCells.Count-1]!=Cell && canMove)
                 {
                     Unit_Base unit = Owner.CreateNewUnit(Cell, Cell.MinUnitAmount);
@@ -94,6 +95,10 @@ public class Unit_Base : MonoBehaviour
     }
     public void Merged(Unit_Base MergeToUnit)
     {
+        if(MergeToUnit.MoveDistance < MoveDistance)
+        {
+            MergeToUnit.MoveDistance = MoveDistance;
+        }
         MergeToUnit.ChangeHealth(Health);
         MergeToUnit.TempHealth += TempHealth;
         UnitRemoved();
@@ -106,7 +111,7 @@ public class Unit_Base : MonoBehaviour
         HexCell destinyCell = PathCells[PathCells.Count - 1];
         UnitMoveTo(destinyCell);
         SetAnimMoveState(true);
-
+        MoveDistance = PathCells.Count;
         float speed = PathCells.Count * HexMetrics.innerRadius * 2 / 2.5f;
         while (PathCells.Count > 0)
         {                        
