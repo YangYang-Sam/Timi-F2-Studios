@@ -32,7 +32,7 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u5DF1\u65B9\u6E56\u6CCA\u4E0A\u7684\u6240\u6709\u5355\u4F4D\u83B7\u5F971\u70B9\u6218\u6597\u529B"
+      value: "\u5DF1\u65B9\u6240\u6709\u6E56\u6CCA\u4E0A\u5404\u83B7\u5F971\u70B9\u6218\u6597\u529B"
       objectReference: {fileID: 0}
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

@@ -160,11 +160,11 @@ MonoBehaviour:
   BallPrefab: {fileID: 1245345318053292882, guid: b7f9514ddbf0ac442932893e17670e54,
     type: 3}
   RaceInfos:
-  - Name: "\u9752\u679D\u90E8\u843D"
-    TraitName: "\u8349\u6728\u7E41\u76DB"
-    TraitIntroduce: "\u521D\u59CB\u6BCF\u56DE\u5408\u62BD\u724C\u4E24\u5F20\uFF0C\u6BCF\u62E5\u6709\u4E00\u4E2A\u5EFA\u7B51\u591A\u62BD\u4E00\u5F20\uFF0C\u6700\u591A\u4E94\u5F20"
-    FitCells: 0100000005000000
-    GalleryPrefab: {fileID: 8772511729376741450, guid: 4345c16d7c269204e87a6badd3d20072,
+  - Name: "\u6D2A\u7259\u90E8\u843D"
+    TraitName: "\u9AD8\u6DA8\u4E4B\u6C34"
+    TraitIntroduce: "\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u5DF1\u65B9\u5904\u4E8E\u964D\u96E8\u683C\u5B50\u7684\u5355\u4F4D\u6218\u6597\u529B+1"
+    FitCells: 0400000000000000
+    GalleryPrefab: {fileID: 1402832618061682485, guid: 227e578c7f9a1d246ace28227cd98f84,
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
@@ -173,7 +173,7 @@ MonoBehaviour:
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
-    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3, type: 3}
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
@@ -199,40 +199,48 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: df9d0c434ec3cde459b70ae8433b28cd, type: 3}
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
       - {fileID: 6943707428436127944, guid: 72b68d7127337494fac9e04f27848944, type: 3}
-    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 7ebd7d3ec2214574b8b585fdb7bf17a5,
+    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
       type: 3}
-  - Name: "\u6D2A\u7259\u90E8\u843D"
-    TraitName: "\u9AD8\u6DA8\u4E4B\u6C34"
-    TraitIntroduce: "\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u5DF1\u65B9\u5904\u4E8E\u964D\u96E8\u683C\u5B50\u7684\u5355\u4F4D\u6218\u6597\u529B+1"
-    FitCells: 0400000000000000
-    GalleryPrefab: {fileID: 1402832618061682485, guid: 227e578c7f9a1d246ace28227cd98f84,
+  - Name: "\u9752\u679D\u90E8\u843D"
+    TraitName: "\u8349\u6728\u7E41\u76DB"
+    TraitIntroduce: "\u521D\u59CB\u6BCF\u56DE\u5408\u62BD\u724C\u4E24\u5F20\uFF0C\u6BCF\u62E5\u6709\u4E00\u4E2A\u5EFA\u7B51\u591A\u62BD\u4E00\u5F20\uFF0C\u6700\u591A\u4E94\u5F20"
+    FitCells: 0100000005000000
+    GalleryPrefab: {fileID: 8772511729376741450, guid: 4345c16d7c269204e87a6badd3d20072,
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
+    UnitPrefab: {fileID: 2875863986545933350, guid: 7acb28ca93af6054fbc1a97c76c779b5,
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
-    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: 9c204cfc15526fe45b6c5afb18d6b794, type: 3}
     cards:
     - cards:
+      - {fileID: 6943707428436127944, guid: 86a673d55ed966340992f8dbe5cca158, type: 3}
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
-      - {fileID: 6943707428436127944, guid: 7d4305f701ad4b64d8be5b44e5a7dfdf, type: 3}
+      - {fileID: 6943707428436127944, guid: 9c204cfc15526fe45b6c5afb18d6b794, type: 3}
     - cards:
+      - {fileID: 6943707428436127944, guid: 3552a16cd4d1d07429a2dc7e6067e5fb, type: 3}
       - {fileID: 6943707428436127944, guid: 56e6ca40384227f4290f86e0c4cd67a0, type: 3}
-      - {fileID: 6943707428436127944, guid: f3ec0ebcd6b01144091a032ba58629ef, type: 3}
-    - cards:
       - {fileID: 6943707428436127944, guid: f5cbf84d1e6507b41b341b8f2fdc7208, type: 3}
-      - {fileID: 6943707428436127944, guid: 0d1a9c7f809a1de4681fad5a97e134af, type: 3}
     - cards:
+      - {fileID: 6943707428436127944, guid: 936a8f23848e15646af3d8ee7df23a11, type: 3}
+      - {fileID: 6943707428436127944, guid: a682d0ca49143f34a876209aaac67dec, type: 3}
+      - {fileID: 6943707428436127944, guid: 3789a627b5af9ae408e58a174d6c4d27, type: 3}
+    - cards:
+      - {fileID: 6943707428436127944, guid: b1a11c45dc1386846b13d8838b7be698, type: 3}
       - {fileID: 6943707428436127944, guid: 307214ba36d6d1d4288fb46e9cb86d49, type: 3}
+      - {fileID: 6943707428436127944, guid: 4dd31d7483a192f4a89bc07ffe1f3b85, type: 3}
     - cards:
+      - {fileID: 6943707428436127944, guid: 54e02565771f2044b8b49ac2e4c67ec4, type: 3}
       - {fileID: 6943707428436127944, guid: b1392f2a8d25c1742ba1b8436dfb8a25, type: 3}
-      - {fileID: 6943707428436127944, guid: 56e6ca40384227f4290f86e0c4cd67a0, type: 3}
+      - {fileID: 6943707428436127944, guid: 9c82aa297ac03a04abf8d3ae070cde26, type: 3}
     - cards:
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
-    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
+      - {fileID: 6943707428436127944, guid: 3d361638233cd3f4885cef2db6895dba, type: 3}
+      - {fileID: 6943707428436127944, guid: fa69694284f55144d8c0329c1d51f8b1, type: 3}
+    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 7ebd7d3ec2214574b8b585fdb7bf17a5,
       type: 3}
   - Name: "\u661F\u706B\u90E8\u843D"
     TraitName: "\u71CE\u539F\u4E4B\u706B"
@@ -247,7 +255,7 @@ MonoBehaviour:
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
-    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
+    - {fileID: 6943707428436127944, guid: ec2b3b2259dbb9e47843fc3eb05c5660, type: 3}
     cards:
     - cards:
       - {fileID: 6943707428436127944, guid: 8036309c424e17d428342994cee327e2, type: 3}
@@ -3616,6 +3624,11 @@ PrefabInstance:
       propertyPath: Duration
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
+        type: 3}
+      propertyPath: HighlightColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165180, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3730,7 +3743,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8500d86cc8ca9184f9b03b73721a117a,
+      objectReference: {fileID: 21300000, guid: b3f28171bd48866408c57ac2e590e30d,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02b62f9532c2fd49b6c2787802e59a1, type: 3}
@@ -4379,6 +4392,11 @@ PrefabInstance:
       propertyPath: Duration
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
+        type: 3}
+      propertyPath: HighlightColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165180, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4493,7 +4511,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b3f28171bd48866408c57ac2e590e30d,
+      objectReference: {fileID: 21300000, guid: 8500d86cc8ca9184f9b03b73721a117a,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02b62f9532c2fd49b6c2787802e59a1, type: 3}
