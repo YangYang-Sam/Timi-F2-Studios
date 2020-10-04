@@ -62,13 +62,19 @@ public class CellBuff_Base:MonoBehaviour
 public enum CellBuffType
 {
     Null,
+    BallLightning,
     Cold,
     Fire,
+    FollowingWind,
     Nourish,
+    Overload,
     Rain,
     RainStorm,
     SandStorm,
+    Superconduct,
+    Thunder,
     ThunderSlash,
+    ThunderStorm,
     Vine,
     WoodSpirit,
     SeedOfNature

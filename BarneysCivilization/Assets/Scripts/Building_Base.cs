@@ -50,8 +50,11 @@ public class Building_Base : MonoBehaviour
                 Turns--;
                 if (Turns <= 0)
                 {
-                    OnBuildingDestroy();
-                    Destroy(gameObject);
+                    //OnBuildingDestroy();
+                    //Owner.BuildingDestroy(this);
+                    //Destroy(gameObject);
+
+                    DestroyBuilding(this);
                 }
             }     
         }
@@ -67,9 +70,18 @@ public class Building_Base : MonoBehaviour
     {
         if (Cell.OwnerManager != Owner)
         {
-            OnBuildingDestroy();                                
-            Owner.BuildingDestroy(this);
-            Destroy(gameObject);
+            //OnBuildingDestroy();                                
+            //Owner.BuildingDestroy(this);
+            //Destroy(gameObject);
+
+            DestroyBuilding(this);
         }
+    }
+
+    static public void DestroyBuilding(Building_Base building)
+    {
+        building.OnBuildingDestroy();
+        building.Owner.BuildingDestroy(building);
+        Destroy(building.gameObject);
     }
 }
