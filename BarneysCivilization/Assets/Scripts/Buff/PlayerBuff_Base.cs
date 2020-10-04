@@ -65,5 +65,8 @@ public enum PlayerBuffType
     WaterGather,
     Flood,
     BurnToGround,
-    Revive
+    Revive,
+    EscapeElectric,
+    Superconduct,
+    Thunder
 }

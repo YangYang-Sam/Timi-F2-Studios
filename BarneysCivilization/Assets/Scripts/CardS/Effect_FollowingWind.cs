@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Effect_FollowingWind : CardEffect
 {
-    public int Turns = 1;
     public int ActionPointAddAmount = 1;
-    public GameObject BuffPrefab;
 
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
@@ -20,11 +18,11 @@ public class Effect_FollowingWind : CardEffect
 
     public override void Effect(CardManager user, HexCell cell)
     {
-        GameObject g = Instantiate(BuffPrefab, cell.transform.position, Quaternion.identity);
-        CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
-        buff.Turns = Turns;
-        buff.OnCreated(cell, user);
-
         user.ActionPoint += ActionPointAddAmount;
+
+        foreach(var unit in user.Units)
+        {
+            unit.ForceMove = true;
+        }
     }
 }
