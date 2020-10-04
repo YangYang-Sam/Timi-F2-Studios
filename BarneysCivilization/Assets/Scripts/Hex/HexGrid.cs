@@ -53,8 +53,15 @@ public class HexGrid : MonoBehaviour
 				cellIndex++;
 				if (distance >= Radius)
 				{
-					ColorCell(cell, new Color(0.4f, 0.4f, 0.4f));
+					//ColorCell(cell, new Color(0.4f, 0.4f, 0.4f));
 					cell.CanPass = false;
+					cell.isValidCell = false;
+				}
+				if (cell.isValidCell)
+				{
+					GameObject terrain = Instantiate(ArtResourceManager.instance.GetTerrainPrefab((int)cell.CellType));
+					terrain.transform.position = cell.transform.position;
+					terrain.transform.eulerAngles = new Vector3(0, 60 * Random.Range(1, 6) + 30, 0);
 				}
 			}
 		}
@@ -106,11 +113,6 @@ public class HexGrid : MonoBehaviour
 				break;
 		}
 		cell.TypeText.text = t;
-
-		GameObject terrain = Instantiate(ArtResourceManager.instance.GetTerrainPrefab(typeIndex));
-		terrain.transform.position = cell.transform.position;
-		terrain.transform.eulerAngles = new Vector3(0, 60 * Random.Range(1, 6)+30, 0);
-
 
         //Text label = Instantiate<Text>(cellLabelPrefab);
         //label.rectTransform.SetParent(gridCanvas.transform, false);

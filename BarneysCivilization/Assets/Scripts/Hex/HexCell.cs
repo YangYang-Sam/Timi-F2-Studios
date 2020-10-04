@@ -357,14 +357,20 @@ public class HexCell : MonoBehaviour
     }
     public void HighLightCell(bool highLight)
     {
-        HightlightSprite.enabled = highLight;
+        if (isValidCell)
+        {
+            HightlightSprite.enabled = highLight;
+        }
     }
     public void SetHighLightColor(Color c)
     {
-        HightlightSprite.color = c;
+        if (isValidCell)
+        {
+            HightlightSprite.color = c;
+        }
     }
 
-    public bool isValidCell;
+    public bool isValidCell=true;
 
     public event System.Action<CardManager> OwnerChangeEvent;
 

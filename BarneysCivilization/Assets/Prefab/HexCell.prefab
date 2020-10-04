@@ -156,7 +156,7 @@ MonoBehaviour:
   CanPass: 1
   TypeText: {fileID: 1582871700947842234}
   HightlightSprite: {fileID: 4238096031326684423}
-  isValidCell: 0
+  isValidCell: 1
 --- !u!1 &4407402985480766165
 GameObject:
   m_ObjectHideFlags: 0
