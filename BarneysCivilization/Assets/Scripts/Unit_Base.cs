@@ -63,6 +63,7 @@ public class Unit_Base : MonoBehaviour
                 TempHealth = 0;
                 canMove = true;
                 ForceMove = false;
+                PathCells.Clear(); // 为了支持磁石效果
                 break;
         }
     }

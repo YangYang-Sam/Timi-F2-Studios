@@ -69,5 +69,6 @@ public enum PlayerBuffType
     EscapeElectric,
     Superconduct,
     Thunder,
-    FierceWind
+    FierceWind,
+    RollingStone
 }

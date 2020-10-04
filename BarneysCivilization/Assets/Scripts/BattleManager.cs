@@ -141,14 +141,18 @@ public class BattleManager : MonoBehaviour
         foreach (Unit_Base unit in owner.Units)
         {
             List<HexCell> queue = SearchRoute(unit.Cell, targetCell, owner);
-            unit.PathCells.Clear();
-            for (int i = 1; i <= distance; i++)
+
+            if(unit.PathCells.Count == 0)// 为了支持磁石效果
             {
-                if (queue.Count> i)
+                for (int i = 1; i <= distance; i++)
                 {
-                    unit.PathCells.Add(queue[i]);
+                    if (queue.Count > i)
+                    {
+                        unit.PathCells.Add(queue[i]);
+                    }
                 }
             }
+     
             unit.UpdateDestinyCell();
         }
     }

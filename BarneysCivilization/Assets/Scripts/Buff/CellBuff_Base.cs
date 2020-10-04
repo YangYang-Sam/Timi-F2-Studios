@@ -75,5 +75,8 @@ public enum CellBuffType
     ThunderStorm,
     Vine,
     WoodSpirit,
-    SeedOfNature
+    SeedOfNature,
+    StonePrison,
+    FlyingStone,
+    SpireStone
 }
