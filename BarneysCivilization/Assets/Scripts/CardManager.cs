@@ -357,6 +357,8 @@ public class CardManager : MonoBehaviour
         UIManager.instance.AddCard(card.gameObject, camp);
         //AddToUsedCards(card);
         InGameCardDeck.Insert(0, card);
+        card.gameObject.SetActive(false);
+        card.isActive = false;
     }
     public void LostCell(HexCell cell)
     {
