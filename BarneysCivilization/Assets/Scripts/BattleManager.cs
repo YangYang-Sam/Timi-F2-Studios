@@ -5,7 +5,8 @@ using UnityEngine;
 public enum UnitMoveMode
 {
     Normal,
-    Directional
+    Directional,
+    JumpThreeStep
 }
 
 public class BattleManager : MonoBehaviour
@@ -140,14 +141,18 @@ public class BattleManager : MonoBehaviour
         foreach (Unit_Base unit in owner.Units)
         {
             List<HexCell> queue = SearchRoute(unit.Cell, targetCell, owner);
-            unit.PathCells.Clear();
-            for (int i = 1; i <= distance; i++)
+
+            if(unit.PathCells.Count == 0)// 为了支持磁石效果
             {
-                if (queue.Count> i)
+                for (int i = 1; i <= distance; i++)
                 {
-                    unit.PathCells.Add(queue[i]);
+                    if (queue.Count > i)
+                    {
+                        unit.PathCells.Add(queue[i]);
+                    }
                 }
             }
+     
             unit.UpdateDestinyCell();
         }
     }
@@ -164,6 +169,22 @@ public class BattleManager : MonoBehaviour
                 unit.PathCells.Add(targetCell);
             }
             unit.UpdateDestinyCell();
+        }
+    }
+
+    public void JumpAllUnitsToTargetCell(CardManager owner, HexCell targetCell, int maxSteps)
+    {
+        if (maxSteps <= 0 || !targetCell) return;
+        
+        foreach (Unit_Base unit in owner.Units)
+        {
+            int distance = unit.Cell.coordinates.DistanceTo(targetCell.coordinates);
+            if(distance <= maxSteps)
+            {
+                unit.PathCells.Clear();
+                unit.PathCells.Add(targetCell);
+                unit.UpdateDestinyCell();
+            }
         }
     }
 }
