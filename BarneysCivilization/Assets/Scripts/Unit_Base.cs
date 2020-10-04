@@ -17,8 +17,6 @@ public class Unit_Base : MonoBehaviour
 
     public int LastDamage;
     public int MoveDistance;
-    [SerializeField]
-    private Material redMat;
 
     [SerializeField]
     private Animator[] animator;

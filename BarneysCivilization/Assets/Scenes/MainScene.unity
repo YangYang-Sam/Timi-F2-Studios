@@ -168,7 +168,7 @@ MonoBehaviour:
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: 7acb28ca93af6054fbc1a97c76c779b5,
+    UnitPrefab: {fileID: 4362243853606727292, guid: d038875c317ec5447b0373ba784f14f1,
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
@@ -209,7 +209,7 @@ MonoBehaviour:
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: 7acb28ca93af6054fbc1a97c76c779b5,
+    UnitPrefab: {fileID: 783411404690683756, guid: 8e1f19a4bf43e0b4b93baa4dce84a17e,
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
@@ -250,7 +250,7 @@ MonoBehaviour:
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
+    UnitPrefab: {fileID: 783411404690683756, guid: 7073c23e3ea7bb14c94dfed7f8b7d726,
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
