@@ -13,6 +13,7 @@ public class Unit_Base : MonoBehaviour
 
     public bool isAlive;
     public bool canMove;
+    public bool ForceMove;
 
     public int LastDamage;
     public int MoveDistance;
@@ -41,10 +42,10 @@ public class Unit_Base : MonoBehaviour
     private void OnGameStateChange()
     {
         switch (InGameManager.CurrentGameState)
-        {       
+        {
             case GameStateType.Move:
                 MoveDistance = 0;
-                if (canMove && Health > Cell.MinUnitAmount && PathCells.Count>0 && PathCells[PathCells.Count-1]!=Cell && canMove)
+                if (canMove && Health > Cell.MinUnitAmount && PathCells.Count > 0 && PathCells[PathCells.Count - 1] != Cell && (canMove || ForceMove))
                 {
                     Unit_Base unit = Owner.CreateNewUnit(Cell, Cell.MinUnitAmount);
                     Cell.UnitArrived(unit);
@@ -63,6 +64,7 @@ public class Unit_Base : MonoBehaviour
             case GameStateType.Decision:
                 TempHealth = 0;
                 canMove = true;
+                ForceMove = false;
                 break;
         }
     }
@@ -261,13 +263,16 @@ public class Unit_Base : MonoBehaviour
         {
             if (amount > 0)
             {
-                ArtResourceManager.instance.CreateHealEffect(transform.position);
-                CurveManger.instance.StartNewCurve(FromPosition, transform.position, amount, PlayerController.instance.OrbPrefabs[Owner.camp]);
+                ArtResourceManager.instance.CreateHealEffect(transform.position);              
             }
         }
         if (HealthChangeEvent != null)
         {
             HealthChangeEvent();
+        }
+        if (amount > 0)
+        {
+            CurveManger.instance.StartNewCurve(FromPosition, transform.position, amount, PlayerController.instance.OrbPrefabs[Owner.camp]);
         }
     }
     public event System.Action HealthChangeEvent;

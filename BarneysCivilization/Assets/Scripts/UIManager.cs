@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class UIManager : MonoBehaviour
     public Color NormalInteractColor;
     public Color HightlightInteractColor;
 
+    public TextMeshProUGUI CardDeckText;
+
     [SerializeField]
     private UI_ChooseCardWidget ChooseCardWidget;
     [SerializeField]
@@ -53,6 +56,7 @@ public class UIManager : MonoBehaviour
         HexTrace();
         ArrangeCards();
         MouseUp();
+        CardDeckText.text = playerCardManager.InGameCardDeck.Count.ToString();
     }
     private void Start()
     {
@@ -83,7 +87,9 @@ public class UIManager : MonoBehaviour
             {
                 SelectCell.SetHighLightColor(NormalInteractColor);
             }
+            Debug.DrawLine(inputRay.origin, hit.point);
             SelectCell = HexGrid.instance.GetCellByPosition(hit.point);
+        
             if (SelectCell != null)
             {
                 UI_ArrowMesh.instance.UpdatePosition(hit.point);
@@ -179,15 +185,16 @@ public class UIManager : MonoBehaviour
                 {
                     int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName);
                     int hexID = -2;
-
+                    //Debug.DrawLine(SelectCell.transform.position, SelectCell.transform.position + Vector3.up * 20, Color.red);
+                    print(SelectCell.HexIndex);
                     if (SelectCell != null)
                     {
-                        playerCardManager.UseCard(SelectCard, PlayerController.instance.SelectCell);
+                        playerCardManager.UseCard(SelectCard, SelectCell);
                         hexID = SelectCell.HexIndex;
                     }
                     else if (SelectCard.NoneTargetCard())
                     {
-                        playerCardManager.UseCard(SelectCard, PlayerController.instance.SelectCell);
+                        playerCardManager.UseCard(SelectCard, SelectCell);
                     }
                     else
                     {

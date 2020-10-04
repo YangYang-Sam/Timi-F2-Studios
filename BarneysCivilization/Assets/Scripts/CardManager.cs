@@ -97,7 +97,7 @@ public class CardManager : MonoBehaviour
             AddNewCard(g, null);
         }
     }
- public Vector3 GetCorePosition()
+    public Vector3 GetCorePosition()
     {
         return PlayerCore.transform.position;
     }
@@ -355,7 +355,8 @@ public class CardManager : MonoBehaviour
         Card_Base card = Instantiate(CardPrefab).GetComponent<Card_Base>();
         card.CardSource = cell;
         UIManager.instance.AddCard(card.gameObject, camp);
-        AddToUsedCards(card);
+        //AddToUsedCards(card);
+        InGameCardDeck.Insert(0, card);
     }
     public void LostCell(HexCell cell)
     {
@@ -372,7 +373,7 @@ public class CardManager : MonoBehaviour
         }
         if (!Removed)
         {
-            for (int i = 0; i < Cards.Count; i++)
+            for (int i = 0; i < InGameCardDeck.Count; i++)
             {
                 if (InGameCardDeck[i].CardSource == cell)
                 {

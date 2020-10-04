@@ -51,22 +51,19 @@ public class PlayerController : MonoBehaviour
             }     
         }        
     }
-
-    void Update()
+ 
+    public void PlayerClickOnMap()
     {
-        if (cardManager != null && canControl)
+        HexTrace();
+        if (SelectCell != null)
         {
-            HexTrace();
-            if (Input.GetMouseButtonDown(0) && SelectCell != null)
+            cardManager.SetUnitMoveTo(SelectCell);
+            if (UserData.instance.isMultiplayerGame)
             {
-                cardManager.SetUnitMoveTo(SelectCell);
-                if (UserData.instance.isMultiplayerGame)
-                {
-                    NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
-                }
+                NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
             }
         }
-    } 
+    }
 }
 
 public enum PointerJobType
