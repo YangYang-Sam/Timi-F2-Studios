@@ -48,4 +48,15 @@ public class UI_ChooseRaceButton : MonoBehaviour
             yield return null;
         }
     }
+    public void SetColorDirectly(bool isHighlight)
+    {
+        if (isHighlight)
+        {
+            BackImage.color = HighlightColor;
+        }
+        else
+        {
+            BackImage.color = NormalColor;
+        }
+    }
 }

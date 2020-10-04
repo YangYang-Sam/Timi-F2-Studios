@@ -37,8 +37,7 @@ public class UI_MainScene : MonoBehaviour
 
         int RaceIndex = Random.Range(0, 6);
         ChooseRace(RaceIndex);
-        UserData.instance.RaceIndex = RaceIndex;
-        RaceButtons[RaceIndex].SetHighlight(true);
+        UserData.instance.RaceIndex = RaceIndex;        
     }
     private void Update()
     {
@@ -98,7 +97,7 @@ public class UI_MainScene : MonoBehaviour
     public void StartChooseRace()
     {
         animator.Play("StartChooseRace");
-
+        RaceButtons[UserData.instance.RaceIndex].SetColorDirectly(true);
         if (CameraRotateProcess != null)
         {
             StopCoroutine(CameraRotateProcess);
