@@ -7,6 +7,7 @@ public class RaceInfo
 {
     [Header("Introduce")]
     public string Name;
+    public string Element;
     public string TraitName;
     public string TraitIntroduce;
     public HexCellType[] FitCells;

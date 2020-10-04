@@ -161,6 +161,7 @@ MonoBehaviour:
     type: 3}
   RaceInfos:
   - Name: "\u6D2A\u7259\u90E8\u843D"
+    Element: "\u6C34\u7CFB"
     TraitName: "\u9AD8\u6DA8\u4E4B\u6C34"
     TraitIntroduce: "\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u5DF1\u65B9\u5904\u4E8E\u964D\u96E8\u683C\u5B50\u7684\u5355\u4F4D\u6218\u6597\u529B+1"
     FitCells: 0400000000000000
@@ -168,7 +169,7 @@ MonoBehaviour:
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 4362243853606727292, guid: d038875c317ec5447b0373ba784f14f1,
+    UnitPrefab: {fileID: 4362243853606727292, guid: 229365ef8b1a8c14990680cbf6b10c5c,
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
@@ -202,6 +203,7 @@ MonoBehaviour:
     RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
       type: 3}
   - Name: "\u9752\u679D\u90E8\u843D"
+    Element: "\u6728\u7CFB"
     TraitName: "\u8349\u6728\u7E41\u76DB"
     TraitIntroduce: "\u521D\u59CB\u6BCF\u56DE\u5408\u62BD\u724C\u4E24\u5F20\uFF0C\u6BCF\u62E5\u6709\u4E00\u4E2A\u5EFA\u7B51\u591A\u62BD\u4E00\u5F20\uFF0C\u6700\u591A\u4E94\u5F20"
     FitCells: 0100000005000000
@@ -209,7 +211,7 @@ MonoBehaviour:
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 783411404690683756, guid: 8e1f19a4bf43e0b4b93baa4dce84a17e,
+    UnitPrefab: {fileID: 783411404690683756, guid: c70a6d06cbe155844977f0c02873bd1d,
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
@@ -243,6 +245,7 @@ MonoBehaviour:
     RaceTraitPrefab: {fileID: 9058298516049921785, guid: 7ebd7d3ec2214574b8b585fdb7bf17a5,
       type: 3}
   - Name: "\u661F\u706B\u90E8\u843D"
+    Element: "\u706B\u7CFB"
     TraitName: "\u71CE\u539F\u4E4B\u706B"
     TraitIntroduce: "\u6BCF\u6B21\u5360\u9886\u68EE\u6797\u6216\u8349\u539F\u65F6\uFF0C\u4F7F\u5360\u9886\u5355\u4F4D\u6218\u6597\u529B+1\u3002\u5355\u4F4D\u4E0D\u53D7\u71C3\u70E7\u6548\u679C\u7684\u4F24\u5BB3"
     FitCells: 0100000000000000
@@ -250,7 +253,7 @@ MonoBehaviour:
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 783411404690683756, guid: 7073c23e3ea7bb14c94dfed7f8b7d726,
+    UnitPrefab: {fileID: 783411404690683756, guid: 188958ecb39d761428682d46dd10f282,
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
@@ -284,14 +287,15 @@ MonoBehaviour:
     RaceTraitPrefab: {fileID: 9058298516049921785, guid: cd14a631ba1b8f44081316494a378a87,
       type: 3}
   - Name: "\u96F7\u9E23\u90E8\u843D"
+    Element: "\u96F7\u7CFB"
     TraitName: "\u7535\u5149\u75BE\u884C"
     TraitIntroduce: "\u79FB\u52A8\u7ED3\u675F\u65F6\uFF0C\u4E8C\u7EA7\u4EE5\u4E0A\u5355\u4F4D\u6BCF\u79FB\u52A8\u4E00\u683C\u83B7\u5F97+1\uFF0C\u6700\u591A+3"
     FitCells: 0400000000000000
-    GalleryPrefab: {fileID: 1402832618061682485, guid: 227e578c7f9a1d246ace28227cd98f84,
+    GalleryPrefab: {fileID: 25747987919072908, guid: 2ece4274fea6a31479c37649631ee511,
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
+    UnitPrefab: {fileID: 783411404690683756, guid: d28f401b858aac340a4ce69afbf33def,
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
@@ -316,15 +320,16 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
     RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
       type: 3}
-  - Name: "\u6D2A\u7259\u90E8\u843D"
+  - Name: "\u5B64\u98CE\u90E8\u843D"
+    Element: "\u98CE\u7CFB"
     TraitName: "\u9AD8\u6DA8\u4E4B\u6C34"
     TraitIntroduce: "\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u5DF1\u65B9\u5904\u4E8E\u964D\u96E8\u683C\u5B50\u7684\u5355\u4F4D\u6218\u6597\u529B+1"
     FitCells: 0400000000000000
-    GalleryPrefab: {fileID: 1402832618061682485, guid: 227e578c7f9a1d246ace28227cd98f84,
+    GalleryPrefab: {fileID: 25747987919072908, guid: 42ce0df247aaf504fac9c21d19048e14,
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
+    UnitPrefab: {fileID: 783411404690683756, guid: b50a256b07f7b424a9bee56322ab2c11,
       type: 3}
     StartDeckPrefabs: []
     cards:
@@ -346,15 +351,16 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
     RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
       type: 3}
-  - Name: "\u6D2A\u7259\u90E8\u843D"
+  - Name: "\u78D0\u77F3\u90E8\u843D"
+    Element: "\u571F\u7CFB"
     TraitName: "\u9AD8\u6DA8\u4E4B\u6C34"
     TraitIntroduce: "\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u5DF1\u65B9\u5904\u4E8E\u964D\u96E8\u683C\u5B50\u7684\u5355\u4F4D\u6218\u6597\u529B+1"
     FitCells: 0400000000000000
-    GalleryPrefab: {fileID: 1402832618061682485, guid: 227e578c7f9a1d246ace28227cd98f84,
+    GalleryPrefab: {fileID: 25747987919072908, guid: 84dbf22e3b7ea1648afef4852a34dbf8,
       type: 3}
     CorePrefab: {fileID: 5806393052597247930, guid: c42049f8772cc484e8a949223048910c,
       type: 3}
-    UnitPrefab: {fileID: 2875863986545933350, guid: c186ce6ffdb793c40b5787929d431817,
+    UnitPrefab: {fileID: 783411404690683756, guid: 6875b47618690fd47baa382ae39d9e21,
       type: 3}
     StartDeckPrefabs: []
     cards:
@@ -719,6 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RaceNameText: {fileID: 745368005}
+  RaceElementText: {fileID: 1759006415}
   TraitNameText: {fileID: 1222945141}
   TraitDescriptionText: {fileID: 1982067872}
   CellIconHolder: {fileID: 653507907}
@@ -1380,12 +1387,17 @@ PrefabInstance:
     - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: HighlightColor.g
-      value: 1
+      value: 0.42979938
       objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: HighlightColor.b
-      value: 0.85098046
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
+        type: 3}
+      propertyPath: HighlightColor.r
+      value: 0.9056604
       objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165180, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
@@ -1501,7 +1513,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d2be21a638cac884f827d2d082c5ee5e,
+      objectReference: {fileID: 21300000, guid: 0c5f81e4fbcb992458452d967c001e37,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02b62f9532c2fd49b6c2787802e59a1, type: 3}
@@ -2207,17 +2219,22 @@ PrefabInstance:
     - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: HighlightColor.r
-      value: 0.38431376
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: HighlightColor.b
-      value: 1
+      value: 0.91309977
       objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: Duration
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
+        type: 3}
+      propertyPath: HighlightColor.g
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165180, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
@@ -2333,7 +2350,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c5b294088aded5e4b94bab9d62b63edd,
+      objectReference: {fileID: 21300000, guid: d2be21a638cac884f827d2d082c5ee5e,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02b62f9532c2fd49b6c2787802e59a1, type: 3}
@@ -3032,17 +3049,22 @@ PrefabInstance:
     - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: HighlightColor.r
-      value: 1
+      value: 0.45573044
       objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: HighlightColor.g
-      value: 0.5803922
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
       propertyPath: Duration
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621985018492165179, guid: e02b62f9532c2fd49b6c2787802e59a1,
+        type: 3}
+      propertyPath: HighlightColor.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6621985018492165180, guid: e02b62f9532c2fd49b6c2787802e59a1,
         type: 3}
@@ -3158,7 +3180,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0c5f81e4fbcb992458452d967c001e37,
+      objectReference: {fileID: 21300000, guid: c5b294088aded5e4b94bab9d62b63edd,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02b62f9532c2fd49b6c2787802e59a1, type: 3}

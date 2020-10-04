@@ -102,6 +102,7 @@ public class InGameManager : MonoBehaviour
             }
         }
         PlayerController.instance.cardManager.ChooseRace(UserData.instance.RaceIndex);
+        UI_RaceTrait.instance.UpdateRaceInfo(ArtResourceManager.instance.RaceInfos[data.RaceIndex]); 
 
         foreach (CardManager c in CardManagers)
         {

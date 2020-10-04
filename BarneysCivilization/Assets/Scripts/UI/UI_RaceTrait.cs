@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UI_RaceTrait : MonoBehaviour
 {
     public Text RaceNameText;
+    public Text RaceElementText;
     public Text TraitNameText;
     public Text TraitDescriptionText;
     public Transform CellIconHolder;
@@ -13,9 +14,21 @@ public class UI_RaceTrait : MonoBehaviour
   
     public GameObject[] CellIcons;
 
+    public static UI_RaceTrait instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     public void UpdateRaceInfo(RaceInfo info)
     {
-        RaceNameText.text = info.Name;
+        if (RaceNameText != null)
+        {
+            RaceNameText.text = info.Name;
+        }
+        if (RaceElementText != null)
+        {
+            RaceElementText.text = info.Element;
+        }
         TraitNameText.text = info.TraitName;
         TraitDescriptionText.text = info.TraitIntroduce;
         for (int i = 0; i < CellIcons.Length; i++)

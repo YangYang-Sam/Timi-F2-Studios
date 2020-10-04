@@ -186,7 +186,6 @@ public class UIManager : MonoBehaviour
                     int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName);
                     int hexID = -2;
                     //Debug.DrawLine(SelectCell.transform.position, SelectCell.transform.position + Vector3.up * 20, Color.red);
-                    print(SelectCell.HexIndex);
                     if (SelectCell != null)
                     {
                         playerCardManager.UseCard(SelectCard, SelectCell);
