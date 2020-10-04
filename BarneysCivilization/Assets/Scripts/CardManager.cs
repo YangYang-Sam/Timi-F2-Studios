@@ -402,9 +402,10 @@ public class CardManager : MonoBehaviour
                     Vector3 direction = TargetCell.transform.position - startCell.transform.position;
                     BattleManager.instance.MoveAllUnitsOneStepToDirection(this, direction);
                 }
-                //else if(MoveMode == UnitMoveMode.OtherMode)
-                //{ 
-                //}
+                else if(MoveMode == UnitMoveMode.JumpThreeStep)
+                {
+                    BattleManager.instance.JumpAllUnitsToTargetCell(this, TargetCell, 3);
+                }
                 else
                 {
                     BattleManager.instance.MoveAllUnitsToCell(this, TargetCell, UnitMoveSpeed);

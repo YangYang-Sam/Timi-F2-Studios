@@ -5,7 +5,8 @@ using UnityEngine;
 public enum UnitMoveMode
 {
     Normal,
-    Directional
+    Directional,
+    JumpThreeStep
 }
 
 public class BattleManager : MonoBehaviour
@@ -164,6 +165,22 @@ public class BattleManager : MonoBehaviour
                 unit.PathCells.Add(targetCell);
             }
             unit.UpdateDestinyCell();
+        }
+    }
+
+    public void JumpAllUnitsToTargetCell(CardManager owner, HexCell targetCell, int maxSteps)
+    {
+        if (maxSteps <= 0 || !targetCell) return;
+        
+        foreach (Unit_Base unit in owner.Units)
+        {
+            int distance = unit.Cell.coordinates.DistanceTo(targetCell.coordinates);
+            if(distance <= maxSteps)
+            {
+                unit.PathCells.Clear();
+                unit.PathCells.Add(targetCell);
+                unit.UpdateDestinyCell();
+            }
         }
     }
 }

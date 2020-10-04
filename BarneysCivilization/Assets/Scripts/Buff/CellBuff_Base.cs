@@ -65,6 +65,7 @@ public enum CellBuffType
     BallLightning,
     Cold,
     Fire,
+    IceStorm,
     Nourish,
     Overload,
     Rain,
