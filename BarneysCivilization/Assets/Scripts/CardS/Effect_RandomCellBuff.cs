@@ -6,6 +6,7 @@ public class Effect_RandomCellBuff : CardEffect
 {
     public int Turns;
     public GameObject BuffPrefab;
+    public List<HexCellType> Types;
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
         return base.CanUseCard(user, cell);
@@ -16,10 +17,18 @@ public class Effect_RandomCellBuff : CardEffect
     }
     public override void Effect(CardManager user, HexCell cell)
     {
-        int cellCount = HexGrid.instance.cells.Length;
+        List<HexCell> PossibleCells = new List<HexCell>();
+        foreach (HexCell c in HexGrid.instance.cells)
+        {
+            if (c.isValidCell && Types.Contains(c.CellType))
+            {
+                PossibleCells.Add(c);
+            }
+        }
+        int cellCount = PossibleCells.Count;
         Random.InitState(UserData.instance.RandomSeeds[1]);
-        int randomCellIndex = Random.Range(0, cellCount - 1);
-        var randomCell = HexGrid.instance.cells[randomCellIndex];
+        int randomCellIndex = Random.Range(0, cellCount);
+        var randomCell = PossibleCells[randomCellIndex];
 
         GameObject g = Instantiate(BuffPrefab, randomCell.transform.position, Quaternion.identity);
         CellBuff_Base buff = g.GetComponent<CellBuff_Base>();

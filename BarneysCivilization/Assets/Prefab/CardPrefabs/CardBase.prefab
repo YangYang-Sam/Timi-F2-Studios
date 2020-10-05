@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 0}
   Graphic: {fileID: 8826270397805948214}
-  CardImage: {fileID: 4197997867088453150}
+  CardImage: {fileID: 3690292980845738363}
   NameText: {fileID: 5451290693730646944}
   DescriptionText: {fileID: 3737306267706184337}
 --- !u!114 &4704140921453613085

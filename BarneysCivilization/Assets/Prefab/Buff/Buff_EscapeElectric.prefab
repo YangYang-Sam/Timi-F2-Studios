@@ -44,12 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6844649a227dc45b1a3dbe7d877a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cell: {fileID: 0}
   Owner: {fileID: 0}
   Creator: {fileID: 0}
   Turns: 0
   Stackable: 0
-  BuffType: 0
+  BuffType: 5
 --- !u!1 &4574575311639297273
 GameObject:
   m_ObjectHideFlags: 0

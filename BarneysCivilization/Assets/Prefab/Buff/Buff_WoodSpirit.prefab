@@ -48,7 +48,7 @@ MonoBehaviour:
   Creator: {fileID: 0}
   Turns: 0
   Stackable: 1
-  BuffType: 9
+  BuffType: 13
   BuffName: "\u6218\u4E89\u4E4B\u6811"
   Creators: []
 --- !u!1 &4574575311639297273

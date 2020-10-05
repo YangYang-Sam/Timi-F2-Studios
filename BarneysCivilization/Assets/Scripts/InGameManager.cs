@@ -143,6 +143,13 @@ public class InGameManager : MonoBehaviour
             case GameStateType.Decision:
                 PlayerController.canControl = true;
                 DecisionTimer = Time.time + DecisionDuration;
+                if (!UserData.instance.isMultiplayerGame)
+                {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        UserData.instance.RandomSeeds[i] = Random.Range(0, int.MaxValue);
+                    }
+                }
                 break;
         }
     }

@@ -48,7 +48,7 @@ MonoBehaviour:
   Creator: {fileID: 0}
   Turns: 0
   Stackable: 0
-  BuffType: 1
+  BuffType: 2
   BuffName: "\u6781\u5BD2"
 --- !u!1 &4574575311639297273
 GameObject:

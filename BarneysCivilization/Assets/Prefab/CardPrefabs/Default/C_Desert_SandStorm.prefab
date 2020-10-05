@@ -17,6 +17,7 @@ MonoBehaviour:
   Turns: 3
   BuffPrefab: {fileID: 1477477239368706076, guid: 59d6d3c370207b6499576790b93d4b69,
     type: 3}
+  Types: 03000000
 --- !u!1001 &3016318905123916207
 PrefabInstance:
   m_ObjectHideFlags: 0

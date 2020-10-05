@@ -48,7 +48,7 @@ MonoBehaviour:
   Creator: {fileID: 0}
   Turns: 3
   Stackable: 0
-  BuffType: 2
+  BuffType: 3
   BuffName: "\u71C3\u70E7"
   Damage: 1
 --- !u!1 &1532587289792529392

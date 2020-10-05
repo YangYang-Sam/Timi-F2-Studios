@@ -47,6 +47,6 @@ MonoBehaviour:
   Creator: {fileID: 0}
   Turns: 0
   Stackable: 0
-  BuffType: 3
+  BuffType: 5
   BuffName: "\u6ECB\u517B"
   HealthAddAmount: 1
