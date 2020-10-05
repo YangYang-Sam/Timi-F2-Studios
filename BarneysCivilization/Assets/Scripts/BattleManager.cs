@@ -140,6 +140,7 @@ public class BattleManager : MonoBehaviour
 
         foreach (Unit_Base unit in owner.Units)
         {
+            unit.PathCells.Clear();
             List<HexCell> queue = SearchRoute(unit.Cell, targetCell, owner);
 
             if(unit.PathCells.Count == 0)// 为了支持磁石效果

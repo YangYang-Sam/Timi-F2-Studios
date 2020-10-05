@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     private float CardAngle = 20f;
     [SerializeField]
     private Text ResourceText;
+    [SerializeField]
+    private Vector3 PressedSize;
 
     [HideInInspector]
     public Camera MainCam;
@@ -137,6 +139,7 @@ public class UIManager : MonoBehaviour
                     card.transform.position = Vector3.Lerp(card.transform.position, position, 0.15f);
                     Quaternion q = Quaternion.Euler(0, 0, angle);
                     card.transform.rotation = Quaternion.Slerp(card.transform.rotation, q, 0.15f);
+                    card.transform.localScale = Vector3.Lerp(card.transform.localScale, Vector3.one, 0.1f);
                 }
                 else
                 {
@@ -144,6 +147,8 @@ public class UIManager : MonoBehaviour
                     position.z = 0;
                     card.transform.position = Vector3.Lerp(card.transform.position, position, 0.2f);
                     card.transform.rotation = Quaternion.Slerp(card.transform.rotation, Quaternion.identity, 0.15f);
+                    card.transform.localScale = Vector3.Lerp(card.transform.localScale, PressedSize, 0.1f);
+                    card.transform.SetAsLastSibling();
                     if (Input.mousePosition.y > ReleaseThreshold)
                     {
                         if (!SelectCard.NoneTargetCard())
@@ -209,6 +214,10 @@ public class UIManager : MonoBehaviour
                 }
                 SelectCard = null;
                 UI_ArrowMesh.instance.SetVisibility(false);
+                for (int i = 0; i < playerCardManager.Cards.Count; i++)
+                {
+                    playerCardManager.Cards[i].transform.SetAsFirstSibling();
+                }
             }
        
         }

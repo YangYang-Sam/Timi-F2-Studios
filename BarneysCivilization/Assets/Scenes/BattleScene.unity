@@ -1826,6 +1826,21 @@ PrefabInstance:
       propertyPath: CardDeckText
       value: 
       objectReference: {fileID: 197235713}
+    - target: {fileID: 2610616360566754601, guid: 9c1e0ee652e884f47b06e53da6b5e91f,
+        type: 3}
+      propertyPath: PressedSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610616360566754601, guid: 9c1e0ee652e884f47b06e53da6b5e91f,
+        type: 3}
+      propertyPath: PressedSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610616360566754601, guid: 9c1e0ee652e884f47b06e53da6b5e91f,
+        type: 3}
+      propertyPath: PressedSize.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2610616360566754604, guid: 9c1e0ee652e884f47b06e53da6b5e91f,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
