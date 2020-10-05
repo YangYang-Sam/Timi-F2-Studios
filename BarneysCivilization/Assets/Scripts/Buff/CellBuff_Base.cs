@@ -9,9 +9,11 @@ public class CellBuff_Base:MonoBehaviour
     public int Turns;
     public bool Stackable = false;
     public CellBuffType BuffType = CellBuffType.Null;
+    public string BuffName;
 
     public virtual void OnCreated(HexCell cell, CardManager creator)
     {
+        ArtResourceManager.instance.CreateTextEffect(BuffName, transform.position);
         Cell = cell;
         Creator = creator;
         cell.AddBuff(this);
