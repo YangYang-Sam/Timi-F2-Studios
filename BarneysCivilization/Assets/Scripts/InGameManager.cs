@@ -163,17 +163,29 @@ public class InGameManager : MonoBehaviour
     {
         ChangeGameState(GameStateType.BeforeMove);
         yield return new WaitForSeconds(0.1f);
+        foreach (HexCell cell in HexGrid.instance.cells)
+        {
+            cell.CheckOwner();
+        }
 
         ChangeGameState(GameStateType.Move);
         yield return new WaitForSeconds(2.5f);
+        foreach (HexCell cell in HexGrid.instance.cells)
+        {
+            cell.CheckOwner();
+        }
 
         ChangeGameState(GameStateType.BeforeBattle);
         foreach (HexCell cell in HexGrid.instance.cells)
         {
             cell.BeforeBattle();
         }   
-        yield return new WaitForSeconds(0.1f);
-  
+        yield return new WaitForSeconds(0.3f);
+        foreach (HexCell cell in HexGrid.instance.cells)
+        {
+            cell.CheckOwner();
+        }
+
         ChangeGameState(GameStateType.Battle);
         foreach (HexCell cell in HexGrid.instance.cells)
         {
@@ -191,6 +203,10 @@ public class InGameManager : MonoBehaviour
             BeforeTurnEndEvent();
         }
         yield return new WaitForSeconds(0.1f);
+        foreach (HexCell cell in HexGrid.instance.cells)
+        {
+            cell.CheckOwner();
+        }
 
         ChangeGameState(GameStateType.Decision);
         if (LateDecisionEvent != null)

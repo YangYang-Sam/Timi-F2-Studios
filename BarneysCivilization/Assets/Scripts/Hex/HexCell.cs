@@ -348,6 +348,40 @@ public class HexCell : MonoBehaviour
         Camps.Clear();
         CampUnits.Clear();
     }
+    public void CheckOwner()
+    {
+        // 清理无效单位
+        if (PlacedUnits.Count > 0)
+        {
+            for (int i = PlacedUnits.Count - 1; i >= 0; i--)
+            {
+                if (PlacedUnits[i] == null || !PlacedUnits[i].isAlive)
+                {
+                    PlacedUnits.RemoveAt(i);
+                }
+            }
+        }
+
+        if (PlacedUnits.Count == 0)
+        {
+            ChangeOwner(null);
+        }
+        else
+        {
+            if (PlacedUnits[0].Owner != OwnerManager)
+            {
+                ChangeOwner(PlacedUnits[0]);
+            }
+            else
+            {
+                OwnerManager = PlacedUnits[0].Owner;
+            }
+            if (PlacedUnits.Count >= 2)
+            {
+                //Debug.LogError("Cell unit count larger than 1, Cell:" + this + " Unit1:" + PlacedUnits[0] + " Unit2:" + PlacedUnits[1]);
+            }
+        }
+    }
     public void AfterBattle()
     {
         if (hasBattle && GetUnitOnCell()!=null)

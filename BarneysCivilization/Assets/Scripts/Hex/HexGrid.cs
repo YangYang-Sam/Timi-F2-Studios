@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class HexGrid : MonoBehaviour
@@ -39,6 +40,7 @@ public class HexGrid : MonoBehaviour
     {
 		Random.InitState(UserData.instance.RandomSeeds[0]);
 		int cellIndex = 0;
+
 		for (int z = 0, i = 0; z < height; z++)
 		{
 			for (int x = 0; x < height; x++)

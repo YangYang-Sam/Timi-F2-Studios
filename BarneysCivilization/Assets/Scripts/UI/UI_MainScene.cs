@@ -79,14 +79,22 @@ public class UI_MainScene : MonoBehaviour
         print("Match Begin");
     }
 
-    public void SinglePlayerStart()
+    public void SinglePlayerStart(bool isBigMap)
     {
         UserData.instance.RandomSeeds = new int[10];
         for (int i = 0; i < 10; i++)       
         {
             UserData.instance.RandomSeeds[i] = Random.Range(0, int.MaxValue);
         }
-        SceneManager.LoadScene("BattleScene");
+        if (isBigMap)
+        {
+            SceneManager.LoadScene("Battle_6");
+        }
+        else
+        {
+            SceneManager.LoadScene("BattleScene");
+        }
+
     }
     public void StartMatching()
     {

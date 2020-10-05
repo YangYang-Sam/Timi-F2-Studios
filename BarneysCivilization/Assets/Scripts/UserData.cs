@@ -14,6 +14,8 @@ public class UserData : MonoBehaviour
     public int[] AllPoses;
     public int[] RandomSeeds;
     public bool isMultiplayerGame;
+
+    public int PlayerAmount;
  
     private void Awake()
     {
