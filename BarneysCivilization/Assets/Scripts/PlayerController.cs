@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
         }
         instance = this;
         camp = UserData.instance.Camp;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void HexTrace()

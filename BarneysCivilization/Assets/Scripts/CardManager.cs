@@ -27,10 +27,26 @@ public class CardManager : MonoBehaviour
     public int DrawCardAmount = 3;
 
     public int ResourceAmount;
-    public int TempResourceAmount;
+    public int TempResourceAmount
+    {
+        get { return tempResourceAmount; }
+        set
+        {
+            tempResourceAmount = value;
+        }
+    }
+    private int tempResourceAmount;
     public int BuyUnitTimes;
     public int ActionPoint;
-    public int UnitMoveSpeed=1;
+    public int UnitMoveSpeed
+    {
+        get { return unitMoveSpeed;}
+        set
+        {
+            unitMoveSpeed = value;
+        }
+    }
+    private int unitMoveSpeed;
 
     public RaceInfo Race;
     public RaceTrait_Base RaceTrait;
@@ -321,7 +337,7 @@ public class CardManager : MonoBehaviour
             card.CardEffect(this,cell);
             AddToUsedCards(card);
             ActionPoint -= card.ActionPointCost();
-            ArtResourceManager.instance.CreateTestEffect(card.CardName, PlayerCore.transform.position);
+            ArtResourceManager.instance.CreateTextEffect(card.CardName, PlayerCore.transform.position);
         }
     }
     public void AddToUsedCards(Card_Base card)

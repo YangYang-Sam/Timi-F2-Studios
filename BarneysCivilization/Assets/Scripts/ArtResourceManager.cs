@@ -58,12 +58,12 @@ public class ArtResourceManager : MonoBehaviour
         GameObject g = Instantiate(BattleEffect, pos, Quaternion.identity); 
         Destroy(g, 1);
     }
-    public void CreateTestEffect(string Text, Vector3 position)
+    public void CreateTextEffect(string Text, Vector3 position)
     {
-        CreateTestEffect(Text, position, Color.white, 1);
+        CreateTextEffect(Text, position, Color.white, 1);
     }
 
-    public void CreateTestEffect(string Text, Vector3 position,Color c,float sizeMultiplier)
+    public void CreateTextEffect(string Text, Vector3 position,Color c,float sizeMultiplier)
     {
         GameObject g = Instantiate(TextEffectPrefab, position+ Vector3.up, Quaternion.identity);
         Text t = g.GetComponentInChildren<Text>();
