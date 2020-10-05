@@ -141,10 +141,11 @@ public class BattleManager : MonoBehaviour
         foreach (Unit_Base unit in owner.Units)
         {
             unit.PathCells.Clear();
-            List<HexCell> queue = SearchRoute(unit.Cell, targetCell, owner);
 
-            if(unit.PathCells.Count == 0)// 为了支持磁石效果
+            if (unit.TempPathCells.Count == 0)
             {
+                List<HexCell> queue = SearchRoute(unit.Cell, targetCell, owner);
+               
                 for (int i = 1; i <= distance; i++)
                 {
                     if (queue.Count > i)
@@ -153,7 +154,14 @@ public class BattleManager : MonoBehaviour
                     }
                 }
             }
-     
+            else
+            {
+                foreach(var pathCell in unit.TempPathCells)
+                {
+                    unit.PathCells.Add(pathCell);
+                }         
+            }
+
             unit.UpdateDestinyCell();
         }
     }

@@ -14,8 +14,8 @@ public class Building_Magnet : Building_Base
             {
                 if(neabyCell.GetUnitOnCell() && (neabyCell.GetUnitOnCell().Owner != Owner))
                 {
-                    neabyCell.GetUnitOnCell().PathCells.Clear();
-                    neabyCell.GetUnitOnCell().PathCells.Add(Cell);
+                    neabyCell.GetUnitOnCell().TempPathCells.Clear();
+                    neabyCell.GetUnitOnCell().TempPathCells.Add(Cell);
                 }
             }
         }

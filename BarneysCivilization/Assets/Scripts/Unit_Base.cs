@@ -25,6 +25,7 @@ public class Unit_Base : MonoBehaviour
     [SerializeField]
     private GameObject[] LevelGraphics;
 
+    public List<HexCell> TempPathCells = new List<HexCell>();
     public List<HexCell> PathCells = new List<HexCell>();
     public List<HexCell> VisitCells = new List<HexCell>();
     private void Start()
@@ -63,7 +64,7 @@ public class Unit_Base : MonoBehaviour
                 TempHealth = 0;
                 canMove = true;
                 ForceMove = false;
-                PathCells.Clear(); // 为了支持磁石效果
+                TempPathCells.Clear();
                 break;
         }
     }
