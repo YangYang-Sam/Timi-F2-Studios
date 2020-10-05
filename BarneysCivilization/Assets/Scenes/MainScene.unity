@@ -215,7 +215,6 @@ MonoBehaviour:
       type: 3}
     StartDeckPrefabs:
     - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
-    - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
     - {fileID: 6943707428436127944, guid: 9c204cfc15526fe45b6c5afb18d6b794, type: 3}
     cards:
     - cards:
@@ -318,7 +317,7 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: 56e6ca40384227f4290f86e0c4cd67a0, type: 3}
     - cards:
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
-    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
+    RaceTraitPrefab: {fileID: 9058298516049921785, guid: b2eb37e80d4d68943b16fcdd37f34048,
       type: 3}
   - Name: "\u5B64\u98CE\u90E8\u843D"
     Element: "\u98CE\u7CFB"
