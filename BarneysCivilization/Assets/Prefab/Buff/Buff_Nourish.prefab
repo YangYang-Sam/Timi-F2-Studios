@@ -48,4 +48,5 @@ MonoBehaviour:
   Turns: 0
   Stackable: 0
   BuffType: 3
+  BuffName: "\u6ECB\u517B"
   HealthAddAmount: 1

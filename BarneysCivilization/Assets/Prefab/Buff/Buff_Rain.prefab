@@ -49,6 +49,7 @@ MonoBehaviour:
   Turns: 3
   Stackable: 0
   BuffType: 4
+  BuffName: "\u4E0B\u96E8"
 --- !u!1 &4574575311639297273
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,8 +49,7 @@ MonoBehaviour:
   Turns: 0
   Stackable: 0
   BuffType: 1
-  BuffName: 
-  BuffNameColor: {r: 1, g: 1, b: 1, a: 0}
+  BuffName: "\u6781\u5BD2"
 --- !u!1 &4574575311639297273
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,6 +49,7 @@ MonoBehaviour:
   Turns: 0
   Stackable: 0
   BuffType: 6
+  BuffName: "\u6C99\u66B4"
   Damage: 1
 --- !u!1 &4574575311639297273
 GameObject:
