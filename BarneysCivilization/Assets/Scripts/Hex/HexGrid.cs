@@ -49,7 +49,8 @@ public class HexGrid : MonoBehaviour
 				int Dz = Mathf.Abs(z - other.z);
 				int distance = (Dx + Dy + Dz) / 2;
 				HexCell cell = CreateCell(x, z, i++);
-				cell.HexIndex = cellIndex;
+				cell.HexIndex = cellIndex;     
+
 				cellIndex++;
 				if (distance >= Radius)
 				{

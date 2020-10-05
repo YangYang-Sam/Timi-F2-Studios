@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerBuff_Base : MonoBehaviour
 {
-    public HexCell Cell;
     public CardManager Owner;
     public CardManager Creator;
     public int Turns;

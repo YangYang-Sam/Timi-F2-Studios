@@ -93,7 +93,7 @@ public class CardManager : MonoBehaviour
         PlayerCore = coreObj.GetComponent<Core>();
         HexCell startCell = HexGrid.instance.cells[StartCell];
         PlayerCore.transform.position = startCell.transform.position;
-        PlayerCore.InitCore(startCell, this);
+        PlayerCore.OnCreated(startCell, this);
         if (camp == UserData.instance.Camp)
         {
             UI_ArrowMesh.instance.transform.position = startCell.transform.position;
@@ -115,7 +115,7 @@ public class CardManager : MonoBehaviour
     }
     public Vector3 GetCorePosition()
     {
-        return PlayerCore.transform.position;
+        return PlayerCore.EffectTransform.position;
     }
     public Unit_Base CreateNewUnit(HexCell cell,int health)
     {
@@ -346,7 +346,8 @@ public class CardManager : MonoBehaviour
         card.gameObject.SetActive(false);
 
         card.isActive = false;
-
+        card.transform.position = UIManager.instance.CardDeckText.transform.position;
+        card.transform.localScale = Vector3.zero;
         Cards.Remove(card);
     }
     public void ShuffleCards()
@@ -375,6 +376,8 @@ public class CardManager : MonoBehaviour
         InGameCardDeck.Insert(0, card);
         card.gameObject.SetActive(false);
         card.isActive = false;
+        card.transform.position = UIManager.instance.CardDeckText.transform.position;
+        card.transform.localScale = Vector3.zero;
     }
     public void LostCell(HexCell cell)
     {
@@ -435,6 +438,7 @@ public class CardManager : MonoBehaviour
     {
         GameObject g = Instantiate(prefab, cell.transform.position, Quaternion.identity);
         Building_Base building = g.GetComponent<Building_Base>();
+        Buildings.Add(building);
         building.OnCreated(cell, this);
     }
     public void BuildingDestroy(Building_Base building)

@@ -11,6 +11,7 @@ public class Building_Base : MonoBehaviour
 
     public int Level = 1;
     public int MaxLevel = 1;
+    public Transform EffectTransform;
     public virtual void OnCreated(HexCell cell,CardManager owner)
     {
         Cell = cell;
@@ -18,6 +19,10 @@ public class Building_Base : MonoBehaviour
         cell.OwnerChangeEvent += OnCellChangeOwner;
         cell.OnBuildingCreatedOnCell(this);
         InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
+        if (!EffectTransform)
+        {
+            EffectTransform = transform;
+        }
     }
     public void ChangeCell(HexCell newCell)
     {

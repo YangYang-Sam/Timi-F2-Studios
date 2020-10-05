@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PlayerBuff_EscapeElectric : PlayerBuff_Base
 {   
-    private void OnDeathEvent(int damage)
+    private void OnDeathEvent(int damage, Unit_Base unit)
     {
-        foreach(var nearbyCell in Cell.NearbyCells)
+        foreach(var nearbyCell in unit.Cell.NearbyCells)
         {
             if (nearbyCell)
             {
-                foreach (var unit in nearbyCell.PlacedUnits)
+                foreach (var otherUnit in nearbyCell.PlacedUnits)
                 {
-                    if (unit && (unit.Owner == Creator))
+                    if (otherUnit && (otherUnit.Owner == Creator))
                     {
-                        unit.ChangeHealth(damage / 2,Cell.transform.position);
+                        unit.ChangeHealth(damage / 2,unit.Cell.transform.position);
                         return;
                     }
                 }

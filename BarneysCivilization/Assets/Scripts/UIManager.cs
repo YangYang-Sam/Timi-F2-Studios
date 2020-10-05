@@ -11,8 +11,7 @@ public class UIManager : MonoBehaviour
     private GameObject PlayerCardHolder;
     [SerializeField]
     private GameObject EnemyCardHolder;
-    [SerializeField]
-    private float CardAngle = 20f;
+
     [SerializeField]
     private Text ResourceText;
     [SerializeField]
@@ -44,9 +43,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private float ReleaseThreshold = 50;
     [SerializeField]
-    private float yM = 990;
-    [SerializeField]
-    private float YOffset = -784;
+    private float CardAngle = 20f;
     private void Awake()
     {
         instance = this;
@@ -127,18 +124,20 @@ public class UIManager : MonoBehaviour
 
                 if (card != SelectCard)
                 {
-                    float angle;
+                    //float angle;
 
-                    angle = PosIndex * CardAngle;
-                    position = new Vector3(0, yM, 0);
+                    //angle = PosIndex * CardAngle;
+                    //position = new Vector3(0, yM, 0);
+                    position = PlayerCardHolder.transform.position + PosIndex * (CardAngle/count) * Vector3.right;
 
+                    //position = Quaternion.Euler(0, 0, angle) * position;
+                    //position += PlayerCardHolder.transform.position + new Vector3(0, YOffset, 0);
 
-                    position = Quaternion.Euler(0, 0, angle) * position;
-                    position += PlayerCardHolder.transform.position + new Vector3(0, YOffset, 0);
-
+                    //card.transform.position = Vector3.Lerp(card.transform.position, position, 0.15f);
+                    //Quaternion q = Quaternion.Euler(0, 0, angle);
                     card.transform.position = Vector3.Lerp(card.transform.position, position, 0.15f);
-                    Quaternion q = Quaternion.Euler(0, 0, angle);
-                    card.transform.rotation = Quaternion.Slerp(card.transform.rotation, q, 0.15f);
+
+                    //card.transform.rotation = Quaternion.Slerp(card.transform.rotation, q, 0.15f);
                     card.transform.localScale = Vector3.Lerp(card.transform.localScale, Vector3.one, 0.1f);
                 }
                 else

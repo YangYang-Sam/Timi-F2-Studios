@@ -48,7 +48,8 @@ MonoBehaviour:
   Creator: {fileID: 0}
   Turns: 0
   Stackable: 0
-  BuffType: 10
+  BuffType: 14
+  BuffName: 
 --- !u!1 &1532587289792529392
 GameObject:
   m_ObjectHideFlags: 0

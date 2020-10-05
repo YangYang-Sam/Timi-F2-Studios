@@ -6,7 +6,7 @@ public class RaceTrait_Wood : RaceTrait_Base
 {
     private void Start()
     {
-        owner.DrawCardAmount = 2;
+        owner.DrawCardAmount = 1;
         InGameManager.instance.GameStateChangeEvent += Instance_GameStateChangeEvent;
     }
 

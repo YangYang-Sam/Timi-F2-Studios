@@ -58,7 +58,10 @@ public class Unit_Base : MonoBehaviour
                 }
                 break;
             case GameStateType.AfterBattle:
-                StartCoroutine(MoveToCenter());
+                if (gameObject.activeSelf)
+                {
+                    StartCoroutine(MoveToCenter());
+                }            
                 break;
             case GameStateType.Decision:
                 TempHealth = 0;
@@ -225,7 +228,7 @@ public class Unit_Base : MonoBehaviour
             {
                 if (DeathEvent != null)
                 {
-                    DeathEvent(LastDamage);
+                    DeathEvent(LastDamage,this);
                 }
                 Death(source);
                 return true;
@@ -233,7 +236,7 @@ public class Unit_Base : MonoBehaviour
             return false;
         }
     }
-    public event System.Action<int> DeathEvent;
+    public event System.Action<int,Unit_Base> DeathEvent;
 
     public void ChangeHealth(int amount, Vector3 FromPosition)
     {
@@ -272,7 +275,15 @@ public class Unit_Base : MonoBehaviour
         }
         if (amount > 0)
         {
-            CurveManger.instance.StartNewCurve(FromPosition, transform.position, amount, PlayerController.instance.OrbPrefabs[Owner.camp]);
+            if (amount > 3)
+            {
+                CurveManger.instance.StartNewCurve(FromPosition, transform.position, 1, PlayerController.instance.OrbPrefabs[Owner.camp]);
+            }
+            else
+            {
+                CurveManger.instance.StartNewCurve(FromPosition, transform.position, amount, PlayerController.instance.OrbPrefabs[Owner.camp]);
+            }
+          
         }
     }
     public event System.Action HealthChangeEvent;

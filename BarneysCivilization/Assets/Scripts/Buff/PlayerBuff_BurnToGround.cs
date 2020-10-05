@@ -17,7 +17,7 @@ public class PlayerBuff_BurnToGround : PlayerBuff_Base
             if (cell.FindBuff(CellBuffType.Rain) != null)
             {
                 amount += AmountPerFire;
-                unit.ChangeHealth(AmountPerFire, Cell.transform.position);                
+                unit.ChangeHealth(AmountPerFire, cell.transform.position);                
             }
 
             foreach (HexCell neighbor in cell.NearbyCells)
