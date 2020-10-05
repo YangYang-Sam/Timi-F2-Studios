@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5770948835251651120}
-  - component: {fileID: -919214951575523588}
+  - component: {fileID: 8921327300908558272}
   m_Layer: 0
   m_Name: RaceTrait_Thunder
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-919214951575523588
+--- !u!114 &8921327300908558272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,10 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9058298516049921785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29dcbf66c5b09f347958c143a0f5c70f, type: 3}
+  m_Script: {fileID: 11500000, guid: feae3b637b1fcce4992150ef15c6b7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionPointCost: 1
-  NonTargetCard: 0
-  Turns: 1
-  BuffPrefab: {fileID: 0}
+  owner: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionPointCost: 1
-  NonTargetCard: 0
+  NonTargetCard: 1
   TempResource: 0
   ActionPoint: 1
   DrawCards: 0
@@ -44,7 +44,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Lake_MoveSpeed 1
+      value: C_Thunder_Lake_1
       objectReference: {fileID: 0}
     - target: {fileID: 7068474797131690296, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

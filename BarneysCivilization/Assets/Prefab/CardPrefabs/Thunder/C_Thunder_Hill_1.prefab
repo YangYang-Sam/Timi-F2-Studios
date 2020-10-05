@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionPointCost: 1
-  NonTargetCard: 0
+  NonTargetCard: 1
   Turns: 0
   BuffPrefab: {fileID: 1477477239368706076, guid: e241f6fe55b26b946a0a7bd56a582c4b,
     type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionPointCost: 1
-  NonTargetCard: 0
+  NonTargetCard: 1
 --- !u!1001 &3016318905123916207
 PrefabInstance:
   m_ObjectHideFlags: 0
