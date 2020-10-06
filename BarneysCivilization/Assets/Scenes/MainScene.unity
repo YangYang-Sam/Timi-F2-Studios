@@ -718,7 +718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &311385584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -795,7 +795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 320, y: -763}
+  m_AnchoredPosition: {x: 200, y: -790.3}
   m_SizeDelta: {x: 420, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422577389
@@ -965,14 +965,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457465336}
-  m_LocalRotation: {x: 0.21243352, y: 0, z: 0, w: 0.97717553}
+  m_LocalRotation: {x: 0.15962273, y: 0, z: 0, w: 0.9871781}
   m_LocalPosition: {x: 0, y: 2.69, z: -6.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480751211}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 24.53, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.37, y: 0, z: 0}
 --- !u!1 &480751210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,7 +2424,7 @@ RectTransform:
   m_GameObject: {fileID: 1077982192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.97956, y: 0.97956, z: 0.97956}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 166045645}
   m_Father: {fileID: 1119694492}
@@ -2432,8 +2432,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -320, y: -605}
-  m_SizeDelta: {x: 420, y: 150}
+  m_AnchoredPosition: {x: -200, y: -605}
+  m_SizeDelta: {x: 420, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077982194
 MonoBehaviour:
@@ -2561,7 +2561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 320, y: -605}
+  m_AnchoredPosition: {x: 200, y: -605}
   m_SizeDelta: {x: 420, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083072743
@@ -3595,7 +3595,7 @@ Light:
     m_CustomResolution: -1
     m_Strength: 0.74
     m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -3683,8 +3683,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -320, y: -764.3}
-  m_SizeDelta: {x: 420, y: 138}
+  m_AnchoredPosition: {x: -200, y: -790.3}
+  m_SizeDelta: {x: 420, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1342013923
 MonoBehaviour:
@@ -5008,7 +5008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChooseRaceCameraPitch: 24.53
-  MainSceneCameraPitch: 20
+  MainSceneCameraPitch: 18.37
   GalleryInstance: {fileID: 0}
   RaceTrait: {fileID: 311385585}
   RaceButtons:
