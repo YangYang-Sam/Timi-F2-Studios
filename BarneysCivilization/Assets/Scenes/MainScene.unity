@@ -367,7 +367,7 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
       - {fileID: 6943707428436127944, guid: a092396a682e6f34b837ece1cb05ac07, type: 3}
       - {fileID: 6943707428436127944, guid: eb0258338c3b73b45a3ea659083b07b5, type: 3}
-    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
+    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 459d49faaa3a5fd489c11e47268ab71d,
       type: 3}
   - Name: "\u78D0\u77F3\u90E8\u843D"
     Element: "\u571F\u7CFB"
@@ -409,7 +409,7 @@ MonoBehaviour:
       - {fileID: 6943707428436127944, guid: 9861e53b896fc6b45952a9b475b098ea, type: 3}
       - {fileID: 6943707428436127944, guid: df9d0c434ec3cde459b70ae8433b28cd, type: 3}
       - {fileID: 6943707428436127944, guid: a3b4608960b815b409d64053f5960029, type: 3}
-    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 812e6c3fc3967574291eb261a9564ab1,
+    RaceTraitPrefab: {fileID: 9058298516049921785, guid: 18a6085b0ea684941ac5e0cae2712641,
       type: 3}
   EffectPrefabs:
   - {fileID: 5756787108513754847, guid: 82b30a0be5e5f794a8555ef31c868aab, type: 3}

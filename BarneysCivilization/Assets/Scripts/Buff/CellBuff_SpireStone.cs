@@ -17,13 +17,13 @@ public class CellBuff_SpireStone : CellBuff_Base
     {
         if (InGameManager.isGameState(GameStateType.BeforeBattle))
         {
-            foreach (var unit in Cell.PlacedUnits)
+            for (int i = Cell.PlacedUnits.Count-1; i >=0 ; i--)
             {
-                if(unit.Owner != Creator)
+                if (Cell.PlacedUnits[i].Owner != Creator)
                 {
-                    unit.TakeDamage(HealthReduceAmount, null);
+                    Cell.PlacedUnits[i].TakeDamage(HealthReduceAmount, null);
                 }
-            }
+            }           
         }
     }
 

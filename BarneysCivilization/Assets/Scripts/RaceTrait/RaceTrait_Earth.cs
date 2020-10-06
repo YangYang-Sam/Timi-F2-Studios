@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RaceTrait_Earth :RaceTrait_Base
+{
+    public Color c;
+    private void Start()
+    {
+        InGameManager.instance.BeforeTurnEndEvent += OnTurnEnd;
+    }
+
+    private void OnTurnEnd()
+    {
+        foreach (Unit_Base unit in owner.Units)
+        {           
+            if (!unit.canMove)
+            {
+                unit.ChangeHealth(1, owner.GetCorePosition());
+                ArtResourceManager.instance.CreateTextEffect("凝聚之土", unit.transform.position, c, 1);
+            }
+        }
+    }
+}

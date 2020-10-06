@@ -119,7 +119,13 @@ public class Unit_Base : MonoBehaviour
         SetAnimMoveState(true);
         MoveDistance = PathCells.Count;
         VisitCells.Clear();
-        float speed = PathCells.Count * HexMetrics.innerRadius * 2 / 2.5f;
+
+        float distance = Vector3.Distance(PathCells[0].transform.position, transform.position);  
+        for (int i = 1; i < PathCells.Count; i++)
+        {
+            distance += Vector3.Distance(PathCells[i].transform.position, PathCells[i - 1].transform.position);
+        }
+        float speed = distance / 2.5f;
         while (PathCells.Count > 0)
         {                        
             transform.position += (PathCells[0].transform.position - transform.position).normalized * speed * Time.deltaTime;

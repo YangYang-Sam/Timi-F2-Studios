@@ -18,6 +18,6 @@ public class Effect_UninhibitedWind : CardEffect
 
     public override void Effect(CardManager user, HexCell cell)
     {
-        user.UnitMoveSpeed += MoveSpeedAmount;
+        user.SetUnitMoveModeTemporarily(UnitMoveMode.JumpTwoStep);
     }
 }
