@@ -24,6 +24,8 @@ public class UI_MainScene : MonoBehaviour
     public UI_ChooseRaceButton[] RaceButtons;
 
     public MapData[] MapDatas;
+    public SpriteRenderer CameraBackgroundRenderer;
+    public Sprite[] RaceBackgrounds;
     private void Awake()
     {
         instance = this;
@@ -146,6 +148,7 @@ public class UI_MainScene : MonoBehaviour
             Destroy(GalleryInstance);
         }
         GalleryInstance = Instantiate(info.GalleryPrefab);
+        CameraBackgroundRenderer.sprite = RaceBackgrounds[raceIndex];
     }
 }
 [System.Serializable]
