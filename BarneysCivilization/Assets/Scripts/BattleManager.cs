@@ -6,7 +6,8 @@ public enum UnitMoveMode
 {
     Normal,
     Directional,
-    JumpThreeStep
+    JumpThreeStep,
+    JumpTwoStep
 }
 
 public class BattleManager : MonoBehaviour
@@ -175,7 +176,18 @@ public class BattleManager : MonoBehaviour
             unit.PathCells.Clear();
             if (targetCell != null /*&& targetCell.CanPass*/)
             {
-                unit.PathCells.Add(targetCell);
+                if (unit.TempPathCells.Count == 0)
+                {
+                    unit.PathCells.Add(targetCell);
+                }
+                else
+                {
+                    foreach (var pathCell in unit.TempPathCells)
+                    {
+                        unit.PathCells.Add(pathCell);
+                    }
+                }
+               
             }
             unit.UpdateDestinyCell();
         }
@@ -184,15 +196,38 @@ public class BattleManager : MonoBehaviour
     public void JumpAllUnitsToTargetCell(CardManager owner, HexCell targetCell, int maxSteps)
     {
         if (maxSteps <= 0 || !targetCell) return;
-        
+       
         foreach (Unit_Base unit in owner.Units)
         {
+            unit.PathCells.Clear();
             int distance = unit.Cell.coordinates.DistanceTo(targetCell.coordinates);
             if(distance <= maxSteps)
             {
                 unit.PathCells.Clear();
                 unit.PathCells.Add(targetCell);
                 unit.UpdateDestinyCell();
+            }
+            else
+            {
+                if (unit.TempPathCells.Count == 0)
+                {
+                    List<HexCell> queue = SearchRoute(unit.Cell, targetCell, owner);
+
+                    for (int i = 1; i <= distance; i++)
+                    {
+                        if (queue.Count > i)
+                        {
+                            unit.PathCells.Add(queue[i]);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var pathCell in unit.TempPathCells)
+                    {
+                        unit.PathCells.Add(pathCell);
+                    }
+                }
             }
         }
     }

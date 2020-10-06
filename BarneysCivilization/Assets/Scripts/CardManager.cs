@@ -60,6 +60,8 @@ public class CardManager : MonoBehaviour
     public void SetUnitMoveModeTemporarily(UnitMoveMode mode)
     {
         MoveMode = mode;
+        UpdateCanMoveCells();
+        UIManager.instance.UpdateInteractableCells(true, null);
     }
 
     public GameObject GetUnitPrefab()
@@ -247,20 +249,63 @@ public class CardManager : MonoBehaviour
     public void UpdateCanMoveCells()
     {
         CanMoveCells.Clear();
-        foreach (HexCell cell in OccupiedCells)
+        switch (MoveMode)
         {
-            if (!CanMoveCells.Contains(cell))
-            {
-                CanMoveCells.Add(cell);
-            }
-            foreach (HexCell neighbor in cell.NearbyCells)
-            {
-                if (!CanMoveCells.Contains(neighbor))
+            case UnitMoveMode.Normal:
+                foreach (HexCell cell in OccupiedCells)
                 {
-                    CanMoveCells.Add(neighbor);
+                    if (!CanMoveCells.Contains(cell))
+                    {
+                        CanMoveCells.Add(cell);
+                    }
+                    foreach (HexCell neighbor in cell.NearbyCells)
+                    {
+                        if (!CanMoveCells.Contains(neighbor))
+                        {
+                            CanMoveCells.Add(neighbor);
+                        }
+                    }
                 }
-            }
+                break;
+            case UnitMoveMode.Directional:
+                foreach (HexCell cell in PlayerCore.Cell.NearbyCells)
+                {
+                    CanMoveCells.Add(cell);
+                }
+
+                break;
+            case UnitMoveMode.JumpThreeStep:
+                CanMoveCells = new List<HexCell>(OccupiedCells);
+                break;
+            case UnitMoveMode.JumpTwoStep:
+                List<HexCell> neighbors = new List<HexCell>();
+                foreach (HexCell cell in OccupiedCells)
+                {
+                    if (!neighbors.Contains(cell))
+                    {
+                        neighbors.Add(cell);
+                    }
+                    foreach (HexCell neighbor in cell.NearbyCells)
+                    {
+                        if (!neighbors.Contains(neighbor))
+                        {
+                            neighbors.Add(neighbor);
+                        }
+                    }
+                }
+                foreach (HexCell cell in neighbors)
+                {
+                    foreach (HexCell neighbor in cell.NearbyCells)
+                    {
+                        if (!CanMoveCells.Contains(neighbor))
+                        {
+                            CanMoveCells.Add(neighbor);
+                        }
+                    }
+                }
+                break;
         }
+
         //List<HexCell> CheckedCells = new List<HexCell>();
         //List<HexCell> ProcessingCells = new List<HexCell>();
         //ProcessingCells.Add(PlayerCore.Cell);
@@ -414,23 +459,25 @@ public class CardManager : MonoBehaviour
     {
         if (InGameManager.isGameState(GameStateType.Decision) && !isLost)
         {
-            UpdateCanMoveCells();
             if (CanMoveCells.Contains(TargetCell))
             {
-                if(MoveMode == UnitMoveMode.Directional)
+                switch (MoveMode)
                 {
-                    HexCell startCell = HexGrid.instance.cells[StartCell];
-                    Vector3 direction = TargetCell.transform.position - startCell.transform.position;
-                    BattleManager.instance.MoveAllUnitsOneStepToDirection(this, direction);
-                }
-                else if(MoveMode == UnitMoveMode.JumpThreeStep)
-                {
-                    BattleManager.instance.JumpAllUnitsToTargetCell(this, TargetCell, 3);
-                }
-                else
-                {
-                    BattleManager.instance.MoveAllUnitsToCell(this, TargetCell, UnitMoveSpeed);
-                }
+                    case UnitMoveMode.Normal:
+                        BattleManager.instance.MoveAllUnitsToCell(this, TargetCell, UnitMoveSpeed);
+                        break;
+                    case UnitMoveMode.Directional:
+                        HexCell startCell = HexGrid.instance.cells[StartCell];
+                        Vector3 direction = TargetCell.transform.position - startCell.transform.position;
+                        BattleManager.instance.MoveAllUnitsOneStepToDirection(this, direction);
+                        break;
+                    case UnitMoveMode.JumpTwoStep:
+                        BattleManager.instance.JumpAllUnitsToTargetCell(this, TargetCell, 2);
+                        break;
+                    case UnitMoveMode.JumpThreeStep:
+                        BattleManager.instance.JumpAllUnitsToTargetCell(this, TargetCell, 3);
+                        break;
+                }      
             }
         }
     }
