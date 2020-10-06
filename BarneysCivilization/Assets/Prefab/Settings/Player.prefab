@@ -44,13 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a9f8707ca73a849b469afa80e70cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UID: 
   camp: 0
   Cards: []
   InGameCardDeck: []
-  StartDeck:
-  - {fileID: 6943707428436127944, guid: efb728c16c24be3419a25d7be4786fe3, type: 3}
-  - {fileID: 6943707428436127944, guid: ec2b3b2259dbb9e47843fc3eb05c5660, type: 3}
-  - {fileID: 6943707428436127944, guid: b7ce8351dcb436e4e9527e6ccc127454, type: 3}
   Units: []
   OccupiedCells: []
   CanMoveCells: []
@@ -59,20 +56,26 @@ MonoBehaviour:
   MaxCardAmount: 6
   DrawCardAmount: 3
   ResourceAmount: 1
-  TempResourceAmount: 0
   BuyUnitTimes: 0
   ActionPoint: 0
-  UnitMoveSpeed: 1
   Race:
     Name: 
+    Element: 
+    TraitName: 
+    TraitIntroduce: 
+    FitCells: 
+    GalleryPrefab: {fileID: 0}
     CorePrefab: {fileID: 0}
     UnitPrefab: {fileID: 0}
+    StartDeckPrefabs: []
     cards: []
     RaceTraitPrefab: {fileID: 0}
   RaceTrait: {fileID: 0}
   PlayerCore: {fileID: 0}
   isLost: 0
   StartCell: 22
+  MoveMode: 1
+  PlayerBuffs: []
 --- !u!114 &186178794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +89,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineOffset: 0.06
-  OutlineExtent: 0
+  OutlineExtent: 0.05
   LineRendererPrefab: {fileID: 4780640826905784930, guid: 97c4cb65bc1fdad45934b7d36652a3ae,
     type: 3}

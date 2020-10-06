@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     private UI_BattleEndPannel BattleEndPannel;
     public bool IsChoosingCard;
 
+
     [Header("Arrangment")]
     [SerializeField]
     private float ReleaseThreshold = 50;
@@ -55,7 +56,11 @@ public class UIManager : MonoBehaviour
         HexTrace();
         ArrangeCards();
         MouseUp();
-        CardDeckText.text = playerCardManager.InGameCardDeck.Count.ToString();
+        if (playerCardManager)
+        {
+            CardDeckText.text = playerCardManager.InGameCardDeck.Count.ToString();
+        }
+
     }
     private void Start()
     {
@@ -111,7 +116,7 @@ public class UIManager : MonoBehaviour
 
     public void ArrangeCards()
     {
-        if (playerCardManager.Cards != null)
+        if (playerCardManager && playerCardManager.Cards != null)
         {
             int count = playerCardManager.Cards.Count;
 

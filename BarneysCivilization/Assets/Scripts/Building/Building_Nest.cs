@@ -6,24 +6,32 @@ public class Building_Nest : Building_Base
 {
     public int ResourceAmount = 1;
 
-    protected override void OnGameStateChange()
+    public override void OnCreated(HexCell cell, CardManager owner)
     {
-        base.OnGameStateChange();
+        base.OnCreated(cell, owner);
+        InGameManager.instance.LateDecisionEvent += OnLateDecision;
+    }
 
-        if (InGameManager.isGameState(GameStateType.BeforeMove))
+    private void OnLateDecision()
+    {
+        bool isolate = true;
+        foreach(HexCell cell in Cell.NearbyCells)
         {
-            if (Cell.GetUnitOnCell() && Cell.GetUnitOnCell().Owner == Owner)
+            if (cell.OwnerManager == Owner)
             {
-                Cell.GetUnitOnCell().canMove = false;
+                isolate=false;
+                break;
             }
         }
-
-        if (InGameManager.isGameState(GameStateType.AfterBattle))
+        if (isolate)
         {
-            if (Cell.GetUnitOnCell() && Cell.GetUnitOnCell().Owner == Owner)
-            {
-                Cell.GetUnitOnCell().ChangeHealth(ResourceAmount, Cell.transform.position);
-            }
+            Cell.GetUnitOnCell().ChangeHealth(1, EffectTransform.position);
         }
+    }
+
+    public override void OnBuildingDestroy()
+    {
+        base.OnBuildingDestroy();
+        InGameManager.instance.LateDecisionEvent -= OnLateDecision;
     }
 }

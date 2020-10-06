@@ -32,6 +32,10 @@ public class HexGrid : MonoBehaviour
 
 		gridCanvas = GetComponentInChildren<Canvas>();
 
+		width = UserData.instance.mapData.Width;
+		height = UserData.instance.mapData.Width;
+		Radius = UserData.instance.mapData.Radius;
+		other = UserData.instance.mapData.CenterGrid;
 		cells = new HexCell[height * width];
 
 
@@ -40,7 +44,6 @@ public class HexGrid : MonoBehaviour
     {
 		Random.InitState(UserData.instance.RandomSeeds[0]);
 		int cellIndex = 0;
-
 		for (int z = 0, i = 0; z < height; z++)
 		{
 			for (int x = 0; x < height; x++)
