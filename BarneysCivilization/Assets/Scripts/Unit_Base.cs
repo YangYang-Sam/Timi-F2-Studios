@@ -27,7 +27,6 @@ public class Unit_Base : MonoBehaviour
 
     public List<HexCell> TempPathCells = new List<HexCell>();
     public List<HexCell> PathCells = new List<HexCell>();
-    public List<HexCell> VisitCells = new List<HexCell>();
     private void Start()
     {
         InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
@@ -109,7 +108,6 @@ public class Unit_Base : MonoBehaviour
         MergeToUnit.TempHealth += TempHealth;
         UnitRemoved();
     }
-
     Coroutine RotateProcess;
     private IEnumerator MoveProcess()
     {
@@ -118,7 +116,6 @@ public class Unit_Base : MonoBehaviour
         UnitMoveTo(destinyCell);
         SetAnimMoveState(true);
         MoveDistance = PathCells.Count;
-        VisitCells.Clear();
 
         float distance = Vector3.Distance(PathCells[0].transform.position, transform.position);  
         for (int i = 1; i < PathCells.Count; i++)
@@ -131,7 +128,7 @@ public class Unit_Base : MonoBehaviour
             transform.position += (PathCells[0].transform.position - transform.position).normalized * speed * Time.deltaTime;
             if (Vector3.Distance(PathCells[0].transform.position, transform.position) <= 3)
             {
-                VisitCells.Add(PathCells[0]);
+                Owner.OnUnitVisitCell(this, PathCells[0]);
                 PathCells.RemoveAt(0);
                 if (PathCells.Count > 0)
                 {

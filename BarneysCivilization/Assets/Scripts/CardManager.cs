@@ -62,6 +62,24 @@ public class CardManager : MonoBehaviour
         MoveMode = mode;
         UpdateCanMoveCells();
         UIManager.instance.UpdateInteractableCells(true, null);
+        CancelAllUnitMove();
+    }
+    public void CancelAllUnitMove()
+    {
+        if (InGameManager.isGameState(GameStateType.Decision) && !isLost)
+        {
+            foreach (Unit_Base unit in Units)
+            {
+                unit.PathCells.Clear();
+                if (unit.TempPathCells.Count != 0)
+                {
+                    for (int i = 0; i < unit.TempPathCells.Count; i++)
+                    {
+                        unit.PathCells.Add(unit.TempPathCells[i]);
+                    }
+                }
+            }
+        }
     }
 
     public GameObject GetUnitPrefab()
@@ -455,7 +473,7 @@ public class CardManager : MonoBehaviour
         }
         UpdateOccupiedBoundaryLines();
     }
-    public void SetUnitMoveTo(HexCell TargetCell)
+    public bool SetUnitMoveTo(HexCell TargetCell)
     {
         if (InGameManager.isGameState(GameStateType.Decision) && !isLost)
         {
@@ -477,8 +495,24 @@ public class CardManager : MonoBehaviour
                     case UnitMoveMode.JumpThreeStep:
                         BattleManager.instance.JumpAllUnitsToTargetCell(this, TargetCell, 3);
                         break;
-                }      
+                }
+
+                return true;
             }
+            else
+            {
+                CancelAllUnitMove();                
+            }          
+        }
+        return false;
+    }
+
+    public event System.Action<Unit_Base, HexCell> UnitVisitCellEvent;
+    public void OnUnitVisitCell(Unit_Base unit, HexCell cell)
+    {
+        if (UnitVisitCellEvent != null)
+        {
+            UnitVisitCellEvent(unit, cell);
         }
     }
     public void CreateBuilding(GameObject prefab,HexCell cell)

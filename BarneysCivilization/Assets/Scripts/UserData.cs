@@ -15,7 +15,7 @@ public class UserData : MonoBehaviour
     public int[] RandomSeeds;
     public bool isMultiplayerGame;
 
-    public int PlayerAmount;
+    public MapData mapData;
  
     private void Awake()
     {

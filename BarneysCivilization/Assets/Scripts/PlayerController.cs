@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public static bool canControl = false;
     public int camp;
 
+    public GameObject MoveIndicator;
+
     public GameObject[] OrbPrefabs;
     private void Awake()
     {
@@ -34,13 +36,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(inputRay, out hit))
         {
-            if (SelectCell != null)
-            {
-            }
-            SelectCell = HexGrid.instance.GetCellByPosition(hit.point);
-            if (SelectCell != null)
-            {
-            }           
+            SelectCell = HexGrid.instance.GetCellByPosition(hit.point);               
         }
         else
         {
@@ -53,13 +49,34 @@ public class PlayerController : MonoBehaviour
  
     public void PlayerClickOnMap()
     {
-        HexTrace();
-        if (SelectCell != null)
+        if (canControl)
         {
-            cardManager.SetUnitMoveTo(SelectCell);
-            if (UserData.instance.isMultiplayerGame)
+            HexTrace();
+            if (SelectCell != null && SelectCell.isValidCell)
             {
-                NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
+                if(cardManager.SetUnitMoveTo(SelectCell))
+                {
+                    MoveIndicator.SetActive(true);
+                    MoveIndicator.transform.position = SelectCell.transform.position;
+                }
+                else
+                {
+                    MoveIndicator.SetActive(false);
+                }
+
+                if (UserData.instance.isMultiplayerGame)
+                {
+                    NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
+                }
+            }
+            else
+            {
+                cardManager.CancelAllUnitMove();
+                if (UserData.instance.isMultiplayerGame)
+                {
+                    NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, -2);
+                }
+                MoveIndicator.SetActive(false);
             }
         }
     }

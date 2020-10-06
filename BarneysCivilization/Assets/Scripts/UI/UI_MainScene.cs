@@ -23,6 +23,7 @@ public class UI_MainScene : MonoBehaviour
 
     public UI_ChooseRaceButton[] RaceButtons;
 
+    public MapData[] MapDatas;
     private void Awake()
     {
         instance = this;
@@ -79,22 +80,17 @@ public class UI_MainScene : MonoBehaviour
         print("Match Begin");
     }
 
-    public void SinglePlayerStart(bool isBigMap)
+    public void SinglePlayerStart(int MapIndex)
     {
         UserData.instance.RandomSeeds = new int[10];
-        for (int i = 0; i < 10; i++)       
+        for (int i = 0; i < 10; i++)
         {
             UserData.instance.RandomSeeds[i] = Random.Range(0, int.MaxValue);
         }
-        if (isBigMap)
-        {
-            SceneManager.LoadScene("Battle_6");
-        }
-        else
-        {
-            SceneManager.LoadScene("BattleScene");
-        }
 
+        UserData.instance.mapData = MapDatas[MapIndex];
+
+        SceneManager.LoadScene("BattleScene");
     }
     public void StartMatching()
     {
@@ -151,4 +147,12 @@ public class UI_MainScene : MonoBehaviour
         }
         GalleryInstance = Instantiate(info.GalleryPrefab);
     }
+}
+[System.Serializable]
+public class MapData
+{
+    public int Width;
+    public int Radius;
+    public Vector3Int CenterGrid;
+    public int[] StartCells;
 }

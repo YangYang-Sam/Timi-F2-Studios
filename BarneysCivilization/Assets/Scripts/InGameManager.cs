@@ -7,7 +7,8 @@ public class InGameManager : MonoBehaviour
     public static InGameManager instance;
     public static GameStateType CurrentGameState=GameStateType.Decision;
     public Color[] CampColor;
-    public List<CardManager> CardManagers;
+    public List<CardManager> CardManagers= new List<CardManager>();
+    public GameObject CardManagerPrefab;
 
     public float DecisionDuration = 15f;
     private float DecisionTimer;
@@ -16,6 +17,15 @@ public class InGameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        for (int i = 0; i < UserData.instance.mapData.StartCells.Length; i++)
+        {
+            GameObject g = Instantiate(CardManagerPrefab);
+            CardManager cm = g.GetComponent<CardManager>();
+            cm.camp = i;
+            cm.StartCell = UserData.instance.mapData.StartCells[i];
+            CardManagers.Add(cm);
+        }
     }
     private void Start()
     {
@@ -51,7 +61,7 @@ public class InGameManager : MonoBehaviour
                     {
                         HexCell cell = HexGrid.instance.cells[UserData.instance.AllPoses[i]];
                         cm.SetUnitMoveTo(cell);
-                    }       
+                    }                   
                     break;
                 }
             }
