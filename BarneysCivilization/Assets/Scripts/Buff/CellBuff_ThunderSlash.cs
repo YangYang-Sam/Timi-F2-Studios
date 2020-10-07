@@ -7,6 +7,7 @@ public class CellBuff_ThunderSlash : CellBuff_Base
     public int EnemyReduceAmount = 3;
     public int MyReduceAmount = 1;
 
+    public int EffectIndex = 7;
 
     public override void OnCreated(HexCell cell, CardManager creator)
     {
@@ -22,7 +23,7 @@ public class CellBuff_ThunderSlash : CellBuff_Base
             int EnemyReduceTotalAmount = 0;
             foreach (var nearbyCell in Cell.NearbyCells)
             {
-                if (nearbyCell && (nearbyCell.OwnerManager == Creator) && nearbyCell.GetUnitOnCell())
+                if (nearbyCell && (nearbyCell.OwnerManager == Creator) && nearbyCell.GetUnitOnCell() && nearbyCell.GetUnitOnCell().Level>1)
                 {
                     nearbyCell.GetUnitOnCell().TakeDamage(MyReduceAmount, null);
                     EnemyReduceTotalAmount += EnemyReduceAmount;
@@ -32,6 +33,12 @@ public class CellBuff_ThunderSlash : CellBuff_Base
             if (Cell && (Cell.OwnerManager != Creator) && Cell.GetUnitOnCell())
             {
                 Cell.GetUnitOnCell().TakeDamage(EnemyReduceTotalAmount, null);
+            }
+
+            if (EnemyReduceTotalAmount > 0)
+            {
+                ArtResourceManager.instance.CreateEffectByIndex(transform.position, EffectIndex);
+                ArtResourceManager.instance.CreateTextEffect("雷鸣斩", transform.position);
             }
         }
     }

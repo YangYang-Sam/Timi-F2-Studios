@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionPointCost: 1
   NonTargetCard: 1
-  TempResource: 0
+  TempResource: 1
   ActionPoint: 1
   DrawCards: 0
-  MoveSpeed: 1
+  MoveSpeed: 0
 --- !u!1001 &3016318905123916207
 PrefabInstance:
   m_ObjectHideFlags: 0

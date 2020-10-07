@@ -94,10 +94,11 @@ public class UI_MainScene : MonoBehaviour
 
         SceneManager.LoadScene("BattleScene");
     }
-    public void StartMatching()
+    public void StartMatching(int MapIndex)
     {
         animator.Play("StartMatching");
         isMatching = true;
+        UserData.instance.mapData = MapDatas[MapIndex];
         NetManager.instance.ReqMatching(UserData.instance.UID,UserData.instance.RaceIndex+1);
     }
     public void StartChooseRace()

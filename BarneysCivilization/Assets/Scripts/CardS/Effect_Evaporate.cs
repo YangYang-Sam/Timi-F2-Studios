@@ -8,6 +8,7 @@ public class Effect_Evaporate : CardEffect
     public int HealthReduceAmount = 2;
     public int ResourceAddAmount = 2;
     public GameObject BuffPrefab;
+    public int EffectIndex = 4;
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
         return base.CanUseCard(user, cell) && (cell.GetUnitOnCell().Health > HealthReduceAmount);
@@ -42,5 +43,8 @@ public class Effect_Evaporate : CardEffect
         CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
         buff.Turns = RainTurns;
         buff.OnCreated(cell, user);
+
+        ArtResourceManager.instance.CreateEffectByIndex(cell.transform.position, EffectIndex);
+        ArtResourceManager.instance.CreateTextEffect("蒸发", cell.transform.position);
     }
 }

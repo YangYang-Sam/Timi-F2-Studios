@@ -10,32 +10,29 @@ public class CellBuff_SandStorm : CellBuff_Base
     {
         base.OnCreated(cell, creator);
         UpdateBuffType(CellBuffType.SandStorm);
-        InGameManager.instance.GameStateChangeEvent += OnGameStateChangeInColdBuff;
+        InGameManager.instance.LateDecisionEvent += OnGameStateChangeInColdBuff;
     }
-
     private void OnGameStateChangeInColdBuff()
     {
-        if (InGameManager.isGameState(GameStateType.AfterBattle))
-        {
-            List<Unit_Base> units = new List<Unit_Base>(Cell.PlacedUnits);
-            foreach (var nearbyCell in Cell.NearbyCells)
-            {
-                foreach(var unit in nearbyCell.PlacedUnits)
-                {
-                    units.Add(unit);
-                }
-            }
-                      
-            foreach(var unit in units)
-            {
-                unit.TakeDamage(Damage, null);
-            }       
-        }
-    }
 
+        List<Unit_Base> units = new List<Unit_Base>(Cell.PlacedUnits);
+        foreach (var nearbyCell in Cell.NearbyCells)
+        {
+            foreach (var unit in nearbyCell.PlacedUnits)
+            {
+                units.Add(unit);
+            }
+        }
+
+        foreach (var unit in units)
+        {
+            unit.TakeDamage(Damage, null);
+        }
+
+    }
     public override void OnBuffDestroy()
     {
         base.OnBuffDestroy();
-        InGameManager.instance.GameStateChangeEvent -= OnGameStateChangeInColdBuff;
+        InGameManager.instance.LateDecisionEvent -= OnGameStateChangeInColdBuff;
     }
 }

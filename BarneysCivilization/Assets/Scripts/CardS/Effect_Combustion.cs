@@ -5,7 +5,7 @@ using UnityEngine;
 public class Effect_Combustion : CardEffect
 {
     public int HealthAddAmount = 1;
-
+    public int EffectIndex = 5;
     public bool HasFireBuff(HexCell cell)
     {
         foreach(var buff in cell.CellBuffs)
@@ -35,7 +35,9 @@ public class Effect_Combustion : CardEffect
             if(HasFireBuff(occupiedCell))
             {
                 occupiedCell.GetUnitOnCell().ChangeHealth(HealthAddAmount, user.GetCorePosition());
-            }         
+            }
+            ArtResourceManager.instance.CreateEffectByIndex(occupiedCell.transform.position, EffectIndex);
+            ArtResourceManager.instance.CreateTextEffect("助燃", occupiedCell.transform.position);
         }
     }
 }

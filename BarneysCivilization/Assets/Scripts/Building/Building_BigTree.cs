@@ -25,7 +25,7 @@ public class Building_BigTree : Building_Base
 
     public override void OnBuildingDestroy()
     {
-        base.OnBuildingDestroy();
         InGameManager.instance.LateDecisionEvent -= OnLateDecision;
+        base.OnBuildingDestroy();  
     }
 }

@@ -24,6 +24,8 @@ public class ArtResourceManager : MonoBehaviour
     public GameObject UpgradeEffect;
     public GameObject BattleEffect;
 
+    public GameObject CannotMoveEffect;
+
     public GameObject TextEffectPrefab;
 
     public GameObject BallPrefab;
@@ -42,6 +44,10 @@ public class ArtResourceManager : MonoBehaviour
     public GameObject GetTerrainPrefab(int typeIndex)
     {
         return Terrains[typeIndex].TerrainPerfab[Random.Range(0, Terrains[typeIndex].TerrainPerfab.Length)];
+    }
+    public void CreateCannotMoveEffect(Vector3 pos)
+    {
+        Instantiate(CannotMoveEffect, pos, Quaternion.identity);
     }
     public void CreateHealEffect(Vector3 pos)
     {
@@ -75,7 +81,7 @@ public class ArtResourceManager : MonoBehaviour
 
     public void CreateEffectByIndex(Vector3 pos,int i,float duration=1)
     {
-        GameObject g = Instantiate(EffectPrefabs[i], pos, Quaternion.identity);
+        GameObject g = Instantiate(EffectPrefabs[i], pos, Quaternion.Euler(-90,0,0));
         Destroy(g, duration);
     }
 

@@ -6,6 +6,7 @@ public class CellBuff_BallLightning : CellBuff_Base
 {
     public int DamageBuildingAmount = 1;
 
+    public int EffectIndex = 10;
     public override void OnCreated(HexCell cell, CardManager creator)
     {
         base.OnCreated(cell, creator);
@@ -22,10 +23,12 @@ public class CellBuff_BallLightning : CellBuff_Base
             {
                 if(nearbyCell.OwnerManager != Creator)
                 {
-                    if(nearbyCell.PlacedBuilding != null)
+                    if(nearbyCell.PlacedBuilding != null && !nearbyCell.PlacedBuilding.GetComponent<Building_Core>())
                     {
                         Building_Base.DestroyBuilding(nearbyCell.PlacedBuilding);
                         needDamageAmount--;
+                        ArtResourceManager.instance.CreateEffectByIndex(nearbyCell.transform.position, EffectIndex);
+                        ArtResourceManager.instance.CreateTextEffect("球形闪电", nearbyCell.transform.position);
                     }
                 }
 

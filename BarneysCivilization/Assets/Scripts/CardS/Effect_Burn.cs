@@ -6,6 +6,7 @@ public class Effect_Burn : CardEffect
 {
     public int FireTurns = 2;
     public int HealthAddAmount = 1;
+    public int ActionPoint = 1;
     public GameObject BuffPrefab;
 
     public bool IsSupportCellType(HexCell cell)
@@ -45,5 +46,6 @@ public class Effect_Burn : CardEffect
         CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
         buff.Turns = FireTurns;
         buff.OnCreated(cell, user);
+        user.ActionPoint += ActionPoint;
     }
 }

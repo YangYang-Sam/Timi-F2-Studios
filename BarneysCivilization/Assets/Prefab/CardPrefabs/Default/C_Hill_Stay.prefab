@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionPointCost: 1
   NonTargetCard: 0
-  amount: 2
+  amount: 1
 --- !u!1001 &3016318905123916207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u6307\u5B9A\u4E00\u4E2A\u5DF1\u65B9\u683C\u5B50+n\u6218\u6597\u529B\uFF0C\u672C\u56DE\u5408\u8BE5\u683C\u5B50\u4E0A\u7684\u5355\u4F4D\u65E0\u6CD5\u79FB\u52A8\uFF0Cn\u4E3A\u4F60\u5360\u6709\u7684\u5C71\u4E18\u6570"
+      value: "\u8BE5\u683C\u5B50\u751F\u547D+2\u5E76\u5728\u672C\u56DE\u5408\u65E0\u6CD5\u79FB\u52A8"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

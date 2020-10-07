@@ -81,17 +81,20 @@ public class PlayerController : MonoBehaviour
                 {
                     MoveIndicator.SetActive(false);
                 }
-
+             
                 if (UserData.instance.isMultiplayerGame)
                 {
                     NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
+                    print("Player "+UserData.instance.UID+" Move to: "+ SelectCell.HexIndex);
                 }
             }
             else
             {
+            
                 cardManager.CancelAllUnitMove();
                 if (UserData.instance.isMultiplayerGame)
                 {
+                    print("Player " + UserData.instance.UID + " cancel ");
                     NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, -2);
                 }
                 MoveIndicator.SetActive(false);

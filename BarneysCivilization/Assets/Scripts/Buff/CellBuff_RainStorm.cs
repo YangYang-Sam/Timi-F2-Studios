@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CellBuff_RainStorm : CellBuff_Base
 {
+    public int Damage;
+    public int EffectIndex = 3;
     public override void OnCreated(HexCell cell, CardManager creator)
     {
         base.OnCreated(cell, creator);
@@ -13,9 +15,10 @@ public class CellBuff_RainStorm : CellBuff_Base
 
     private void OnGameStateChangeInRainStormBuff()
     {
+        ArtResourceManager.instance.CreateEffectByIndex(transform.position, EffectIndex);
+        ArtResourceManager.instance.CreateTextEffect("暴雨", transform.position);
         if (InGameManager.isGameState(GameStateType.BeforeMove) && Cell.GetUnitOnCell())
         {
-            int Damage = Cell.GetUnitOnCell().Level;
             Cell.GetUnitOnCell().TakeDamage(Damage, null);
         }
     }

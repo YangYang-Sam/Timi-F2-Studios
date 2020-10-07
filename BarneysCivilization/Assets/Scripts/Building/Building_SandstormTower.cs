@@ -10,7 +10,7 @@ public class Building_SandstormTower : Building_Base
     {
         base.OnGameStateChange();
 
-        if (InGameManager.isGameState(GameStateType.BeforeMove))
+        if (InGameManager.isGameState(GameStateType.Decision))
         {
             bool hasUserNearbyCell = false;
 

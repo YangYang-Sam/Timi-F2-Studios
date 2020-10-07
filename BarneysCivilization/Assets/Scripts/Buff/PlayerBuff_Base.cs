@@ -9,7 +9,7 @@ public class PlayerBuff_Base : MonoBehaviour
     public int Turns;
     public bool Stackable = false;
     public PlayerBuffType BuffType = PlayerBuffType.Null;
-
+ 
     public virtual void OnCreated(CardManager owner, CardManager creator)
     {
         Owner = owner;

@@ -482,6 +482,7 @@ public class CardManager : MonoBehaviour
     {
         if (InGameManager.isGameState(GameStateType.Decision) && !isLost)
         {
+            UpdateCanMoveCells();
             if (CanMoveCells.Contains(TargetCell))
             {
                 switch (MoveMode)
