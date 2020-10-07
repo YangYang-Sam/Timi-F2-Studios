@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBuff_Flood : PlayerBuff_Base
 {
+    public int EffectIndex=2;
     protected override void OnGameStateChange()
     {
         base.OnGameStateChange();
@@ -24,6 +25,9 @@ public class PlayerBuff_Flood : PlayerBuff_Base
                     {
                         unit.Cell.PlacedBuilding.OnBuildingDestroy();
                     }
+
+                    ArtResourceManager.instance.CreateEffectByIndex(unit.transform.position, EffectIndex);
+                    ArtResourceManager.instance.CreateTextEffect("洪水", unit.transform.position);
                 }
             }
         }

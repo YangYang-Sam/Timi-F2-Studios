@@ -11,6 +11,7 @@ public class CellBuff_Base:MonoBehaviour
     public CellBuffType BuffType = CellBuffType.Null;
     public string BuffName;
 
+
     public virtual void OnCreated(HexCell cell, CardManager creator)
     {
         ArtResourceManager.instance.CreateTextEffect(BuffName, transform.position);
@@ -80,5 +81,7 @@ public enum CellBuffType
     SeedOfNature,
     StonePrison,
     FlyingStone,
-    SpireStone
+    SpireStone,
+    SuperConduct,
+    ThunderExplode
 }

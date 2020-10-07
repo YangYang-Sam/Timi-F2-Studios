@@ -15,7 +15,13 @@ public class Effect_Stay : CardEffect
     }
     public override void Effect(CardManager user, HexCell cell)
     {
-        cell.GetUnitOnCell().canMove = false;
-        cell.GetUnitOnCell().ChangeHealth(amount, user.GetCorePosition());
+        foreach(HexCell c in user.OccupiedCells)
+        {
+            if(c.CellType== HexCellType.Hill)
+            {
+                cell.GetUnitOnCell().ChangeHealth(amount, c.transform.position);
+            }
+        }
+        cell.GetUnitOnCell().canMove = false;    
     }
 }

@@ -72,7 +72,7 @@ namespace NetTest
             if (RoundEndEvent != null)
             {
                 RoundEndEvent();
-            }            
+            }    
         }
         public static void NtyUseCard(string uid, int cardID,int hexID)
         {

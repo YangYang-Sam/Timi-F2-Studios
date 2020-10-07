@@ -72,17 +72,16 @@ public class UIManager : MonoBehaviour
     private void OnLateDecision()
     {
         playerCardManager.UpdateCanMoveCells();
+        UpdateInteractableCells(true, null);
     }
 
     private void OnGameStateChange()
     {
         switch (InGameManager.CurrentGameState)
         {
-            case GameStateType.Decision:               
-                UpdateInteractableCells(true, null);
-                break;
             case GameStateType.BeforeMove:
                 UpdateInteractableCells(false, null);
+                CancelSelet();
                 break;
         }
     }
@@ -185,50 +184,61 @@ public class UIManager : MonoBehaviour
     }
     public void MouseUp()
     {
-        if (!Input.GetMouseButton(0) && InGameManager.isGameState(GameStateType.Decision))
+        if (!Input.GetMouseButton(0))
         {
-            if (PlayerController.instance.jobType == PointerJobType.UseCard)
+            if (InGameManager.isGameState(GameStateType.Decision))
             {
-                PlayerController.instance.jobType = PointerJobType.none;
-                UpdateInteractableCells(true, null);
-                SelectCard.GetComponent<CardAppearence>().SetVisibility(true);
-            }
-            if (SelectCard != null)
-            {
-                if (Input.mousePosition.y > ReleaseThreshold && PlayerController.canControl)
+                if (PlayerController.instance.jobType == PointerJobType.UseCard)
                 {
-                    int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName);
-                    int hexID = -2;
-                    //Debug.DrawLine(SelectCell.transform.position, SelectCell.transform.position + Vector3.up * 20, Color.red);
-                    if (SelectCell != null)
+                    PlayerController.instance.jobType = PointerJobType.none;
+                    UpdateInteractableCells(true, null);
+                    if (SelectCard != null)
                     {
-                        playerCardManager.UseCard(SelectCard, SelectCell);
-                        hexID = SelectCell.HexIndex;
-                    }
-                    else if (SelectCard.NoneTargetCard())
-                    {
-                        playerCardManager.UseCard(SelectCard, SelectCell);
-                    }
-                    else
-                    {
-                        SelectCard = null;
-                        UI_ArrowMesh.instance.SetVisibility(false);
-                        return;
-                    }
-                    if (UserData.instance.isMultiplayerGame)
-                    {
-                        // 向服务器汇报使用卡的ID              
-                        NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
-                    }
+                        SelectCard.GetComponent<CardAppearence>().SetVisibility(true);
+                    }                   
                 }
-                SelectCard = null;
-                UI_ArrowMesh.instance.SetVisibility(false);
-                for (int i = 0; i < playerCardManager.Cards.Count; i++)
+                if (SelectCard != null)
                 {
-                    playerCardManager.Cards[i].transform.SetAsFirstSibling();
+                    if (Input.mousePosition.y > ReleaseThreshold && PlayerController.canControl)
+                    {
+                        int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName);
+                        int hexID = -2;
+                        //Debug.DrawLine(SelectCell.transform.position, SelectCell.transform.position + Vector3.up * 20, Color.red);
+                        if (SelectCell != null)
+                        {
+                            playerCardManager.UseCard(SelectCard, SelectCell);
+                            hexID = SelectCell.HexIndex;
+                        }
+                        else if (SelectCard.NoneTargetCard())
+                        {
+                            playerCardManager.UseCard(SelectCard, SelectCell);
+                        }
+                        else
+                        {
+                            SelectCard = null;
+                            UI_ArrowMesh.instance.SetVisibility(false);
+                            return;
+                        }
+                        if (UserData.instance.isMultiplayerGame)
+                        {
+                            // 向服务器汇报使用卡的ID              
+                            NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
+                        }
+                    }
+                    CancelSelet();
                 }
+
             }
-       
+        }
+    }
+
+    public void CancelSelet()
+    {
+        SelectCard = null;
+        UI_ArrowMesh.instance.SetVisibility(false);
+        for (int i = 0; i < playerCardManager.Cards.Count; i++)
+        {
+            playerCardManager.Cards[i].transform.SetAsFirstSibling();
         }
     }
     public void UpdateInteractableCells(bool ShowGrid, Card_Base card)

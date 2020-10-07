@@ -27,5 +27,7 @@ public class Effect_SnowStorm : CardEffect
         {
             cell.GetUnitOnCell().canMove = false;
         }
+        ArtResourceManager.instance.CreateCannotMoveEffect(cell.transform.position);
+        ArtResourceManager.instance.CreateTextEffect("暴风雪", cell.transform.position);
     }
 }

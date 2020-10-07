@@ -110,7 +110,7 @@ namespace NetTest
                     ud.AllPoses = new int[resMsg8.Posid.Count];
                     for (int i = 0; i < ud.AllPoses.Length; i++)
                     {
-                        ud.AllPoses[i] = resMsg8.Posid[i] - 1;
+                        ud.AllPoses[i] = resMsg8.Posid[i] - 1;                        
                     }
                     ud.RandomSeeds = new int[resMsg8.Randomlist.Count];
                     for (int i = 0; i < resMsg8.Randomlist.Count; i++)

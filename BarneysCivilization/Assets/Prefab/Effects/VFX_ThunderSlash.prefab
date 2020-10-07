@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9174050089808617859}
   - component: {fileID: 2421726206683847826}
   m_Layer: 0
-  m_Name: LightningStrikeTallBlue(Clone)
+  m_Name: VFX_ThunderSlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840442716626151522}
   m_LocalRotation: {x: -0.5408081, y: -0.455551, z: -0.4555509, w: 0.540808}
-  m_LocalPosition: {x: 59.1, y: 10.23, z: 53.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 6114453218841276747}

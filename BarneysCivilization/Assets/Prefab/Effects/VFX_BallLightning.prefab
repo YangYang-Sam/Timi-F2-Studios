@@ -4738,7 +4738,7 @@ GameObject:
   - component: {fileID: 519545473282998884}
   - component: {fileID: 5729897324866138267}
   m_Layer: 0
-  m_Name: LightningOrbSharpBlue(Clone)
+  m_Name: VFX_BallLightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4752,7 +4752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6406795451867376354}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 69.338196, y: 3.39, z: 59.726933}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.8797, y: 6.8797, z: 6.8797}
   m_Children:
   - {fileID: 1733826049041759656}

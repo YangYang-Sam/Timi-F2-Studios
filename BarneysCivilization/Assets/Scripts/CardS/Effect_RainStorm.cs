@@ -7,55 +7,30 @@ public class Effect_RainStorm : CardEffect
     public int Turns;
     public int ResourceReduceAmount = 1;
     public GameObject BuffPrefab;
+    public int NormalDamage = 2;
+    public int HeavyDamage = 4;
 
-    private bool CanUseRainStormCell(CardManager user, HexCell targetCell)
-    {
-        bool isUserOccupiedCell = false;
-        if (targetCell != null)
-        {
-            isUserOccupiedCell = targetCell.OwnerManager == user;
-        }
-        bool isSupportCellType = (targetCell.CellType == HexCellType.Forest) || (targetCell.CellType == HexCellType.Water);
-        foreach(var buff in targetCell.CellBuffs)
-        {
-            if(buff.BuffType == CellBuffType.Rain)
-            {
-                isSupportCellType |= true;
-                break;
-            }
-        }
-        return !isUserOccupiedCell && isSupportCellType;
-    }
     public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
     {
-        if (!CanUseRainStormCell(user,cell))
+        if (user.ResourceAmount<0)
         {
-            return UseCardFailReason.NotValidCell;
+            return UseCardFailReason.NoResource;
         }
         return base.GetFailReason(user, cell);
     }
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
-        return base.CanUseCard(user, cell) && (user.GetTotalResource() >= ResourceReduceAmount) && CanUseRainStormCell(user, cell);
+        return base.CanUseCard(user, cell) && (user.GetTotalResource() >= 0);
     }
 
     public override List<HexCell> GetCanUseCells(CardManager user)
     {
-        List<HexCell> cells = new List<HexCell>();
+        List<HexCell> cells = new List<HexCell>(user.GetAllNearbyCells());
 
         if(user.GetTotalResource() < ResourceReduceAmount)
         {
             return cells;
         }
-
-        foreach(var cell in user.GetAllNearbyCells())
-        {
-            if(CanUseRainStormCell(user, cell))
-            {
-                cells.Add(cell);
-            }
-        }
-
         return cells;
     }
 
@@ -63,8 +38,16 @@ public class Effect_RainStorm : CardEffect
     {
         user.TempResourceAmount -= ResourceReduceAmount;
         GameObject g = Instantiate(BuffPrefab, cell.transform.position, Quaternion.identity);
-        CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
+        CellBuff_RainStorm buff = g.GetComponent<CellBuff_RainStorm>();
         buff.Turns = Turns;
+        if (cell.FindBuff(CellBuffType.Rain))
+        {
+            buff.Damage = HeavyDamage;
+        }
+        else
+        {
+            buff.Damage = NormalDamage;
+        }
         buff.OnCreated(cell, user);
     }
 }

@@ -6,13 +6,20 @@ public class Building_Mine : Building_Base
 {
     public int ResourceAmount = 1;
 
-    protected override void OnGameStateChange()
+    public override void OnCreated(HexCell cell, CardManager owner)
     {
-        base.OnGameStateChange();
-
-        if (InGameManager.isGameState(GameStateType.AfterBattle))
-        {
-            Owner.TempResourceAmount += ResourceAmount;
-        }
+        base.OnCreated(cell, owner);
+        InGameManager.instance.LateDecisionEvent += OnLateDecision;
     }
+    public override void OnBuildingDestroy()
+    {
+        base.OnBuildingDestroy();
+        InGameManager.instance.LateDecisionEvent -= OnLateDecision;
+    }
+    private void OnLateDecision()
+    {
+        Owner.TempResourceAmount += ResourceAmount;
+    }
+
+
 }

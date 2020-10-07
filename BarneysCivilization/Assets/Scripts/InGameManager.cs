@@ -107,7 +107,7 @@ public class InGameManager : MonoBehaviour
             CardManagers[0].ChooseRace(UserData.instance.RaceIndex);
             for (int i = 1; i < CardManagers.Count; i++)
             {
-                CardManagers[i].ChooseRace(Random.Range(0, 2));
+                CardManagers[i].ChooseRace(Random.Range(0, 6));
                 CardManagers[i].gameObject.AddComponent<AIController>();
             }
         }
@@ -119,6 +119,10 @@ public class InGameManager : MonoBehaviour
             c.GameStart();
         }
         ChangeGameState(GameStateType.Decision);
+        if (LateDecisionEvent != null)
+        {
+            LateDecisionEvent();
+        }
     }
 
     public static bool isGameState(GameStateType type)

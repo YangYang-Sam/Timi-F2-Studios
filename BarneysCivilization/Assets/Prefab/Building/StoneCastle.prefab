@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cell: {fileID: 0}
   Owner: {fileID: 0}
-  IsPermenant: 0
+  IsPermenant: 1
   Turns: 0
   Level: 1
   MaxLevel: 1

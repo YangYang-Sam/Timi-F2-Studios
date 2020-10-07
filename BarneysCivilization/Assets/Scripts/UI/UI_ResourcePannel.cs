@@ -5,17 +5,23 @@ using UnityEngine.UI;
 
 public class UI_ResourcePannel : MonoBehaviour
 {
+    public int resource;
     public Text ResourceText;
-    public Text BuyUnitTimesText;
     public Text ActionPointText;
+    public Animator animator;
 
     private void Update()
     {
         if (PlayerController.instance.cardManager)
         {
-            ResourceText.text = "资源： " + PlayerController.instance.cardManager.GetTotalResource();
+            if(resource != PlayerController.instance.cardManager.GetTotalResource())
+            {
+                resource = PlayerController.instance.cardManager.GetTotalResource();
+                animator.Play("ResourceIncrease");
+            }        
+
+            ResourceText.text =PlayerController.instance.cardManager.GetTotalResource().ToString();
             ActionPointText.text = PlayerController.instance.cardManager.ActionPoint.ToString();
-            BuyUnitTimesText.text = "领土数： " + PlayerController.instance.cardManager.OccupiedCells.Count;
         }
     }
 }

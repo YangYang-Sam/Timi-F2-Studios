@@ -7,12 +7,15 @@ public class PlayerBuff_WaterGather : PlayerBuff_Base
     public List<HexCellType> Types;
     public int AmountPerCell = 1;
     public int AmountPerRain = 1;
+    public int EffectIndex=1;
     protected override void OnUnitBeforeBattle(Unit_Base unit, HexCell cell)
     {
         base.OnUnitBeforeBattle(unit, cell);
         if (unit.Level > 1)
         {
             int amount = 0;
+            ArtResourceManager.instance.CreateEffectByIndex(cell.transform.position, EffectIndex);
+            ArtResourceManager.instance.CreateTextEffect("汇聚", cell.transform.position);
 
             if (Types.Contains(cell.CellType))
             {

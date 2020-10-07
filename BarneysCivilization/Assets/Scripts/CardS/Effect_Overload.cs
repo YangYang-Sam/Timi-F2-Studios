@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Effect_Overload : CardEffect
 {
-    public int Turns = 1;
-    public int MinLevel = 2;
-    public GameObject BuffPrefab;
+    public int MinLevel=2;
+    public int ResourceCost;
+    public int HealthAmount;
 
     public override bool CanUseCard(CardManager user, HexCell cell)
-    {        
-        return base.CanUseCard(user, cell) && cell.GetUnitOnCell() && (cell.GetUnitOnCell().Level >= MinLevel);
+    {
+        return base.CanUseCard(user, cell) && cell.GetUnitOnCell() && (cell.GetUnitOnCell().Level >= MinLevel && user.GetTotalResource() >= 0);
     }
     public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
     {
@@ -35,9 +35,7 @@ public class Effect_Overload : CardEffect
 
     public override void Effect(CardManager user, HexCell cell)
     {
-        GameObject g = Instantiate(BuffPrefab, cell.transform.position, Quaternion.identity);
-        CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
-        buff.Turns = Turns;
-        buff.OnCreated(cell, user);
+        cell.GetUnitOnCell().ChangeHealth(HealthAmount, user.GetCorePosition());
+        ArtResourceManager.instance.CreateTextEffect("过载", cell.transform.position);
     }
 }
