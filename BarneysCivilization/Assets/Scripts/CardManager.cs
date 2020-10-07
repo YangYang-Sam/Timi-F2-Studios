@@ -402,6 +402,11 @@ public class CardManager : MonoBehaviour
             ActionPoint -= card.ActionPointCost();
             ArtResourceManager.instance.CreateTextEffect(card.CardName, PlayerCore.transform.position);
         }
+        else
+        {
+            UseCardFailReason reason = card.GetComponent<CardEffect>().GetFailReason(this, cell);
+            UI_Warning.instance.ShowWarningText(CardEffect.GetWarningTextByFailReason(reason));
+        }
     }
     public void AddToUsedCards(Card_Base card)
     {

@@ -11,6 +11,15 @@ public class Effect_WindGrass : CardEffect
         UpdateDesertCell(user);
         return base.CanUseCard(user, cell) && EmptyDessertCells.Count > 0;
     }
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        UpdateDesertCell(user);
+        if (EmptyDessertCells.Count <= 0)
+        {
+            return UseCardFailReason.NoEmptyDesert;
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {
         List<HexCell> BuildingGrids = new List<HexCell>();

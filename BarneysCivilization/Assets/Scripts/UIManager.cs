@@ -66,14 +66,19 @@ public class UIManager : MonoBehaviour
     {
         playerCardManager = InGameManager.instance.CardManagers[UserData.instance.Camp];
         InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
+        InGameManager.instance.LateDecisionEvent += OnLateDecision;
+    }
+
+    private void OnLateDecision()
+    {
+        playerCardManager.UpdateCanMoveCells();
     }
 
     private void OnGameStateChange()
     {
         switch (InGameManager.CurrentGameState)
         {
-            case GameStateType.Decision:
-                playerCardManager.UpdateCanMoveCells();
+            case GameStateType.Decision:               
                 UpdateInteractableCells(true, null);
                 break;
             case GameStateType.BeforeMove:

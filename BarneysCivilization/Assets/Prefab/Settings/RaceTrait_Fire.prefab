@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  BuffPrefab: {fileID: 246154860520892266, guid: 529d205fe0cd8ac4b8f6cfb9fa0d767b,
+    type: 3}
+  Turns: 3

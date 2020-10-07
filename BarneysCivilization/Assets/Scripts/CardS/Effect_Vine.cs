@@ -24,7 +24,22 @@ public class Effect_Vine : CardEffect
 
         return false;
     }
-
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if (cell && (cell.OwnerManager == user))
+        {
+            if (!SupportCellTypes.Contains(cell.CellType))
+            {
+                return UseCardFailReason.NotValidCellType;
+            }
+            else if (cell.GetUnitOnCell().Health <= ConsumeHealth)
+            {
+                return UseCardFailReason.NoHealthPoint;
+            }
+           
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
         return base.CanUseCard(user, cell);

@@ -22,6 +22,14 @@ public class Effect_Thaw : CardEffect
     {
         return base.CanUseCard(user, cell) && IsSupportCell(user, cell);
     }
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if (cell && cell.OwnerManager == user && cell.GetUnitOnCell() && cell.GetUnitOnCell().Level < MinSupportLevel)
+        {
+            return UseCardFailReason.InvalidUnitLevel;
+        }
+        return base.GetFailReason(user, cell);
+    }
 
     public override List<HexCell> GetCanUseCells(CardManager user)
     {

@@ -10,7 +10,15 @@ public class Effect_Rain : CardEffect
     public GameObject BuffPrefab;
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
-        return base.CanUseCard(user, cell) && (user.GetTotalResource() >= ResourceReduceAmount);
+        return base.CanUseCard(user, cell) && (user.GetTotalResource() >= 0);
+    }
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if (user.GetTotalResource() < 0)
+        {
+            return UseCardFailReason.NoResource;
+        }
+        return base.GetFailReason(user, cell);
     }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {

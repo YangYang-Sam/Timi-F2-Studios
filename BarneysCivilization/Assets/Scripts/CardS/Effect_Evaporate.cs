@@ -12,6 +12,14 @@ public class Effect_Evaporate : CardEffect
     {
         return base.CanUseCard(user, cell) && (cell.GetUnitOnCell().Health > HealthReduceAmount);
     }
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if (cell.GetUnitOnCell() && (cell.GetUnitOnCell().Health <= HealthReduceAmount))
+        {
+            return UseCardFailReason.NoHealthPoint;
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {
         List<HexCell> cells = new List<HexCell>();

@@ -19,7 +19,14 @@ public class Effect_StonePrison : CardEffect
 
         return false;
     }
-
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if (IsCellHasCore(cell))
+        {
+            return UseCardFailReason.CantUseOnCore;
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
         return base.CanUseCard(user, cell) && !IsCellHasCore(cell);

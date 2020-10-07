@@ -16,7 +16,14 @@ public class Effect_Accumulate : CardEffect
     {
         return user.OccupiedCells;
     }
-
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if (cell.GetUnitOnCell() && (cell.GetUnitOnCell().Level > MaxLevel))
+        {
+            return UseCardFailReason.InvalidUnitLevel;
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override void Effect(CardManager user, HexCell cell)
     {
         if(cell.GetUnitOnCell())

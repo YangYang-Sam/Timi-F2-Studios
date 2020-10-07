@@ -30,6 +30,24 @@ public class PlayerController : MonoBehaviour
         camp = UserData.instance.Camp;
     }
 
+    private void Start()
+    {
+        if (InGameManager.instance != null)
+        {
+            InGameManager.instance.GameStateChangeEvent += OnGameStateChange;
+        }
+    }
+
+    private void OnGameStateChange()
+    {
+        switch (InGameManager.CurrentGameState)
+        {
+            case GameStateType.BeforeBattle:
+                MoveIndicator.SetActive(false);
+                break;
+        }        
+    }
+
     private void HexTrace()
     {
         Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);

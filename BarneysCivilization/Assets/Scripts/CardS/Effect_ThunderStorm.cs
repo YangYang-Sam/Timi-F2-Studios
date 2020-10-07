@@ -12,7 +12,14 @@ public class Effect_ThunderStorm : CardEffect
     {
         return base.CanUseCard(user, cell) && (cell.OwnerManager == user) && cell.GetUnitOnCell() && (cell.GetUnitOnCell().GetTotalHealth() > CenterHealthReduceAmount);
     }
-
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if ((cell.OwnerManager == user) && cell.GetUnitOnCell() && (cell.GetUnitOnCell().GetTotalHealth() <= CenterHealthReduceAmount))
+        {
+            return UseCardFailReason.NoHealthPoint;
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {
         List<HexCell> cells = new List<HexCell>();

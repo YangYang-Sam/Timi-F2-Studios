@@ -17,7 +17,14 @@ public class Effect_Burn : CardEffect
     {
         return base.CanUseCard(user, cell) && (cell.OwnerManager == user) && IsSupportCellType(cell);
     }
-
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if (!IsSupportCellType(cell))
+        {
+            return UseCardFailReason.NotValidCellType;
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {
         List<HexCell> cells = new List<HexCell>();

@@ -16,6 +16,7 @@ public class Effect_BasicStats : CardEffect
     {
         return base.GetCanUseCells(user);
     }
+
     public override void Effect(CardManager user, HexCell cell)
     {
         user.ActionPoint += ActionPoint;

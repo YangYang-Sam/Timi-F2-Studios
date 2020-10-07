@@ -26,7 +26,14 @@ public class Effect_RainStorm : CardEffect
         }
         return !isUserOccupiedCell && isSupportCellType;
     }
-
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        if (!CanUseRainStormCell(user,cell))
+        {
+            return UseCardFailReason.NotValidCell;
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
         return base.CanUseCard(user, cell) && (user.GetTotalResource() >= ResourceReduceAmount) && CanUseRainStormCell(user, cell);

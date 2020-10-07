@@ -26,7 +26,26 @@ public class Effect_CreateBuilding : CardEffect
         }
         return base.CanUseCard(user, cell) && isSupportCellType;
     }
-
+    public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
+    {
+        bool isSupportCellType = SupportAllCellTypes;
+        if (!SupportAllCellTypes)
+        {
+            if (cell)
+            {
+                isSupportCellType = SupportCellTypes.Contains(cell.CellType);
+            }
+            else
+            {
+                isSupportCellType = false;
+            }
+        }
+        if (!isSupportCellType)
+        {
+            return UseCardFailReason.NotValidCellType;
+        }
+        return base.GetFailReason(user, cell);
+    }
     public override List<HexCell> GetCanUseCells(CardManager user)
     {
         List<HexCell> cells = new List<HexCell>();
