@@ -1020,7 +1020,7 @@ RectTransform:
   - {fileID: 999390295}
   - {fileID: 1258488813}
   m_Father: {fileID: 1907858685}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1619,7 +1619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5BC6\u7801"
+  m_Text: "\u7528\u6237\u540D"
 --- !u!222 &999390297
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1961,7 +1961,7 @@ RectTransform:
   - {fileID: 1792930126}
   - {fileID: 1117905382}
   m_Father: {fileID: 1907858685}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2716,7 +2716,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7528\u6237\u540D"
+  m_Text: "\u5BC6\u7801"
 --- !u!222 &1792930128
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2946,8 +2946,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1203581211}
   - {fileID: 873726090}
+  - {fileID: 1203581211}
   - {fileID: 604875363}
   - {fileID: 1320274152}
   - {fileID: 2067456697}

@@ -7,7 +7,7 @@ public class PlayerBuff_EscapeElectric : PlayerBuff_Base
     public int EffectIndex = 9;
     private void OnDeathEvent(int damage, Unit_Base unit)
     {
-        Creator.ResourceAmount += damage / 2;
+        Creator.TempResourceAmount += damage / 2;
         ArtResourceManager.instance.CreateTextEffect("散逸电荷", unit.transform.position);
         ArtResourceManager.instance.CreateEffectByIndex(unit.transform.position, EffectIndex);
     }
