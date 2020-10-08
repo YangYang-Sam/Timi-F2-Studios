@@ -119,7 +119,6 @@ public class CardManager : MonoBehaviour
             UI_ArrowMesh.instance.transform.position = startCell.transform.position;
         }
       
-
         GameObject traitObj = Instantiate(Race.RaceTraitPrefab);
         RaceTrait = traitObj.GetComponent<RaceTrait_Base>();
         RaceTrait.InitRaceTrait(this);

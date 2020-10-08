@@ -19,19 +19,23 @@ public class RemotePlayer : MonoBehaviour
         if (UseCard)
         {
             UseCard = false;
-            if (cardManager.UID == UID)
-            {
-                GameObject prefab = CardIDSystem.instance.GetCardByID(CardID);
-                GameObject cardObj = Instantiate(prefab);
-                Card_Base card = cardObj.GetComponent<Card_Base>();
-                HexCell cell = null;
-                if (HexID >= 0)
-                {
-                    cell = HexGrid.instance.cells[HexID];
-                }
-                cardManager.UseCard(card, cell);
-            }
+            RemoteUseCard(UID, CardID, HexID);
         }  
+    }
+    public void RemoteUseCard(string uid, int cardID, int hexID)
+    {
+        if (cardManager.UID == uid)
+        {
+            GameObject prefab = CardIDSystem.instance.GetCardByID(cardID);
+            GameObject cardObj = Instantiate(prefab);
+            Card_Base card = cardObj.GetComponent<Card_Base>();
+            HexCell cell = null;
+            if (hexID >= 0)
+            {
+                cell = HexGrid.instance.cells[hexID];
+            }
+            cardManager.UseCard(card, cell);
+        }
     }
     private void OnUseCard(string uid, int cardID, int hexID)
     {

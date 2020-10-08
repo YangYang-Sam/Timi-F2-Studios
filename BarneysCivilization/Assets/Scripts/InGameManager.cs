@@ -16,6 +16,10 @@ public class InGameManager : MonoBehaviour
 
     public bool IsTurnEnd;
 
+    private List<int> CardIDList = new List<int>();
+    private List<int> PosList = new List<int>();
+    private List<string> CardUIDList = new List<string>();
+
     private void Awake()
     {
         instance = this;
@@ -32,7 +36,14 @@ public class InGameManager : MonoBehaviour
     private void Start()
     {
         NetTest.CsResManager.RoundEndEvent += OnReceiveTurnEnd;
+        NetTest.CsResManager.UseCardEvent += OnReceiveUseCard;
         StartCoroutine(WaitForGameStart());
+    }
+    public void OnReceiveUseCard(string uid, int cardID, int pos)
+    {
+        CardUIDList.Add(uid);
+        PosList.Add(pos);
+        CardIDList.Add(cardID);
     }
     private void Update()
     {
@@ -43,6 +54,38 @@ public class InGameManager : MonoBehaviour
         if(Time.time> DecisionTimer && PlayerController.canControl)
         {
             EndTurn();
+        }
+
+        UserData ud= UserData.instance;
+        if (ud.ReceiveCardPack)
+        {
+            for (int i = 0; i < CardIDList.Count; i++)
+            {
+                if(CardIDList[i]== ud.CardIDList[i] && CardUIDList[i]==ud.CardUIDList[i] && PosList[i] == ud.PosIDList[i])
+                {
+
+                }
+                else
+                {
+                    Debug.LogError("Server: " + ud.CardUIDList[i] + " card: " + ud.CardIDList[i] + " pos:" + ud.PosIDList[i] + " Client:" + CardUIDList[i] + " card: " + CardIDList[i] + " pos:" + PosList[i]);
+                }
+            }
+            if (ud.CardIDList.Count > CardIDList.Count)
+            {
+                for (int i = CardIDList.Count; i < ud.CardIDList.Count; i++)
+                {
+                    if (ud.UID != ud.CardUIDList[i])
+                    {
+                        foreach (CardManager cm in CardManagers)
+                        {
+                            if (cm.UID == ud.CardUIDList[i])
+                            {
+                                cm.GetComponent<RemotePlayer>().RemoteUseCard(ud.CardUIDList[i], ud.CardIDList[i], ud.PosIDList[i]);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     private void OnReceiveTurnEnd()
@@ -158,6 +201,9 @@ public class InGameManager : MonoBehaviour
         switch (newState)
         {
             case GameStateType.Decision:
+                CardUIDList.Clear();
+                PosList.Clear();
+                CardIDList.Clear();
                 PlayerController.canControl = true;
                 DecisionTimer = Time.time + DecisionDuration;
                 if (!UserData.instance.isMultiplayerGame)
