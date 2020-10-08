@@ -50,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u6307\u5B9A\u4E00\u4E2A\u6218\u6597\u529B\u81F3\u5C11\u4E3A3\u7684\u5DF1\u65B9\u683C\u5B50\uFF0C\u4F7F\u5176\u6218\u6597\u529B-2\uFF0C\u672C\u56DE\u5408+2\u8D44\u6E90\uFF0C\u6B64\u683C\u5B50\u964D\u96E84\u56DE\u5408"
+      value: "\u9009\u4E00\u6218\u6597\u529B\u81F3\u5C11\u4E3A3\u7684\u5DF1\u65B9\u683C\u5B50\uFF0C\u4F7F\u5176\u6218\u6597\u529B-2\uFF0C\u672C\u56DE\u5408+2\u8D44\u6E90\uFF0C\u6B64\u683C\u5B50\u964D\u96E84\u56DE\u5408"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Water_Evaporate
+      value: C_Water_Desert
       objectReference: {fileID: 0}
     - target: {fileID: 5451290693730646944, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
