@@ -22,10 +22,13 @@ public class Building_Stonewatch : Building_Base
                 }
             }
 
-            if (Cell.GetUnitOnCell() && (Cell.GetUnitOnCell().GetTotalHealth() < ReserveHealth))
-            {
-                Cell.GetUnitOnCell().canMove = false;
-            }
+            Cell.MinUnitAmount = ReserveHealth;
         }
+    }
+
+    public override void OnBuildingDestroy()
+    {
+        Cell.MinUnitAmount = 1;
+        base.OnBuildingDestroy();
     }
 }

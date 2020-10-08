@@ -9,7 +9,7 @@ public class Effect_WindGrass : CardEffect
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
         UpdateDesertCell(user);
-        return base.CanUseCard(user, cell) && EmptyDessertCells.Count > 0;
+        return base.CanUseCard(user, cell) && (EmptyDessertCells.Count > 0) && (user.PlayerCore.Cell != cell);
     }
     public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
     {
@@ -25,7 +25,7 @@ public class Effect_WindGrass : CardEffect
         List<HexCell> BuildingGrids = new List<HexCell>();
         foreach (HexCell cell in user.OccupiedCells)
         {
-            if (cell.PlacedBuilding != null)
+            if ((cell.PlacedBuilding != null) && (user.PlayerCore.Cell != cell))
             {
                 BuildingGrids.Add(cell);
             }
