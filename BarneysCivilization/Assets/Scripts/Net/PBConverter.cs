@@ -129,17 +129,20 @@ namespace NetTest
                 case MSGID.CsNtyCardListId:
                     CS_NTY_CARD_LIST resMsg10 = msg.CsNtyCardList;
                     UserData.instance.Round = resMsg10.Round;
+                    UserData.instance.CardIDList.Clear();
                     for (int i = 0; i < resMsg10.CardidList.Count; i++)
                     {
-                        UserData.instance.CardIDList[i] = resMsg10.CardidList[i] - 1;
+                        UserData.instance.CardIDList.Add(resMsg10.CardidList[i] - 1);
                     }
+                    UserData.instance.PosIDList.Clear();
                     for (int i = 0; i < resMsg10.CardidList.Count; i++)
                     {
-                        UserData.instance.PosIDList[i] = resMsg10.CardposList[i] - 1;
+                        UserData.instance.PosIDList.Add(resMsg10.CardposList[i] - 1);
                     }
+                    UserData.instance.CardUIDList.Clear();
                     for (int i = 0; i < resMsg10.CardidList.Count; i++)
                     {
-                        UserData.instance.CardUIDList[i] = resMsg10.CarduidList[i];
+                        UserData.instance.CardUIDList.Add(resMsg10.CarduidList[i]);
                     }
                     UserData.instance.ReceiveCardPack = true;
                     break;
