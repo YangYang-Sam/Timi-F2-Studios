@@ -8,12 +8,29 @@ public class BattleCamera : MonoBehaviour
     public float Speed;
     private void Start()
     {
-        StartCoroutine(StartCamera());
+        InGameManager.instance.GameStartEvent += GameStart;
+      
     }
 
-    private IEnumerator StartCamera()
+    private void GameStart()
     {
-        yield return new WaitForSeconds(1);
+        StartCoroutine(MoveToMyCore());
+    }
+
+    private IEnumerator MoveToMyCore()
+    {
+        Vector3 position = PlayerController.instance.cardManager.GetCorePosition() + Offset;
+        float timer = 1;
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            transform.position = Vector3.Lerp(transform.position, position, Speed);
+            yield return null;
+        }
+    }
+
+    private IEnumerator MoveToCore()
+    {
         Vector3 position = PlayerController.instance.cardManager.GetCorePosition() + Offset;
         float timer = 1;
         while (timer > 0)

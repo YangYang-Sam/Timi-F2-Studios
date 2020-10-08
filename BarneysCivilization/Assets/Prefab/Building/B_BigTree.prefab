@@ -82,6 +82,7 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 1
   EffectTransform: {fileID: 7383909417384722395}
+  Type: 1
 --- !u!1001 &5244294394972903270
 PrefabInstance:
   m_ObjectHideFlags: 0

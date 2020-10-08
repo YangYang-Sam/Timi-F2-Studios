@@ -51,6 +51,7 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 3
   EffectTransform: {fileID: 0}
+  Type: 2
   Threshold: 5
   Amount: 1
 --- !u!1001 &1220864117870994892

@@ -51,6 +51,7 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 1
   EffectTransform: {fileID: 0}
+  Type: 4
   ResourceAmount: 1
 --- !u!1001 &441670011041071694
 PrefabInstance:

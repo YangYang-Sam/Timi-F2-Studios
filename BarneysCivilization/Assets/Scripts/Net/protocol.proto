@@ -218,6 +218,7 @@ message CS_NTY_END_ROUND {
   repeated string userid = 2;
   repeated int32 posid = 3;
   repeated int32 randomlist = 4;
+  int32 rounds = 5;
 }
 
 message CS_REQ_PLAYER_MOV {

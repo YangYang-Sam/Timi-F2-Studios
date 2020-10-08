@@ -51,6 +51,7 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 1
   EffectTransform: {fileID: 0}
+  Type: 7
   ActionPointAmount: 1
 --- !u!1001 &5109029462187316428
 PrefabInstance:

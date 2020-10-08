@@ -13,6 +13,7 @@ public class UI_ChooseCardWidget : MonoBehaviour
     public HexCell Cell;
 
     private GameObject[] CardButtons;
+
     public void StartChooseCard(GameObject[] cards, HexCell cell)
     {
         Cell = cell;

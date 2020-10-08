@@ -128,10 +128,15 @@ public class InGameManager : MonoBehaviour
         }
         StartMoving();
     }
+    public event System.Action GameStartEvent;
     private IEnumerator WaitForGameStart()
     {
         yield return new WaitForSeconds(1);
         GameStartProcess();
+        if (GameStartEvent != null)
+        {
+            GameStartEvent();
+        }
     }
 
     
