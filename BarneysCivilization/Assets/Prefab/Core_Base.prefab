@@ -101,6 +101,7 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 1
   EffectTransform: {fileID: 3212945569106956357}
+  Type: 0
 --- !u!1001 &6559304165952480756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Base_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768401167930700431, guid: 8e4902b9c9771d84f95962e4b26be63d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4902b9c9771d84f95962e4b26be63d, type: 3}

@@ -25,6 +25,7 @@ public class Building_Base : MonoBehaviour
         {
             EffectTransform = transform;
         }
+        ArtResourceManager.instance.CreateEffectByIndex(transform.GetChild(0).position, 12);
     }
     public void ChangeCell(HexCell newCell)
     {
@@ -72,6 +73,7 @@ public class Building_Base : MonoBehaviour
         Cell.OwnerChangeEvent -= OnCellChangeOwner; 
         InGameManager.instance.GameStateChangeEvent -= OnGameStateChange;
         Cell.PlacedBuilding = null;
+        ArtResourceManager.instance.CreateEffectByIndex(transform.GetChild(0).position, 13);
     }
     protected virtual void OnCellChangeOwner(CardManager newOwner)
     {
