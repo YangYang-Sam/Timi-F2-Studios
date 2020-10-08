@@ -255,6 +255,7 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 1
   EffectTransform: {fileID: 8561934370863758214}
+  Type: 9
   Amount: 1
 --- !u!1 &8885624208532456581
 GameObject:

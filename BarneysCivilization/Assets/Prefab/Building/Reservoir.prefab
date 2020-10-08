@@ -51,7 +51,8 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 1
   EffectTransform: {fileID: 0}
-  ResourceAmount: 1
+  Type: 6
+  ResourceAmount: 2
 --- !u!1001 &4368058859170434449
 PrefabInstance:
   m_ObjectHideFlags: 0

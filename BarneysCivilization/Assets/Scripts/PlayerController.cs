@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             }     
         }        
     }
- 
+    public event System.Action<HexCell> PlayerMoveEvent;
     public void PlayerClickOnMap()
     {
         if (canControl)
@@ -88,6 +88,11 @@ public class PlayerController : MonoBehaviour
                     {
                         NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
                         print("Player " + UserData.instance.UID + " Move to: " + SelectCell.HexIndex);
+                    }
+
+                    if (PlayerMoveEvent != null)
+                    {
+                        PlayerMoveEvent(SelectCell);
                     }
                 }
                 else

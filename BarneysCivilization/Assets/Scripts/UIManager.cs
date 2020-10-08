@@ -182,6 +182,7 @@ public class UIManager : MonoBehaviour
             PlayerController.instance.jobType = PointerJobType.UseCard;
         }
     }
+    public event System.Action<Card_Base> PlayerUseCardEvent;
     public void MouseUp()
     {
         if (!Input.GetMouseButton(0))
@@ -225,6 +226,10 @@ public class UIManager : MonoBehaviour
                             {
                                 // 向服务器汇报使用卡的ID              
                                 NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
+                            }
+                            if (PlayerUseCardEvent != null)
+                            {
+                                PlayerUseCardEvent(SelectCard);
                             }
                         }
                         else
@@ -291,20 +296,30 @@ public class UIManager : MonoBehaviour
         card.transform.localScale = Vector3.one;
     }
 
+    public event System.Action StartChooseCardEvent;
     public void ShowChooseCardPannel(GameObject[] cards,HexCell cell)
     {
         IsChoosingCard = true;
         ChooseCardWidget.StartChooseCard(cards,cell);
+        if (StartChooseCardEvent != null)
+        {
+            StartChooseCardEvent();
+        }
     }
     public void ChooseRandomCard()
     {
         ChooseCardWidget.ChooseRandomCard();
     }
+    public event System.Action ChooseCardFinish;
     public void CardChoosed(GameObject card , HexCell cell)
     {
         IsChoosingCard = false;
         ChooseCardWidget.ChooseFinish();
         playerCardManager.AddNewCard(card,cell);
+        if (ChooseCardFinish != null)
+        {
+            ChooseCardFinish();
+        }
     }
     public void EndTurnButton()
     {

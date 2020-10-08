@@ -99,6 +99,7 @@ public class UI_MainScene : MonoBehaviour
         animator.Play("StartMatching");
         isMatching = true;
         UserData.instance.mapData = MapDatas[MapIndex];
+        NetManager.instance.ReLogin();
         NetManager.instance.ReqMatching(UserData.instance.UID,UserData.instance.RaceIndex+1);
     }
     public void StartChooseRace()

@@ -214,6 +214,13 @@ namespace NetTest
             //    return false;
             //}
         }
+
+        public void ReLogin()
+        {
+            Reconnect();
+            ReqLogin(UserData.instance.UID, UserData.instance.Password);
+        }
+
         public static bool Reconnect()
         {
             //socket.Shutdown(SocketShutdown.Both);
@@ -222,6 +229,7 @@ namespace NetTest
 
             return Socket_Create_Connect();
         }
+
         public static bool Socket_Create_Connect()
         {
             int port = 8000;
