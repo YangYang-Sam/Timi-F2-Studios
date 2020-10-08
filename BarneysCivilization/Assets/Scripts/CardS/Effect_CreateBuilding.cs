@@ -52,7 +52,7 @@ public class Effect_CreateBuilding : CardEffect
         foreach (HexCell cell in user.OccupiedCells)
         {
             bool isSupportCellType = SupportAllCellTypes ? true : SupportCellTypes.Contains(cell.CellType);
-            if (cell.GetUnitOnCell().Health >= RequireHealth && (cell.PlacedBuilding == null || cell.PlacedBuilding.CanUpgrade(user)) && isSupportCellType)
+            if (cell.GetUnitOnCell() && cell.GetUnitOnCell().Health >= RequireHealth && (cell.PlacedBuilding == null || cell.PlacedBuilding.CanUpgrade(user)) && isSupportCellType)
             {
                 cells.Add(cell);
             }

@@ -4787,7 +4787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4918070499588674130}
   - component: {fileID: 4918070499593454332}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Teratorn 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8130,7 +8130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8993704185867821209}
   - component: {fileID: 1168415497104626695}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Teratorn 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8593,7 +8593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3202084526077111253}
   - component: {fileID: 6926005481128569749}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Teratorn 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

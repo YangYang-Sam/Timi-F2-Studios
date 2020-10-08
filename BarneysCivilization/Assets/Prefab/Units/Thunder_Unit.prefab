@@ -400,7 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8948522609092063175}
   - component: {fileID: 2370508463174363334}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3584,7 +3584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630962486984731802}
   - component: {fileID: 5670925179881274592}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23989,7 +23989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7058576355761187832}
   - component: {fileID: 7058576355772529796}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}

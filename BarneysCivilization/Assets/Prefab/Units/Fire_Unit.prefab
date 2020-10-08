@@ -806,7 +806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8909967985320433924}
   - component: {fileID: 800291005829308273}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7016985699316275000}
   - component: {fileID: 7016985699310700062}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3321,7 +3321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8639245098900852852}
   - component: {fileID: 8639245098897506642}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,6 +6,7 @@ public class InGameManager : MonoBehaviour
 {
     public static InGameManager instance;
     public static GameStateType CurrentGameState=GameStateType.Decision;
+    public static int TurnCount;
     public Color[] CampColor;
     public List<CardManager> CardManagers= new List<CardManager>();
     public GameObject CardManagerPrefab;
@@ -14,6 +15,7 @@ public class InGameManager : MonoBehaviour
     private float DecisionTimer;
 
     public bool IsTurnEnd;
+
     private void Awake()
     {
         instance = this;
@@ -50,6 +52,7 @@ public class InGameManager : MonoBehaviour
     private void OnTurnEnd()
     {
         IsTurnEnd = false;
+        TurnCount++;
         foreach (CardManager cm in CardManagers)
         {
             for (int i = 0; i < UserData.instance.AllUsers.Length; i++)

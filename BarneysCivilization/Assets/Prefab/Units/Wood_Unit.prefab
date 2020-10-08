@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8073677453152299978}
   - component: {fileID: 8464220570753052363}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Deer 003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814112218583064364}
   - component: {fileID: 1814112218585878016}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Deer 003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1565,7 +1565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814112218583064334}
   - component: {fileID: 1814112218585878018}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Magic001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,7 +2019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3911941375479995776}
   - component: {fileID: 3177412937298934628}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Magic001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2740,7 +2740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4802105958126450751}
   - component: {fileID: 4802105958115240211}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Deer 003
   m_TagString: Untagged
   m_Icon: {fileID: 0}

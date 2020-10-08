@@ -32,6 +32,7 @@ enum MSGID {
     CS_REQ_GAME_END_ID = 33;
     CS_RES_GAME_END_ID = 34;
     CS_NTY_GAME_END_ID = 36;
+    CS_NTY_CARD_LIST_ID = 38;
   }
 
 enum RACE {
@@ -268,6 +269,13 @@ message CS_NTY_GAME_END {
      Result gameResult = 2;
 }
 
+message CS_NTY_CARD_LIST {
+     int32 round = 1;
+    repeated int32 cardidList = 2;
+    repeated string carduidList = 3;
+    repeated int32 cardposList = 4;
+}
+
 message CS_REQ_MSG {
    MSGID msgid = 1;
 
@@ -308,5 +316,6 @@ message CS_RES_MSG {
          CS_RES_PLAYER_USE_CARD cs_res_player_use_card = 16;
          CS_NTY_PLAYER_USE_CARD cs_nty_player_use_card = 17;
          CS_RES_GAME_END cs_res_game_end = 18;
+         CS_NTY_CARD_LIST cs_nty_card_list = 19;
       }
 }

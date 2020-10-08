@@ -15,7 +15,8 @@ MonoBehaviour:
   ActionPointCost: 1
   NonTargetCard: 1
   Turns: 0
-  BuffPrefab: {fileID: 0}
+  BuffPrefab: {fileID: 1477477239368706076, guid: ca27e19312d866b429b53bbe0aab9351,
+    type: 3}
 --- !u!1001 &3016318905123916207
 PrefabInstance:
   m_ObjectHideFlags: 0

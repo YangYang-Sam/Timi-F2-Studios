@@ -85,65 +85,69 @@ namespace Csmsg {
             "LkdhbWVfUmVzdWx0VHlwZSJ9Cg9DU19OVFlfR0FNRV9FTkQSEgoKc3VjX3Vz",
             "ZXJpZBgBIAEoCRIxCgpnYW1lUmVzdWx0GAIgASgOMh0uY3Ntc2cuQ1NfTlRZ",
             "X0dBTUVfRU5ELlJlc3VsdCIjCgZSZXN1bHQSBwoDU3VjEAASEAoMU3lzdGVt",
-            "X0Vycm9yEAEitQUKCkNTX1JFUV9NU0cSGwoFbXNnaWQYASABKA4yDC5jc21z",
-            "Zy5NU0dJRBItCg1jc19yZXFfcmVnaXN0GAIgASgLMhQuY3Ntc2cuQ1NfUkVR",
-            "X1JFR0lTVEgAEisKDGNzX3JlcV9sb2dpbhgDIAEoCzITLmNzbXNnLkNTX1JF",
-            "UV9MT0dJTkgAEisKDGNzX3JlcV9oZWxsbxgEIAEoCzITLmNzbXNnLkNTX1JF",
-            "UV9IRUxMT0gAEjEKD2NzX3JlcV9sb2dpbm91dBgFIAEoCzIWLmNzbXNnLkNT",
-            "X1JFUV9MT0dJTk9VVEgAEjEKD2NzX3JlcV9jaGdfcmFjZRgGIAEoCzIWLmNz",
-            "bXNnLkNTX1JFUV9DSEdfUkFDRUgAEjEKD2NzX3JlcV9tYXRjaGluZxgHIAEo",
-            "CzIWLmNzbXNnLkNTX1JFUV9NQVRDSElOR0gAEjsKFGNzX3JlcV9zdG9wX21h",
-            "dGNoaW5nGAggASgLMhsuY3Ntc2cuQ1NfUkVRX1NUT1BfTUFUQ0hJTkdIABIx",
-            "Cg9jc19yZXFfZ2V0X3JhY2UYCSABKAsyFi5jc21zZy5DU19SRVFfR0VUX1JB",
-            "Q0VIABJDChhjc19yZXFfY2hnX3BsYXllcl9zdGF0dXMYCiABKAsyHy5jc21z",
-            "Zy5DU19SRVFfQ0hHX1BMQVlFUl9TVEFUVVNIABI1ChFjc19yZXFfcGxheWVy",
-            "X21vdhgLIAEoCzIYLmNzbXNnLkNTX1JFUV9QTEFZRVJfTU9WSAASPwoWY3Nf",
-            "cmVxX3BsYXllcl91c2VfY2FyZBgMIAEoCzIdLmNzbXNnLkNTX1JFUV9QTEFZ",
-            "RVJfVVNFX0NBUkRIABIxCg9jc19yZXFfZ2FtZV9lbmQYDSABKAsyFi5jc21z",
-            "Zy5DU19SRVFfR0FNRV9FTkRIAEIICgZDU19NU0cixAcKCkNTX1JFU19NU0cS",
-            "GwoFbXNnaWQYASABKA4yDC5jc21zZy5NU0dJRBItCg1jc19yZXNfcmVnaXN0",
-            "GAIgASgLMhQuY3Ntc2cuQ1NfUkVTX1JFR0lTVEgAEisKDGNzX3Jlc19sb2dp",
-            "bhgDIAEoCzITLmNzbXNnLkNTX1JFU19MT0dJTkgAEisKDGNzX3Jlc19oZWxs",
-            "bxgEIAEoCzITLmNzbXNnLkNTX1JFU19IRUxMT0gAEjEKD2NzX3Jlc19sb2dp",
-            "bm91dBgFIAEoCzIWLmNzbXNnLkNTX1JFU19MT0dJTk9VVEgAEjEKD2NzX250",
-            "eV9sb2dpbm91dBgGIAEoCzIWLmNzbXNnLkNTX05UWV9MT0dJTk9VVEgAEjEK",
-            "D2NzX250eV9tYXRjaGluZxgHIAEoCzIWLmNzbXNnLkNTX05UWV9NQVRDSElO",
-            "R0gAEjEKD2NzX3Jlc19jaGdfcmFjZRgIIAEoCzIWLmNzbXNnLkNTX1JFU19D",
-            "SEdfUkFDRUgAEjEKD2NzX3Jlc19tYXRjaGluZxgJIAEoCzIWLmNzbXNnLkNT",
-            "X1JFU19NQVRDSElOR0gAEjsKFGNzX3Jlc19zdG9wX21hdGNoaW5nGAogASgL",
-            "MhsuY3Ntc2cuQ1NfUkVTX1NUT1BfTUFUQ0hJTkdIABIxCg9jc19yZXNfZ2V0",
-            "X3JhY2UYCyABKAsyFi5jc21zZy5DU19SRVNfR0VUX1JBQ0VIABJDChhjc19y",
-            "ZXNfY2hnX3BsYXllcl9zdGF0dXMYDCABKAsyHy5jc21zZy5DU19SRVNfQ0hH",
-            "X1BMQVlFUl9TVEFUVVNIABIzChBjc19udHlfZW5kX3JvdW5kGA0gASgLMhcu",
-            "Y3Ntc2cuQ1NfTlRZX0VORF9ST1VOREgAEjEKD2NzX250eV9nYW1lX2VuZBgO",
-            "IAEoCzIWLmNzbXNnLkNTX05UWV9HQU1FX0VOREgAEjUKEWNzX3Jlc19wbGF5",
-            "ZXJfbW92GA8gASgLMhguY3Ntc2cuQ1NfUkVTX1BMQVlFUl9NT1ZIABI/ChZj",
-            "c19yZXNfcGxheWVyX3VzZV9jYXJkGBAgASgLMh0uY3Ntc2cuQ1NfUkVTX1BM",
-            "QVlFUl9VU0VfQ0FSREgAEj8KFmNzX250eV9wbGF5ZXJfdXNlX2NhcmQYESAB",
-            "KAsyHS5jc21zZy5DU19OVFlfUExBWUVSX1VTRV9DQVJESAASMQoPY3NfcmVz",
-            "X2dhbWVfZW5kGBIgASgLMhYuY3Ntc2cuQ1NfUkVTX0dBTUVfRU5ESABCCAoG",
-            "Q1NfTVNHKvIFCgVNU0dJRBILCgdOT19VU0VEEAASFAoQQ1NfUkVRX1JFR0lT",
-            "VF9JRBABEhQKEENTX1JFU19SRUdJU1RfSUQQAhITCg9DU19SRVFfTE9HSU5f",
-            "SUQQAxITCg9DU19SRVNfTE9HSU5fSUQQBBITCg9DU19SRVFfSEVMTE9fSUQQ",
-            "BRITCg9DU19SRVNfSEVMTE9fSUQQBhIWChJDU19SRVFfTE9HSU5PVVRfSUQQ",
-            "BxIWChJDU19SRVNfTE9HSU5PVVRfSUQQCBIWChJDU19OVFlfTE9HSU5PVVRf",
-            "SUQQChIWChJDU19OVFlfTUFUQ0hJTkdfSUQQDBIWChJDU19SRVFfR0VUX1JB",
-            "Q0VfSUQQDRIWChJDU19SRVNfR0VUX1JBQ0VfSUQQDhIWChJDU19SRVFfQ0hH",
-            "X1JBQ0VfSUQQDxIWChJDU19SRVNfQ0hHX1JBQ0VfSUQQEBIWChJDU19SRVFf",
-            "TUFUQ0hJTkdfSUQQERIWChJDU19SRVNfTUFUQ0hJTkdfSUQQEhIbChdDU19S",
-            "RVFfU1RPUF9NQVRDSElOR19JRBATEhsKF0NTX1JFU19TVE9QX01BVENISU5H",
-            "X0lEEBQSGAoUQ1NfUkVRX1BMQVlFUl9NT1ZfSUQQFRIYChRDU19SRVNfUExB",
-            "WUVSX01PVl9JRBAWEh8KG0NTX1JFUV9DSEdfUExBWUVSX1NUQVRVU19JRBAZ",
-            "Eh8KG0NTX1JFU19DSEdfUExBWUVSX1NUQVRVU19JRBAaEhcKE0NTX05UWV9F",
-            "TkRfUk9VTkRfSUQQHBIdChlDU19SRVFfUExBWUVSX1VTRV9DQVJEX0lEEB0S",
-            "HQoZQ1NfUkVTX1BMQVlFUl9VU0VfQ0FSRF9JRBAeEh0KGUNTX05UWV9QTEFZ",
-            "RVJfVVNFX0NBUkRfSUQQIBIWChJDU19SRVFfR0FNRV9FTkRfSUQQIRIWChJD",
-            "U19SRVNfR0FNRV9FTkRfSUQQIhIWChJDU19OVFlfR0FNRV9FTkRfSUQQJCok",
-            "CgRSQUNFEggKBERlZXIQABIICgRCZWFyEAESCAoEV09MRhACKpQBCg9HYW1l",
-            "X1Jlc3VsdFR5cGUSBwoDU3VjEAASEwoPVXNlcl9Ob19Jbl9HYW1lEAESEwoP",
-            "VXNlcl9Ob19Jbl9MaW5lEAISFAoQSGFkX1ByZXBhcl9FcnJvchADEhAKDFVz",
-            "ZXJJRF9FcnJvchAEEhQKEEhhZF9TZXR0bGVfRXJyb3IQBRIQCgxTeXN0ZW1f",
-            "RXJyb3IQBmIGcHJvdG8z"));
+            "X0Vycm9yEAEiXwoQQ1NfTlRZX0NBUkRfTElTVBINCgVyb3VuZBgBIAEoBRIS",
+            "CgpjYXJkaWRMaXN0GAIgAygFEhMKC2NhcmR1aWRMaXN0GAMgAygJEhMKC2Nh",
+            "cmRwb3NMaXN0GAQgAygFIrUFCgpDU19SRVFfTVNHEhsKBW1zZ2lkGAEgASgO",
+            "MgwuY3Ntc2cuTVNHSUQSLQoNY3NfcmVxX3JlZ2lzdBgCIAEoCzIULmNzbXNn",
+            "LkNTX1JFUV9SRUdJU1RIABIrCgxjc19yZXFfbG9naW4YAyABKAsyEy5jc21z",
+            "Zy5DU19SRVFfTE9HSU5IABIrCgxjc19yZXFfaGVsbG8YBCABKAsyEy5jc21z",
+            "Zy5DU19SRVFfSEVMTE9IABIxCg9jc19yZXFfbG9naW5vdXQYBSABKAsyFi5j",
+            "c21zZy5DU19SRVFfTE9HSU5PVVRIABIxCg9jc19yZXFfY2hnX3JhY2UYBiAB",
+            "KAsyFi5jc21zZy5DU19SRVFfQ0hHX1JBQ0VIABIxCg9jc19yZXFfbWF0Y2hp",
+            "bmcYByABKAsyFi5jc21zZy5DU19SRVFfTUFUQ0hJTkdIABI7ChRjc19yZXFf",
+            "c3RvcF9tYXRjaGluZxgIIAEoCzIbLmNzbXNnLkNTX1JFUV9TVE9QX01BVENI",
+            "SU5HSAASMQoPY3NfcmVxX2dldF9yYWNlGAkgASgLMhYuY3Ntc2cuQ1NfUkVR",
+            "X0dFVF9SQUNFSAASQwoYY3NfcmVxX2NoZ19wbGF5ZXJfc3RhdHVzGAogASgL",
+            "Mh8uY3Ntc2cuQ1NfUkVRX0NIR19QTEFZRVJfU1RBVFVTSAASNQoRY3NfcmVx",
+            "X3BsYXllcl9tb3YYCyABKAsyGC5jc21zZy5DU19SRVFfUExBWUVSX01PVkgA",
+            "Ej8KFmNzX3JlcV9wbGF5ZXJfdXNlX2NhcmQYDCABKAsyHS5jc21zZy5DU19S",
+            "RVFfUExBWUVSX1VTRV9DQVJESAASMQoPY3NfcmVxX2dhbWVfZW5kGA0gASgL",
+            "MhYuY3Ntc2cuQ1NfUkVRX0dBTUVfRU5ESABCCAoGQ1NfTVNHIvkHCgpDU19S",
+            "RVNfTVNHEhsKBW1zZ2lkGAEgASgOMgwuY3Ntc2cuTVNHSUQSLQoNY3NfcmVz",
+            "X3JlZ2lzdBgCIAEoCzIULmNzbXNnLkNTX1JFU19SRUdJU1RIABIrCgxjc19y",
+            "ZXNfbG9naW4YAyABKAsyEy5jc21zZy5DU19SRVNfTE9HSU5IABIrCgxjc19y",
+            "ZXNfaGVsbG8YBCABKAsyEy5jc21zZy5DU19SRVNfSEVMTE9IABIxCg9jc19y",
+            "ZXNfbG9naW5vdXQYBSABKAsyFi5jc21zZy5DU19SRVNfTE9HSU5PVVRIABIx",
+            "Cg9jc19udHlfbG9naW5vdXQYBiABKAsyFi5jc21zZy5DU19OVFlfTE9HSU5P",
+            "VVRIABIxCg9jc19udHlfbWF0Y2hpbmcYByABKAsyFi5jc21zZy5DU19OVFlf",
+            "TUFUQ0hJTkdIABIxCg9jc19yZXNfY2hnX3JhY2UYCCABKAsyFi5jc21zZy5D",
+            "U19SRVNfQ0hHX1JBQ0VIABIxCg9jc19yZXNfbWF0Y2hpbmcYCSABKAsyFi5j",
+            "c21zZy5DU19SRVNfTUFUQ0hJTkdIABI7ChRjc19yZXNfc3RvcF9tYXRjaGlu",
+            "ZxgKIAEoCzIbLmNzbXNnLkNTX1JFU19TVE9QX01BVENISU5HSAASMQoPY3Nf",
+            "cmVzX2dldF9yYWNlGAsgASgLMhYuY3Ntc2cuQ1NfUkVTX0dFVF9SQUNFSAAS",
+            "QwoYY3NfcmVzX2NoZ19wbGF5ZXJfc3RhdHVzGAwgASgLMh8uY3Ntc2cuQ1Nf",
+            "UkVTX0NIR19QTEFZRVJfU1RBVFVTSAASMwoQY3NfbnR5X2VuZF9yb3VuZBgN",
+            "IAEoCzIXLmNzbXNnLkNTX05UWV9FTkRfUk9VTkRIABIxCg9jc19udHlfZ2Ft",
+            "ZV9lbmQYDiABKAsyFi5jc21zZy5DU19OVFlfR0FNRV9FTkRIABI1ChFjc19y",
+            "ZXNfcGxheWVyX21vdhgPIAEoCzIYLmNzbXNnLkNTX1JFU19QTEFZRVJfTU9W",
+            "SAASPwoWY3NfcmVzX3BsYXllcl91c2VfY2FyZBgQIAEoCzIdLmNzbXNnLkNT",
+            "X1JFU19QTEFZRVJfVVNFX0NBUkRIABI/ChZjc19udHlfcGxheWVyX3VzZV9j",
+            "YXJkGBEgASgLMh0uY3Ntc2cuQ1NfTlRZX1BMQVlFUl9VU0VfQ0FSREgAEjEK",
+            "D2NzX3Jlc19nYW1lX2VuZBgSIAEoCzIWLmNzbXNnLkNTX1JFU19HQU1FX0VO",
+            "REgAEjMKEGNzX250eV9jYXJkX2xpc3QYEyABKAsyFy5jc21zZy5DU19OVFlf",
+            "Q0FSRF9MSVNUSABCCAoGQ1NfTVNHKosGCgVNU0dJRBILCgdOT19VU0VEEAAS",
+            "FAoQQ1NfUkVRX1JFR0lTVF9JRBABEhQKEENTX1JFU19SRUdJU1RfSUQQAhIT",
+            "Cg9DU19SRVFfTE9HSU5fSUQQAxITCg9DU19SRVNfTE9HSU5fSUQQBBITCg9D",
+            "U19SRVFfSEVMTE9fSUQQBRITCg9DU19SRVNfSEVMTE9fSUQQBhIWChJDU19S",
+            "RVFfTE9HSU5PVVRfSUQQBxIWChJDU19SRVNfTE9HSU5PVVRfSUQQCBIWChJD",
+            "U19OVFlfTE9HSU5PVVRfSUQQChIWChJDU19OVFlfTUFUQ0hJTkdfSUQQDBIW",
+            "ChJDU19SRVFfR0VUX1JBQ0VfSUQQDRIWChJDU19SRVNfR0VUX1JBQ0VfSUQQ",
+            "DhIWChJDU19SRVFfQ0hHX1JBQ0VfSUQQDxIWChJDU19SRVNfQ0hHX1JBQ0Vf",
+            "SUQQEBIWChJDU19SRVFfTUFUQ0hJTkdfSUQQERIWChJDU19SRVNfTUFUQ0hJ",
+            "TkdfSUQQEhIbChdDU19SRVFfU1RPUF9NQVRDSElOR19JRBATEhsKF0NTX1JF",
+            "U19TVE9QX01BVENISU5HX0lEEBQSGAoUQ1NfUkVRX1BMQVlFUl9NT1ZfSUQQ",
+            "FRIYChRDU19SRVNfUExBWUVSX01PVl9JRBAWEh8KG0NTX1JFUV9DSEdfUExB",
+            "WUVSX1NUQVRVU19JRBAZEh8KG0NTX1JFU19DSEdfUExBWUVSX1NUQVRVU19J",
+            "RBAaEhcKE0NTX05UWV9FTkRfUk9VTkRfSUQQHBIdChlDU19SRVFfUExBWUVS",
+            "X1VTRV9DQVJEX0lEEB0SHQoZQ1NfUkVTX1BMQVlFUl9VU0VfQ0FSRF9JRBAe",
+            "Eh0KGUNTX05UWV9QTEFZRVJfVVNFX0NBUkRfSUQQIBIWChJDU19SRVFfR0FN",
+            "RV9FTkRfSUQQIRIWChJDU19SRVNfR0FNRV9FTkRfSUQQIhIWChJDU19OVFlf",
+            "R0FNRV9FTkRfSUQQJBIXChNDU19OVFlfQ0FSRF9MSVNUX0lEECYqJAoEUkFD",
+            "RRIICgREZWVyEAASCAoEQmVhchABEggKBFdPTEYQAiqUAQoPR2FtZV9SZXN1",
+            "bHRUeXBlEgcKA1N1YxAAEhMKD1VzZXJfTm9fSW5fR2FtZRABEhMKD1VzZXJf",
+            "Tm9fSW5fTGluZRACEhQKEEhhZF9QcmVwYXJfRXJyb3IQAxIQCgxVc2VySURf",
+            "RXJyb3IQBBIUChBIYWRfU2V0dGxlX0Vycm9yEAUSEAoMU3lzdGVtX0Vycm9y",
+            "EAZiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Csmsg.MSGID), typeof(global::Csmsg.RACE), typeof(global::Csmsg.Game_ResultType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -177,8 +181,9 @@ namespace Csmsg {
             new pbr::GeneratedClrTypeInfo(typeof(global::Csmsg.CS_REQ_GAME_END), global::Csmsg.CS_REQ_GAME_END.Parser, new[]{ "Userid", "GameResult" }, null, new[]{ typeof(global::Csmsg.CS_REQ_GAME_END.Types.Result) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Csmsg.CS_RES_GAME_END), global::Csmsg.CS_RES_GAME_END.Parser, new[]{ "Result" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Csmsg.CS_NTY_GAME_END), global::Csmsg.CS_NTY_GAME_END.Parser, new[]{ "SucUserid", "GameResult" }, null, new[]{ typeof(global::Csmsg.CS_NTY_GAME_END.Types.Result) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Csmsg.CS_NTY_CARD_LIST), global::Csmsg.CS_NTY_CARD_LIST.Parser, new[]{ "Round", "CardidList", "CarduidList", "CardposList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Csmsg.CS_REQ_MSG), global::Csmsg.CS_REQ_MSG.Parser, new[]{ "Msgid", "CsReqRegist", "CsReqLogin", "CsReqHello", "CsReqLoginout", "CsReqChgRace", "CsReqMatching", "CsReqStopMatching", "CsReqGetRace", "CsReqChgPlayerStatus", "CsReqPlayerMov", "CsReqPlayerUseCard", "CsReqGameEnd" }, new[]{ "CSMSG" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Csmsg.CS_RES_MSG), global::Csmsg.CS_RES_MSG.Parser, new[]{ "Msgid", "CsResRegist", "CsResLogin", "CsResHello", "CsResLoginout", "CsNtyLoginout", "CsNtyMatching", "CsResChgRace", "CsResMatching", "CsResStopMatching", "CsResGetRace", "CsResChgPlayerStatus", "CsNtyEndRound", "CsNtyGameEnd", "CsResPlayerMov", "CsResPlayerUseCard", "CsNtyPlayerUseCard", "CsResGameEnd" }, new[]{ "CSMSG" }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Csmsg.CS_RES_MSG), global::Csmsg.CS_RES_MSG.Parser, new[]{ "Msgid", "CsResRegist", "CsResLogin", "CsResHello", "CsResLoginout", "CsNtyLoginout", "CsNtyMatching", "CsResChgRace", "CsResMatching", "CsResStopMatching", "CsResGetRace", "CsResChgPlayerStatus", "CsNtyEndRound", "CsNtyGameEnd", "CsResPlayerMov", "CsResPlayerUseCard", "CsNtyPlayerUseCard", "CsResGameEnd", "CsNtyCardList" }, new[]{ "CSMSG" }, null, null)
           }));
     }
     #endregion
@@ -216,6 +221,7 @@ namespace Csmsg {
     [pbr::OriginalName("CS_REQ_GAME_END_ID")] CsReqGameEndId = 33,
     [pbr::OriginalName("CS_RES_GAME_END_ID")] CsResGameEndId = 34,
     [pbr::OriginalName("CS_NTY_GAME_END_ID")] CsNtyGameEndId = 36,
+    [pbr::OriginalName("CS_NTY_CARD_LIST_ID")] CsNtyCardListId = 38,
   }
 
   public enum RACE {
@@ -4930,6 +4936,205 @@ namespace Csmsg {
 
   }
 
+  public partial class CS_NTY_CARD_LIST : pb::IMessage<CS_NTY_CARD_LIST> , pb::ICleanable {
+    private static readonly pb::MessageParser<CS_NTY_CARD_LIST> _parser = new pb::MessageParser<CS_NTY_CARD_LIST>(() => new CS_NTY_CARD_LIST());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CS_NTY_CARD_LIST> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Csmsg.ProtocolReflection.Descriptor.MessageTypes[30]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_NTY_CARD_LIST() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_NTY_CARD_LIST(CS_NTY_CARD_LIST other) : this() {
+      round_ = other.round_;
+      cardidList_ = other.cardidList_.Clone();
+      carduidList_ = other.carduidList_.Clone();
+      cardposList_ = other.cardposList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CS_NTY_CARD_LIST Clone() {
+      return new CS_NTY_CARD_LIST(this);
+    }
+
+    /// <summary>Field number for the "round" field.</summary>
+    public const int RoundFieldNumber = 1;
+    private int round_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Round {
+      get { return round_; }
+      set {
+        round_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cardidList" field.</summary>
+    public const int CardidListFieldNumber = 2;
+    private static readonly pb::FieldCodec<int> _repeated_cardidList_codec
+        = pb::FieldCodec.ForInt32(18);
+    private readonly pbc::RepeatedField<int> cardidList_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> CardidList {
+      get { return cardidList_; }
+    }
+
+    /// <summary>Field number for the "carduidList" field.</summary>
+    public const int CarduidListFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_carduidList_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> carduidList_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> CarduidList {
+      get { return carduidList_; }
+    }
+
+    /// <summary>Field number for the "cardposList" field.</summary>
+    public const int CardposListFieldNumber = 4;
+    private static readonly pb::FieldCodec<int> _repeated_cardposList_codec
+        = pb::FieldCodec.ForInt32(34);
+    private readonly pbc::RepeatedField<int> cardposList_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> CardposList {
+      get { return cardposList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CS_NTY_CARD_LIST);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CS_NTY_CARD_LIST other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Round != other.Round) return false;
+      if(!cardidList_.Equals(other.cardidList_)) return false;
+      if(!carduidList_.Equals(other.carduidList_)) return false;
+      if(!cardposList_.Equals(other.cardposList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Round != 0) hash ^= Round.GetHashCode();
+      hash ^= cardidList_.GetHashCode();
+      hash ^= carduidList_.GetHashCode();
+      hash ^= cardposList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Round != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Round);
+      }
+      cardidList_.WriteTo(output, _repeated_cardidList_codec);
+      carduidList_.WriteTo(output, _repeated_carduidList_codec);
+      cardposList_.WriteTo(output, _repeated_cardposList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Round != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Round);
+      }
+      size += cardidList_.CalculateSize(_repeated_cardidList_codec);
+      size += carduidList_.CalculateSize(_repeated_carduidList_codec);
+      size += cardposList_.CalculateSize(_repeated_cardposList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CS_NTY_CARD_LIST other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Round != 0) {
+        Round = other.Round;
+      }
+      cardidList_.Add(other.cardidList_);
+      carduidList_.Add(other.carduidList_);
+      cardposList_.Add(other.cardposList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Round = input.ReadInt32();
+            break;
+          }
+          case 18:
+          case 16: {
+            cardidList_.AddEntriesFrom(input, _repeated_cardidList_codec);
+            break;
+          }
+          case 26: {
+            carduidList_.AddEntriesFrom(input, _repeated_carduidList_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            cardposList_.AddEntriesFrom(input, _repeated_cardposList_codec);
+            break;
+          }
+        }
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void CleanMessage() {
+      round_ = default ;
+      cardidList_.Clear();
+      carduidList_.Clear();
+      cardposList_.Clear();
+    }
+
+  }
+
   public partial class CS_REQ_MSG : pb::IMessage<CS_REQ_MSG> , pb::ICleanable {
     private static readonly pb::MessageParser<CS_REQ_MSG> _parser = new pb::MessageParser<CS_REQ_MSG>(() => new CS_REQ_MSG());
     private pb::UnknownFieldSet _unknownFields;
@@ -4938,7 +5143,7 @@ namespace Csmsg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Csmsg.ProtocolReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Csmsg.ProtocolReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5565,7 +5770,7 @@ namespace Csmsg {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Csmsg.ProtocolReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Csmsg.ProtocolReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5634,6 +5839,9 @@ namespace Csmsg {
           break;
         case CSMSGOneofCase.CsResGameEnd:
           CsResGameEnd = other.CsResGameEnd.Clone();
+          break;
+        case CSMSGOneofCase.CsNtyCardList:
+          CsNtyCardList = other.CsNtyCardList.Clone();
           break;
       }
 
@@ -5843,6 +6051,17 @@ namespace Csmsg {
       }
     }
 
+    /// <summary>Field number for the "cs_nty_card_list" field.</summary>
+    public const int CsNtyCardListFieldNumber = 19;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Csmsg.CS_NTY_CARD_LIST CsNtyCardList {
+      get { return cSMSGCase_ == CSMSGOneofCase.CsNtyCardList ? (global::Csmsg.CS_NTY_CARD_LIST) cSMSG_ : null; }
+      set {
+        cSMSG_ = value;
+        cSMSGCase_ = value == null ? CSMSGOneofCase.None : CSMSGOneofCase.CsNtyCardList;
+      }
+    }
+
     private object cSMSG_;
     /// <summary>Enum of possible cases for the "CS_MSG" oneof.</summary>
     public enum CSMSGOneofCase {
@@ -5864,6 +6083,7 @@ namespace Csmsg {
       CsResPlayerUseCard = 16,
       CsNtyPlayerUseCard = 17,
       CsResGameEnd = 18,
+      CsNtyCardList = 19,
     }
     private CSMSGOneofCase cSMSGCase_ = CSMSGOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5908,6 +6128,7 @@ namespace Csmsg {
       if (!object.Equals(CsResPlayerUseCard, other.CsResPlayerUseCard)) return false;
       if (!object.Equals(CsNtyPlayerUseCard, other.CsNtyPlayerUseCard)) return false;
       if (!object.Equals(CsResGameEnd, other.CsResGameEnd)) return false;
+      if (!object.Equals(CsNtyCardList, other.CsNtyCardList)) return false;
       if (CSMSGCase != other.CSMSGCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -5933,6 +6154,7 @@ namespace Csmsg {
       if (cSMSGCase_ == CSMSGOneofCase.CsResPlayerUseCard) hash ^= CsResPlayerUseCard.GetHashCode();
       if (cSMSGCase_ == CSMSGOneofCase.CsNtyPlayerUseCard) hash ^= CsNtyPlayerUseCard.GetHashCode();
       if (cSMSGCase_ == CSMSGOneofCase.CsResGameEnd) hash ^= CsResGameEnd.GetHashCode();
+      if (cSMSGCase_ == CSMSGOneofCase.CsNtyCardList) hash ^= CsNtyCardList.GetHashCode();
       hash ^= (int) cSMSGCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -6019,6 +6241,10 @@ namespace Csmsg {
         output.WriteRawTag(146, 1);
         output.WriteMessage(CsResGameEnd);
       }
+      if (cSMSGCase_ == CSMSGOneofCase.CsNtyCardList) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(CsNtyCardList);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -6080,6 +6306,9 @@ namespace Csmsg {
       }
       if (cSMSGCase_ == CSMSGOneofCase.CsResGameEnd) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(CsResGameEnd);
+      }
+      if (cSMSGCase_ == CSMSGOneofCase.CsNtyCardList) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CsNtyCardList);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -6197,6 +6426,12 @@ namespace Csmsg {
             CsResGameEnd = new global::Csmsg.CS_RES_GAME_END();
           }
           CsResGameEnd.MergeFrom(other.CsResGameEnd);
+          break;
+        case CSMSGOneofCase.CsNtyCardList:
+          if (CsNtyCardList == null) {
+            CsNtyCardList = new global::Csmsg.CS_NTY_CARD_LIST();
+          }
+          CsNtyCardList.MergeFrom(other.CsNtyCardList);
           break;
       }
 
@@ -6366,6 +6601,15 @@ namespace Csmsg {
             }
             input.ReadMessage(subBuilder);
             CsResGameEnd = subBuilder;
+            break;
+          }
+          case 154: {
+            global::Csmsg.CS_NTY_CARD_LIST subBuilder = new global::Csmsg.CS_NTY_CARD_LIST();
+            if (cSMSGCase_ == CSMSGOneofCase.CsNtyCardList) {
+              subBuilder.MergeFrom(CsNtyCardList);
+            }
+            input.ReadMessage(subBuilder);
+            CsNtyCardList = subBuilder;
             break;
           }
         }

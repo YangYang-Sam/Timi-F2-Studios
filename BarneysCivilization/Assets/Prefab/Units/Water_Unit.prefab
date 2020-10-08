@@ -126,6 +126,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100038, guid: e5a5646bfe9e2804ab1c80b613c79e90, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 100040, guid: e5a5646bfe9e2804ab1c80b613c79e90, type: 3}
       propertyPath: m_Name
       value: Crocodile_Walking (1)
@@ -219,6 +223,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6901529226651494390}
     m_Modifications:
+    - target: {fileID: 100038, guid: e5a5646bfe9e2804ab1c80b613c79e90, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 100040, guid: e5a5646bfe9e2804ab1c80b613c79e90, type: 3}
       propertyPath: m_Name
       value: Crocodile_Walking (2)
@@ -312,6 +320,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6901529226651494390}
     m_Modifications:
+    - target: {fileID: 100038, guid: e5a5646bfe9e2804ab1c80b613c79e90, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 100040, guid: e5a5646bfe9e2804ab1c80b613c79e90, type: 3}
       propertyPath: m_Name
       value: Crocodile_Walking

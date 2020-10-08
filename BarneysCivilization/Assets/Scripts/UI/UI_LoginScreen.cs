@@ -41,6 +41,7 @@ public class UI_LoginScreen : MonoBehaviour
             switch (LoginResult)
             {
                 case 0:
+                    UserData.HasLogin = true;
                     ShowUserMessage("登陆成功",Color.green);
                     SceneManager.LoadScene("MainScene");
                     break;
@@ -85,6 +86,7 @@ public class UI_LoginScreen : MonoBehaviour
         UID = IDField.text;
         Password = PWField.text;
         UserData.instance.UID = UID;
+        UserData.instance.Password = Password;
         netManager.ReqLogin(UID, Password);
         //print("ID: " + UID + " PW: " + Password);
     }

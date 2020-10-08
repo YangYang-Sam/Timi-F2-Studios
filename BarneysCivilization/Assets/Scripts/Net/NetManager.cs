@@ -12,7 +12,7 @@ namespace NetTest
     {
         public static NetManager instance;
         public static Socket socket;
-        private IPEndPoint ipe;
+        private static IPEndPoint ipe;
 
         public void InitState()
         {
@@ -38,8 +38,10 @@ namespace NetTest
             while (true)
             {
                 byte[] data = new byte[1024];
-                ReceiveData(ref data);
-                PBConverter.ResData(data);
+                if(ReceiveData(ref data))
+                {
+                    PBConverter.ResData(data);
+                }         
             }
         }
 
@@ -120,17 +122,168 @@ namespace NetTest
         }
 
         // socket接收数据
-        public void ReceiveData(ref byte[] recvBytes)
+        public bool ReceiveData(ref byte[] recvBytes)
         {
+
             //接受从服务器返回的信息
             int bytes;
-            bytes = socket.Receive(recvBytes, recvBytes.Length, 0);//从服务器端接受返回信息
-            byte[] resRecvBytes = new byte[bytes];
-            for(int i = 0; i < bytes; i++)
+
+            try
             {
-                resRecvBytes[i] = recvBytes[i];
+                if (socket == null)
+                {
+                    Socket_Create_Connect();
+                }
+                else if (!socket.Connected)
+                {
+                    //if (!IsSocketConnected())
+                    //{
+                        Reconnect();
+                    //}
+                    //else
+                    //{
+                    ReqLogin(UserData.instance.UID, UserData.instance.Password);
+                    //}
+                }
+
+                bytes = socket.Receive(recvBytes, recvBytes.Length, 0);//从服务器端接受返回信息
+                byte[] resRecvBytes = new byte[bytes];
+
+                for (int i = 0; i < bytes; i++)
+                {
+                    resRecvBytes[i] = recvBytes[i];
+                }
+                recvBytes = resRecvBytes;
+                return true;
+
             }
-            recvBytes = resRecvBytes;
+            catch
+            {
+               
+            }
+
+            return false;
+
+            //try
+            //{
+            //    bytes = socket.Receive(recvBytes, recvBytes.Length, 0);//从服务器端接受返回信息
+            //    byte[] resRecvBytes = new byte[bytes];
+
+            //    for (int i = 0; i < bytes; i++)
+            //    {
+            //        resRecvBytes[i] = recvBytes[i];
+            //    }
+            //    recvBytes = resRecvBytes;
+            //    return true;
+            //}
+            //catch
+            //{
+            //    if (!IsSocketConnected())
+            //    {
+            //        Reconnect();       
+            //    }
+
+            //    try
+            //    {
+            //        int port = 8000;
+            //        string host = "106.52.156.98";
+            //        ///创建终结点EndPoint
+            //        IPAddress ip = IPAddress.Parse(host);
+            //        ipe = new IPEndPoint(ip, port);//把ip和端口转化为IPEndpoint实例
+            //        ///创建socket并连接到服务器
+            //        socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);//创建Socket
+            //        socket.Connect(ipe);//连接到服务器
+            //        Thread.Sleep(1000);
+            //    }
+            //    catch
+            //    {
+
+            //    }
+
+            //    if (socket.Connected)
+            //    {
+            //        ReqLogin(UserData.instance.UID, UserData.instance.Password);
+            //    }
+            //    else
+            //    {
+
+            //    }
+
+
+
+            //    return false;
+            //}
         }
+        public static bool Reconnect()
+        {
+            //socket.Shutdown(SocketShutdown.Both);
+            //socket.Disconnect(true);
+            //socket.Close();
+
+            return Socket_Create_Connect();
+        }
+        public static bool Socket_Create_Connect()
+        {
+            int port = 8000;
+            string host = "106.52.156.98";
+            ///创建终结点EndPoint
+            IPAddress ip = IPAddress.Parse(host);
+            ipe = new IPEndPoint(ip, port);//把ip和端口转化为IPEndpoint实例
+            ///创建socket并连接到服务器
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);//创建Socket
+            socket.Connect(ipe);//连接到服务器
+
+            return true;
+        }
+
+        private bool IsSocketConnected()
+        {
+            #region remarks
+            /********************************************************************************************
+             * 当Socket.Conneted为false时， 如果您需要确定连接的当前状态，请进行非阻塞、零字节的 Send 调用。
+             * 如果该调用成功返回或引发 WAEWOULDBLOCK 错误代码 (10035)，则该套接字仍然处于连接状态； 
+             * 否则，该套接字不再处于连接状态。
+             * Depending on http://msdn.microsoft.com/zh-cn/library/system.net.sockets.socket.connected.aspx?cs-save-lang=1&cs-lang=csharp#code-snippet-2
+            ********************************************************************************************/
+            #endregion
+
+            #region 过程
+            // This is how you can determine whether a socket is still connected.
+            bool connectState = true;
+            bool blockingState = socket.Blocking;
+            try
+            {
+                byte[] tmp = new byte[1];
+
+                socket.Blocking = false;
+                socket.Send(tmp, 0, 0);
+                //Console.WriteLine("Connected!");
+                connectState = true; //若Send错误会跳去执行catch体，而不会执行其try体里其之后的代码
+            }
+            catch (SocketException e)
+            {
+                // 10035 == WSAEWOULDBLOCK
+                if (e.NativeErrorCode.Equals(10035))
+                {
+                    //Console.WriteLine("Still Connected, but the Send would block");
+                    connectState = true;
+                }
+
+                else
+                {
+                    //Console.WriteLine("Disconnected: error code {0}!", e.NativeErrorCode);
+                    connectState = false;
+                }
+            }
+            finally
+            {
+                socket.Blocking = blockingState;
+            }
+
+            //Console.WriteLine("Connected: {0}", client.Connected);
+            return connectState;
+            #endregion
+        }
+
     }
 }

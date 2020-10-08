@@ -402,7 +402,7 @@ public class CardManager : MonoBehaviour
             ActionPoint -= card.ActionPointCost();
             ArtResourceManager.instance.CreateTextEffect(card.CardName, PlayerCore.transform.position);
         }
-        else
+        else if(camp==UserData.instance.Camp)
         {
             UseCardFailReason reason = card.GetComponent<CardEffect>().GetFailReason(this, cell);
             UI_Warning.instance.ShowWarningText(CardEffect.GetWarningTextByFailReason(reason));
@@ -534,6 +534,7 @@ public class CardManager : MonoBehaviour
     }
     public void CampLost(CardManager destroyer)
     {
+        print(UserData.instance.UID + " Lost");
         isLost = true;
         for (int i = OccupiedCells.Count-1; i >= 0; i--)
         {

@@ -12,6 +12,8 @@ public class Building_Base : MonoBehaviour
     public int Level = 1;
     public int MaxLevel = 1;
     public Transform EffectTransform;
+
+    public BuildingType Type;
     public virtual void OnCreated(HexCell cell,CardManager owner)
     {
         Cell = cell;
@@ -89,4 +91,18 @@ public class Building_Base : MonoBehaviour
         building.Owner.BuildingDestroy(building);
         Destroy(building.gameObject);
     }
+}
+
+public enum BuildingType
+{
+    WarTree,
+    BigTree,
+    Tree,
+    Magnet,
+    Mine,
+    Nest,
+    Reservoir,
+    SandTower,
+    StoneCastle,
+    Tinder
 }

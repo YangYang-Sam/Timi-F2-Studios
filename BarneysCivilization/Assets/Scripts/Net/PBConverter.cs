@@ -126,6 +126,14 @@ namespace NetTest
                     int hexID = resMsg9.Pos - 1;
                     CsResManager.NtyUseCard(uid, cardID, hexID);
                     break;
+                case MSGID.CsNtyCardListId:
+                    CS_NTY_CARD_LIST resMsg10 = msg.CsNtyCardList;
+                    UserData.instance.Round = resMsg10.Round;
+                    UserData.instance.CardIDList = new List<int>(resMsg10.CardidList);
+                    UserData.instance.PosIDList = new List<int>(resMsg10.CardposList);
+                    UserData.instance.CardUIDList = new List<string>(resMsg10.CarduidList);
+                    UserData.instance.ReceiveCardPack = true;
+                    break;
                 default:
                     break;
             }
@@ -141,7 +149,14 @@ namespace NetTest
                 Thread.Sleep(10000);
                 byte[] data = new byte[1024];
                 ReqHello(uid, ref data);
-                NetManager.socket.Send(data, data.Length, 0);                
+                try
+                {
+                    NetManager.socket.Send(data, data.Length, 0);
+                }
+                catch
+                {
+
+                } 
             }
         }
 
