@@ -6,6 +6,11 @@ public class BattleCamera : MonoBehaviour
 {
     public Vector3 Offset;
     public float Speed;
+    public static BattleCamera instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         InGameManager.instance.GameStartEvent += GameStart;
@@ -29,9 +34,14 @@ public class BattleCamera : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveToCore()
+    public void MoveToCore(int i)
     {
-        Vector3 position = PlayerController.instance.cardManager.GetCorePosition() + Offset;
+        StartCoroutine(MoveToOtherCore(i));
+    }
+
+    private IEnumerator MoveToOtherCore(int i)
+    {
+        Vector3 position = InGameManager.instance.CardManagers[i].GetCorePosition() + Offset;
         float timer = 1;
         while (timer > 0)
         {

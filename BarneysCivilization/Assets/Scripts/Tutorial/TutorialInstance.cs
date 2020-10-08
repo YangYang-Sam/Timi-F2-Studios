@@ -5,18 +5,44 @@ using UnityEngine.UI;
 
 public class TutorialInstance : MonoBehaviour
 {
-    public Text contentText;
     public GameObject Graphic;
 
     public TutorialTriggerType type;
-    public string content;
     public float time;
     private float timer;
+    public bool MoveCameraToEnemy;
+    public GameObject StartCloseObj;
+
+    private float Duration=3;
+    private float durationTimer;
     private void Start()
     {
         UIManager.instance.PlayerUseCardEvent += PlayerUseCard;
         PlayerController.instance.PlayerMoveEvent += PlayerMove;
+        InGameManager.instance.LateDecisionEvent += OnLateDecision;
+        UIManager.instance.ChooseCardFinish += ChooseCard;
         timer = time;
+        durationTimer = Duration;
+        if (type == TutorialTriggerType.None)
+        {
+            TutorialStart();
+        }
+    }
+
+    private void ChooseCard()
+    {
+        if (type == TutorialTriggerType.ChooseCard)
+        {
+            TutorialStart();
+        }
+    }
+
+    private void OnLateDecision()
+    {
+        if (type == TutorialTriggerType.TurnStart)
+        {
+            TutorialStart();
+        }
     }
 
     private void Update()
@@ -29,6 +55,8 @@ public class TutorialInstance : MonoBehaviour
                 TutorialStart();
             }
         }
+
+        durationTimer -= Time.deltaTime;
     }
 
     private void PlayerMove(HexCell obj)
@@ -50,9 +78,21 @@ public class TutorialInstance : MonoBehaviour
     public void TutorialStart()
     {
         Graphic.SetActive(true);
+        if (MoveCameraToEnemy)
+        {
+            BattleCamera.instance.MoveToCore(1);
+        }
+        if (StartCloseObj)
+        {
+            StartCloseObj.SetActive(false);
+        }
     }
     public void TutorialClose()
     {
+        UIManager.instance.PlayerUseCardEvent -= PlayerUseCard;
+        PlayerController.instance.PlayerMoveEvent -= PlayerMove;
+        InGameManager.instance.LateDecisionEvent -= OnLateDecision;
+        UIManager.instance.ChooseCardFinish -= ChooseCard;
         TutorialManager.instance.isInstanceGoing = false;
         Destroy(gameObject);
     }
@@ -62,5 +102,7 @@ public enum TutorialTriggerType
     None,
     UseCard,
     Move,
-    Time
+    Time,
+    TurnStart,
+    ChooseCard
 }

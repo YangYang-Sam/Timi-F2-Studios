@@ -310,11 +310,16 @@ public class UIManager : MonoBehaviour
     {
         ChooseCardWidget.ChooseRandomCard();
     }
+    public event System.Action ChooseCardFinish;
     public void CardChoosed(GameObject card , HexCell cell)
     {
         IsChoosingCard = false;
         ChooseCardWidget.ChooseFinish();
         playerCardManager.AddNewCard(card,cell);
+        if (ChooseCardFinish != null)
+        {
+            ChooseCardFinish();
+        }
     }
     public void EndTurnButton()
     {
