@@ -193,14 +193,21 @@ public class InGameManager : MonoBehaviour
     {
         if (PlayerController.canControl)
         {
-            PlayerController.canControl = false;
-            if (UserData.instance.isMultiplayerGame)
+            if (!UserData.instance.isMultiplayerGame || NetTest.NetManager.socket.Connected)
             {
-                NetTest.NetManager.instance.ReqEndTurn(UserData.instance.UID);
+                PlayerController.canControl = false;
+                if (UserData.instance.isMultiplayerGame)
+                {
+                    NetTest.NetManager.instance.ReqEndTurn(UserData.instance.UID);
+                }
+                else
+                {
+                    StartMoving();
+                }
             }
             else
             {
-                StartMoving();
+                UI_Warning.instance.ShowWarningText("断线重连中，请稍后操作");
             }
         }
     }

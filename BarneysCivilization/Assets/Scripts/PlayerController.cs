@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    UI_Warning.instance.ShowWarningText("无法连接到服务器，请稍后再试");
+                    UI_Warning.instance.ShowWarningText("断线重连中，请稍后操作");
                 }
             }
             else
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    UI_Warning.instance.ShowWarningText("无法连接到服务器，请稍后再试");
+                    UI_Warning.instance.ShowWarningText("断线重连中，请稍后操作");
                 }
             }
         }
