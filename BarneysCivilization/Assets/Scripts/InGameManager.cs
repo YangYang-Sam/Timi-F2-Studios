@@ -57,8 +57,21 @@ public class InGameManager : MonoBehaviour
         }
 
         UserData ud= UserData.instance;
+
+
+
         if (ud.ReceiveCardPack)
         {
+            for (int i = ud.CardIDList.Count; i >= 0; i--)
+            {
+                if (ud.CardUIDList[i] == ud.UID)
+                {
+                    ud.CardIDList.RemoveAt(i);
+                    ud.CardUIDList.RemoveAt(i);
+                    ud.PosIDList.RemoveAt(i);
+                }
+            }
+
             for (int i = 0; i < CardIDList.Count; i++)
             {
                 if(CardIDList[i]== ud.CardIDList[i] && CardUIDList[i]==ud.CardUIDList[i] && PosList[i] == ud.PosIDList[i])
