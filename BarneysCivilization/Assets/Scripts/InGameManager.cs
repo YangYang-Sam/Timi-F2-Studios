@@ -62,7 +62,8 @@ public class InGameManager : MonoBehaviour
 
         if (ud.ReceiveCardPack)
         {
-            for (int i = ud.CardIDList.Count; i >= 0; i--)
+            ud.ReceiveCardPack = false;
+            for (int i = ud.CardUIDList.Count - 1; i >= 0; i--)
             {
                 if (ud.CardUIDList[i] == ud.UID)
                 {
