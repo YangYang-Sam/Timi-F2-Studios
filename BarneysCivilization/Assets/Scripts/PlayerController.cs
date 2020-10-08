@@ -72,32 +72,46 @@ public class PlayerController : MonoBehaviour
             HexTrace();
             if (SelectCell != null && SelectCell.isValidCell)
             {
-                if(cardManager.SetUnitMoveTo(SelectCell))
+                if (!UserData.instance.isMultiplayerGame || NetTest.NetManager.socket.Connected)
                 {
-                    MoveIndicator.SetActive(true);
-                    MoveIndicator.transform.position = SelectCell.transform.position;
+                    if (cardManager.SetUnitMoveTo(SelectCell))
+                    {
+                        MoveIndicator.SetActive(true);
+                        MoveIndicator.transform.position = SelectCell.transform.position;
+                    }
+                    else
+                    {
+                        MoveIndicator.SetActive(false);
+                    }
+
+                    if (UserData.instance.isMultiplayerGame)
+                    {
+                        NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
+                        print("Player " + UserData.instance.UID + " Move to: " + SelectCell.HexIndex);
+                    }
                 }
                 else
                 {
-                    MoveIndicator.SetActive(false);
-                }
-             
-                if (UserData.instance.isMultiplayerGame)
-                {
-                    NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
-                    print("Player "+UserData.instance.UID+" Move to: "+ SelectCell.HexIndex);
+                    UI_Warning.instance.ShowWarningText("无法连接到服务器，请稍后再试");
                 }
             }
             else
             {
-            
-                cardManager.CancelAllUnitMove();
-                if (UserData.instance.isMultiplayerGame)
+                if (!UserData.instance.isMultiplayerGame || NetTest.NetManager.socket.Connected)
                 {
-                    print("Player " + UserData.instance.UID + " cancel ");
-                    NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, -2);
+                    cardManager.CancelAllUnitMove();
+
+                    if (UserData.instance.isMultiplayerGame)
+                    {
+                        print("Player " + UserData.instance.UID + " cancel ");
+                        NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, -2);
+                    }
+                    MoveIndicator.SetActive(false);
                 }
-                MoveIndicator.SetActive(false);
+                else
+                {
+                    UI_Warning.instance.ShowWarningText("无法连接到服务器，请稍后再试");
+                }
             }
         }
     }

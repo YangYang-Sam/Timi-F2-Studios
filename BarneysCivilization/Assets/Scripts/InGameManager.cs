@@ -51,7 +51,7 @@ public class InGameManager : MonoBehaviour
         {
             OnTurnEnd();
         }
-        if(Time.time> DecisionTimer && PlayerController.canControl)
+        if(Time.time> DecisionTimer && PlayerController.canControl && NetTest.NetManager.socket.Connected)
         {
             EndTurn();
         }

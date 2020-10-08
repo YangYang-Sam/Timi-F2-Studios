@@ -201,28 +201,35 @@ public class UIManager : MonoBehaviour
                 {
                     if (Input.mousePosition.y > ReleaseThreshold && PlayerController.canControl)
                     {
-                        int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName);
-                        int hexID = -2;
-                        //Debug.DrawLine(SelectCell.transform.position, SelectCell.transform.position + Vector3.up * 20, Color.red);
-                        if (SelectCell != null)
+                        if (!UserData.instance.isMultiplayerGame || NetTest.NetManager.socket.Connected)
                         {
-                            playerCardManager.UseCard(SelectCard, SelectCell);
-                            hexID = SelectCell.HexIndex;
-                        }
-                        else if (SelectCard.NoneTargetCard())
-                        {
-                            playerCardManager.UseCard(SelectCard, SelectCell);
+                            int cardID = CardIDSystem.instance.GetCardID(SelectCard.CardName);
+                            int hexID = -2;
+                            //Debug.DrawLine(SelectCell.transform.position, SelectCell.transform.position + Vector3.up * 20, Color.red);
+                            if (SelectCell != null)
+                            {
+                                playerCardManager.UseCard(SelectCard, SelectCell);
+                                hexID = SelectCell.HexIndex;
+                            }
+                            else if (SelectCard.NoneTargetCard())
+                            {
+                                playerCardManager.UseCard(SelectCard, SelectCell);
+                            }
+                            else
+                            {
+                                SelectCard = null;
+                                UI_ArrowMesh.instance.SetVisibility(false);
+                                return;
+                            }
+                            if (UserData.instance.isMultiplayerGame)
+                            {
+                                // 向服务器汇报使用卡的ID              
+                                NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
+                            }
                         }
                         else
                         {
-                            SelectCard = null;
-                            UI_ArrowMesh.instance.SetVisibility(false);
-                            return;
-                        }
-                        if (UserData.instance.isMultiplayerGame)
-                        {
-                            // 向服务器汇报使用卡的ID              
-                            NetTest.NetManager.instance.ReqUseCard(UserData.instance.UID, cardID, hexID);
+                            UI_Warning.instance.ShowWarningText("断线重连中，请稍后操作");
                         }
                     }
                     CancelSelet();
