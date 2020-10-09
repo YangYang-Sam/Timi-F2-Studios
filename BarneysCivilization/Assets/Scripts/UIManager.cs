@@ -323,6 +323,9 @@ public class UIManager : MonoBehaviour
     public event System.Action ChooseCardFinish;
     public void CardChoosed(GameObject card , HexCell cell)
     {
+
+        SoundEffectManager.instance.CreateSoundEffect(2);
+        
         IsChoosingCard = false;
         ChooseCardWidget.ChooseFinish();
         playerCardManager.AddNewCard(card,cell);

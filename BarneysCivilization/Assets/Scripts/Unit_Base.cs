@@ -19,7 +19,7 @@ public class Unit_Base : MonoBehaviour
         {
             if (!value && canMove)
             {
-                ArtResourceManager.instance.CreateEffectByIndex(transform.position, 15, 1, false);
+                ArtResourceManager.instance.CreateEffectByIndex(transform.position, 15, 1, false, 0);
             }
             canMove = value;
         }

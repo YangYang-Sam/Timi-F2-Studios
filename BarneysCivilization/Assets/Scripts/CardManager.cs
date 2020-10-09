@@ -32,6 +32,10 @@ public class CardManager : MonoBehaviour
         get { return tempResourceAmount; }
         set
         {
+            if (camp == UserData.instance.Camp)
+            {
+                SoundEffectManager.instance.CreateSoundEffect(1);
+            }       
             tempResourceAmount = value;
         }
     }
@@ -171,6 +175,10 @@ public class CardManager : MonoBehaviour
                 ActionPoint = 1;
                 BuyUnitTimes = 1;
                 UnitMoveSpeed = 1;
+                if (camp == UserData.instance.Camp)
+                {
+                    SoundEffectManager.instance.CreateSoundEffect(2);
+                }
                 for (int i = 0; i < DrawCardAmount; i++)
                 {
                     DrawCard();
@@ -360,7 +368,7 @@ public class CardManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             DrawCard();
-        }
+        }   
     }
     public void DrawCard()
     {
@@ -407,6 +415,10 @@ public class CardManager : MonoBehaviour
             AddToUsedCards(card);
             ActionPoint -= card.ActionPointCost();
             ArtResourceManager.instance.CreateTextEffect(card.CardName, PlayerCore.transform.position);
+            if (camp == UserData.instance.Camp)
+            {
+                SoundEffectManager.instance.CreateSoundEffect(3);
+            }
         }
         else if(camp==UserData.instance.Camp)
         {
