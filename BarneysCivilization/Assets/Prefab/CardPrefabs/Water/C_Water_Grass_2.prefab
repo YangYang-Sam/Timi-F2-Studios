@@ -48,7 +48,7 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u672C\u56DE\u5408\u7ED3\u675F\u9636\u6BB5\uFF0C\u5DF1\u65B9\u9886\u571F\u5185\u6240\u6709\u964D\u96E8\u683C\u5B50+1\u6218\u6597\u529B"
+      value: "\u56DE\u5408\u7ED3\u675F\u65F6\uFF0C\u9886\u571F\u5185\u6240\u6709\u964D\u96E8\u683C\u5B50\u6218\u529B+1"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Water_Nourish
+      value: C_Water_Grass_2
       objectReference: {fileID: 0}
     - target: {fileID: 5451290693730646944, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

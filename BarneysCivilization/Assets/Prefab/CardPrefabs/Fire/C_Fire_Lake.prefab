@@ -47,7 +47,7 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u4F60\u6240\u6709\u76841\u7EA7\u4EE5\u4E0A\u5355\u4F4D+1\u6218\u6597\u529B"
+      value: "\u4F60\u6240\u6709\u76841\u7EA7\u4EE5\u4E0A\u5355\u4F4D+1\u6218\u529B"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Fire_HotWater
+      value: C_Fire_Lake
       objectReference: {fileID: 0}
     - target: {fileID: 5451290693730646944, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

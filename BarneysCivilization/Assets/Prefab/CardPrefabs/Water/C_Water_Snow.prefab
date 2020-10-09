@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionPointCost: 1
   NonTargetCard: 0
-  RainTurns: 1
+  Turns: 1
   BuffPrefab: {fileID: 1477477239368706076, guid: eb1263c2936edb5498ac87e1df44e741,
     type: 3}
 --- !u!1001 &3016318905123916207
@@ -48,7 +48,7 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u4F7F\u4E00\u4E2A\u683C\u5B50\u964D\u96E81\u56DE\u5408\uFF0C\u82E5\u4E3A\u654C\u65B9\u683C\u5B50\uFF0C\u672C\u56DE\u5408\u5176\u4E0A\u5355\u4F4D\u65E0\u6CD5\u79FB\u52A8"
+      value: "\u4F7F\u4E00\u683C\u5B50\u964D\u96E81\u56DE\u5408\uFF0C\u82E5\u4E3A\u654C\u65B9\u683C\u5B50\uFF0C\u5176\u4E0A\u5355\u4F4D\u65E0\u6CD5\u79FB\u52A8"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
