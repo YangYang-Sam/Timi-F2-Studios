@@ -5,6 +5,7 @@ using UnityEngine;
 public class CellBuff_IceStorm : CellBuff_Base
 {
     public int DamageHealthAmount = 2;
+    public int EffectIndex = 23;
 
     public override void OnCreated(HexCell cell, CardManager creator)
     {
@@ -24,6 +25,8 @@ public class CellBuff_IceStorm : CellBuff_Base
                     nearbyCell.GetUnitOnCell().TakeDamage(DamageHealthAmount, null);
                 }
             }
+            ArtResourceManager.instance.CreateEffectByIndex(Cell.transform.position, EffectIndex);
+            ArtResourceManager.instance.CreateTextEffect("冰风暴", Cell.transform.position);
         }
     }
 

@@ -14,8 +14,8 @@ public class PlayerBuff_WaterGather : PlayerBuff_Base
         if (unit.Level > 1)
         {
             int amount = 0;
-            ArtResourceManager.instance.CreateEffectByIndex(cell.transform.position, EffectIndex);
-            ArtResourceManager.instance.CreateTextEffect("汇聚", cell.transform.position);
+            ArtResourceManager.instance.CreateEffectByIndex(unit.transform.position, EffectIndex);
+            ArtResourceManager.instance.CreateTextEffect("汇聚", unit.transform.position);
 
             if (Types.Contains(cell.CellType))
             {

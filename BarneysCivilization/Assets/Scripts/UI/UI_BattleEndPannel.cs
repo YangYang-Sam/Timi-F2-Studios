@@ -22,6 +22,6 @@ public class UI_BattleEndPannel : MonoBehaviour
 
     public void Restart()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UIManager.instance.ExitBattle();
     }
 }

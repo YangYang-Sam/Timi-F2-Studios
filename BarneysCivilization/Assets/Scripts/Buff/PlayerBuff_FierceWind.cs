@@ -10,6 +10,11 @@ public class PlayerBuff_FierceWind : PlayerBuff_Base
 
         int DamageAmount = unit.Level;
 
+        if (cell.PlacedUnits.Count > 0)
+        {
+            ArtResourceManager.instance.CreateTextEffect("狂风", cell.transform.position);
+            ArtResourceManager.instance.CreateEffectByIndex(cell.transform.position, 21);
+        }
         foreach (var placedUnit in cell.PlacedUnits)
         {
             if(placedUnit != unit)

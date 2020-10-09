@@ -19,5 +19,7 @@ public class Effect_UninhibitedWind : CardEffect
     public override void Effect(CardManager user, HexCell cell)
     {
         user.SetUnitMoveModeTemporarily(UnitMoveMode.JumpTwoStep);
+        ArtResourceManager.instance.CreateTextEffect("无羁之风", user.GetCorePosition());
+        ArtResourceManager.instance.CreateEffectByIndex(user.GetCorePosition(), 20);
     }
 }

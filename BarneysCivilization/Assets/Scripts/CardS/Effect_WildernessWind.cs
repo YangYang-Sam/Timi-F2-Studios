@@ -30,6 +30,8 @@ public class Effect_WildernessWind : CardEffect
                     }
                 }
             }
+            ArtResourceManager.instance.CreateTextEffect("旷野之风", cell.transform.position);
+            ArtResourceManager.instance.CreateEffectByIndex(cell.transform.position, 19);
         }
     }
 }
