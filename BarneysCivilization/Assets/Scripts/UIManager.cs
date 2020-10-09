@@ -169,6 +169,10 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    public void ExitBattle()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
     public void MouseDownOnCard(Card_Base card)
     {
         if (SelectCard == null && InGameManager.isGameState(GameStateType.Decision) && card.isActive)

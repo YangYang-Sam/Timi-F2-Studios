@@ -25,7 +25,6 @@ public class CellBuff_Superconduct : CellBuff_Base
                     unit.ChangeHealth(2, transform.position);
                 }              
                 ArtResourceManager.instance.CreateTextEffect("超导", transform.position);
-                ArtResourceManager.instance.CreateEffectByIndex(transform.position, EffectIndex);
             }
         }
     }

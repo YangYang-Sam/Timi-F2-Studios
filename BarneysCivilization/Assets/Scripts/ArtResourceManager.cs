@@ -79,7 +79,7 @@ public class ArtResourceManager : MonoBehaviour
         Destroy(g, 1.5f);
     }
 
-    public void CreateEffectByIndex(Vector3 pos,int i,float duration=1, bool autoDestroy=true, float height=3)
+    public void CreateEffectByIndex(Vector3 pos,int i,float duration=2, bool autoDestroy=true, float height=3)
     {
         GameObject g = Instantiate(EffectPrefabs[i], pos + Vector3.up * height, Quaternion.Euler(-90,0,0));
         if (autoDestroy)

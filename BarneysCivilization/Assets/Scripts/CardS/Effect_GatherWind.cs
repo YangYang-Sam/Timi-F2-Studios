@@ -17,5 +17,7 @@ public class Effect_GatherWind : CardEffect
     public override void Effect(CardManager user, HexCell cell)
     {
         user.SetUnitMoveModeTemporarily(UnitMoveMode.JumpThreeStep);
+        ArtResourceManager.instance.CreateTextEffect("汇聚之风", user.GetCorePosition());
+        ArtResourceManager.instance.CreateEffectByIndex(user.GetCorePosition(), 18);
     }
 }

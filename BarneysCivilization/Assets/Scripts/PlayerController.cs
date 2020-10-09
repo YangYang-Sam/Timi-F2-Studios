@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
                     {
                         MoveIndicator.SetActive(true);
                         MoveIndicator.transform.position = SelectCell.transform.position;
+                        SoundEffectManager.instance.CreateSoundEffect(0);
                     }
                     else
                     {
