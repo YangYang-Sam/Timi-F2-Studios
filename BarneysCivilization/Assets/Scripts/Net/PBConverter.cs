@@ -145,6 +145,10 @@ namespace NetTest
                         UserData.instance.CardUIDList.Add(resMsg10.CarduidList[i]);
                     }
                     UserData.instance.ReceiveCardPack = true;
+                    if(!PlayerController.canControl)
+                    {
+                        NetManager.instance.ReqEndTurn(UserData.instance.UID, InGameManager.TurnCount);
+                    }
                     break;
                 default:
                     break;
@@ -287,13 +291,14 @@ namespace NetTest
         }
 
         // 发送回合结束指令
-        public static void ReqTurnEnd(String uid, ref byte[] data)
+        public static void ReqTurnEnd(String uid, int rounds, ref byte[] data)
         {
             CS_REQ_MSG msg = new CS_REQ_MSG();
             msg.Msgid = MSGID.CsReqChgPlayerStatusId;
 
             CS_REQ_CHG_PLAYER_STATUS reqMsg = new CS_REQ_CHG_PLAYER_STATUS();
             reqMsg.Userid = uid;
+            reqMsg.Round = rounds;
 
             msg.CsReqChgPlayerStatus = reqMsg;
 
@@ -304,7 +309,7 @@ namespace NetTest
         public static void ReqGameEnd(String uid, ref byte[] data)
         {
             CS_REQ_MSG msg = new CS_REQ_MSG();
-        msg.Msgid = MSGID.CsReqGameEndId;
+            msg.Msgid = MSGID.CsReqGameEndId;
 
             CS_REQ_GAME_END reqMsg = new CS_REQ_GAME_END();
             reqMsg.Userid = uid;

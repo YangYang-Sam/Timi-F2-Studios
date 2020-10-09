@@ -6,7 +6,7 @@ public class InGameManager : MonoBehaviour
 {
     public static InGameManager instance;
     public static GameStateType CurrentGameState=GameStateType.Decision;
-    public static int TurnCount;
+    public static int TurnCount = 1;
     public Color[] CampColor;
     public List<CardManager> CardManagers= new List<CardManager>();
     public GameObject CardManagerPrefab;
@@ -59,8 +59,6 @@ public class InGameManager : MonoBehaviour
         
 
         UserData ud= UserData.instance;
-
-
 
         if (ud.ReceiveCardPack)
         {
@@ -144,6 +142,7 @@ public class InGameManager : MonoBehaviour
     
     public void GameStartProcess()
     {
+        TurnCount = 1;
         UserData data = UserData.instance;
         if (data.isMultiplayerGame)
         {
@@ -205,7 +204,7 @@ public class InGameManager : MonoBehaviour
                 PlayerController.canControl = false;
                 if (UserData.instance.isMultiplayerGame)
                 {
-                    NetTest.NetManager.instance.ReqEndTurn(UserData.instance.UID);
+                    NetTest.NetManager.instance.ReqEndTurn(UserData.instance.UID, TurnCount);
                 }
                 else
                 {
