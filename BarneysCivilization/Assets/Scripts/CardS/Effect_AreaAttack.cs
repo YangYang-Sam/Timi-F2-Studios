@@ -25,11 +25,11 @@ public class Effect_AreaAttack : CardEffect
 
         foreach(HexCell checkCell in CheckList)
         {
-            if (checkCell.OwnerManager == user)
+            if (checkCell.OwnerManager == user && checkCell.GetUnitOnCell())
             {
                 checkCell.GetUnitOnCell().AddTempHealth(AllyAmount);
             }
-            else if(checkCell.OwnerManager!=null)
+            else if(checkCell.OwnerManager!=null && checkCell.GetUnitOnCell())
             {
                 checkCell.GetUnitOnCell().AddTempHealth(-EnemyAmount);
             }

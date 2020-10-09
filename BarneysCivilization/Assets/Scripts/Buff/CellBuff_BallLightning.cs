@@ -23,7 +23,7 @@ public class CellBuff_BallLightning : CellBuff_Base
             {
                 if(nearbyCell.OwnerManager != Creator)
                 {
-                    if(nearbyCell.PlacedBuilding != null && !nearbyCell.PlacedBuilding.GetComponent<Building_Core>())
+                    if(nearbyCell.PlacedBuilding != null && !IsCoreBuildingCell(nearbyCell))
                     {
                         Building_Base.DestroyBuilding(nearbyCell.PlacedBuilding);
                         needDamageAmount--;
@@ -44,5 +44,10 @@ public class CellBuff_BallLightning : CellBuff_Base
     {
         base.OnBuffDestroy();
         InGameManager.instance.GameStateChangeEvent -= OnGameStateChangeInBallLightningBuff;
+    }
+
+    private bool IsCoreBuildingCell(HexCell cell)
+    {
+        return cell && cell.OwnerManager && cell.OwnerManager.PlayerCore && (cell.OwnerManager.PlayerCore.Cell == cell);
     }
 }

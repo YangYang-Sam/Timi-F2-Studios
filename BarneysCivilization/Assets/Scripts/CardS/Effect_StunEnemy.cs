@@ -25,7 +25,7 @@ public class Effect_StunEnemy : CardEffect
 
         foreach (HexCell checkCell in CheckList)
         {
-            if (checkCell.OwnerManager != user && checkCell.OwnerManager!=null)
+            if (checkCell.OwnerManager != user && checkCell.OwnerManager!=null && checkCell.GetUnitOnCell())
             {
                 checkCell.GetUnitOnCell().canMove = false;
             }

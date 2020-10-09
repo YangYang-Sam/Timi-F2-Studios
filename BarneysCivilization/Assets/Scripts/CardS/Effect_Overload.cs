@@ -35,7 +35,11 @@ public class Effect_Overload : CardEffect
 
     public override void Effect(CardManager user, HexCell cell)
     {
-        cell.GetUnitOnCell().ChangeHealth(HealthAmount, user.GetCorePosition());
+        if(cell.GetUnitOnCell())
+        {
+            cell.GetUnitOnCell().ChangeHealth(HealthAmount, user.GetCorePosition());
+        }
+        
         ArtResourceManager.instance.CreateTextEffect("过载", cell.transform.position);
     }
 }

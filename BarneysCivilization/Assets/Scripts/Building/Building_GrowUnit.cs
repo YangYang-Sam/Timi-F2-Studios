@@ -12,7 +12,7 @@ public class Building_GrowUnit : Building_Base
         base.OnGameStateChange();
         if (InGameManager.isGameState(GameStateType.Decision))
         {
-            if (Cell.GetUnitOnCell().Health <= Threshold)
+            if (Cell.GetUnitOnCell() && Cell.GetUnitOnCell().Health <= Threshold)
             {
                 Cell.GetUnitOnCell().ChangeHealth(Mathf.Min(Threshold - Cell.GetUnitOnCell().Health, Amount * Level),Cell.transform.position);                
             }          

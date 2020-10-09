@@ -23,7 +23,7 @@ public class Building_Nest : Building_Base
                 break;
             }
         }
-        if (isolate)
+        if (isolate && Cell.GetUnitOnCell())
         {
             Cell.GetUnitOnCell().ChangeHealth(1, EffectTransform.position);
         }
