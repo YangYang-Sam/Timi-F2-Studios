@@ -11,7 +11,7 @@ public class Effect_Evaporate : CardEffect
     public int EffectIndex = 4;
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
-        return base.CanUseCard(user, cell) && (cell.GetUnitOnCell().Health > HealthReduceAmount);
+        return base.CanUseCard(user, cell) && cell.GetUnitOnCell() && (cell.GetUnitOnCell().Health > HealthReduceAmount);
     }
     public override UseCardFailReason GetFailReason(CardManager user, HexCell cell)
     {
@@ -27,7 +27,7 @@ public class Effect_Evaporate : CardEffect
 
         foreach (var cell in user.OccupiedCells)
         {
-            if(cell.GetUnitOnCell().Health > HealthReduceAmount)
+            if(cell.GetUnitOnCell() && cell.GetUnitOnCell().Health > HealthReduceAmount)
             {
                 cells.Add(cell);
             }            
@@ -37,7 +37,11 @@ public class Effect_Evaporate : CardEffect
     }
     public override void Effect(CardManager user, HexCell cell)
     {
-        cell.GetUnitOnCell().TakeDamage(HealthReduceAmount, null);
+        if(cell.GetUnitOnCell())
+        {
+            cell.GetUnitOnCell().TakeDamage(HealthReduceAmount, null);
+        }    
+
         user.TempResourceAmount += ResourceAddAmount;
         GameObject g = Instantiate(BuffPrefab, cell.transform.position, Quaternion.identity);
         CellBuff_Base buff = g.GetComponent<CellBuff_Base>();

@@ -26,7 +26,7 @@ public class Building_Tinder : Building_Base
             {
                 foreach (var buff in cell.CellBuffs)
                 {
-                    if(buff.BuffType == CellBuffType.Fire)
+                    if(buff.BuffType == CellBuffType.Fire && cell.GetUnitOnCell())
                     {
                         cell.GetUnitOnCell().ChangeHealth(Amount,Cell.transform.position);
                         break;

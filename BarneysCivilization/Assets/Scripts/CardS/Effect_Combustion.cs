@@ -32,7 +32,7 @@ public class Effect_Combustion : CardEffect
     {
         foreach(var occupiedCell in user.OccupiedCells)
         {
-            if(HasFireBuff(occupiedCell))
+            if(HasFireBuff(occupiedCell) && occupiedCell.GetUnitOnCell())
             {
                 occupiedCell.GetUnitOnCell().ChangeHealth(HealthAddAmount, user.GetCorePosition());
             }

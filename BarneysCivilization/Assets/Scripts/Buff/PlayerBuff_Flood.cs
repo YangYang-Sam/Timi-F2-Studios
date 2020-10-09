@@ -21,7 +21,7 @@ public class PlayerBuff_Flood : PlayerBuff_Base
                             unit.Cell.CellBuffs[i].OnBuffDestroy();
                         }
                     }
-                    if(unit.Cell.OwnerManager!=Owner && unit.Cell.PlacedBuilding != null && !unit.Cell.PlacedBuilding.GetComponent<Core>())
+                    if(unit.Cell.OwnerManager!=Owner && unit.Cell.PlacedBuilding != null && !IsCoreBuildingCell(unit.Cell))
                     {
                         unit.Cell.PlacedBuilding.OnBuildingDestroy();
                         ArtResourceManager.instance.CreateEffectByIndex(unit.transform.position, EffectIndex);
@@ -31,5 +31,10 @@ public class PlayerBuff_Flood : PlayerBuff_Base
                 }
             }
         }
+    }
+
+    private bool IsCoreBuildingCell(HexCell cell)
+    {
+        return cell && cell.OwnerManager && cell.OwnerManager.PlayerCore && (cell.OwnerManager.PlayerCore.Cell == cell);
     }
 }

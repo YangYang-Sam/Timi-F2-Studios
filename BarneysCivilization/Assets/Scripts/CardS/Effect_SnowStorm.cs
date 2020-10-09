@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Effect_SnowStorm : CardEffect
 {
-    public int RainTurns = 1;
+    public int Turns = 1;
     public GameObject BuffPrefab;
     public override bool CanUseCard(CardManager user, HexCell cell)
     {
@@ -20,14 +20,16 @@ public class Effect_SnowStorm : CardEffect
     {
         GameObject g = Instantiate(BuffPrefab, cell.transform.position, Quaternion.identity);
         CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
-        buff.Turns = RainTurns;
+        buff.Turns = Turns;
         buff.OnCreated(cell, user);
 
         if((cell.OwnerManager != user) && cell.GetUnitOnCell())
         {
             cell.GetUnitOnCell().canMove = false;
         }
-        ArtResourceManager.instance.CreateCannotMoveEffect(cell.transform.position);
+
+        // CreateCannotMoveEffect没配注掉
+        //ArtResourceManager.instance.CreateCannotMoveEffect(cell.transform.position);
         ArtResourceManager.instance.CreateTextEffect("暴风雪", cell.transform.position);
     }
 }

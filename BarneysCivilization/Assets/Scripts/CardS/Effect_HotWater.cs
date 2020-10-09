@@ -20,7 +20,7 @@ public class Effect_HotWater : CardEffect
        foreach(var occupiedCell in user.OccupiedCells)
        {
             var unit = occupiedCell.GetUnitOnCell();
-            if(unit.Level >= MinLevel)
+            if(unit && unit.Level >= MinLevel)
             {
                 unit.ChangeHealth(HealthAmount, user.GetCorePosition());
             }           

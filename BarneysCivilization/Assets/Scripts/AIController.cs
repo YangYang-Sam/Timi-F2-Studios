@@ -34,7 +34,7 @@ public class AIController : MonoBehaviour
             }
             foreach (HexCell neighbor in cell.NearbyCells)
             {
-                if (!CanMoveCells.Contains(neighbor) && neighbor.CanPass && cell.GetUnitOnCell().Health > cell.MinUnitAmount)
+                if (!CanMoveCells.Contains(neighbor) && neighbor.CanPass && cell.GetUnitOnCell() && cell.GetUnitOnCell().Health > cell.MinUnitAmount)
                 {
                     CanMoveCells.Add(neighbor);
                 }
@@ -57,7 +57,7 @@ public class AIController : MonoBehaviour
             }
             else if (cell.OwnerManager != cardManager)
             {
-                if (GetNearbyHealthTotal(cell) > cell.GetUnitOnCell().GetTotalHealth())
+                if (cell.GetUnitOnCell() && GetNearbyHealthTotal(cell) > cell.GetUnitOnCell().GetTotalHealth())
                 {
                     CellValues[cell.HexIndex] += 2;
                 }
@@ -78,7 +78,7 @@ public class AIController : MonoBehaviour
         int t = 0;
         foreach(HexCell cell in targetCell.NearbyCells)
         {
-            if (cell.OwnerManager == cardManager)
+            if (cell.OwnerManager == cardManager && cell.GetUnitOnCell())
             {
                 t += Mathf.Clamp(cell.GetUnitOnCell().GetTotalHealth() - cell.MinUnitAmount, 0, int.MaxValue);
             }

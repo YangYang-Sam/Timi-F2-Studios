@@ -19,7 +19,10 @@ public class RaceTrait_Fire : RaceTrait_Base
         buff.OnCreated(cell, owner);
         if (cell.CellType == HexCellType.Forest || cell.CellType== HexCellType.Grass)
         {
-            cell.GetUnitOnCell().ChangeHealth(1, owner.GetCorePosition());
+            if(cell.GetUnitOnCell())
+            {
+                cell.GetUnitOnCell().ChangeHealth(1, owner.GetCorePosition());
+            }  
         }
     }
 }

@@ -17,7 +17,7 @@ public class Effect_Stay : CardEffect
     {
         foreach(HexCell c in user.OccupiedCells)
         {
-            if(c.CellType== HexCellType.Hill)
+            if(c.CellType== HexCellType.Hill && cell.GetUnitOnCell())
             {
                 cell.GetUnitOnCell().ChangeHealth(amount, c.transform.position);
             }

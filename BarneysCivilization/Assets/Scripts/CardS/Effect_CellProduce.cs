@@ -18,7 +18,7 @@ public class Effect_CellProduce : CardEffect
     {
         foreach(HexCell c in user.OccupiedCells)
         {
-            if (cellType.Contains(c.CellType))
+            if (cellType.Contains(c.CellType) && c.GetUnitOnCell())
             {
                 c.GetUnitOnCell().ChangeHealth(amount, user.GetCorePosition());
             }
