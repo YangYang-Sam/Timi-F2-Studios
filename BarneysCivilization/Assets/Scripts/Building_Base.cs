@@ -74,6 +74,7 @@ public class Building_Base : MonoBehaviour
         InGameManager.instance.GameStateChangeEvent -= OnGameStateChange;
         Cell.PlacedBuilding = null;
         ArtResourceManager.instance.CreateEffectByIndex(transform.GetChild(0).position, 13);
+        Destroy(gameObject);
     }
     protected virtual void OnCellChangeOwner(CardManager newOwner)
     {
@@ -90,8 +91,7 @@ public class Building_Base : MonoBehaviour
     static public void DestroyBuilding(Building_Base building)
     {
         building.OnBuildingDestroy();
-        building.Owner.BuildingDestroy(building);
-        Destroy(building.gameObject);
+        building.Owner.BuildingDestroy(building);       
     }
 }
 
