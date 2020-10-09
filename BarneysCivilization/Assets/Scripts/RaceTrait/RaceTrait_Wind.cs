@@ -26,7 +26,7 @@ public class RaceTrait_Wind : RaceTrait_Base
             if (isolated)
             {
                 unit.ChangeHealth(1, owner.GetCorePosition());
-                ArtResourceManager.instance.CreateTextEffect("自由之风", unit.transform.position, c, 1);
+                ArtResourceManager.instance.CreateTextEffect("独行之风", unit.transform.position, c, 1);
             }
         }
     }
