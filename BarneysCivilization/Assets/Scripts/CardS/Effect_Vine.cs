@@ -15,7 +15,7 @@ public class Effect_Vine : CardEffect
         {
             if(SupportCellTypes.Contains(cell.CellType))
             {
-                if (cell.GetUnitOnCell().Health > ConsumeHealth)
+                if (cell.GetUnitOnCell() && cell.GetUnitOnCell().Health > ConsumeHealth)
                 {
                     return true;
                 }                
@@ -32,7 +32,7 @@ public class Effect_Vine : CardEffect
             {
                 return UseCardFailReason.NotValidCellType;
             }
-            else if (cell.GetUnitOnCell().Health <= ConsumeHealth)
+            else if (cell.GetUnitOnCell() && cell.GetUnitOnCell().Health <= ConsumeHealth)
             {
                 return UseCardFailReason.NoHealthPoint;
             }
@@ -62,7 +62,11 @@ public class Effect_Vine : CardEffect
 
     public override void Effect(CardManager user, HexCell cell)
     {
-        cell.GetUnitOnCell().TakeDamage(ConsumeHealth,null);
+        if(cell.GetUnitOnCell())
+        {
+            cell.GetUnitOnCell().TakeDamage(ConsumeHealth, null);
+        }
+        
         GameObject g = Instantiate(BuffPrefab, cell.transform.position, Quaternion.identity);
         CellBuff_Base buff = g.GetComponent<CellBuff_Base>();
         buff.Turns = Turns;

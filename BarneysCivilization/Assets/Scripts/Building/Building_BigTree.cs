@@ -12,14 +12,17 @@ public class Building_BigTree : Building_Base
 
     private void OnLateDecision()
     {
-        Cell.GetUnitOnCell().ChangeHealth(1, transform.position);
-        if (Cell.GetUnitOnCell().Level == 3)
+        if(Cell.GetUnitOnCell())
         {
-            OnBuildingDestroy();
-        }
-        else
-        {
-            Cell.GetUnitOnCell().canMove = false;
+            Cell.GetUnitOnCell().ChangeHealth(1, transform.position);
+            if (Cell.GetUnitOnCell().Level == 3)
+            {
+                OnBuildingDestroy();
+            }
+            else
+            {
+                Cell.GetUnitOnCell().canMove = false;
+            }
         }
     }
 

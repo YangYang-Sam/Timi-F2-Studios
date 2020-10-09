@@ -14,7 +14,7 @@ public class CellBuff_ThunderExplode : CellBuff_Base
     protected override void OnGameStateChange()
     {
         base.OnGameStateChange();
-        if (InGameManager.isGameState(GameStateType.BeforeMove))
+        if (InGameManager.isGameState(GameStateType.BeforeMove) && Cell.GetUnitOnCell())
         {
             int amount = Cell.GetUnitOnCell().Health - 1;
             Cell.GetUnitOnCell().TakeDamage(amount, null);

@@ -63,7 +63,7 @@ public class Effect_CreateBuilding : CardEffect
     public override void Effect(CardManager user, HexCell cell)
     {
         base.Effect(user, cell);
-        if (DecreaseHealth != 0)
+        if (DecreaseHealth != 0 && cell.GetUnitOnCell())
         {
             cell.GetUnitOnCell().ChangeHealth(-DecreaseHealth,Vector3.zero);
         }
