@@ -17,7 +17,7 @@ public class RaceTrait_Earth :RaceTrait_Base
             if (!unit.canMove)
             {
                 unit.ChangeHealth(1, owner.GetCorePosition());
-                ArtResourceManager.instance.CreateTextEffect("凝聚之土", unit.transform.position, c, 1);
+                ArtResourceManager.instance.CreateTextEffect("不动如山", unit.transform.position, c, 1);
             }
         }
     }
