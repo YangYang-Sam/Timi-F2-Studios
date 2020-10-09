@@ -52,7 +52,7 @@ MonoBehaviour:
   MaxLevel: 1
   EffectTransform: {fileID: 0}
   Type: 6
-  ResourceAmount: 2
+  ResourceAmount: 1
 --- !u!1001 &4368058859170434449
 PrefabInstance:
   m_ObjectHideFlags: 0

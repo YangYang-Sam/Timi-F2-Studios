@@ -11,8 +11,8 @@ public class UI_ResourcePannel : MonoBehaviour
     public int deckAmount;
     public int CellAmount;
 
-    public Text ResourceText;
-    public Text ActionPointText;
+    public TextMeshProUGUI ResourceText;
+    public TextMeshProUGUI ActionPointText;
     public TextMeshProUGUI CardDeckText;
     public Animator ResourceAnimator;
     public Animator ActionAnimator;

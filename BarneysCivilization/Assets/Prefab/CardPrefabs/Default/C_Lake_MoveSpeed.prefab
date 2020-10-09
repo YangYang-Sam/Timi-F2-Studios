@@ -15,7 +15,7 @@ MonoBehaviour:
   ActionPointCost: 1
   NonTargetCard: 1
   TempResource: 1
-  ActionPoint: 1
+  ActionPoint: 0
   DrawCards: 0
   MoveSpeed: 0
 --- !u!1001 &3016318905123916207

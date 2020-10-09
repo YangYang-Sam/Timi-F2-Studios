@@ -9,7 +9,7 @@ public class Building_Reservoir : Building_Base
     protected override void OnGameStateChange()
     {
         base.OnGameStateChange();
-
+        
         if (InGameManager.isGameState(GameStateType.AfterBattle))
         {
             foreach (var buff in Cell.CellBuffs)
