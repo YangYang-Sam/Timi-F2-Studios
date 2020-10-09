@@ -428,6 +428,7 @@ MonoBehaviour:
   - {fileID: 4245236691503379506, guid: 9f3fd33398a8db248a1607765da89ba1, type: 3}
   - {fileID: 5014203200611555292, guid: 03f5279646ddabf4092fd1c87620f0da, type: 3}
   - {fileID: 1898636953918137696, guid: 0b7c9869c8ab8f44a9dbd3766b6bfb1c, type: 3}
+  - {fileID: 956102186519350772, guid: 63330c6c10a970642b0782d2bfae2143, type: 3}
   CellIconPrefab:
   - {fileID: 1710729663482659346, guid: 86c1ed12dc8ecd142a664e3fa3746d24, type: 3}
   - {fileID: 1710729663482659346, guid: 2f8ca49bdfe2573418f5a805570526ca, type: 3}

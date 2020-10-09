@@ -29,7 +29,7 @@ public class Effect_Accumulate : CardEffect
         if(cell.GetUnitOnCell())
         {
             cell.GetUnitOnCell().ChangeHealth(HealthAddAmount, cell.transform.position);
-            cell.GetUnitOnCell().canMove = false;
+            cell.GetUnitOnCell().CanMove = false;
         }
     }
 }

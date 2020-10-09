@@ -25,7 +25,7 @@ public class Effect_SnowStorm : CardEffect
 
         if((cell.OwnerManager != user) && cell.GetUnitOnCell())
         {
-            cell.GetUnitOnCell().canMove = false;
+            cell.GetUnitOnCell().CanMove = false;
         }
 
         // CreateCannotMoveEffect没配注掉

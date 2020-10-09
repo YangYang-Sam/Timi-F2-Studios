@@ -4775,3 +4775,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b3eb70e6d660c4b801c489f3361798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyOnGameState: 1
+  type: 4

@@ -22,6 +22,6 @@ public class Effect_Stay : CardEffect
                 cell.GetUnitOnCell().ChangeHealth(amount, c.transform.position);
             }
         }
-        cell.GetUnitOnCell().canMove = false;    
+        cell.GetUnitOnCell().CanMove = false;    
     }
 }

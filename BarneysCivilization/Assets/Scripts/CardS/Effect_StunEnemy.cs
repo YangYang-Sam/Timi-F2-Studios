@@ -27,7 +27,7 @@ public class Effect_StunEnemy : CardEffect
         {
             if (checkCell.OwnerManager != user && checkCell.OwnerManager!=null && checkCell.GetUnitOnCell())
             {
-                checkCell.GetUnitOnCell().canMove = false;
+                checkCell.GetUnitOnCell().CanMove = false;
             }
         }
         ArtResourceManager.instance.CreateEffectByIndex(cell.transform.position, EffectIndex, EffectDuration);

@@ -21,7 +21,7 @@ public class CellBuff_StonePrison : CellBuff_Base
 
             if(Cell.GetUnitOnCell())
             {
-                Cell.GetUnitOnCell().canMove = false;
+                Cell.GetUnitOnCell().CanMove = false;
             }
         }
     }

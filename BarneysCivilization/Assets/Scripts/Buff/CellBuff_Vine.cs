@@ -13,13 +13,13 @@ public class CellBuff_Vine : CellBuff_Base
         {
             if (nearbyCell && (nearbyCell.OwnerManager != Creator) && nearbyCell.GetUnitOnCell())
             {
-                nearbyCell.GetUnitOnCell().canMove = false;
+                nearbyCell.GetUnitOnCell().CanMove = false;
             }
         }
 
         if (Cell && (Cell.OwnerManager != Creator) && Cell.GetUnitOnCell())
         {
-            Cell.GetUnitOnCell().canMove = false;
+            Cell.GetUnitOnCell().CanMove = false;
         }
     }
 

@@ -14,7 +14,7 @@ public class RaceTrait_Earth :RaceTrait_Base
     {
         foreach (Unit_Base unit in owner.Units)
         {           
-            if (!unit.canMove)
+            if (!unit.CanMove)
             {
                 unit.ChangeHealth(1, owner.GetCorePosition());
                 ArtResourceManager.instance.CreateTextEffect("不动如山", unit.transform.position, c, 1);

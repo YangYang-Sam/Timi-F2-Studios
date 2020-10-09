@@ -17,7 +17,7 @@ public class DestroyOnTurnStart : MonoBehaviour
     {
         if (InGameManager.isGameState(type) && destroyOnGameState)
         {
-            Destroy(gameObject);
+            DestroyThis();
         }
     }
 
@@ -25,8 +25,14 @@ public class DestroyOnTurnStart : MonoBehaviour
     {
         if (!destroyOnGameState)
         {
-            Destroy(gameObject);
+            DestroyThis();
         }
+    }
+    public void DestroyThis()
+    {
+        InGameManager.instance.LateDecisionEvent -= OnLateDecision;
+        InGameManager.instance.GameStateChangeEvent -= OnGameState;
+        Destroy(gameObject);
     }
 
 }

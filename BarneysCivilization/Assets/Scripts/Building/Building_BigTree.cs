@@ -21,7 +21,7 @@ public class Building_BigTree : Building_Base
             }
             else
             {
-                Cell.GetUnitOnCell().canMove = false;
+                Cell.GetUnitOnCell().CanMove = false;
             }
         }
     }

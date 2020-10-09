@@ -12,6 +12,18 @@ public class Unit_Base : MonoBehaviour
     public int Level = 1;
 
     public bool isAlive;
+    public bool CanMove
+    {
+        get { return canMove; }
+        set
+        {
+            if (!value && canMove)
+            {
+                ArtResourceManager.instance.CreateEffectByIndex(transform.position, 15, 1, false);
+            }
+            canMove = value;
+        }
+    }
     public bool canMove;
     public bool ForceMove;
 
@@ -43,7 +55,7 @@ public class Unit_Base : MonoBehaviour
         {
             case GameStateType.Move:
                 MoveDistance = 0;
-                if (canMove && Health > Cell.MinUnitAmount && PathCells.Count > 0 && PathCells[PathCells.Count - 1] != Cell && (canMove || ForceMove))
+                if (CanMove && Health > Cell.MinUnitAmount && PathCells.Count > 0 && PathCells[PathCells.Count - 1] != Cell && (CanMove || ForceMove))
                 {
                     Unit_Base unit = Owner.CreateNewUnit(Cell, Cell.MinUnitAmount);
                     Cell.UnitArrived(unit);
@@ -64,7 +76,7 @@ public class Unit_Base : MonoBehaviour
                 break;
             case GameStateType.Decision:
                 TempHealth = 0;
-                canMove = true;
+                CanMove = true;
                 ForceMove = false;
                 TempPathCells.Clear();
                 break;
