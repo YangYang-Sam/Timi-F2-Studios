@@ -950,7 +950,7 @@ MonoBehaviour:
   CardIDList: 
   PosIDList: 
   CardUIDList: []
-  UseTutorial: 1
+  UseTutorial: 0
 --- !u!4 &1602789538
 Transform:
   m_ObjectHideFlags: 0

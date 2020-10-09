@@ -26,8 +26,6 @@ public class UserData : MonoBehaviour
     public List<int> PosIDList;
     public List<string> CardUIDList;
 
-    public bool UseTutorial;
-
     bool textMessage = false;
     string text;
     private void Awake()

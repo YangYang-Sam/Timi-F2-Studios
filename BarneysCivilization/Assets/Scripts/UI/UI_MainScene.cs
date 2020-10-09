@@ -160,4 +160,5 @@ public class MapData
     public int Radius;
     public Vector3Int CenterGrid;
     public int[] StartCells;
+    public bool useTutorial;
 }
