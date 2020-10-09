@@ -100,10 +100,10 @@ namespace NetTest
         }
 
         // 发送回合结束指令
-        public void ReqEndTurn(string uid)
+        public void ReqEndTurn(string uid, int round)
         {
             byte[] data = new byte[1024];
-            PBConverter.ReqTurnEnd(uid, ref data);
+            PBConverter.ReqTurnEnd(uid, round, ref data);
             SendData(data);
         }
         // 发送玩家结束指令   

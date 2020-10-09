@@ -207,6 +207,7 @@ message CS_RES_CHG_RACE {
 
 message CS_REQ_CHG_PLAYER_STATUS {
    string userid = 1;
+   int32 round = 2;
 }
 
 message CS_RES_CHG_PLAYER_STATUS {
