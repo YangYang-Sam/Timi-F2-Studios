@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     public Color NormalInteractColor;
     public Color HightlightInteractColor;
 
-    public TextMeshProUGUI CardDeckText;
+    public Transform DeckTransform;
 
     [SerializeField]
     private UI_ChooseCardWidget ChooseCardWidget;
@@ -57,11 +57,6 @@ public class UIManager : MonoBehaviour
         HexTrace();
         ArrangeCards();
         MouseUp();
-        if (playerCardManager)
-        {
-            CardDeckText.text = playerCardManager.InGameCardDeck.Count.ToString();
-        }
-
     }
     private void Start()
     {

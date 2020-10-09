@@ -42,7 +42,7 @@ public class UI_LoginScreen : MonoBehaviour
             {
                 case 0:
                     UserData.HasLogin = true;
-                    ShowUserMessage("登陆成功",Color.green);
+                    ShowUserMessage("登陆成功",Color.white);
                     SceneManager.LoadScene("MainScene");
                     break;
                 case 1:
@@ -59,7 +59,7 @@ public class UI_LoginScreen : MonoBehaviour
             switch (RegistResult)
             {
                 case 0:
-                    ShowUserMessage("注册成功", Color.green);
+                    ShowUserMessage("注册成功", Color.white);
                     break;
                 case 1:
                     ShowUserMessage("用户名已存在", Color.red);

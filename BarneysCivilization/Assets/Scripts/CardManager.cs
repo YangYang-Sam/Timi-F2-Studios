@@ -413,7 +413,7 @@ public class CardManager : MonoBehaviour
         card.gameObject.SetActive(false);
 
         card.isActive = false;
-        card.transform.position = UIManager.instance.CardDeckText.transform.position;
+        card.transform.position = UIManager.instance.DeckTransform.position;
         card.transform.localScale = Vector3.zero;
         Cards.Remove(card);
     }
@@ -443,7 +443,7 @@ public class CardManager : MonoBehaviour
         InGameCardDeck.Insert(0, card);
         card.gameObject.SetActive(false);
         card.isActive = false;
-        card.transform.position = UIManager.instance.CardDeckText.transform.position;
+        card.transform.position = UIManager.instance.DeckTransform.position;
         card.transform.localScale = Vector3.zero;
     }
     public void LostCell(HexCell cell)

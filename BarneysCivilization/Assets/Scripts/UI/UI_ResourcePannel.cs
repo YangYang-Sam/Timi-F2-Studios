@@ -2,26 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_ResourcePannel : MonoBehaviour
 {
     public int resource;
+    public int actionPoint;
+    public int deckAmount;
+    public int CellAmount;
+
     public Text ResourceText;
     public Text ActionPointText;
-    public Animator animator;
+    public TextMeshProUGUI CardDeckText;
+    public Animator ResourceAnimator;
+    public Animator ActionAnimator;
+    public Animator CardDeckAnimator;
 
     private void Update()
     {
         if (PlayerController.instance.cardManager)
         {
-            if(resource != PlayerController.instance.cardManager.GetTotalResource())
+            if (resource != PlayerController.instance.cardManager.GetTotalResource())
             {
                 resource = PlayerController.instance.cardManager.GetTotalResource();
-                animator.Play("ResourceIncrease");
-            }        
+                ResourceAnimator.Play("ResourceIncrease");
+                ResourceText.text = resource.ToString();
+            }
 
-            ResourceText.text =PlayerController.instance.cardManager.GetTotalResource().ToString();
-            ActionPointText.text = PlayerController.instance.cardManager.ActionPoint.ToString();
+            if (deckAmount != PlayerController.instance.cardManager.InGameCardDeck.Count)
+            {   
+                deckAmount = PlayerController.instance.cardManager.InGameCardDeck.Count;
+                CardDeckText.text = deckAmount.ToString();
+            }
+
+            if (actionPoint != PlayerController.instance.cardManager.ActionPoint)
+            {
+                if (actionPoint < PlayerController.instance.cardManager.ActionPoint)
+                {
+                    ActionAnimator.Play("ActionPoint");
+                }
+                actionPoint = PlayerController.instance.cardManager.ActionPoint;
+                ActionPointText.text = actionPoint.ToString();
+            }
+
+            if(CellAmount!= PlayerController.instance.cardManager.OccupiedCells.Count)
+            {
+                if (CellAmount > PlayerController.instance.cardManager.OccupiedCells.Count)
+                {
+                    CardDeckAnimator.Play("CardDeckDecrease");
+                }
+                else
+                {
+                    CardDeckAnimator.Play("CardDeck");
+                }
+                CellAmount = PlayerController.instance.cardManager.OccupiedCells.Count;
+            }
         }
     }
 }

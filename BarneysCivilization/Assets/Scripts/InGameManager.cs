@@ -51,10 +51,12 @@ public class InGameManager : MonoBehaviour
         {
             OnTurnEnd();
         }
-        if(Time.time> DecisionTimer && PlayerController.canControl && NetTest.NetManager.socket.Connected)
+
+        if (Time.time > DecisionTimer && PlayerController.canControl && NetTest.NetManager.socket.Connected)
         {
             EndTurn();
         }
+        
 
         UserData ud= UserData.instance;
 
