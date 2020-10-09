@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: -120202245359314131}
   - component: {fileID: -6439282840226339883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneCastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StoneCastle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745149059786591330, guid: a4da9035c35606440b48e0458d6b0d9f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4745149059786625090, guid: a4da9035c35606440b48e0458d6b0d9f,
         type: 3}

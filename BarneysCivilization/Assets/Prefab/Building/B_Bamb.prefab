@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4218188541142125622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: 5226746406523220095}
   - component: {fileID: -4229877720236747226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: B_Bamb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 4392419516918508744, guid: 61215eb0a1d256c4589e7a806a431477,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4392419516918542568, guid: 61215eb0a1d256c4589e7a806a431477,
         type: 3}
@@ -291,6 +291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_WarTree
       objectReference: {fileID: 0}
+    - target: {fileID: 560815691983602819, guid: 580db5ab1fbce5d47933981851e62315,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4662251114996000644, guid: 580db5ab1fbce5d47933981851e62315,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,6 +350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854645205188499568, guid: 580db5ab1fbce5d47933981851e62315,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 580db5ab1fbce5d47933981851e62315, type: 3}

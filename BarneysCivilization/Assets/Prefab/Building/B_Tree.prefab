@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: 3496330935874996695}
   - component: {fileID: 5138640485293318481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: B_Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,6 +162,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NourishingTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597521882212058250, guid: 3f206feb37fc3634db2795b846f0498b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3597521882212358314, guid: 3f206feb37fc3634db2795b846f0498b,
         type: 3}

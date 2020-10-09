@@ -79,10 +79,13 @@ public class ArtResourceManager : MonoBehaviour
         Destroy(g, 1.5f);
     }
 
-    public void CreateEffectByIndex(Vector3 pos,int i,float duration=1)
+    public void CreateEffectByIndex(Vector3 pos,int i,float duration=1, bool autoDestroy=true)
     {
         GameObject g = Instantiate(EffectPrefabs[i], pos, Quaternion.Euler(-90,0,0));
-        Destroy(g, duration);
+        if (autoDestroy)
+        {
+            Destroy(g, duration);
+        }     
     }
 
     public GameObject GetCellIconPrefab(HexCellType type)

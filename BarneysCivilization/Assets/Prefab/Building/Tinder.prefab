@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8561934370863758214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7160848233442056841}
   - component: {fileID: 7160848233443214943}
   - component: {fileID: 7160848233439003039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CampFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7160848234116810699}
   - component: {fileID: 7160848234119710699}
   - component: {fileID: 7160848234118710571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: 3354547858663353275}
   - component: {fileID: 5532036294090883307}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 8885624208532718977}
   - component: {fileID: 8885624208514468879}
   - component: {fileID: 8885624208512709611}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5028,7 +5028,7 @@ GameObject:
   - component: {fileID: 8885624208532733369}
   - component: {fileID: 8885624208514392023}
   - component: {fileID: 8885624208512678819}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpikyFireAdditiveRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9742,7 +9742,7 @@ GameObject:
   - component: {fileID: 8885624208532807245}
   - component: {fileID: 8885624208514406909}
   - component: {fileID: 8885624208514430137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7383909417384722395}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: -2239278997560704095}
   - component: {fileID: 2508507015944736057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: B_BigTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,6 +261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BigTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 153742617993853483, guid: a5b65fcbd1b5f8344ac0b799580b0430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b65fcbd1b5f8344ac0b799580b0430, type: 3}

@@ -43,6 +43,13 @@ public class CardManager : MonoBehaviour
         get { return unitMoveSpeed;}
         set
         {
+            if (value>1 && unitMoveSpeed == 1)
+            {
+                foreach(HexCell cell in OccupiedCells)
+                {
+                    ArtResourceManager.instance.CreateEffectByIndex(cell.transform.position, 14, 1, false);
+                }
+            }
             unitMoveSpeed = value;
         }
     }

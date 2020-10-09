@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: -7229974789825980027}
   - component: {fileID: -7999688073498817193}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,6 +160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Magnet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351337112755389607, guid: e44bc56bdc8c62a439e4f6a023629c27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2351337112755624071, guid: e44bc56bdc8c62a439e4f6a023629c27,
         type: 3}
