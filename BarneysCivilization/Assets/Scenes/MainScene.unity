@@ -425,6 +425,8 @@ MonoBehaviour:
   - {fileID: 7762356477087596510, guid: 0386f84868ae21c46b21e2a2cb42878b, type: 3}
   - {fileID: 6406795451867376354, guid: 014ba02060125ae40890e4e1b6f064e1, type: 3}
   - {fileID: 705193165785177358, guid: 957a10204a7b74741b3a690b544eaf8a, type: 3}
+  - {fileID: 4245236691503379506, guid: 9f3fd33398a8db248a1607765da89ba1, type: 3}
+  - {fileID: 5014203200611555292, guid: 03f5279646ddabf4092fd1c87620f0da, type: 3}
   CellIconPrefab:
   - {fileID: 1710729663482659346, guid: 86c1ed12dc8ecd142a664e3fa3746d24, type: 3}
   - {fileID: 1710729663482659346, guid: 2f8ca49bdfe2573418f5a805570526ca, type: 3}
@@ -948,7 +950,7 @@ MonoBehaviour:
   CardIDList: 
   PosIDList: 
   CardUIDList: []
-  UseTutorial: 1
+  UseTutorial: 0
 --- !u!4 &1602789538
 Transform:
   m_ObjectHideFlags: 0

@@ -83,6 +83,7 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 2
   EffectTransform: {fileID: 4218188541142125622}
+  Type: 0
   Amount: 1
   WoodSpiritBuff: {fileID: 1477477239368706076, guid: b58d403aa74832b43a484888bc32c083,
     type: 3}
@@ -97,6 +98,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WarTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392419516918508744, guid: 61215eb0a1d256c4589e7a806a431477,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4392419516918542568, guid: 61215eb0a1d256c4589e7a806a431477,
         type: 3}

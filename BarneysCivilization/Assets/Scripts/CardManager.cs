@@ -116,7 +116,7 @@ public class CardManager : MonoBehaviour
         PlayerCore.OnCreated(startCell, this);
         if (camp == UserData.instance.Camp)
         {
-            UI_ArrowMesh.instance.transform.position = startCell.transform.position;
+            UI_ArrowMesh.instance.transform.position = GetCorePosition();
         }
       
         GameObject traitObj = Instantiate(Race.RaceTraitPrefab);

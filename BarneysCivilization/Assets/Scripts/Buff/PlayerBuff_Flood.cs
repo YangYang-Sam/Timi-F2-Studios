@@ -21,13 +21,13 @@ public class PlayerBuff_Flood : PlayerBuff_Base
                             unit.Cell.CellBuffs[i].OnBuffDestroy();
                         }
                     }
-                    if(unit.Cell.OwnerManager!=Owner && unit.Cell.PlacedBuilding != null)
+                    if(unit.Cell.OwnerManager!=Owner && unit.Cell.PlacedBuilding != null && !unit.Cell.PlacedBuilding.GetComponent<Core>())
                     {
                         unit.Cell.PlacedBuilding.OnBuildingDestroy();
+                        ArtResourceManager.instance.CreateEffectByIndex(unit.transform.position, EffectIndex);
+                        ArtResourceManager.instance.CreateTextEffect("洪水", unit.transform.position);
                     }
 
-                    ArtResourceManager.instance.CreateEffectByIndex(unit.transform.position, EffectIndex);
-                    ArtResourceManager.instance.CreateTextEffect("洪水", unit.transform.position);
                 }
             }
         }

@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     private UI_BattleEndPannel BattleEndPannel;
     public bool IsChoosingCard;
 
+    public bool InteractCellVisibility = true;
 
     [Header("Arrangment")]
     [SerializeField]
@@ -97,11 +98,11 @@ public class UIManager : MonoBehaviour
             }
             Debug.DrawLine(inputRay.origin, hit.point);
             SelectCell = HexGrid.instance.GetCellByPosition(hit.point);
-        
+
             if (SelectCell != null)
             {
                 UI_ArrowMesh.instance.UpdatePosition(hit.point);
-                if (UIManager.instance.InteractableCells!=null && UIManager.instance.InteractableCells.Contains(SelectCell))
+                if (UIManager.instance.InteractableCells != null && UIManager.instance.InteractableCells.Contains(SelectCell))
                 {
                     SelectCell.SetHighLightColor(HightlightInteractColor);
                 }
@@ -137,7 +138,7 @@ public class UIManager : MonoBehaviour
 
                     //angle = PosIndex * CardAngle;
                     //position = new Vector3(0, yM, 0);
-                    position = PlayerCardHolder.transform.position + PosIndex * (CardAngle/count) * Vector3.right;
+                    position = PlayerCardHolder.transform.position + PosIndex * (CardAngle / count) * Vector3.right;
 
                     //position = Quaternion.Euler(0, 0, angle) * position;
                     //position += PlayerCardHolder.transform.position + new Vector3(0, YOffset, 0);
@@ -196,7 +197,7 @@ public class UIManager : MonoBehaviour
                     if (SelectCard != null)
                     {
                         SelectCard.GetComponent<CardAppearence>().SetVisibility(true);
-                    }                   
+                    }
                 }
                 if (SelectCard != null)
                 {
@@ -253,6 +254,15 @@ public class UIManager : MonoBehaviour
             playerCardManager.Cards[i].transform.SetAsFirstSibling();
         }
     }
+    public void SwitchRaceTraitPannel()
+    {
+        UI_RaceTrait.instance.gameObject.SetActive(!UI_RaceTrait.instance.gameObject.activeSelf);
+    }
+    public void SwitchInteractVisible()
+    {
+        InteractCellVisibility = !InteractCellVisibility;
+        UpdateInteractableCells(true, null);
+    }
     public void UpdateInteractableCells(bool ShowGrid, Card_Base card)
     {
         InteractableCells = new List<HexCell>();
@@ -267,11 +277,12 @@ public class UIManager : MonoBehaviour
                 InteractableCells = playerCardManager.CanMoveCells;
             }
         }
+        bool showGrid = InteractCellVisibility || card;
         foreach (HexCell cell in HexGrid.instance.cells)
         {
             if (InteractableCells != null)
             {
-                cell.HighLightCell(InteractableCells.Contains(cell));
+                cell.HighLightCell(InteractableCells.Contains(cell) && showGrid);
             }
             else
             {

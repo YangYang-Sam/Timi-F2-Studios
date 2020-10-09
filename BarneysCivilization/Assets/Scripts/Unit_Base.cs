@@ -269,7 +269,8 @@ public class Unit_Base : MonoBehaviour
         {
             if (amount > 0)
             {
-                ArtResourceManager.instance.CreateHealEffect(transform.position);              
+                ArtResourceManager.instance.CreateHealEffect(transform.position);
+                ArtResourceManager.instance.CreateTextEffect("+" + amount, transform.position,Color.green,1.2f,2);
             }
         }
         if (HealthChangeEvent != null)

@@ -12,7 +12,7 @@ public class TutorialManager : MonoBehaviour
     private bool firstChooseCard=true;
     private void Awake()
     {
-        if (UserData.instance.UseTutorial)
+        if (UserData.instance.mapData.useTutorial)
         {
             instance = this;
         }
