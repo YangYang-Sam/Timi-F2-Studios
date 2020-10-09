@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: 7381993753309766108}
   - component: {fileID: -4190826041437299402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SandTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SandTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868538118021150402, guid: d296eddb0a27e8541a3baf0eebb3aa19,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6868538118021507810, guid: d296eddb0a27e8541a3baf0eebb3aa19,
         type: 3}

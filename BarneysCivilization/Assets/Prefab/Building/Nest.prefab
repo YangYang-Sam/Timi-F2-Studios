@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3486931390343410433}
   - component: {fileID: 4826720593891816028}
   - component: {fileID: 6367035372419399368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Nest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Nest
+      objectReference: {fileID: 0}
+    - target: {fileID: 9147026594252119427, guid: b3d0e3d5c0960c944b81a8381a80a83d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9147026594252276131, guid: b3d0e3d5c0960c944b81a8381a80a83d,
         type: 3}
