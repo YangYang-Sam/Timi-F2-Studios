@@ -41,5 +41,6 @@ public class Effect_Overload : CardEffect
         }
         
         ArtResourceManager.instance.CreateTextEffect("过载", cell.transform.position);
+        ArtResourceManager.instance.CreateEffectByIndex(cell.transform.position, 17);
     }
 }
