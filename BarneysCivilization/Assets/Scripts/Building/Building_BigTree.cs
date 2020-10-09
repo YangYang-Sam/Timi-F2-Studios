@@ -7,28 +7,33 @@ public class Building_BigTree : Building_Base
     public override void OnCreated(HexCell cell, CardManager owner)
     {
         base.OnCreated(cell, owner);
-        InGameManager.instance.LateDecisionEvent += OnLateDecision;
+        InGameManager.instance.GameStateChangeEvent += GameStateChangeEventInBigTree;
     }
 
-    private void OnLateDecision()
+    private void GameStateChangeEventInBigTree()
     {
-        if(Cell.GetUnitOnCell())
+        if(InGameManager.isGameState(GameStateType.BeforeMove))
         {
-            Cell.GetUnitOnCell().ChangeHealth(1, transform.position);
-            if (Cell.GetUnitOnCell().Level == 3)
+            if (Cell.GetUnitOnCell())
             {
-                OnBuildingDestroy();
-            }
-            else
-            {
-                Cell.GetUnitOnCell().CanMove = false;
+                Cell.GetUnitOnCell().ChangeHealth(1, transform.position);
+                if (Cell.GetUnitOnCell().Level >= 3)
+                {
+                    OnBuildingDestroy();
+                }
+                else
+                {
+                    Cell.GetUnitOnCell().CanMove = false;
+                }
             }
         }
+        
+
     }
 
     public override void OnBuildingDestroy()
     {
-        InGameManager.instance.LateDecisionEvent -= OnLateDecision;
+        InGameManager.instance.GameStateChangeEvent -= GameStateChangeEventInBigTree;
         base.OnBuildingDestroy();  
     }
 }
