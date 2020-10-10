@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4529735105332043613, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -699.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529735105332043613, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1399.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803655887837918465, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8317111589117696256, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_IsActive
@@ -56,12 +76,12 @@ PrefabInstance:
     - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Text
-      value: "\u8FD9\u662F\u4F60\u7684\u884C\u52A8\u529B\uFF0C\u6BCF\u56DE\u5408\u5F00\u59CB\u6062\u590D\u52301\uFF0C\u6BCF\u6B21\u4F7F\u7528\u5361\u724C\u90FD\u9700\u8981\u6D88\u8017\u4E00\u70B9\u884C\u52A8\u529B"
+      value: "\u8FD9\u662F\u4F60\u7684<b>\u884C\u52A8\u529B</b>\uFF0C\u6BCF\u56DE\u5408\u5F00\u59CB\u6062\u590D\u52301\uFF0C\u6BCF\u6B21\u4F7F\u7528\u5361\u724C\u90FD\u9700\u8981\u6D88\u80171\u70B9<b>\u884C\u52A8\u529B</b>"
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114018, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}

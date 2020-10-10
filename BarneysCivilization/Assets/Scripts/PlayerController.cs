@@ -79,6 +79,10 @@ public class PlayerController : MonoBehaviour
                         MoveIndicator.SetActive(true);
                         MoveIndicator.transform.position = SelectCell.transform.position;
                         SoundEffectManager.instance.CreateSoundEffect(0);
+                        if (PlayerMoveEvent != null)
+                        {
+                            PlayerMoveEvent(SelectCell);
+                        }
                     }
                     else
                     {
@@ -90,11 +94,7 @@ public class PlayerController : MonoBehaviour
                         NetTest.NetManager.instance.ReqSetDestiny(UserData.instance.UID, SelectCell.HexIndex);
                         print("Player " + UserData.instance.UID + " Move to: " + SelectCell.HexIndex);
                     }
-
-                    if (PlayerMoveEvent != null)
-                    {
-                        PlayerMoveEvent(SelectCell);
-                    }
+               
                 }
                 else
                 {

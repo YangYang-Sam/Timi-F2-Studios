@@ -7,17 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4529735105332043613, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -699.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4529735105332043613, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1399.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4803655887837918465, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380971553219315343, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -35,39 +30,54 @@ PrefabInstance:
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 625
+      value: -304
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 199.90002
+      value: 259.6
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 135
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111589145482599, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f11632b4f6eb8e468ddc007ccab340e,
+        type: 3}
+    - target: {fileID: 8317111589145482599, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111589946633756, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Text
-      value: "\u8FD9\u91CC\u662F\u4F60\u7684<b>\u624B\u724C</b>\uFF0C\u6BCF\u56DE\u5408\u4F60\u4F1A\u62BD\u53D6<b>\u4E09\u5F20\u624B\u724C</b>\uFF0C\u56DE\u5408\u7ED3\u675F\u65F6<b>\u4E22\u5F03</b>\u3002"
+      value: "\u73B0\u5728\uFF0C\u6211\u4EEC\u4ECE\u4EE5\u4E0B\u4E09\u5F20\u724C\u91CC\u9009\u4E00\u5F20\u5427\u3002\n\u4E00\u822C\u6765\u8BF4\uFF0C\u524D\u671F\u9009\u62E9\u53D1\u5C55\u724C\u6216\u5EFA\u7B51\u724C\u6536\u76CA\u66F4\u5927\u3002"
       objectReference: {fileID: 0}
-    - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 66c9d9c226328fb439b849af29fe7bac,
-        type: 3}
     - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: type
@@ -76,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 8317111590507114018, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Name
-      value: Tutorial_2.1
+      value: Tutorial_4.2
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114019, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}

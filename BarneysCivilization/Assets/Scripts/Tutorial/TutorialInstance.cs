@@ -15,8 +15,9 @@ public class TutorialInstance : MonoBehaviour
     public GameObject StartCloseObj;
 
     private bool isStart=false;
-    private float Duration=3;
+    public float Duration=2;
     private float durationTimer;
+
     private void Start()
     {
         UIManager.instance.PlayerUseCardEvent += PlayerUseCard;
@@ -28,6 +29,10 @@ public class TutorialInstance : MonoBehaviour
         if (type == TutorialTriggerType.None)
         {
             TutorialStart();
+        }
+        else
+        {
+            Graphic.SetActive(false);
         }
     }
 

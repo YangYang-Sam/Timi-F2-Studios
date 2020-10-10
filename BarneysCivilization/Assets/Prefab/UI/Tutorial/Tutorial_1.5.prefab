@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4402216247346863408
+--- !u!1001 &3410485282946608624
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,17 +10,37 @@ PrefabInstance:
     - target: {fileID: 4529735105332043613, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -699.8
+      value: -594.5
       objectReference: {fileID: 0}
     - target: {fileID: 4529735105332043613, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1399.5
+      value: 1189
       objectReference: {fileID: 0}
     - target: {fileID: 4803655887837918465, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380971553219315343, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
@@ -35,17 +55,22 @@ PrefabInstance:
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 625
+      value: 804
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 199.90002
+      value: 331.2
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 135
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 885.8
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
@@ -57,17 +82,27 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+    - target: {fileID: 8317111589145482599, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
-      propertyPath: m_Text
-      value: "\u8FD9\u91CC\u662F\u4F60\u7684<b>\u624B\u724C</b>\uFF0C\u6BCF\u56DE\u5408\u4F60\u4F1A\u62BD\u53D6<b>\u4E09\u5F20\u624B\u724C</b>\uFF0C\u56DE\u5408\u7ED3\u675F\u65F6<b>\u4E22\u5F03</b>\u3002"
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 563805415930a894ab071ba965b10a2c,
+        type: 3}
+    - target: {fileID: 8317111589145482599, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111589946633756, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 66c9d9c226328fb439b849af29fe7bac,
-        type: 3}
+      propertyPath: m_Text
+      value: "\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u6211\u4EEC\u7684<b>\u8D44\u6E90</b>\u90FD\u4F1A\u88AB\u6C34\u6676\u6D88\u8017\uFF0C\u5E76\u8F6C\u5316\u4E3A<b>\u6218\u529B</b>\uFF0C\u52A0\u5728\u6C34\u6676\u90A3\u91CC\u7684<b>\u5355\u4F4D</b>\u8EAB\u4E0A\u3002"
+      objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: type
@@ -76,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 8317111590507114018, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Name
-      value: Tutorial_2.1
+      value: Tutorial_1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114019, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
