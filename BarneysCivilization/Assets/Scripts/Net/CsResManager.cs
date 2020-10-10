@@ -9,6 +9,7 @@ namespace NetTest
         public static event System.Action<int> LoginResult;
         public static event System.Action<int> RegistResult;
         public static event System.Action MatchingBeginEvent;
+        public static event System.Action MatchingErrorEvent;
         public static event System.Action<string[], int[], int[]> MatchSuccessEvent;
         public static event System.Action RoundEndEvent;
         public static event System.Action<string, int, int> UseCardEvent;
@@ -45,9 +46,13 @@ namespace NetTest
         public static void ResMatching(int result)
         {
             Console.WriteLine("Matching:" + result);
-            if (RegistResult != null)
+            if (RegistResult != null && result == 0)
             {
                 MatchingBeginEvent();
+            }
+            else 
+            {
+                MatchingErrorEvent();
             }
         }
         public static void NtyMatching(int result, String[] userList, int[] raceList, int[] RandomList)
@@ -58,10 +63,14 @@ namespace NetTest
             {
                 Console.WriteLine("NtyMatchingUser " + i + ":" + userList[i]);
             }
-            if (MatchSuccessEvent != null)
+            if (MatchSuccessEvent != null && result == 0)
             {
                 MatchSuccessEvent(userList,raceList,RandomList);
-            }            
+            }  
+            else
+            {
+                MatchingErrorEvent();
+            }
         }
         public static void ResStopMatching(int result)
         {

@@ -171,6 +171,11 @@ public class UIManager : MonoBehaviour
     }
     public void ExitBattle()
     {
+        if (UserData.instance.isMultiplayerGame)
+        {
+            NetTest.NetManager.instance.ReqGameEnd(UserData.instance.UID);
+        }
+
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
     public void MouseDownOnCard(Card_Base card)
