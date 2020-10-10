@@ -38,6 +38,7 @@ public class InGameManager : MonoBehaviour
         NetTest.CsResManager.RoundEndEvent += OnReceiveTurnEnd;
         NetTest.CsResManager.UseCardEvent += OnReceiveUseCard;
         StartCoroutine(WaitForGameStart());
+        DecisionTimer = Time.time + 999999;
     }
     public void OnReceiveUseCard(string uid, int cardID, int pos)
     {

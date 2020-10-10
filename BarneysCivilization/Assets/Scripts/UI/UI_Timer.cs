@@ -11,7 +11,8 @@ public class UI_Timer : MonoBehaviour
     }
     void Update()
     {
-        float percent = 1 - ((Time.time - InGameManager.instance.DecisionTimer) / InGameManager.instance.DecisionDuration);
+        float percent = (InGameManager.instance.DecisionTimer-Time.time) / InGameManager.instance.DecisionDuration;
+        print(percent);
         if (percent > 0)
         {
             FillBar.fillAmount = percent;
