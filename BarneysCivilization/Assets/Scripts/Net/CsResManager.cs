@@ -52,7 +52,7 @@ namespace NetTest
             }
             else 
             {
-                MatchingErrorEvent();
+                //MatchingErrorEvent();
             }
         }
         public static void NtyMatching(int result, String[] userList, int[] raceList, int[] RandomList)
@@ -69,7 +69,7 @@ namespace NetTest
             }  
             else
             {
-                MatchingErrorEvent();
+               MatchingErrorEvent();
             }
         }
         public static void ResStopMatching(int result)

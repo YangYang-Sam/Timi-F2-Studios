@@ -174,7 +174,14 @@ public class UIManager : MonoBehaviour
     {
         if (UserData.instance.isMultiplayerGame)
         {
-            NetTest.NetManager.instance.ReqGameEnd(UserData.instance.UID);
+            try 
+            {
+                NetTest.NetManager.instance.ReqGameEnd(UserData.instance.UID); 
+            }
+            catch
+            {
+
+            }           
         }
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);

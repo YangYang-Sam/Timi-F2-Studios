@@ -50,6 +50,7 @@ public class UI_MainScene : MonoBehaviour
     {
         if(isMatching  && MatchFound)
         {
+            print("Match Found");
             MatchFound = false;           
             SceneManager.LoadScene("BattleScene");
             CsResManager.MatchingErrorEvent -= OnMatchingError;
@@ -105,6 +106,7 @@ public class UI_MainScene : MonoBehaviour
             UserData.instance.RandomSeeds[i] = Random.Range(0, int.MaxValue);
         }
 
+        UserData.instance.isMultiplayerGame =false;
         UserData.instance.mapData = MapDatas[MapIndex];
         CsResManager.MatchingErrorEvent -= OnMatchingError;
         SceneManager.LoadScene("BattleScene");

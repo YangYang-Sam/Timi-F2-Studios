@@ -52,7 +52,6 @@ public class UserData : MonoBehaviour
     {
         if (textMessage)
         {
-            print(text);
             textMessage = false;
         }
     }
