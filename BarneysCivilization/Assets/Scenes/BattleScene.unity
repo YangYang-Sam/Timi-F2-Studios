@@ -1535,6 +1535,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6757104003006605547, guid: 5ea4f951cafd4234cb48e7934fad8720,
+        type: 3}
+      propertyPath: HoldCardOffset
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6757104003006605551, guid: 5ea4f951cafd4234cb48e7934fad8720,
         type: 3}
       propertyPath: m_LocalPosition.x

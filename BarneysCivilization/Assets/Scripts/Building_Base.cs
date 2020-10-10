@@ -40,9 +40,9 @@ public class Building_Base : MonoBehaviour
 
         transform.position = Cell.transform.position;
     }
-    public virtual bool CanUpgrade(CardManager user)
+    public virtual bool CanUpgrade(CardManager user,BuildingType type)
     {
-        return MaxLevel > Level;
+        return MaxLevel > Level && type==Type;
     }
     public virtual void UpgradeBuilding(HexCell cell, CardManager owner)
     {
