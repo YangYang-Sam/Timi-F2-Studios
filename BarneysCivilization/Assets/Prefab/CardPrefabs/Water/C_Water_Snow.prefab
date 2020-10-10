@@ -48,7 +48,8 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u4F7F\u4E00\u683C\u5B50\u964D\u96E81\u56DE\u5408\uFF0C\u82E5\u4E3A\u654C\u65B9\u683C\u5B50\uFF0C\u5176\u4E0A\u5355\u4F4D\u65E0\u6CD5\u79FB\u52A8"
+      value: "<b>\u76EE\u6807</b>\uFF1A<b>\u9886\u571F\u5185</b>\u53CA<b>\u9644\u8FD1</b>\u683C\u5B50
+        <b>\u6548\u679C</b>\uFF1A<b>\u964D\u96E8</b>1\u56DE\u5408\uFF0C\u82E5\u4E3A<b>\u654C\u65B9</b>\u683C\u5B50\uFF0C\u5176\u4E0A\u5355\u4F4D<b>\u65E0\u6CD5\u79FB\u52A8</b>"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

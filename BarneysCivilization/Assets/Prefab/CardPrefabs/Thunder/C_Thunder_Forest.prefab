@@ -38,7 +38,9 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u8D44\u6E90-1\uFF0C\u4F7F\u4E00\u67091\u7EA7\u4EE5\u4E0A\u5355\u4F4D\u7684\u683C\u5B50\u4E0A\u6218\u529B+3"
+      value: "<b>\u76EE\u6807</b>\uFF1A<b>5 \u6218\u529B\u4EE5\u4E0A</b>\u5355\u4F4D
+        <b>\u6D88\u8017</b>\uFF1A<b>\u8D44\u6E90</b> -1 <b>\u6548\u679C</b>\uFF1A<b>\u6218\u529B</b>
+        +3"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
