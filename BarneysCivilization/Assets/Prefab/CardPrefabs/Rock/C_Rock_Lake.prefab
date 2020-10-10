@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 3737306267706184337, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Text
-      value: "\u6307\u5B9A\u683C\u5B50\u4E0B\u96E83\u56DE\u5408"
+      value: "<b>\u6548\u679C</b>\uFF1A<b>\u884C\u52A8\u529B</b>+1\uFF0C<b>\u79FB\u52A8\u5F00\u59CB</b>\u65F6\uFF0C<b>\u89E3\u9664\u9886\u5730\u5185</b>\u6240\u6709<b>\u65E0\u6CD5\u79FB\u52A8</b>\u6548\u679C"
       objectReference: {fileID: 0}
     - target: {fileID: 4197997867088453150, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -46,7 +46,7 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u884C\u52A8\u529B+1\uFF0C\u79FB\u52A8\u5F00\u59CB\u65F6\uFF0C\u89E3\u9664\u9886\u5730\u5185\u6240\u6709\u65E0\u6CD5\u79FB\u52A8\u6548\u679C"
+      value: "<b>\u6548\u679C</b>\uFF1A<b>\u884C\u52A8\u529B</b>+1\uFF0C<b>\u79FB\u52A8\u5F00\u59CB</b>\u65F6\uFF0C<b>\u89E3\u9664\u9886\u5730\u5185</b>\u6240\u6709<b>\u65E0\u6CD5\u79FB\u52A8</b>\u6548\u679C"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
