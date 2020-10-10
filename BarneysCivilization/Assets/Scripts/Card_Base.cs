@@ -19,6 +19,7 @@ public class Card_Base : MonoBehaviour
     public Sprite CardImage;
     public string CardName;
     public string CardDescription;
+    public CardCategory Category;
 
     [SerializeField]
     private CardAppearence cardAppearence;
@@ -49,4 +50,11 @@ public class Card_Base : MonoBehaviour
     {
         cardEffect.Effect(user, cell);
     }
+}
+public enum CardCategory
+{
+    develope,
+    damaeg,
+    move,
+    building
 }
