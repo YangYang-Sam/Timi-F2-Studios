@@ -26,6 +26,9 @@ public class UI_MainScene : MonoBehaviour
     public MapData[] MapDatas;
     public SpriteRenderer CameraBackgroundRenderer;
     public Sprite[] RaceBackgrounds;
+
+
+    public bool cancelMatch=false;
     private void Awake()
     {
         instance = this;
@@ -49,6 +52,12 @@ public class UI_MainScene : MonoBehaviour
         {
             MatchFound = false;           
             SceneManager.LoadScene("BattleScene");
+            CsResManager.MatchingErrorEvent -= OnMatchingError;
+        }
+        if (cancelMatch)
+        {
+            cancelMatch = false;
+            CancelMatch();
         }
     }
     private void OnMatchSuccess(string[] Users, int[] Races, int[] RandomSeeds)
@@ -80,12 +89,12 @@ public class UI_MainScene : MonoBehaviour
 
     private void OnMatchingBegin()
     {
-        print("Match Begin");
+       
     }
 
     private void OnMatchingError()
     {
-        CancelMatch();
+        cancelMatch = true;
     }
 
     public void SinglePlayerStart(int MapIndex)
@@ -97,7 +106,7 @@ public class UI_MainScene : MonoBehaviour
         }
 
         UserData.instance.mapData = MapDatas[MapIndex];
-
+        CsResManager.MatchingErrorEvent -= OnMatchingError;
         SceneManager.LoadScene("BattleScene");
     }
     public void StartMatching(int MapIndex)

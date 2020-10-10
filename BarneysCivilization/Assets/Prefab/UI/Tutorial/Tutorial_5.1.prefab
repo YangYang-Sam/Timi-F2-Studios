@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Text
-      value: "\u73B0\u5728\u6211\u4EEC\u6709\u4E00\u5B9A\u7684\u5B9E\u529B\u4E86\uFF0C\u53BB\u770B\u770B\u654C\u4EBA\u505A\u4EC0\u4E48\u5427"
+      value: "\u73B0\u5728\u6211\u4EEC\u6709\u4E00\u5B9A\u7684\u5B9E\u529B\u4E86\uFF0C\u53BB\u770B\u770B\u654C\u4EBA\u5728\u505A\u4EC0\u4E48\u5427"
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}

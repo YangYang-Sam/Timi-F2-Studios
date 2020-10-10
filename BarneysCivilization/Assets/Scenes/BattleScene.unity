@@ -684,6 +684,7 @@ MonoBehaviour:
   - {fileID: 5655255279133389586, guid: 2df233d914c28e4488fa0e534215dadf, type: 3}
   - {fileID: 5655255279133389586, guid: db3bc500d345e9f47b1e5c647d45ff2d, type: 3}
   - {fileID: 5655255279133389586, guid: 90245b49df2d09d4b8111e9d511c1761, type: 3}
+  - {fileID: 5655255279133389586, guid: d0aa6e038b65ca645b63f4d712089431, type: 3}
   isInstanceGoing: 0
 --- !u!4 &610774885
 Transform:
@@ -803,6 +804,7 @@ MonoBehaviour:
   EffectPrefabs:
   - {fileID: 5756787108513754847, guid: 82b30a0be5e5f794a8555ef31c868aab, type: 3}
   CellIconPrefab: []
+  CategoryImages: []
   Terrains: []
 --- !u!4 &670890827
 Transform:
