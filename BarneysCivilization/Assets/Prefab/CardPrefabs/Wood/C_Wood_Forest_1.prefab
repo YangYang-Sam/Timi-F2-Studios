@@ -27,6 +27,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3737306267706184337, guid: 718dcd16eb5143245a546bd22e620c09,
+        type: 3}
+      propertyPath: m_Text
+      value: "<b>\u76EE\u6807</b>\uFF1A\u5DF1\u65B9<b>\u68EE\u6797</b>\n<b>\u6548\u679C</b>\uFF1A<b>\u5EFA\u9020</b>/<b>\u5347\u7EA7</b>\u6ECB\u517B\u4E4B\u6811,
+        <b>\u56DE\u5408\u5F00\u59CB</b>\u65F6\uFF0C\u82E5\u8BE5\u683C<b>\u6218\u529B</b><5\uFF0C\u5219<b>\u6218\u529B</b>+1/+2"
+      objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardName
