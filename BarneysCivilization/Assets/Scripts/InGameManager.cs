@@ -144,6 +144,14 @@ public class InGameManager : MonoBehaviour
     {
         TurnCount = 1;
         UserData data = UserData.instance;
+        if (data.mapData.useTutorial)
+        {
+            DecisionTimer = Time.time + 999999;
+        }
+        else
+        {
+            DecisionTimer = Time.time + DecisionDuration;
+        }
         if (data.isMultiplayerGame)
         {
             for (int i = 0; i < CardManagers.Count; i++)
@@ -232,7 +240,14 @@ public class InGameManager : MonoBehaviour
                 PosList.Clear();
                 CardIDList.Clear();
                 PlayerController.canControl = true;
-                DecisionTimer = Time.time + DecisionDuration;
+                if (UserData.instance.mapData.useTutorial)
+                {
+                    DecisionTimer = Time.time + 999999;
+                }
+                else
+                {
+                    DecisionTimer = Time.time + DecisionDuration;
+                }
                 if (!UserData.instance.isMultiplayerGame)
                 {
                     for (int i = 0; i < 10; i++)

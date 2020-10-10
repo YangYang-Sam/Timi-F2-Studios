@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TutorialInstance : MonoBehaviour
 {
     public GameObject Graphic;
+    public Text TimerText;
 
     public TutorialTriggerType type;
     public float time;
@@ -13,6 +14,7 @@ public class TutorialInstance : MonoBehaviour
     public bool MoveCameraToEnemy;
     public GameObject StartCloseObj;
 
+    private bool isStart=false;
     private float Duration=3;
     private float durationTimer;
     private void Start()
@@ -29,6 +31,7 @@ public class TutorialInstance : MonoBehaviour
         }
     }
 
+ 
     private void ChooseCard()
     {
         if (type == TutorialTriggerType.ChooseCard)
@@ -55,8 +58,19 @@ public class TutorialInstance : MonoBehaviour
                 TutorialStart();
             }
         }
-
-        durationTimer -= Time.deltaTime;
+        if (isStart)
+        {
+            durationTimer -= Time.deltaTime;
+            int t = Mathf.FloorToInt(durationTimer);
+            if (t > 0)
+            {
+                TimerText.text = t.ToString();
+            }
+            else
+            {
+                TimerText.text = "点击继续";
+            }
+        }        
     }
 
     private void PlayerMove(HexCell obj)
@@ -77,7 +91,8 @@ public class TutorialInstance : MonoBehaviour
 
     public void TutorialStart()
     {
-        Graphic.SetActive(true);
+        Graphic.SetActive(true); 
+        isStart = true;
         if (MoveCameraToEnemy)
         {
             BattleCamera.instance.MoveToCore(1);
@@ -89,12 +104,15 @@ public class TutorialInstance : MonoBehaviour
     }
     public void TutorialClose()
     {
-        UIManager.instance.PlayerUseCardEvent -= PlayerUseCard;
-        PlayerController.instance.PlayerMoveEvent -= PlayerMove;
-        InGameManager.instance.LateDecisionEvent -= OnLateDecision;
-        UIManager.instance.ChooseCardFinish -= ChooseCard;
-        TutorialManager.instance.isInstanceGoing = false;
-        Destroy(gameObject);
+        if (durationTimer <=0)
+        {
+            UIManager.instance.PlayerUseCardEvent -= PlayerUseCard;
+            PlayerController.instance.PlayerMoveEvent -= PlayerMove;
+            InGameManager.instance.LateDecisionEvent -= OnLateDecision;
+            UIManager.instance.ChooseCardFinish -= ChooseCard;
+            TutorialManager.instance.isInstanceGoing = false;
+            Destroy(gameObject);
+        }
     }
 }
 public enum TutorialTriggerType

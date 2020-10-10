@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3410485282946608624
+--- !u!1001 &7841666461570881030
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,79 +9,58 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
       propertyPath: m_Color.a
-      value: 0.2784314
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589117696256, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -156
+      value: 711.4
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 331.2
+      value: 268.3
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 885.8
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482599, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 563805415930a894ab071ba965b10a2c,
-        type: 3}
-    - target: {fileID: 8317111589145482599, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
-      propertyPath: m_Type
+      propertyPath: m_RaycastTarget
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317111589946633756, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Text
-      value: "\u5DEE\u70B9\u5FD8\u4E86\u544A\u8BC9\u4F60\uFF0C\u6BCF\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u4F60\u7684\u8D44\u6E90\u90FD\u4F1A\u6062\u590D1\u70B9\u3002\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u6BCF\u70B9\u8D44\u6E90\u90FD\u4F1A\u5728\u4F60\u7684\u57FA\u5730\u5904\u8F6C\u5316\u4E3A1\u70B9\u6218\u6597\u529B\u3002\u597D\u597D\u5229\u7528\u8D44\u6E90\u5427\uFF01"
+      value: "\u770B\u5230\u6218\u58EB\u8EAB\u4E0A\u7684\u6570\u5B57\u4E86\u5417\uFF0C\u90A3\u662F\u5B83\u7684\u6218\u6597\u529B\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: content
+      value: "\u6B22\u8FCE\u6765\u5230\u7EFF\u6D32\uFF0C\u914B\u957F\u3002 \u73B0\u5728\uFF0C\u62D6\u52A8\u4F60\u7684\u5C4F\u5E55\u770B\u770B\u56DB\u5468\u73AF\u5883\u5427!"
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: type
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114018, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Name
-      value: Tutorial_7
+      value: Tutorial_1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111590507114018, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114019, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
