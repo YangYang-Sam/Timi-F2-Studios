@@ -129,22 +129,25 @@ namespace NetTest
                 case MSGID.CsNtyCardListId:
                     CS_NTY_CARD_LIST resMsg10 = msg.CsNtyCardList;
                     UserData.instance.Round = resMsg10.Round;
-                    UserData.instance.CardIDList.Clear();
-                    for (int i = 0; i < resMsg10.CardidList.Count; i++)
+                    if(InGameManager.TurnCount == resMsg10.Round)
                     {
-                        UserData.instance.CardIDList.Add(resMsg10.CardidList[i] - 1);
-                    }
-                    UserData.instance.PosIDList.Clear();
-                    for (int i = 0; i < resMsg10.CardidList.Count; i++)
-                    {
-                        UserData.instance.PosIDList.Add(resMsg10.CardposList[i] - 1);
-                    }
-                    UserData.instance.CardUIDList.Clear();
-                    for (int i = 0; i < resMsg10.CardidList.Count; i++)
-                    {
-                        UserData.instance.CardUIDList.Add(resMsg10.CarduidList[i]);
-                    }
-                    UserData.instance.ReceiveCardPack = true;
+                        UserData.instance.CardIDList.Clear();
+                        for (int i = 0; i < resMsg10.CardidList.Count; i++)
+                        {
+                            UserData.instance.CardIDList.Add(resMsg10.CardidList[i] - 1);
+                        }
+                        UserData.instance.PosIDList.Clear();
+                        for (int i = 0; i < resMsg10.CardposList.Count; i++)
+                        {
+                            UserData.instance.PosIDList.Add(resMsg10.CardposList[i] - 1);
+                        }
+                        UserData.instance.CardUIDList.Clear();
+                        for (int i = 0; i < resMsg10.CarduidList.Count; i++)
+                        {
+                            UserData.instance.CardUIDList.Add(resMsg10.CarduidList[i]);
+                        }
+                        UserData.instance.ReceiveCardPack = true;
+                    }            
                     if(!PlayerController.canControl)
                     {
                         NetManager.instance.ReqEndTurn(UserData.instance.UID, InGameManager.TurnCount);
@@ -239,6 +242,7 @@ namespace NetTest
             CS_REQ_LOGIN reqMsg = new CS_REQ_LOGIN();
             reqMsg.Id = uid;
             reqMsg.Passwd = password;
+            reqMsg.Type = InGameManager.IsInGame() ? 2 : 1;
 
             msg.CsReqLogin = reqMsg;
 

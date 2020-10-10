@@ -73,7 +73,8 @@ public class InGameManager : MonoBehaviour
                 }
             }
 
-            for (int i = 0; i < CardIDList.Count; i++)
+            int Count = Mathf.Min(CardIDList.Count, ud.CardIDList.Count);
+            for (int i = 0; i < Count; i++)
             {
                 if(CardIDList[i]== ud.CardIDList[i] && CardUIDList[i]==ud.CardUIDList[i] && PosList[i] == ud.PosIDList[i])
                 {
@@ -346,6 +347,15 @@ public class InGameManager : MonoBehaviour
         {
             NetTest.NetManager.instance.ReqGameEnd(UserData.instance.UID);
         }
+    }
+    public static bool IsInGame()
+    {
+        if(instance && instance.gameObject)
+        {
+            return true;
+        }
+
+        return false;
     }
     public event System.Action GameStateChangeEvent;
     public event System.Action LateDecisionEvent;
