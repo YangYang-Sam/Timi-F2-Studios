@@ -85,6 +85,7 @@ message CS_RES_REGIST {
 message CS_REQ_LOGIN {
    string id = 1;
    string passwd = 2;
+   int32 type = 3;
 }
 
 message CS_RES_LOGIN {
@@ -121,6 +122,7 @@ message CS_NTY_LOGINOUT {
 
    string id = 1;
    Loginout_Reason Reason = 2;
+   int32 type = 3;
 }
 
 message CS_REQ_HELLO {
