@@ -49,10 +49,11 @@ public class Effect_CreateBuilding : CardEffect
     public override List<HexCell> GetCanUseCells(CardManager user)
     {
         List<HexCell> cells = new List<HexCell>();
+        BuildingType type = BuildingPrefab.GetComponent<Building_Base>().Type;
         foreach (HexCell cell in user.OccupiedCells)
         {
             bool isSupportCellType = SupportAllCellTypes ? true : SupportCellTypes.Contains(cell.CellType);
-            if (cell.GetUnitOnCell() && cell.GetUnitOnCell().Health >= RequireHealth && (cell.PlacedBuilding == null || cell.PlacedBuilding.CanUpgrade(user)) && isSupportCellType)
+            if (cell.GetUnitOnCell() && cell.GetUnitOnCell().Health >= RequireHealth && (cell.PlacedBuilding == null || cell.PlacedBuilding.CanUpgrade(user,type)) && isSupportCellType)
             {
                 cells.Add(cell);
             }

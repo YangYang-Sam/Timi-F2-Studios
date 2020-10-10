@@ -9,6 +9,8 @@ public class CardAppearence : MonoBehaviour
     private Card_Base card;
     [SerializeField]
     private GameObject Graphic;
+    [SerializeField]
+    private Image categoryImage;
 
     public Image CardImage;
     public Text NameText;
@@ -23,5 +25,6 @@ public class CardAppearence : MonoBehaviour
         CardImage.sprite = card.CardImage;
         NameText.text = card.CardName;
         DescriptionText.text = card.CardDescription;
+        categoryImage.sprite = ArtResourceManager.instance.CategoryImages[(int)card.Category];
     }
 }

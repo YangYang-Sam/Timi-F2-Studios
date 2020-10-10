@@ -22,6 +22,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3737306267706184337, guid: 718dcd16eb5143245a546bd22e620c09,
+        type: 3}
+      propertyPath: m_Text
+      value: "<b>\u76EE\u6807</b>\uFF1A\u5DF1\u65B9\u5355\u4F4D\n<b>\u6548\u679C</b>\uFF1A<b>\u6218\u529B</b>+n\uFF0C\u8BE5\u683C\u5B50\u672C\u56DE\u5408<b>\u65E0\u6CD5\u79FB\u52A8</b>\uFF0Cn\u4E3A\u4F60\u7684<b>\u5C71\u4E18\u6570</b>"
+      objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardName
@@ -30,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u5DF1\u65B9\u4E00\u683C\u5B50+n\u6218\u529B\uFF0C\u8BE5\u683C\u5B50\u672C\u56DE\u5408\u65E0\u6CD5\u79FB\u52A8\uFF0Cn\u4E3A\u4F60\u7684\u5C71\u4E18\u6570"
+      value: "<b>\u76EE\u6807</b>\uFF1A\u5DF1\u65B9\u5355\u4F4D <b>\u6548\u679C</b>\uFF1A<b>\u6218\u529B</b>+n\uFF0C\u8BE5\u683C\u5B50\u672C\u56DE\u5408<b>\u65E0\u6CD5\u79FB\u52A8</b>\uFF0Cn\u4E3A\u4F60\u7684<b>\u5C71\u4E18\u6570</b>"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

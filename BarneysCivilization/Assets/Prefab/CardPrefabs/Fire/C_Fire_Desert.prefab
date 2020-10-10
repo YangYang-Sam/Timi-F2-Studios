@@ -28,7 +28,8 @@ PrefabInstance:
     - target: {fileID: 3737306267706184337, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Text
-      value: "\u6307\u5B9A\u683C\u5B50\u4E0B\u96E83\u56DE\u5408"
+      value: "<b>\u76EE\u6807</b>\uFF1A<b>\u9886\u5730\u5185</b>\u53CA<b>\u9644\u8FD1</b>\u683C\u5B50\n<b>\u6548\u679C</b>\uFF1A<b>\u71C3\u70E7
+        3 </b>\u56DE\u5408\uFF0C\u82E5\u8BE5\u683C\u4E3A<b>\u68EE\u6797</b> / <b>\u8349\u539F</b>\u5219<b>\u884C\u52A8\u529B</b>+1"
       objectReference: {fileID: 0}
     - target: {fileID: 4197997867088453150, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -49,7 +50,9 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u4F7F\u4E00\u4E2A\u683C\u5B50\u71C3\u70E73\u56DE\u5408\uFF0C\u82E5\u4E3A\u68EE\u6797\u6216\u8349\u539F\u5219\u540C\u65F6\u884C\u52A8\u529B+1"
+      value: "<b>\u76EE\u6807</b>\uFF1A<b>\u9886\u5730\u5185</b>\u53CA<b>\u9644\u8FD1</b>\u683C\u5B50
+        <b>\u6548\u679C</b>\uFF1A<b>\u71C3\u70E7 3 </b>\u56DE\u5408\uFF0C\u82E5\u8BE5\u683C\u4E3A<b>\u68EE\u6797</b>
+        / <b>\u8349\u539F</b>\u5219<b>\u884C\u52A8\u529B</b>+1"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -65,7 +68,7 @@ PrefabInstance:
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name
-      value: C_Fire_Exposure
+      value: C_Fire_Desert
       objectReference: {fileID: 0}
     - target: {fileID: 5451290693730646944, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}

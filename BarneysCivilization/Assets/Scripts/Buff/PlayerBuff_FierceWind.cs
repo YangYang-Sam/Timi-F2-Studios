@@ -8,7 +8,7 @@ public class PlayerBuff_FierceWind : PlayerBuff_Base
     {
         base.OnUnitBeforeBattle(unit, cell);
 
-        int DamageAmount = unit.Level;
+        int DamageAmount =3/* unit.Level*/;
 
         if (cell.PlacedUnits.Count > 0)
         {

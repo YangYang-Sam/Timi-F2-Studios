@@ -444,6 +444,11 @@ MonoBehaviour:
   - {fileID: 1710729663482659346, guid: cc17ed256889634498a8ab473f8ee660, type: 3}
   - {fileID: 1710729663482659346, guid: 7c300e3c6fe57bd4a841b53c3169de83, type: 3}
   - {fileID: 1710729663482659346, guid: 776dfd95e27043b4f95337f4e0eee48a, type: 3}
+  CategoryImages:
+  - {fileID: 21300000, guid: 07022d108ecaeb04eb0670015365f4ad, type: 3}
+  - {fileID: 21300000, guid: 6597e8ba7f8707641a44d0be9c1a4702, type: 3}
+  - {fileID: 21300000, guid: 5608433c7fe4ce0448c69adc7f18fc98, type: 3}
+  - {fileID: 21300000, guid: e3e72603c2646754d92b13b6b2d189c6, type: 3}
   Terrains:
   - TerrainPerfab:
     - {fileID: 3254252090728733660, guid: eccb74349fc57bd4080f52c98e8bea09, type: 3}

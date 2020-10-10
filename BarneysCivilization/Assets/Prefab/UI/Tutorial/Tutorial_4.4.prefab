@@ -7,6 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4803655887837918465, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380971553219315343, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111588890261130, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8317111589117696256, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_IsActive
@@ -15,53 +30,68 @@ PrefabInstance:
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -154
+      value: -1268
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 208.1
+      value: 259.6
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 88
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 686.1
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111589145482598, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589145482599, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 85a63aec52543ab48b247dee932c01ed,
+      objectReference: {fileID: 21300000, guid: 1f11632b4f6eb8e468ddc007ccab340e,
         type: 3}
     - target: {fileID: 8317111589145482599, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589946633756, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Text
-      value: "\u597D\u4E86\uFF0C\u4F60\u5DF2\u7ECF\u505A\u4E86\u4F60\u80FD\u505A\u7684\u3002\u73B0\u5728\u70B9\u51FB\u53F3\u8FB9\u7684\u7ED3\u675F\u6309\u94AE\u5F00\u59CB\u79FB\u52A8\u5427\uFF01"
+      value: "\u5360\u9886\u4E0D\u540C\u79CD\u7C7B\u7684\u5730\u5757\u4F1A\u5E26\u7ED9\u4F60\u4E0D\u540C\u7684\u5361\u724C\u9009\u9879\u3002\u5982\u679C\u4F60\u5931\u53BB\u5730\u5757\u7684\u8BDD\uFF0C\u4E5F\u4F1A\u5931\u53BB\u4F60\u83B7\u5F97\u7684\u90A3\u5F20\u5361\u724C\u3002"
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: type
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: StartCloseObj
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114018, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Name
-      value: Tutorial_4
+      value: Tutorial_4.4
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114019, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}

@@ -34,6 +34,7 @@ public class ArtResourceManager : MonoBehaviour
     public GameObject[] EffectPrefabs;
     public GameObject[] CellIconPrefab;
 
+    public Sprite[] CategoryImages;
 
     [System.Serializable]
     public class TerrainPrefabs

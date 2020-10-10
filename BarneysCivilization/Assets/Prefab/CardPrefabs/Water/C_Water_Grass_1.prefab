@@ -29,7 +29,8 @@ PrefabInstance:
     - target: {fileID: 3737306267706184337, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Text
-      value: "\u6307\u5B9A\u683C\u5B50\u4E0B\u96E83\u56DE\u5408"
+      value: "<b>\u76EE\u6807</b>\uFF1A<b>\u9886\u571F\u5185</b>\u53CA<b>\u9644\u8FD1</b>\u683C\u5B50\n<b>\u6D88\u8017</b>\uFF1A<b>\u8D44\u6E90</b>-1\n<b>\u6548\u679C</b>\uFF1A\u8BE5\u683C<b>\u964D\u96E8</b>
+        3 \u56DE\u5408\uFF0C\n<b>\u884C\u52A8\u529B</b>+1"
       objectReference: {fileID: 0}
     - target: {fileID: 4197997867088453150, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -50,7 +51,9 @@ PrefabInstance:
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: CardDescription
-      value: "\u8D44\u6E90-1\uFF0C\u4F7F\u4E00\u683C\u5B50\u964D\u96E83\u56DE\u5408\uFF0C\u884C\u52A8\u529B+1"
+      value: "<b>\u76EE\u6807</b>\uFF1A<b>\u9886\u571F\u5185</b>\u53CA<b>\u9644\u8FD1</b>\u683C\u5B50
+        <b>\u6D88\u8017</b>\uFF1A<b>\u8D44\u6E90</b>-1 <b>\u6548\u679C</b>\uFF1A\u8BE5\u683C<b>\u964D\u96E8</b>
+        3 \u56DE\u5408\uFF0C <b>\u884C\u52A8\u529B</b>+1"
       objectReference: {fileID: 0}
     - target: {fileID: 4704140921453613085, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
@@ -58,6 +61,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0ede62abb7fa4c144ade0efb7e1fc06f,
         type: 3}
+    - target: {fileID: 5023656151015282395, guid: 718dcd16eb5143245a546bd22e620c09,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023656151015282395, guid: 718dcd16eb5143245a546bd22e620c09,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 255.55
+      objectReference: {fileID: 0}
     - target: {fileID: 5296548780900481383, guid: 718dcd16eb5143245a546bd22e620c09,
         type: 3}
       propertyPath: m_Name

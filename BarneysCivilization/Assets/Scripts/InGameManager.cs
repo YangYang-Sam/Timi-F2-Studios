@@ -12,7 +12,7 @@ public class InGameManager : MonoBehaviour
     public GameObject CardManagerPrefab;
 
     public float DecisionDuration = 15f;
-    private float DecisionTimer;
+    public float DecisionTimer;
 
     public bool IsTurnEnd;
 
@@ -286,7 +286,7 @@ public class InGameManager : MonoBehaviour
         {
             cell.BeforeBattle();
         }   
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         foreach (HexCell cell in HexGrid.instance.cells)
         {
             cell.CheckOwner();

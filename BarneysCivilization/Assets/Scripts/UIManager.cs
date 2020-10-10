@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
     public bool InteractCellVisibility = true;
 
     [Header("Arrangment")]
+    public float HoldCardOffset;
     [SerializeField]
     private float ReleaseThreshold = 50;
     [SerializeField]
@@ -147,11 +148,11 @@ public class UIManager : MonoBehaviour
                 }
                 else
                 {
-                    position = Input.mousePosition;
+                    position = Input.mousePosition + Vector3.up * HoldCardOffset;
                     position.z = 0;
                     card.transform.position = Vector3.Lerp(card.transform.position, position, 0.2f);
                     card.transform.rotation = Quaternion.Slerp(card.transform.rotation, Quaternion.identity, 0.15f);
-                    card.transform.localScale = Vector3.Lerp(card.transform.localScale, PressedSize, 0.1f);
+                    card.transform.localScale = Vector3.Lerp(card.transform.localScale, PressedSize, 0.2f);
                     card.transform.SetAsLastSibling();
                     if (Input.mousePosition.y > ReleaseThreshold)
                     {

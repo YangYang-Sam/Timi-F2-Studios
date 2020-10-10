@@ -664,14 +664,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefabs:
+  - {fileID: 2287655941819283492, guid: d3e8dc68d46874644bc0446aa13ee3d9, type: 3}
   - {fileID: 2287655941819283492, guid: 96a773bbf96298a48a1ffa5807e6621e, type: 3}
-  - {fileID: 3565324214881531442, guid: ae9aac5ecc40048458814d2775783fd0, type: 3}
-  - {fileID: 5655255279133389586, guid: 5cb84a557c4e69449a5dbbfdc6e997dd, type: 3}
-  - {fileID: 5655255279133389586, guid: 0bb9cd11f0099d14bbc4e4d0dddd9411, type: 3}
-  - {fileID: 6645108148758578130, guid: 0a6d6e08659962b43b4f8265422fe12f, type: 3}
-  - {fileID: 6645108148758578130, guid: 8156dafc18d589549aa0ece0acfb044b, type: 3}
-  - {fileID: 6645108148758578130, guid: 3dfcddc1af9450640ba68025d0513cbe, type: 3}
+  - {fileID: 2287655941819283492, guid: 958811e72dfbe09469ec7c6bc2f3a60a, type: 3}
+  - {fileID: 6645108148758578130, guid: 5a637bed9f43d224481869cf7ff998f4, type: 3}
   - {fileID: 6645108148758578130, guid: 6e2f686d667c0a44f8a2c4a9156bfe62, type: 3}
+  - {fileID: 5655255279133389586, guid: 5cb84a557c4e69449a5dbbfdc6e997dd, type: 3}
+  - {fileID: 5655255279133389586, guid: 8f714b6ee7fb35d45aabf21f612658f6, type: 3}
+  - {fileID: 5655255279133389586, guid: 4d298b5fb7d768843851e4a21097cb19, type: 3}
+  - {fileID: 2287655941819283492, guid: 3e334d46a0c850b4c87f598c90fbfe22, type: 3}
+  - {fileID: 2065298378408509787, guid: c829c179eae7751499536549a0495994, type: 3}
+  - {fileID: 2065298378408509787, guid: 77a4e7ab32f223a46ad59894389a7fe7, type: 3}
+  - {fileID: 2065298378408509787, guid: 1c8dc2d0db2904f43a6bd86dab0bef5e, type: 3}
+  - {fileID: 5655255279133389586, guid: 0bb9cd11f0099d14bbc4e4d0dddd9411, type: 3}
+  - {fileID: 5655255279133389586, guid: a36cd69534ca33747926a92209b15608, type: 3}
+  - {fileID: 5655255279133389586, guid: 645b6c1c04e4c6940963f29a2447450d, type: 3}
+  - {fileID: 5655255279133389586, guid: ac4350114877ec8458d1f422a49c4965, type: 3}
+  - {fileID: 5655255279133389586, guid: be2dbe4319204e041a16122af2dbc2b6, type: 3}
+  - {fileID: 5655255279133389586, guid: 2df233d914c28e4488fa0e534215dadf, type: 3}
+  - {fileID: 5655255279133389586, guid: db3bc500d345e9f47b1e5c647d45ff2d, type: 3}
+  - {fileID: 5655255279133389586, guid: 90245b49df2d09d4b8111e9d511c1761, type: 3}
   isInstanceGoing: 0
 --- !u!4 &610774885
 Transform:
@@ -1522,6 +1534,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BattleCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757104003006605547, guid: 5ea4f951cafd4234cb48e7934fad8720,
+        type: 3}
+      propertyPath: HoldCardOffset
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6757104003006605551, guid: 5ea4f951cafd4234cb48e7934fad8720,
         type: 3}
