@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Text
-      value: "\u597D\u4E86\uFF0C\u73B0\u5728\u62D6\u52A8\u5C4F\u5E55\uFF0C\u770B\u770B\u56DB\u5468\u5427"
+      value: "\u6211\u4EEC\u7684\u5B9E\u529B\u53C8\u589E\u957F\u4E86\uFF0C\u73B0\u5728\u662F\u65F6\u5019\u770B\u770B\u56DB\u5468\u4E86\u3002\u62D6\u52A8\u5C4F\u5E55\u6765\u79FB\u52A8\u89C6\u89D2\u5427\uFF01"
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 8317111590507114018, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: m_Name
-      value: Tutorial_1.5
+      value: Tutorial_2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114018, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}

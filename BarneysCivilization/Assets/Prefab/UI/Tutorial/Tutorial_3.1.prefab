@@ -178,6 +178,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 205.09998
       objectReference: {fileID: 0}
+    - target: {fileID: 8317111589946633757, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u56DB\u5468\u6709\u5F88\u591A\u9886\u571F\uFF0C\u8981\u5360\u9886\u54EA\u4E2A\u597D\u5462\uFF1F\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 8317111590507114016, guid: 0b0c23d23ebe9f1469d3ff4e842c7fc1,
         type: 3}
       propertyPath: StartCloseObj
