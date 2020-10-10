@@ -36,6 +36,7 @@ public class UI_MainScene : MonoBehaviour
         mainCam = Camera.main;
 
         CsResManager.MatchingBeginEvent += OnMatchingBegin;
+        CsResManager.MatchingErrorEvent += OnMatchingError;
         CsResManager.MatchSuccessEvent += OnMatchSuccess;
 
         int RaceIndex = Random.Range(0, 6);
@@ -82,6 +83,11 @@ public class UI_MainScene : MonoBehaviour
         print("Match Begin");
     }
 
+    private void OnMatchingError()
+    {
+        CancelMatch();
+    }
+
     public void SinglePlayerStart(int MapIndex)
     {
         UserData.instance.RandomSeeds = new int[10];
@@ -99,8 +105,8 @@ public class UI_MainScene : MonoBehaviour
         animator.Play("StartMatching");
         isMatching = true;
         UserData.instance.mapData = MapDatas[MapIndex];
-        NetManager.instance.ReLogin();
-        NetManager.instance.ReqMatching(UserData.instance.UID,UserData.instance.RaceIndex+1);
+        //NetManager.instance.ReLogin();
+        NetManager.instance.ReqMatching(UserData.instance.UID, UserData.instance.RaceIndex+1);
     }
     public void StartChooseRace()
     {
