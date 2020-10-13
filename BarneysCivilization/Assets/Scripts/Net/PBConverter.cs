@@ -53,9 +53,26 @@ namespace NetTest
                     if (res2 == 0)
                     {
                         //开一个子线程，用于发送心跳包
-                        Thread HeartPcgThread = new Thread(new ParameterizedThreadStart(HeartPcgThreadFunc));
-                        HeartPcgThread.IsBackground = true;
-                        HeartPcgThread.Start(UserData.instance.UID);
+                        if (NetManager.HeartPcgThread != null)
+                        {
+                            try
+                            {
+                                NetManager.HeartPcgThread.Abort();
+                            }
+                            catch
+                            {
+                            }
+                        }
+
+                        NetManager.HeartPcgThread = new Thread(new ParameterizedThreadStart(HeartPcgThreadFunc));
+                        NetManager.HeartPcgThread.IsBackground = true;
+                        NetManager.HeartPcgThread.Start(UserData.instance.UID);
+
+                        if(NetManager.IsMatching)
+                        {
+                            NetManager.IsMatching = false;
+                            NetManager.instance.ReqMatching(UserData.instance.UID, UserData.instance.RaceIndex + 1);
+                        }
                     }
                     CsResManager.ResLogin(res2);
                     break;

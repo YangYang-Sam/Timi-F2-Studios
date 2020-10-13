@@ -12,7 +12,10 @@ namespace NetTest
     {
         public static NetManager instance;
         public static Socket socket;
+        public static Thread HeartPcgThread = null;
+        public static bool IsMatching = false;
         private static IPEndPoint ipe;
+        
 
         public void InitState()
         {

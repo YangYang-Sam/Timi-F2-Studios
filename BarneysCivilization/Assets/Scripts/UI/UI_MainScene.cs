@@ -117,7 +117,7 @@ public class UI_MainScene : MonoBehaviour
         isMatching = true;
         UserData.instance.mapData = MapDatas[MapIndex];
         NetManager.instance.ReLogin();
-        NetManager.instance.ReqMatching(UserData.instance.UID, UserData.instance.RaceIndex+1);
+        NetManager.IsMatching = true;
     }
     public void StartChooseRace()
     {
